@@ -1,0 +1,39 @@
+$var wire 10 ! input $end
+$var wire 8 " d $end
+$var wire 1 # k $end
+$var wire 10 $ input_final $end
+$var wire 5 % code5b $end
+$var wire 3 & code3b $end
+$var wire 1 ' sys_clk $end
+$dumpvars
+$end
+#0
+b0000000000 !
+b00000000 "
+0#
+b0000000000 $
+b00000 %
+b000 &
+0'
+#5
+b0101001001 !
+1'
+b0101001001 $
+#10
+0'
+#15
+b11111 %
+1'
+b00111111 "
+b001 &
+#20
+0'
+#25
+1'
+b0000000000 !
+b00000000 "
+0#
+b0000000000 $
+b00000 %
+b000 &
+0'
