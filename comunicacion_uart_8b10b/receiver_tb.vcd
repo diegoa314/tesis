@@ -1,6 +1,6 @@
-$var wire 1 ! rx_receiver_serial $end
-$var wire 1 " rx_receiver_read_enable $end
-$var wire 8 # output $end
+$var wire 1 ! receiver_serial $end
+$var wire 1 " receiver_read_enable $end
+$var wire 8 # receiver_output $end
 $var wire 1 $ ready $end
 $var wire 1 % rx_serial $end
 $var wire 10 & rx_data $end
@@ -11,9 +11,9 @@ $var wire 4 * bit_n $end
 $var wire 1 + rx_error $end
 $var wire 4 , rx_counter $end
 $var wire 1 - rx_strobe $end
-$var wire 10 . input $end
-$var wire 8 / d $end
-$var wire 1 0 k $end
+$var wire 10 . decoder_input $end
+$var wire 8 / decoder_output $end
+$var wire 1 0 decoder_k $end
 $var wire 10 1 input_final $end
 $var wire 5 2 code5b $end
 $var wire 3 3 code3b $end
@@ -991,6 +991,58 @@ b0111 ,
 #1520
 0<
 #1525
+1<
+b0110 ,
+#1530
+0<
+#1535
+1<
+b0101 ,
+#1540
+0<
+#1545
+1<
+b0100 ,
+#1550
+0<
+#1555
+1<
+b0011 ,
+#1560
+0<
+#1565
+1<
+b0010 ,
+#1570
+0<
+#1575
+1<
+b0001 ,
+#1580
+0<
+#1585
+1-
+1<
+b0000 ,
+#1590
+0<
+#1595
+0-
+1<
+b1001 ,
+#1600
+0<
+#1605
+1<
+b1000 ,
+#1610
+0<
+#1615
+1<
+b0111 ,
+#1620
+0<
+#1625
 1<
 b0110 ,
 0!

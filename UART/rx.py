@@ -48,7 +48,8 @@ class rx(Module):
 				NextValue(self.rx_data,Cat(self.rx_data[1:n_bits],rx_serial)),
 				NextValue(bit_n,bit_n+1),
 				If(bit_n == n_bits-1,
-					NextState("STOP")
+					NextState("STOP"),
+					NextValue(bit_n,0)
 				)
 			)
 		)
@@ -63,9 +64,8 @@ class rx(Module):
 		)
 		self.rx_fsm.act("FULL",
 			self.rx_ready.eq(1),
-			If(self.rx_ack,
-				NextState("IDLE")
-			).Elif(~rx_serial,
+			NextState("IDLE"),
+			If(~rx_serial,
 				NextState("ERROR")
 			)
 		)

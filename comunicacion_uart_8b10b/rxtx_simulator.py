@@ -3,12 +3,12 @@ from rxtx_8b10b import *
 bits=0b00111111
 def rxtx_tb(dut):
 	yield dut.rxtx_input.eq(bits)
+	yield dut.rxtx_fifo_we.eq(1)
 	yield
 	yield dut.rxtx_transmitter_ready.eq(1)
 	yield
-	yield dut.rxtx_transmitter_ready.eq(0)
 	yield dut.rxtx_receiver_read_enable.eq(1)
-	for i in range(250):
+	for i in range(400):
 		yield
 
 dut=rxtx(10000,1000)

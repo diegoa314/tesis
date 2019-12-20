@@ -1,12 +1,12 @@
 from migen import *
 import sys
-sys.path.append('/home/diegoaranda/Documents/Prueba/UART')
+sys.path.append('/home/diegoaranda/Documents/Tesis/UART')
 from rx import *
-sys.path.append('/home/diegoaranda/Documents/Prueba/8b10b')
+sys.path.append('/home/diegoaranda/Documents/Tesis/8b10b')
 from decoder import *
 
 class Receiver(Module):
-	def __init__(self,freq,baud_rate):
+	def __init__(self,freq=10000,baud_rate=1000):
 		self.receiver_serial=Signal()
 		self.receiver_read_enable=Signal()
 		self.receiver_output=Signal(8)

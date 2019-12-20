@@ -8,6 +8,7 @@ class rxtx(Module):
 		self.rxtx_transmitter_ready=Signal()
 		self.rxtx_receiver_read_enable=Signal()
 		self.rxtx_output=Signal(8)
+		self.rxtx_fifo_we=Signal()
 		#  #  #
 		receiver=Receiver(freq,baud_rate)
 		transmitter=Transmitter(freq,baud_rate)
@@ -15,6 +16,7 @@ class rxtx(Module):
 		self.comb+=[
 			transmitter.transmitter_input.eq(self.rxtx_input),
 			transmitter.transmitter_ready.eq(self.rxtx_transmitter_ready),
+			transmitter.transmitter_fifo_we.eq(self.rxtx_fifo_we),
 			receiver.receiver_read_enable.eq(self.rxtx_receiver_read_enable)
 		]
 		self.sync+=[

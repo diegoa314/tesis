@@ -19,8 +19,9 @@ class tx(Module):
 		self.tx_data=tx_data=Signal(n_bits)
 		self.tx_strobe=tx_strobe=Signal()
 		self.tx_bitn=tx_bitn=Signal(max=n_bits)
-		self.tx_ready=Signal()
+		self.tx_ready=tx_ready=Signal()
 		self.tx_latch=tx_latch=Signal(n_bits)
+		self.tx_done=tx_done=Signal() #indica que ya se ha enviado completamente la palabra
 		self.comb+=tx_strobe.eq(tx_counter==0)
 		self.sync+=\
 			If(tx_counter==0,
@@ -50,13 +51,16 @@ class tx(Module):
 				NextValue(tx_latch,Cat(tx_latch[1:n_bits],0)),
 				NextValue(tx_bitn,tx_bitn+1),
 				If(tx_bitn==n_bits-1,
-					NextState("STOP")
+					NextState("STOP"),
+					NextValue(tx_bitn,0),
+					NextValue(tx_done,1),	
 				)
 			)
 		)
 		self.tx_fsm.act("STOP",
 			If(tx_strobe,
 				NextValue(tx_serial,1),
+				NextValue(tx_done,0),
 				NextState("IDLE")
 			)
 		)
