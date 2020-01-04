@@ -1,0 +1,47 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Sat Jan  4 13:11:58 2020
+# Process ID: 7807
+# Current directory: /home/diegoaranda/Documents/Tesis/Manuel
+# Command line: vivado
+# Log file: /home/diegoaranda/Documents/Tesis/Manuel/vivado.log
+# Journal file: /home/diegoaranda/Documents/Tesis/Manuel/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/diegoaranda/Documents/Tesis/Manuel/build/top.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 6635.762 ; gain = 152.809 ; free physical = 401 ; free virtual = 3242
+update_compile_order -fileset sources_1
+launch_runs synth_1
+[Sat Jan  4 13:13:45 2020] Launched synth_1...
+Run output will be captured here: /home/diegoaranda/Documents/Tesis/Manuel/build/top.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a200tsbg484-1
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6973.750 ; gain = 0.000 ; free physical = 587 ; free virtual = 2904
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/diegoaranda/Documents/Tesis/Manuel/build/top.xdc]
+Finished Parsing XDC File [/home/diegoaranda/Documents/Tesis/Manuel/build/top.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 7062.402 ; gain = 0.000 ; free physical = 487 ; free virtual = 2807
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 7199.277 ; gain = 480.008 ; free physical = 361 ; free virtual = 2721
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+report_timing_summary: Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 7773.203 ; gain = 570.410 ; free physical = 123 ; free virtual = 2272
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Jan  4 13:17:19 2020...

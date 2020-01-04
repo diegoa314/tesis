@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Sat Jan  4 15:26:34 2020
+# Process ID: 11968
+# Current directory: /home/diegoaranda/Documents/Tesis/comunicacion_uart_8b10b
+# Command line: vivado
+# Log file: /home/diegoaranda/Documents/Tesis/comunicacion_uart_8b10b/vivado.log
+# Journal file: /home/diegoaranda/Documents/Tesis/comunicacion_uart_8b10b/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/diegoaranda/Documents/Tesis/comunicacion_uart_8b10b/build/top.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 6638.977 ; gain = 110.047 ; free physical = 358 ; free virtual = 3140
+update_compile_order -fileset sources_1
+launch_runs synth_1
+[Sat Jan  4 15:27:40 2020] Launched synth_1...
+Run output will be captured here: /home/diegoaranda/Documents/Tesis/comunicacion_uart_8b10b/build/top.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tcpg236-1
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6904.855 ; gain = 0.000 ; free physical = 345 ; free virtual = 2894
+INFO: [Project 1-479] Netlist was created with Vivado 2019.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/diegoaranda/Documents/Tesis/comunicacion_uart_8b10b/build/top.xdc]
+Finished Parsing XDC File [/home/diegoaranda/Documents/Tesis/comunicacion_uart_8b10b/build/top.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6994.477 ; gain = 0.000 ; free physical = 231 ; free virtual = 2802
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 7084.098 ; gain = 374.379 ; free physical = 141 ; free virtual = 2743
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Jan  4 16:03:04 2020...

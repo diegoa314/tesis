@@ -5,12 +5,15 @@ sys.path.append('/home/diegoaranda/Documents/Tesis/8b10b')
 from encoder import *
 sys.path.append('/home/diegoaranda/Documents/Tesis/FIFO')
 from fifo2 import *
+import cmoda7
+from migen.build.generic_platform import *
 
 class Transmitter(Module):
-	def __init__(self, freq=10000, baud_rate=1000):
+	def __init__(self, platform, freq=120000, baud_rate=9600):
 		self.transmitter_input=Signal(8) #fifo input
 		self.transmitter_tx_ready=Signal(1) #habilitador del rx
-		self.transmitter_output=Signal(1)
+		#self.transmitter_output=Signal(1)
+		self.transmitter_output=platform.request("serial").tx
 		self.transmitter_fifo_we=Signal(1) #habilitador de escritura del fifo
 		self.transmitter_fifo_re=Signal(1) #habilitador de lectura del fifo
 		self.transmitter_tx_done=Signal(1) #finalizacion de transmision
@@ -47,4 +50,8 @@ class Transmitter(Module):
 				counter_disp.eq(0)
 			)
 		]	
+
+plat=cmoda7.Platform()
+dut=Transmitter(plat)
+plat.build(dut)
 

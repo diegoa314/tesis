@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Sat Jan  4 15:26:34 2020
+# Process ID: 11968
+# Current directory: /home/diegoaranda/Documents/Tesis/comunicacion_uart_8b10b
+# Command line: vivado
+# Log file: /home/diegoaranda/Documents/Tesis/comunicacion_uart_8b10b/vivado.log
+# Journal file: /home/diegoaranda/Documents/Tesis/comunicacion_uart_8b10b/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/diegoaranda/Documents/Tesis/comunicacion_uart_8b10b/build/top.xpr
+update_compile_order -fileset sources_1
+launch_runs synth_1
+wait_on_run synth_1
+open_run synth_1 -name synth_1

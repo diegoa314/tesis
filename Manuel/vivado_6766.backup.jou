@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Sat Jan  4 13:03:52 2020
+# Process ID: 6766
+# Current directory: /home/diegoaranda/Documents/Tesis/Manuel
+# Command line: vivado -mode tcl
+# Log file: /home/diegoaranda/Documents/Tesis/Manuel/vivado.log
+# Journal file: /home/diegoaranda/Documents/Tesis/Manuel/vivado.jou
+#-----------------------------------------------------------
+open_hw
+open_hw_manager
+connect_hw_server
+open_hw_target 
+set_property PROBES.FILE {} [lindex [get_hw_devices] {0}]
+set_property PROGRAM.FILE {build/top.bit} [lindex [get_hw_devices] {0}]
+program_hw_devices [lindex [get_hw_devices] {0}]
+refresh_hw_device [lindex [get_hw_devices] {0}]
+quit
