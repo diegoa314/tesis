@@ -1,0 +1,301 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2700185 on Thu Oct 24 18:45:48 MDT 2019
+IP Build: 2699827 on Thu Oct 24 21:16:38 MDT 2019
+
+Process ID (PID): 5430
+License: Customer
+
+Current time: 	Sun Jan 12 18:48:56 PYST 2020
+Time zone: 	Paraguay Standard Time (America/Asuncion)
+
+OS: Scientific Linux release 7.7 (Nitrogen)
+OS Version: 3.10.0-1062.4.1.el7.x86_64
+OS Architecture: amd64
+Available processors (cores): 2
+
+Display: :0
+Screen size: 1366x768
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 44 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/home/diegoaranda/Xilinx/Vivado/2019.2/tps/lnx64/jre9.0.4
+Java executable location: 	/home/diegoaranda/Xilinx/Vivado/2019.2/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	diegoaranda
+User home directory: /home/diegoaranda
+User working directory: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /home/diegoaranda/Xilinx/Vivado
+HDI_APPROOT: /home/diegoaranda/Xilinx/Vivado/2019.2
+RDI_DATADIR: /home/diegoaranda/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: /home/diegoaranda/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: /home/diegoaranda/.Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: /home/diegoaranda/.Xilinx/Vivado/2019.2/
+Vivado layouts directory: /home/diegoaranda/.Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	/home/diegoaranda/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/vivado.log
+Vivado journal file location: 	/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-5430-localhost.localdomain
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /home/diegoaranda/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: /home/diegoaranda/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: /home/diegoaranda/Xilinx/Vivado/2019.2
+XILINX_VITIS: 
+XILINX_VIVADO: /home/diegoaranda/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: /home/diegoaranda/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 5,043 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// HMemoryUtils.trashcanNow. Engine heap size: 5,043 MB. GUI used memory: 43 MB. Current time: 1/12/20, 6:48:58 PM PYST
+selectButton(PAResourceEtoH.GettingStartedView_OPEN_PROJECT, "Open Project"); // y (x, cr)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_PROJECT
+// WARNING: HEventQueue.dispatchEvent() is taking  1034 ms.
+// Elapsed time: 20 seconds
+setFileChooser("/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build/top.xpr");
+// [GUI Memory]: 68 MB (+69009kb) [00:00:41]
+// [Engine Memory]: 5,050 MB (+5143788kb) [00:00:41]
+// Opening Vivado Project: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build/top.xpr. Version: Vivado v2019.2 
+// bB (cr):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build/top.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 5,094 MB. GUI used memory: 46 MB. Current time: 1/12/20, 6:49:23 PM PYST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: MSGMGR_REFRESH_MSG
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build/top.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 103 MB (+33186kb) [00:00:46]
+// WARNING: HEventQueue.dispatchEvent() is taking  2746 ms.
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'. 
+// Project name: top; location: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build; part: xc7a35tcpg236-1
+// 'i' command handler elapsed time: 27 seconds
+// Tcl Message: open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 6636.680 ; gain = 113.660 ; free physical = 744 ; free virtual = 4063 
+dismissDialog("Open Project"); // bB (cr)
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// [GUI Memory]: 110 MB (+1909kb) [00:00:54]
+selectButton(RDIResourceCommand.RDICommands_SETTINGS, "xc7a35tcpg236-1"); // h (Q, cr)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// I (cr): Settings: addNotify
+// 'dy' command handler elapsed time: 4 seconds
+// WARNING: HEventQueue.dispatchEvent() is taking  4136 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,224 MB. GUI used memory: 73 MB. Current time: 1/12/20, 6:49:40 PM PYST
+// [GUI Memory]: 130 MB (+15179kb) [00:01:00]
+// WARNING: HEventQueue.dispatchEvent() is taking  1481 ms.
+selectButton(PAResourceQtoS.SettingsProjectGeneralPage_CHOOSE_DEVICE_FOR_YOUR_PROJECT, (String) null); // t (a, I)
+// c (I): Select Device: addNotify
+// Elapsed time: 13 seconds
+selectTable(PAResourceEtoH.FPGAChooser_FPGA_TABLE, "xc7a15tcpg236-1 ; 236 ; 106 ; 10400 ; 20800 ; 25 ; 0 ; 45 ; 2 ; 2 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 1 ; 5 ;  ;  ;  ;  ; 0.95 ; 0.95 ; 1.05 ; ", 155, "xc7a15tcpg236-1", 0); // w (O, c)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (c)
+dismissDialog("Select Device"); // c (I)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+// bB (cr):  Change Settings : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: set_property part xc7a15tcpg236-1 [current_project] 
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PART_MODIFIED
+dismissDialog("Change Settings"); // bB (cr)
+dismissDialog("Settings"); // I (cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): No Implementation Results Available: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// f (cr): Launch Runs: addNotify
+dismissDialog("No Implementation Results Available"); // A (cr)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (cr)
+// TclEventType: RUN_LAUNCH
+// bB (cr):  Generate Bitstream : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// Tcl Message: [Sun Jan 12 18:50:09 2020] Launched synth_1... Run output will be captured here: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build/top.runs/synth_1/runme.log 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Jan 12 18:50:09 2020] Launched impl_1... Run output will be captured here: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build/top.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bB (cr)
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1048 ms.
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 2463 ms. Increasing delay to 3000 ms.
+// WARNING: HTimer (ExpRunMonitor Open Timer) is taking 1531ms to process. Increasing delay to 6000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1531 ms.
+// WARNING: HTimer (ExpRunMgr Pending Runs Timer) is taking 402ms to process. Increasing delay to 3000 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 5,245 MB. GUI used memory: 68 MB. Current time: 1/12/20, 6:52:39 PM PYST
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 402ms to process. Increasing delay to 2000 ms.
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: updateGUI() is taking  2017 ms.
+// WARNING: HTimer (ExpRunMgr Pending Runs Timer) is taking 3940ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3940 ms.
+// aj (cr): Bitstream Generation Completed: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  1757 ms.
+// Elapsed time: 227 seconds
+dismissDialog("Bitstream Generation Completed"); // aj (cr)
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 1300ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1300 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,247 MB. GUI used memory: 69 MB. Current time: 1/12/20, 7:22:43 PM PYST
+// WARNING: HEventQueue.dispatchEvent() is taking  1278 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,247 MB. GUI used memory: 63 MB. Current time: 1/12/20, 7:52:43 PM PYST
+// WARNING: HEventQueue.dispatchEvent() is taking  1265 ms.
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HTimer (StateMonitor Timer) is taking 872ms to process. Increasing delay to 4000 ms.
+// Elapsed time: 4532 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cr)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // af (cr)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // af (cr)
+selectMenuItem(PAResourceCommand.PACommandNames_CLOSE_PROJECT, "Close Project"); // ai (cr)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cr)
+// Run Command: PAResourceCommand.PACommandNames_CLOSE_PROJECT
+// A (cr): Close Project: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  1057 ms.
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+// bB (cr):  Close Project : addNotify
+dismissDialog("Close Project"); // A (cr)
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,255 MB. GUI used memory: 62 MB. Current time: 1/12/20, 8:09:35 PM PYST
+// Tcl Message: close_project 
+// 'b' command handler elapsed time: 3 seconds
+dismissDialog("Close Project"); // bB (cr)
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build/top.xpr", 0); // r (O, cr)
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build/top.xpr. Version: Vivado v2019.2 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: MSGMGR_REFRESH_MSG
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// WARNING: HEventQueue.dispatchEvent() is taking  1220 ms.
+// Tcl Message: open_project /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build/top.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'. 
+// Project name: top; location: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build; part: xc7a35tcpg236-1
+dismissDialog("Open Project"); // bB (cr)
+selectButton(RDIResourceCommand.RDICommands_SETTINGS, "xc7a35tcpg236-1"); // h (Q, cr)
+// HOptionPane Warning: 'A background task is running. Please wait until it completes and try again. (Background Task)'
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+selectButton(RDIResourceCommand.RDICommands_SETTINGS, "xc7a35tcpg236-1"); // h (Q, cr)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// I (cr): Settings: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  1747 ms.
+selectButton(PAResourceQtoS.SettingsProjectGeneralPage_CHOOSE_DEVICE_FOR_YOUR_PROJECT, (String) null); // t (a, I)
+// [GUI Memory]: 142 MB (+5100kb) [01:21:12]
+// c (I): Select Device: addNotify
+// Elapsed time: 10 seconds
+selectTable(PAResourceEtoH.FPGAChooser_FPGA_TABLE, "xc7a15tcpg236-1 ; 236 ; 106 ; 10400 ; 20800 ; 25 ; 0 ; 45 ; 2 ; 2 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 1 ; 5 ;  ;  ;  ;  ; 0.95 ; 0.95 ; 1.05 ; ", 155, "xc7a15tcpg236-1", 0); // w (O, c)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (c)
+dismissDialog("Select Device"); // c (I)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+// [GUI Memory]: 151 MB (+2780kb) [01:21:27]
+// bB (cr):  Change Settings : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PART_MODIFIED
+// Tcl Message: set_property part xc7a15tcpg236-1 [current_project] 
+dismissDialog("Change Settings"); // bB (cr)
+dismissDialog("Settings"); // I (cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): No Implementation Results Available: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// f (cr): Launch Runs: addNotify
+dismissDialog("No Implementation Results Available"); // A (cr)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// bB (cr):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// Tcl Message: [Sun Jan 12 20:10:15 2020] Launched synth_1... Run output will be captured here: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build/top.runs/synth_1/runme.log [Sun Jan 12 20:10:15 2020] Launched impl_1... Run output will be captured here: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build/top.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bB (cr)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 198 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (aj)
+dismissDialog("Bitstream Generation Completed"); // aj (cr)
+// [GUI Memory]: 160 MB (+520kb) [01:34:22]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,260 MB. GUI used memory: 78 MB. Current time: 1/12/20, 8:39:40 PM PYST
+// WARNING: HEventQueue.dispatchEvent() is taking  1732 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,260 MB. GUI used memory: 76 MB. Current time: 1/12/20, 9:09:40 PM PYST
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 742ms to process. Increasing delay to 2000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1056 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 421ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1235 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2144 ms.

@@ -67,6 +67,7 @@ class SingleEncoder(Module):
 		self.data_in=Signal(8) #senal de entrada
 		self.disp_in=Signal() #disparidad de entrada o anterior, 0 para RD=-1 y 1 para RD=+1
 		self.k=Signal() #caracter especial
+		self.enable
 
 		self.output=Signal(10) #senal de salida
 		self.disp_out=Signal() #disparidad de salida
@@ -149,7 +150,7 @@ class SingleEncoder(Module):
 				self.comb+=self.output[i].eq(output_msb_first[9-i])
 		else:
 			self.comb+=self.output.eq(output_msb_first)
-
+"""
 class Encoder(Module):
 	def __init__(self,nwords=1,lsb_first=False):
 		self.datas_in=[Signal(8) for _ in range(nwords)]
@@ -177,3 +178,4 @@ class Encoder(Module):
 				output.eq(encoder.output),
 				disparity.eq(encoder.disp_out)
 			]
+"""

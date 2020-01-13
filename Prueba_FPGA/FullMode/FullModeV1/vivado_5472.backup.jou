@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Tue Jan  7 16:42:16 2020
+# Process ID: 5472
+# Current directory: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/UART/tx_encoder
+# Command line: vivado
+# Log file: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/UART/tx_encoder/vivado.log
+# Journal file: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/UART/tx_encoder/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/diegoaranda/Documents/Tesis/Prueba_FPGA/UART/tx_encoder/build/top.xpr
+update_compile_order -fileset sources_1
+set_property part xc7a15tcpg236-1 [current_project]
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+create_hw_target -svf true svftarget_0
+open_hw_target [get_hw_targets */svftarget_0]

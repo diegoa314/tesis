@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Sun Jan 12 20:11:25 2020
+# Process ID: 11738
+# Current directory: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build/top.runs/impl_1
+# Command line: vivado -log top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
+# Log file: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build/top.runs/impl_1/top.vdi
+# Journal file: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullModeV1/build/top.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace
