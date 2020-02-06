@@ -15,17 +15,17 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a15t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a15t'
 INFO: [Device 21-403] Loading part xc7a15tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7626 
+INFO: Helper process launched with PID 7707 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 2038.855 ; gain = 201.711 ; free physical = 143 ; free virtual = 3046
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 2039.457 ; gain = 202.680 ; free physical = 146 ; free virtual = 2598
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2/build/top.v:4]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2/build/top.v:8]
-WARNING: [Synth 8-6014] Unused sequential element memdat_reg was removed.  [/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2/build/top.v:580]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2/build/top.v:11]
+WARNING: [Synth 8-6014] Unused sequential element memdat_reg was removed.  [/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2/build/top.v:547]
 INFO: [Synth 8-6155] done synthesizing module 'top' (1#1) [/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2/build/top.v:4]
 WARNING: [Synth 8-3331] design top has unconnected port serial_rx
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 2100.609 ; gain = 263.465 ; free physical = 248 ; free virtual = 3080
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 2101.211 ; gain = 264.434 ; free physical = 229 ; free virtual = 2637
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -38,12 +38,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:15 . Memory (MB): peak = 2106.543 ; gain = 269.398 ; free physical = 247 ; free virtual = 3079
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:15 . Memory (MB): peak = 2104.176 ; gain = 267.398 ; free physical = 148 ; free virtual = 2634
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:15 . Memory (MB): peak = 2106.543 ; gain = 269.398 ; free physical = 247 ; free virtual = 3079
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:15 . Memory (MB): peak = 2104.176 ; gain = 267.398 ; free physical = 148 ; free virtual = 2634
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2106.543 ; gain = 0.000 ; free physical = 238 ; free virtual = 3072
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2104.176 ; gain = 0.000 ; free physical = 114 ; free virtual = 2625
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -54,43 +54,43 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2222.301 ; gain = 0.000 ; free physical = 138 ; free virtual = 2990
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2222.902 ; gain = 0.000 ; free physical = 104 ; free virtual = 2548
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2222.301 ; gain = 0.000 ; free physical = 138 ; free virtual = 2990
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2222.902 ; gain = 0.000 ; free physical = 128 ; free virtual = 2547
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 2222.301 ; gain = 385.156 ; free physical = 202 ; free virtual = 3055
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 2222.902 ; gain = 386.125 ; free physical = 161 ; free virtual = 2611
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a15tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 2222.301 ; gain = 385.156 ; free physical = 202 ; free virtual = 3055
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 2222.902 ; gain = 386.125 ; free physical = 148 ; free virtual = 2613
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 2222.301 ; gain = 385.156 ; free physical = 202 ; free virtual = 3055
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 2222.902 ; gain = 386.125 ; free physical = 146 ; free virtual = 2612
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2/build/top.v:437]
-INFO: [Synth 8-802] inferred FSM for state register 'platform_fsm_state_reg' in module 'top'
-INFO: [Synth 8-802] inferred FSM for state register 'platform_tx_state_reg' in module 'top'
-INFO: [Synth 8-802] inferred FSM for state register 'platform_state_reg' in module 'top'
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2/build/top.v:407]
+INFO: [Synth 8-802] inferred FSM for state register 'fsm_state_reg' in module 'top'
+INFO: [Synth 8-802] inferred FSM for state register 'tx_state_reg' in module 'top'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'top'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                  iSTATE |                              000 |                              000
+                 iSTATE2 |                              000 |                              000
 *
                  iSTATE3 |                              001 |                              001
-                 iSTATE0 |                              010 |                              010
+                 iSTATE1 |                              010 |                              010
                  iSTATE4 |                              011 |                              011
-                 iSTATE1 |                              100 |                              100
-                 iSTATE2 |                              101 |                              101
+                  iSTATE |                              100 |                              100
+                 iSTATE0 |                              101 |                              101
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'platform_state_reg' using encoding 'sequential' in module 'top'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'top'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -100,7 +100,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'platform_state_reg' using 
                   iSTATE |                               10 |                               10
                  iSTATE0 |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'platform_fsm_state_reg' using encoding 'sequential' in module 'top'
+INFO: [Synth 8-3354] encoded FSM with state register 'fsm_state_reg' using encoding 'sequential' in module 'top'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -110,9 +110,9 @@ INFO: [Synth 8-3354] encoded FSM with state register 'platform_fsm_state_reg' us
                  iSTATE0 |                               10 |                               10
                  iSTATE2 |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'platform_tx_state_reg' using encoding 'sequential' in module 'top'
+INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encoding 'sequential' in module 'top'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:27 . Memory (MB): peak = 2222.305 ; gain = 385.160 ; free physical = 195 ; free virtual = 3048
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 2222.906 ; gain = 386.129 ; free physical = 124 ; free virtual = 2599
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -126,18 +126,18 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     11 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
 	   2 Input      6 Bit       Adders := 1     
 	   2 Input      5 Bit       Adders := 3     
-	   2 Input      3 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
 +---XORs : 
-	   2 Input      1 Bit         XORs := 21    
+	   2 Input      1 Bit         XORs := 13    
 +---Registers : 
-	               24 Bit    Registers := 1     
 	               11 Bit    Registers := 1     
-	                8 Bit    Registers := 3     
+	                8 Bit    Registers := 4     
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 2     
-	                3 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 13    
 +---RAMs : 
 	              256 Bit         RAMs := 1     
@@ -150,13 +150,13 @@ Detailed RTL Component Info :
 	   2 Input      7 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
 	   4 Input      5 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 5     
-	   6 Input      3 Bit        Muxes := 2     
 	   4 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 3     
 	   4 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 8     
-	   6 Input      1 Bit        Muxes := 13    
+	   2 Input      1 Bit        Muxes := 6     
+	   6 Input      1 Bit        Muxes := 12    
 	   4 Input      1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -169,18 +169,18 @@ Module top
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     11 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
 	   2 Input      6 Bit       Adders := 1     
 	   2 Input      5 Bit       Adders := 3     
-	   2 Input      3 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
 +---XORs : 
-	   2 Input      1 Bit         XORs := 21    
+	   2 Input      1 Bit         XORs := 13    
 +---Registers : 
-	               24 Bit    Registers := 1     
 	               11 Bit    Registers := 1     
-	                8 Bit    Registers := 3     
+	                8 Bit    Registers := 4     
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 2     
-	                3 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 13    
 +---RAMs : 
 	              256 Bit         RAMs := 1     
@@ -193,13 +193,13 @@ Detailed RTL Component Info :
 	   2 Input      7 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
 	   4 Input      5 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 5     
-	   6 Input      3 Bit        Muxes := 2     
 	   4 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 3     
 	   4 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 8     
-	   6 Input      1 Bit        Muxes := 13    
+	   2 Input      1 Bit        Muxes := 6     
+	   6 Input      1 Bit        Muxes := 12    
 	   4 Input      1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
@@ -218,18 +218,11 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 WARNING: [Synth 8-3331] design top has unconnected port serial_rx
-INFO: [Synth 8-3886] merging instance '__main___transmitter_tx_data_reg[7]' (FDRE) to '__main___transmitter_tx_data_reg[5]'
-INFO: [Synth 8-3886] merging instance '__main___transmitter_tx_data_reg[6]' (FDRE) to '__main___transmitter_tx_data_reg[5]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\__main___transmitter_tx_data_reg[5] )
-INFO: [Synth 8-3886] merging instance '__main___state_reg[1]' (FDRE) to '__main___o_reg[1]'
-INFO: [Synth 8-3886] merging instance '__main___state_reg[2]' (FDRE) to '__main___o_reg[2]'
-INFO: [Synth 8-3886] merging instance '__main___state_reg[7]' (FDRE) to '__main___o_reg[7]'
-INFO: [Synth 8-3886] merging instance '__main___state_reg[5]' (FDRE) to '__main___o_reg[5]'
-INFO: [Synth 8-3886] merging instance '__main___state_reg[6]' (FDRE) to '__main___o_reg[6]'
-INFO: [Synth 8-3886] merging instance '__main___state_reg[3]' (FDRE) to '__main___o_reg[3]'
-INFO: [Synth 8-3886] merging instance '__main___state_reg[4]' (FDRE) to '__main___o_reg[4]'
+INFO: [Synth 8-3886] merging instance 'transmitter_tx_data_reg[7]' (FDRE) to 'transmitter_tx_data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'transmitter_tx_data_reg[6]' (FDRE) to 'transmitter_tx_data_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\transmitter_tx_data_reg[5] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:28 . Memory (MB): peak = 2222.305 ; gain = 385.160 ; free physical = 176 ; free virtual = 3037
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:31 . Memory (MB): peak = 2222.906 ; gain = 386.129 ; free physical = 131 ; free virtual = 2589
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -256,13 +249,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:40 . Memory (MB): peak = 2222.305 ; gain = 385.160 ; free physical = 127 ; free virtual = 2917
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:44 . Memory (MB): peak = 2222.906 ; gain = 386.129 ; free physical = 123 ; free virtual = 2480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:40 . Memory (MB): peak = 2222.305 ; gain = 385.160 ; free physical = 127 ; free virtual = 2915
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:44 . Memory (MB): peak = 2222.906 ; gain = 386.129 ; free physical = 139 ; free virtual = 2477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -287,13 +280,13 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance '__main___consume_reg_rep[0]' (FDRE) to '__main___consume_reg[0]'
-INFO: [Synth 8-3886] merging instance '__main___consume_reg_rep[1]' (FDRE) to '__main___consume_reg[1]'
-INFO: [Synth 8-3886] merging instance '__main___consume_reg_rep[2]' (FDRE) to '__main___consume_reg[2]'
-INFO: [Synth 8-3886] merging instance '__main___consume_reg_rep[3]' (FDRE) to '__main___consume_reg[3]'
-INFO: [Synth 8-3886] merging instance '__main___consume_reg_rep[4]' (FDRE) to '__main___consume_reg[4]'
+INFO: [Synth 8-3886] merging instance 'consume_reg_rep[0]' (FDRE) to 'consume_reg[0]'
+INFO: [Synth 8-3886] merging instance 'consume_reg_rep[1]' (FDRE) to 'consume_reg[1]'
+INFO: [Synth 8-3886] merging instance 'consume_reg_rep[2]' (FDRE) to 'consume_reg[2]'
+INFO: [Synth 8-3886] merging instance 'consume_reg_rep[3]' (FDRE) to 'consume_reg[3]'
+INFO: [Synth 8-3886] merging instance 'consume_reg_rep[4]' (FDRE) to 'consume_reg[4]'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:40 . Memory (MB): peak = 2222.305 ; gain = 385.160 ; free physical = 127 ; free virtual = 2915
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:45 . Memory (MB): peak = 2222.906 ; gain = 386.129 ; free physical = 134 ; free virtual = 2477
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -316,15 +309,15 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2/build/top.v:437]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2/build/top.v:124]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:44 . Memory (MB): peak = 2222.305 ; gain = 385.160 ; free physical = 134 ; free virtual = 2919
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:48 . Memory (MB): peak = 2222.906 ; gain = 386.129 ; free physical = 124 ; free virtual = 2480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:44 . Memory (MB): peak = 2222.305 ; gain = 385.160 ; free physical = 134 ; free virtual = 2919
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:48 . Memory (MB): peak = 2222.906 ; gain = 386.129 ; free physical = 124 ; free virtual = 2480
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -343,25 +336,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:44 . Memory (MB): peak = 2222.305 ; gain = 385.160 ; free physical = 134 ; free virtual = 2919
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:48 . Memory (MB): peak = 2222.906 ; gain = 386.129 ; free physical = 124 ; free virtual = 2479
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:44 . Memory (MB): peak = 2222.305 ; gain = 385.160 ; free physical = 134 ; free virtual = 2919
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:48 . Memory (MB): peak = 2222.906 ; gain = 386.129 ; free physical = 124 ; free virtual = 2479
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:44 . Memory (MB): peak = 2222.305 ; gain = 385.160 ; free physical = 134 ; free virtual = 2919
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:48 . Memory (MB): peak = 2222.906 ; gain = 386.129 ; free physical = 124 ; free virtual = 2479
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:44 . Memory (MB): peak = 2222.305 ; gain = 385.160 ; free physical = 134 ; free virtual = 2919
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:48 . Memory (MB): peak = 2222.906 ; gain = 386.129 ; free physical = 124 ; free virtual = 2479
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -378,49 +371,49 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |LUT1   |     3|
-|3     |LUT2   |    15|
-|4     |LUT3   |    13|
-|5     |LUT4   |    22|
-|6     |LUT5   |    28|
-|7     |LUT6   |    34|
+|2     |LUT1   |     5|
+|3     |LUT2   |     8|
+|4     |LUT3   |    19|
+|5     |LUT4   |    24|
+|6     |LUT5   |    30|
+|7     |LUT6   |    31|
 |8     |RAM32M |     2|
-|9     |FDRE   |    93|
-|10    |FDSE   |     2|
-|11    |IBUF   |     2|
-|12    |OBUF   |     1|
+|9     |FDRE   |    75|
+|10    |FDSE   |     1|
+|11    |IBUF   |     3|
+|12    |OBUF   |     3|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |   216|
+|1     |top      |       |   202|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:44 . Memory (MB): peak = 2222.305 ; gain = 385.160 ; free physical = 134 ; free virtual = 2919
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:48 . Memory (MB): peak = 2222.906 ; gain = 386.129 ; free physical = 124 ; free virtual = 2479
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:41 . Memory (MB): peak = 2222.305 ; gain = 269.402 ; free physical = 186 ; free virtual = 2971
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:44 . Memory (MB): peak = 2222.305 ; gain = 385.160 ; free physical = 186 ; free virtual = 2972
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:44 . Memory (MB): peak = 2222.906 ; gain = 267.402 ; free physical = 170 ; free virtual = 2531
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:49 . Memory (MB): peak = 2222.906 ; gain = 386.129 ; free physical = 157 ; free virtual = 2533
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2222.305 ; gain = 0.000 ; free physical = 216 ; free virtual = 3039
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2222.906 ; gain = 0.000 ; free physical = 107 ; free virtual = 2528
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2222.305 ; gain = 0.000 ; free physical = 158 ; free virtual = 2982
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2222.906 ; gain = 0.000 ; free physical = 142 ; free virtual = 2550
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-37 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+30 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:56 . Memory (MB): peak = 2222.305 ; gain = 625.113 ; free physical = 289 ; free virtual = 3114
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2222.305 ; gain = 0.000 ; free physical = 289 ; free virtual = 3114
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:01:03 . Memory (MB): peak = 2222.906 ; gain = 636.117 ; free physical = 221 ; free virtual = 2684
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2222.906 ; gain = 0.000 ; free physical = 212 ; free virtual = 2684
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2/build/top.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Jan 11 18:24:54 2020...
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 13 17:44:59 2020...

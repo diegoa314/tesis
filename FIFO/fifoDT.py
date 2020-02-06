@@ -72,6 +72,7 @@ class _FIFOInterface:
         yield self.we.eq(0)
         yield
 
+
 ##############################################################################################3333
 class SyncFIFO(Module, _FIFOInterface):
     """Synchronous FIFO (first in, first out)
@@ -216,7 +217,7 @@ class SyncFIFOBuffered(Module, _FIFOInterface):
         self.comb += fifo.re.eq(self.re | ~self.readable) 
    
 
-
+"""
 def _test_fifo(dut):
     for i in range(8):
         yield dut.din.eq(i)
@@ -232,6 +233,6 @@ if __name__ == "__main__":
     run_simulation(dut, _test_fifo(dut), vcd_name="fifoDT.vcd")
     import subprocess
     subprocess.Popen(["gtkwave", "fifoDT.vcd"])
-
+"""
     
     

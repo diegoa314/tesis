@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
 # IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
-# Start of session at: Sat Jan 11 18:22:11 2020
-# Process ID: 7330
+# Start of session at: Mon Jan 13 17:41:25 2020
+# Process ID: 7426
 # Current directory: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2
 # Command line: vivado
 # Log file: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2/vivado.log
@@ -16,17 +16,17 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
-open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 6633.359 ; gain = 109.773 ; free physical = 730 ; free virtual = 3919
-WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 6633.363 ; gain = 113.305 ; free physical = 234 ; free virtual = 3428
 update_compile_order -fileset sources_1
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
 set_property part xc7a15tcpg236-1 [current_project]
 WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
 WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
 WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
 launch_runs impl_1 -to_step write_bitstream
-[Sat Jan 11 18:23:43 2020] Launched synth_1...
+[Mon Jan 13 17:43:37 2020] Launched synth_1...
 Run output will be captured here: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2/build/top.runs/synth_1/runme.log
-[Sat Jan 11 18:23:43 2020] Launched impl_1...
+[Mon Jan 13 17:43:37 2020] Launched impl_1...
 Run output will be captured here: /home/diegoaranda/Documents/Tesis/Prueba_FPGA/FullMode/FullMode_v2/build/top.runs/impl_1/runme.log
 exit
-INFO: [Common 17-206] Exiting Vivado at Sat Jan 11 22:03:38 2020...
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 13 22:18:02 2020...

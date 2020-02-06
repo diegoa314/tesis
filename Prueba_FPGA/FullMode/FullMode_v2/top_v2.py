@@ -13,11 +13,12 @@ from fifo2 import *
 from fsm_v2 import *
 class Top_v2(Module):
 	def __init__(self,platform=0):
-		self.tx_output=platform.request("serial").tx #salida serila
-		self.trans_en=platform.request("user_btn") #habilitador general para el envio
+		#self.tx_output=platform.request("serial").tx #salida serila
+		#self.trans_en=platform.request("user_btn") #habilitador general para el envio
 		#Descomentar para simulacion
-		#self.tx_output=Signal() 
-		#self.trans_en=Signal() 
+		self.tx_output=Signal() 
+		self.trans_en=Signal()
+		
 		#  #  #
 		fsm_v2=Fsm_v2() #FSM 
 		encoder=Encoder() #encoder 8b/10b combinacional

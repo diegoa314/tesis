@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2700185 Thu Oct 24 18:45:48 MDT 2019
-| Date         : Sat Jan 11 18:21:07 2020
+| Date         : Mon Jan 13 17:39:50 2020
 | Host         : localhost.localdomain running 64-bit unknown
 | Command      : report_utilization -hierarchical -file top_utilization_hierarchical_place.rpt
 | Design       : top
@@ -21,7 +21,7 @@ Table of Contents
 +----------+--------+------------+------------+---------+------+-----+--------+--------+--------------+
 | Instance | Module | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | DSP48 Blocks |
 +----------+--------+------------+------------+---------+------+-----+--------+--------+--------------+
-| top      |  (top) |         99 |         91 |       8 |    0 |  95 |      0 |      0 |            0 |
+| top      |  (top) |         94 |         86 |       8 |    0 |  76 |      0 |      0 |            0 |
 +----------+--------+------------+------------+---------+------+-----+--------+--------+--------------+
 * Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
 
