@@ -1,0 +1,24 @@
+0.6
+2019.2
+Oct 24 2019
+18:48:46
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sim_1/imports/simulation/multifpga_gt_master_tb.vhd,1536171938,vhdl,,,,multifpga_gt_master_tb,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sim_1/imports/simulation/sim_reset_gt_model.vhd,1536171940,vhdl,,,,sim_reset_gt_model,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/imports/example_design/multifpga_gt_master_exdes.vhd,1536171936,vhdl,,,,multifpga_gt_master_exdes,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/imports/example_design/multifpga_gt_master_gt_frame_check.vhd,1536171936,vhdl,,,,multifpga_gt_master_gt_frame_check,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/imports/example_design/multifpga_gt_master_gt_frame_gen.vhd,1536171936,vhdl,,,,multifpga_gt_master_gt_frame_gen,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/imports/example_design/support/multifpga_gt_master_common.vhd,1536171934,vhdl,,,,multifpga_gt_master_common,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/imports/example_design/support/multifpga_gt_master_common_reset.vhd,1536171934,vhdl,,,,multifpga_gt_master_common_reset,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/imports/example_design/support/multifpga_gt_master_cpll_railing.vhd,1536171934,vhdl,,,,multifpga_gt_master_cpll_railing,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/imports/example_design/support/multifpga_gt_master_gt_usrclk_source.vhd,1536171934,vhdl,,,,multifpga_gt_master_gt_usrclk_source,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/imports/example_design/support/multifpga_gt_master_support.vhd,1536171934,vhdl,,,,multifpga_gt_master_support,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/ip/multifpga_GT_master/multifpga_GT_master/example_design/multifpga_gt_master_gtrxreset_seq.vhd,1536171970,vhdl,,,,multifpga_gt_master_gtrxreset_seq,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/ip/multifpga_GT_master/multifpga_GT_master/example_design/multifpga_gt_master_rx_startup_fsm.vhd,1536171966,vhdl,,,,multifpga_gt_master_rx_startup_fsm,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/ip/multifpga_GT_master/multifpga_GT_master/example_design/multifpga_gt_master_rxpmarst_seq.vhd,1536171970,vhdl,,,,multifpga_gt_master_rxpmarst_seq,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/ip/multifpga_GT_master/multifpga_GT_master/example_design/multifpga_gt_master_rxrate_seq.vhd,1536171970,vhdl,,,,multifpga_gt_master_rxrate_seq,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/ip/multifpga_GT_master/multifpga_GT_master/example_design/multifpga_gt_master_sync_block.vhd,1536171970,vhdl,,,,multifpga_gt_master_sync_block,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/ip/multifpga_GT_master/multifpga_GT_master/example_design/multifpga_gt_master_tx_startup_fsm.vhd,1536171966,vhdl,,,,multifpga_gt_master_tx_startup_fsm,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/ip/multifpga_GT_master/multifpga_gt_master.vhd,1536171972,vhdl,,,,multifpga_gt_master,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/ip/multifpga_GT_master/multifpga_gt_master_gt.vhd,1536171968,vhdl,,,,multifpga_gt_master_gt,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/ip/multifpga_GT_master/multifpga_gt_master_init.vhd,1536171966,vhdl,,,,multifpga_gt_master_init,,,,,,,,
+/home/diegoaranda/Documents/Tesis/multifpga_GT_master_ex/multifpga_GT_master_ex.srcs/sources_1/ip/multifpga_GT_master/multifpga_gt_master_multi_gt.vhd,1536171968,vhdl,,,,multifpga_gt_master_multi_gt,,,,,,,,

@@ -1,0 +1,1 @@
+-wto "ba794e476d74494bbfafd9dc511d86bc" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "multifpga_GT_master_TB_behav" "xil_defaultlib.multifpga_GT_master_TB" -log "elaborate.log" 

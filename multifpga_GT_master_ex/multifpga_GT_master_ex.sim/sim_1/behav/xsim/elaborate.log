@@ -1,0 +1,51 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /home/diegoaranda/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto ba794e476d74494bbfafd9dc511d86bc --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip -L xpm --snapshot multifpga_GT_master_TB_behav xil_defaultlib.multifpga_GT_master_TB -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.std_logic_textio
+Compiling package vl.vl_types
+Compiling architecture glbl_vhd_v of entity unisim.GLBL_VHD [\GLBL_VHD(1,1)\]
+Compiling architecture behavioral of entity xil_defaultlib.SIM_RESET_GT_MODEL [sim_reset_gt_model_default]
+Compiling architecture ibufds_gte2_v of entity unisim.IBUFDS_GTE2 [\IBUFDS_GTE2(0,1)\]
+Compiling architecture bufg_v of entity unisim.BUFG [bufg_default]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_GT_master_GT_USRCLK_SOURCE [multifpga_gt_master_gt_usrclk_so...]
+Compiling architecture bufh_v of entity unisim.BUFH [bufh_default]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_GT_master_cpll_railing [multifpga_gt_master_cpll_railing...]
+Compiling architecture gtpe2_common_v of entity unisim.GTPE2_COMMON [\GTPE2_COMMON(bias_cfg="00000000...]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_GT_master_common [\multifpga_GT_master_common(wrap...]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_GT_master_common_reset [\multifpga_GT_master_common_rese...]
+Compiling architecture gtpe2_channel_v of entity unisim.GTPE2_CHANNEL [\GTPE2_CHANNEL(align_comma_enabl...]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fd_v of entity unisim.FD [fd_default]
+Compiling architecture structural of entity xil_defaultlib.multifpga_GT_master_sync_block [multifpga_gt_master_sync_block_d...]
+Compiling architecture behavioral of entity xil_defaultlib.multifpga_gt_master_gtrxreset_seq [multifpga_gt_master_gtrxreset_se...]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_GT_master_GT [\multifpga_GT_master_GT(1,5)\]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_GT_master_multi_gt [\multifpga_GT_master_multi_gt(1,...]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_GT_master_TX_STARTUP_FSM [\multifpga_GT_master_TX_STARTUP_...]
+Compiling architecture fdpe_v of entity unisim.FDPE [\FDPE(init='0')\]
+Compiling architecture fdp_v of entity unisim.FDP [\FDP(init='0')\]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_GT_master_RX_STARTUP_FSM [\multifpga_GT_master_RX_STARTUP_...]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_GT_master_init [\multifpga_GT_master_init(1,5)\]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_GT_master [multifpga_gt_master_default]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_GT_master_support [\multifpga_GT_master_support(exa...]
+Compiling architecture ibufds_v of entity unisim.IBUFDS [\IBUFDS(1,9)(1,5)(1,1)(1,4)(1,7)...]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_GT_master_GT_FRAME_GEN [multifpga_gt_master_gt_frame_gen...]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_GT_master_GT_FRAME_CHECK [\multifpga_GT_master_GT_FRAME_CH...]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_GT_master_exdes [\multifpga_GT_master_exdes(1,5)\]
+Compiling architecture rtl of entity xil_defaultlib.multifpga_gt_master_tb
+Built simulation snapshot multifpga_GT_master_TB_behav

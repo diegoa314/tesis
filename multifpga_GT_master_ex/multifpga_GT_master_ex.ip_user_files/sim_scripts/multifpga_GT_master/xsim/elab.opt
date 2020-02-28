@@ -1,0 +1,1 @@
+--relax --debug typical --mt auto -L xil_defaultlib -L secureip --snapshot multifpga_GT_master xil_defaultlib.multifpga_GT_master -log elaborate.log

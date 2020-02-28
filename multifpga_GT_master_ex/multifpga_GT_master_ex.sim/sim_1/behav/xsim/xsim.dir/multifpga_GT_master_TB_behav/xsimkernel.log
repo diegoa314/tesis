@@ -1,0 +1,7 @@
+Running: xsim.dir/multifpga_GT_master_TB_behav/xsimk -simmode gui -wdb multifpga_GT_master_TB_behav.wdb -simrunnum 0 -socket 46136
+Design successfully loaded
+Design Loading Memory Usage: 146648 KB (Peak: 146648 KB)
+Design Loading CPU Usage: 350 ms
+Simulation completed
+Simulation Memory Usage: 235556 KB (Peak: 285920 KB)
+Simulation CPU Usage: 810 ms

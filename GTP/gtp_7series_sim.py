@@ -10,7 +10,7 @@ from litex.build.xilinx import XilinxPlatform
 
 from migen.genlib.io import CRG
 
-from transceiver.gtp_7series import GTPQuadPLL, GTP
+from gtp_7series import GTPQuadPLL, GTP
 
 
 _io = [
@@ -74,8 +74,10 @@ class GTPSim(Module):
 
         tx_pads = platform.request("gtp_tx")
         rx_pads = platform.request("gtp_rx")
-        gtp = GTP(qpll, tx_pads, rx_pads, sys_clk_freq,
-            clock_aligner=False, internal_loopback=False)
+       # gtp = GTP(qpll, tx_pads, rx_pads, sys_clk_freq,
+        #    clock_aligner=False, internal_loopback=False)
+        gtp = GTP(qpll=qpll, drp_host=None, tx_pads=tx_pads, rx_pads=rx_pads, 
+            sys_clk_freq= sys_clk_freq, clock_aligner=False)
         self.submodules += gtp
 
         # counter = Signal(8)

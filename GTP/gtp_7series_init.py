@@ -97,7 +97,7 @@ class GTPTXInit(Module):
         # of gttxreset)
         startup_fsm.act("WAIT_GTP_RESET_DONE",
             gttxreset.eq(0),
-            txuserrdy.eq(1), #pll lock y usuario listo para enviar datos
+            txuserrdy.eq(1),
             If(txresetdone, NextState("ALIGN"))
         )
         # Start delay alignment
@@ -234,7 +234,7 @@ class GTPRXInit(Module):
             self.drp_mux_sel.eq(1),
             gtrxpd.eq(1),
             pll_reset_timer.wait.eq(1),
-            If(pll_reset_timer.done, 
+            If(pll_reset_timer.done,
                 #gtrxreset.eq(1),
                 NextState("GTP_PLL_WAIT")
             )

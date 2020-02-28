@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_tb_sim.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="top_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="2065500000fs"></ZoomStartTime>
+      <ZoomEndTime time="2511500001fs"></ZoomEndTime>
+      <Cursor1Time time="2295000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="290"></NameColumnWidth>
+      <ValueColumnWidth column_width="110"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="29" />
+   <wvobject type="logic" fp_name="/top_tb/gtp_refclk">
+      <obj_property name="ElementShortName">gtp_refclk</obj_property>
+      <obj_property name="ObjectShortName">gtp_refclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/gtp_p">
+      <obj_property name="ElementShortName">gtp_p</obj_property>
+      <obj_property name="ObjectShortName">gtp_p</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/gtp_n">
+      <obj_property name="ElementShortName">gtp_n</obj_property>
+      <obj_property name="ObjectShortName">gtp_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_rxpmaresetdone0">
+      <obj_property name="ElementShortName">gtprxinit_rxpmaresetdone0</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_rxpmaresetdone0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_st_gtp_pd">
+      <obj_property name="ElementShortName">gtprxinit_st_gtp_pd</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_st_gtp_pd</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_st_gtp_pll_wait">
+      <obj_property name="ElementShortName">gtprxinit_st_gtp_pll_wait</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_st_gtp_pll_wait</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_state_10">
+      <obj_property name="ElementShortName">gtprxinit_state_10</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_state_10</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_state_11">
+      <obj_property name="ElementShortName">gtprxinit_state_11</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_state_11</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_state_12">
+      <obj_property name="ElementShortName">gtprxinit_state_12</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_state_12</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_state_13">
+      <obj_property name="ElementShortName">gtprxinit_state_13</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_state_13</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_st_drp_rd">
+      <obj_property name="ElementShortName">gtprxinit_st_drp_rd</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_st_drp_rd</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_st_wait_rd_data">
+      <obj_property name="ElementShortName">gtprxinit_st_wait_rd_data</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_st_wait_rd_data</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_st_wr_16">
+      <obj_property name="ElementShortName">gtprxinit_st_wr_16</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_st_wr_16</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_st_wait_wr_done1">
+      <obj_property name="ElementShortName">gtprxinit_st_wait_wr_done1</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_st_wait_wr_done1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_st_wait_pmareset">
+      <obj_property name="ElementShortName">gtprxinit_st_wait_pmareset</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_st_wait_pmareset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_st_wr_20">
+      <obj_property name="ElementShortName">gtprxinit_st_wr_20</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_st_wr_20</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_st_drprdy_deassert">
+      <obj_property name="ElementShortName">gtprxinit_st_drprdy_deassert</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_st_drprdy_deassert</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtprxinit_st_wait_wr_done2">
+      <obj_property name="ElementShortName">gtprxinit_st_wait_wr_done2</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_st_wait_wr_done2</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/drpaddr">
+      <obj_property name="ElementShortName">drpaddr[8:0]</obj_property>
+      <obj_property name="ObjectShortName">drpaddr[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/drpen">
+      <obj_property name="ElementShortName">drpen</obj_property>
+      <obj_property name="ObjectShortName">drpen</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/drpdi">
+      <obj_property name="ElementShortName">drpdi[15:0]</obj_property>
+      <obj_property name="ObjectShortName">drpdi[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/drprdy">
+      <obj_property name="ElementShortName">drprdy</obj_property>
+      <obj_property name="ObjectShortName">drprdy</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/drpdo">
+      <obj_property name="ElementShortName">drpdo[15:0]</obj_property>
+      <obj_property name="ObjectShortName">drpdo[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/drpwe">
+      <obj_property name="ElementShortName">drpwe</obj_property>
+      <obj_property name="ObjectShortName">drpwe</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/gtprxinit_rd_data">
+      <obj_property name="ElementShortName">gtprxinit_rd_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_rd_data[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/gtprxinit_next_rd_data">
+      <obj_property name="ElementShortName">gtprxinit_next_rd_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_next_rd_data[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/gtprxinit_original_rd_data">
+      <obj_property name="ElementShortName">gtprxinit_original_rd_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">gtprxinit_original_rd_data[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/txdata">
+      <obj_property name="ElementShortName">txdata[19:0]</obj_property>
+      <obj_property name="ObjectShortName">txdata[19:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rxdata">
+      <obj_property name="ElementShortName">rxdata[19:0]</obj_property>
+      <obj_property name="ObjectShortName">rxdata[19:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>

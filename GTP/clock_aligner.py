@@ -109,3 +109,28 @@ class BruteforceClockAligner(Module):
                 NextState("WAIT_COMMA")
             )
         )
+class CommaAligner(Module):
+    def __init__(self):
+        self.rx_aligned=rx_aligned=Signal()
+        self.aligment_en=aligment_en=Signal()
+        self.coma_detected=coma_detected=Signal()
+
+        aligment_fsm=FSM(reset_state="DETECTING_COMMA")
+        self.submodules+=aligment_fsm
+
+        aligment_fsm.act("DETECTING_COMMA",
+            aligment_en.eq(1),
+            If(coma_detected,
+                NextState("COMMA_DETECTED"),
+            )
+        )
+        aligment_fsm.act("COMMA_DETECTED",
+            aligment_en.eq(1),
+            If(rx_aligned,
+                NextState("ALIGNED"),
+                aligment_en.eq(1),
+            )
+        )
+        aligment_fsm.act("ALIGNED",
+            aligment_en.eq(1)
+        )

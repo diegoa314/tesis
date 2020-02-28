@@ -1,0 +1,6 @@
+NET "gtp_refclk_p" LOC=X; # gtp_refclk:0.p
+NET "gtp_refclk_n" LOC=X; # gtp_refclk:0.n
+NET "gtp_tx_p" LOC=X; # gtp_tx:0.p
+NET "gtp_tx_n" LOC=X; # gtp_tx:0.n
+NET "gtp_rx_p" LOC=X; # gtp_rx:0.p
+NET "gtp_rx_n" LOC=X; # gtp_rx:0.n
