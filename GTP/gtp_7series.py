@@ -11,7 +11,7 @@ from litex.soc.cores.code_8b10b import Encoder, Decoder
 from migen.genlib.cdc import *
 
 from gtp_7series_init2 import GTPTXInit, GTPRXInit
-from clock_aligner import CommaAligner
+from clock_aligner import *
 
 from prbs_files.tx_top import _TX
 from prbs_files.rx_top import _RX
@@ -265,11 +265,15 @@ class GTP(Module):
         self.coma_detected=coma_detected=Signal()
         comma_aligner=CommaAligner()
         self.submodules+=comma_aligner
+        self.rx_init_done=rx_init.done
+
         self.comb+=[
             comma_aligner.rx_aligned.eq(rx_aligned),
             aligment_en.eq(comma_aligner.aligment_en),
             #aligment_en.eq(1),
-            comma_aligner.coma_detected.eq(coma_detected)
+            comma_aligner.coma_detected.eq(coma_detected),
+            comma_aligner.rx_init_done.eq(self.rx_init_done)
+
         ]
 
         self.specials += \
@@ -439,14 +443,14 @@ class GTP(Module):
                 i_RXCOMMADETEN=1,
                 p_ALIGN_COMMA_ENABLE=0b1111111111, #cantidad de bits de coma
                 o_RXBYTEISALIGNED=rx_aligned,
-                i_RXMCOMMAALIGNEN=aligment_en, #activa deteccion de coma minus
-                i_RXPCOMMAALIGNEN=0,
-                p_ALIGN_MCOMMA_VALUE=0b1100000101 , #coma k28.5,
-                #p_ALIGN_PCOMMA_VALUE=0b1100000101,
+                #i_RXMCOMMAALIGNEN=aligment_en, #activa deteccion de coma minus
+                #i_RXPCOMMAALIGNEN=aligment_en,
+                #p_ALIGN_MCOMMA_VALUE=0b1100000011 , #coma k28.5,
+                p_ALIGN_PCOMMA_VALUE=0b1100000011,
                 p_ALIGN_MCOMMA_DET="TRUE", #activa la la bandera de deteccion de coma
-                p_ALIGN_PCOMMA_DET="FALSE",
+                p_ALIGN_PCOMMA_DET="TRUE",
                 o_RXCOMMADET=coma_detected,
-                p_ALIGN_COMMA_DOUBLE="FALSE",
+                p_ALIGN_COMMA_DOUBLE="TRUE",
                 p_ALIGN_COMMA_WORD=1
             )
         """
@@ -483,7 +487,7 @@ class GTP(Module):
         """
         if clock_aligner:
             print("oikeee clock aligener")
-            clock_aligner = BruteforceClockAligner(0b0101111100, self.tx_clk_freq, check_period=4e-6)
+            clock_aligner = BruteforceClockAligner(0b0101111100, self.tx_clk_freq, check_period=10e-6)
             self.submodules += clock_aligner
             self.comb += [
                 clock_aligner.rxdata.eq(rx.rxdata),

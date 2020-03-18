@@ -13,7 +13,7 @@ from migen.genlib.io import CRG
 from gtp_7series import GTPQuadPLL, GTP
 
 
-_io = [
+_io = [                             #generic_platform
     ("gtp_refclk", 0,
         Subsignal("p", Pins("X")),
         Subsignal("n", Pins("X"))
@@ -51,7 +51,7 @@ class GTPSim(Module):
             Instance("BUFG", i_I=refclk100, o_O=sys_clk)
         ]
 
-        refclk125 = Signal()
+        refclk = Signal()
         pll_fb = Signal()
         self.specials += [
             Instance("PLLE2_BASE",
@@ -62,12 +62,12 @@ class GTPSim(Module):
                      p_CLKFBOUT_MULT=10, p_DIVCLK_DIVIDE=1,
                      i_CLKIN1=sys_clk, i_CLKFBIN=pll_fb, o_CLKFBOUT=pll_fb,
 
-                     # 125MHz
-                     p_CLKOUT0_DIVIDE=8, p_CLKOUT0_PHASE=0.0, o_CLKOUT0=refclk125
+                     # 200MHz
+                     p_CLKOUT0_DIVIDE=5, p_CLKOUT0_PHASE=0.0, o_CLKOUT0=refclk
             ),
         ]
 
-        qpll = GTPQuadPLL(refclk125, 125e6, 2.5e9)
+        qpll = GTPQuadPLL(refclk, 200e6, 4.8e9)
         print(qpll)
         self.submodules += qpll
 
@@ -77,7 +77,7 @@ class GTPSim(Module):
        # gtp = GTP(qpll, tx_pads, rx_pads, sys_clk_freq,
         #    clock_aligner=False, internal_loopback=False)
         gtp = GTP(qpll=qpll, drp_host=None, tx_pads=tx_pads, rx_pads=rx_pads, 
-            sys_clk_freq= sys_clk_freq, clock_aligner=False)
+            sys_clk_freq= sys_clk_freq, clock_aligner=True)
         self.submodules += gtp
 
         # counter = Signal(8)

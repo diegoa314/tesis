@@ -1,0 +1,107 @@
+$var wire 8 ! data_in $end
+$var wire 1 " disp_in $end
+$var wire 1 # k $end
+$var wire 10 $ output $end
+$var wire 1 % disp_out $end
+$var wire 6 & code6b $end
+$var wire 1 ' code6b_unbalanced $end
+$var wire 4 ( code4b $end
+$var wire 1 ) code4b_unbalanced $end
+$var wire 1 * alt7_rd0 $end
+$var wire 1 + alt7_rd1 $end
+$var wire 6 , output_6b $end
+$var wire 1 - flip_6b $end
+$var wire 1 . disp_in_3b4b $end
+$var wire 4 / output_4b $end
+$var wire 1 0 flip_4b $end
+$var wire 10 1 output_msb_first $end
+$var wire 1 2 sys_clk $end
+$dumpvars
+$end
+#0
+b00000000 !
+0"
+0#
+b0000000000 $
+0%
+b000000 &
+0'
+b0000 (
+0)
+0*
+0+
+b000000 ,
+0-
+0.
+b0000 /
+00
+b0000000000 1
+02
+#5
+b10111100 !
+b1001110100 1
+12
+b1001110100 $
+b100111 ,
+1-
+b011000 &
+1.
+1'
+b0100 /
+b0100 (
+1)
+#10
+02
+#15
+b0011101010 1
+12
+b0011101010 $
+b001110 ,
+0-
+b001110 &
+0.
+0'
+b1010 /
+b1010 (
+0)
+#20
+02
+#25
+12
+#30
+02
+#35
+1%
+1"
+12
+1.
+#40
+02
+#45
+12
+#50
+02
+#55
+12
+#60
+02
+#65
+12
+b00000000 !
+0"
+0#
+b0000000000 $
+0%
+b000000 &
+0'
+b0000 (
+0)
+0*
+0+
+b000000 ,
+0-
+0.
+b0000 /
+00
+b0000000000 1
+02

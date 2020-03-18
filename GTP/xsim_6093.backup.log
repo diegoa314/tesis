@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# xsim v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Wed Mar  4 11:40:51 2020
+# Process ID: 6093
+# Current directory: /home/diegoaranda/Documents/Tesis/GTP
+# Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
+# Log file: /home/diegoaranda/Documents/Tesis/GTP/xsim.log
+# Journal file: /home/diegoaranda/Documents/Tesis/GTP/xsim.jou
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/top_tb_sim/xsim_script.tcl
+# set_param project.enableReportConfiguration 0
+# load_feature core
+# current_fileset
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
+current_fileset: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 8580.883 ; gain = 135.020 ; free physical = 1238 ; free virtual = 5782
+# xsim {top_tb_sim} -autoloadwcfg
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+create_wave_config; add_wave /; set_property needs_save false [current_wave_config]
+run 4000 us

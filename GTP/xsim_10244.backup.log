@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# xsim v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Wed Mar  4 16:31:30 2020
+# Process ID: 10244
+# Current directory: /home/diegoaranda/Documents/Tesis/GTP
+# Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
+# Log file: /home/diegoaranda/Documents/Tesis/GTP/xsim.log
+# Journal file: /home/diegoaranda/Documents/Tesis/GTP/xsim.jou
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/top_tb_sim/xsim_script.tcl
+# set_param project.enableReportConfiguration 0
+# load_feature core
+# current_fileset
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
+current_fileset: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 8530.523 ; gain = 84.027 ; free physical = 449 ; free virtual = 4611
+# xsim {top_tb_sim} -autoloadwcfg
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+xsim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 8583.363 ; gain = 52.840 ; free physical = 301 ; free virtual = 4462
+create_wave_config; add_wave /; set_property needs_save false [current_wave_config]
+run 4000 us
+ Attribute Syntax Error : The calculation of VCO frequency=200.000000 Mhz. This exceeds the permitted VCO frequency range of 800.000000 Mhz to 2133.000000 Mhz. The VCO frequency is calculated with formula: VCO frequency =  CLKFBOUT_MULT / (DIVCLK_DIVIDE * CLKIN1_PERIOD). Please adjust the attributes to the permitted VCO frequency range.
+$finish called at time : 2 ps : File "/wrk/2019.2/continuous/2019_10_24_2700185/data/verilog/src/unisims/PLLE2_ADV.v" Line 1705
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 8740.645 ; gain = 0.000 ; free physical = 375 ; free virtual = 4540
+exit
+INFO: [Common 17-206] Exiting xsim at Wed Mar  4 16:38:24 2020...

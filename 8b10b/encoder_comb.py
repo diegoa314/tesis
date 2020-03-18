@@ -3,7 +3,7 @@ class Encoder(Module):
 	def __init__(self):
 		self.data_in=data_in=Signal(8)
 		self.k=k=Signal()
-		self.data_out=data_out=Signal(10)
+		self.output=output=Signal(10)
 		self.disp_in=disp_in=Signal()
 		self.disp_out=Signal()
 		
@@ -103,20 +103,33 @@ class Encoder(Module):
   			compls4.eq((pd1s4 & ~disp6) | (nd1s4 & disp6)),
   			self.disp_out.eq(disp6 ^ (ndos4 | pdos4))
   		]
-		self.comb+=[
-	  		data_out[0].eq((jo ^ compls4)),data_out[1].eq( (ho ^ compls4)),
-			data_out[2].eq((go ^ compls4)),data_out[3].eq((fo ^ compls4)),
-			data_out[4].eq((io ^ compls6)),data_out[5].eq((eo ^ compls6)),
-			data_out[6].eq((do ^ compls6)),data_out[7].eq((co ^ compls6)),
-			data_out[8].eq((bo ^ compls6)),data_out[9].eq((ao ^ compls6))
+		#self.comb+=[
+		self.sync+=[
+	  		output[0].eq((jo ^ compls4)),output[1].eq( (ho ^ compls4)),
+			output[2].eq((go ^ compls4)),output[3].eq((fo ^ compls4)),
+			output[4].eq((io ^ compls6)),output[5].eq((eo ^ compls6)),
+			output[6].eq((do ^ compls6)),output[7].eq((co ^ compls6)),
+			output[8].eq((bo ^ compls6)),output[9].eq((ao ^ compls6))
 			
 		]		
-""""
+
 def tb(dut):
-	yield dut.data_in.eq(0b10010010)
+	yield dut.data_in.eq(0xBC)
+	yield dut.disp_in.eq(0)
+	yield dut.k.eq(1)
+	yield
+	yield dut.data_in.eq(0xBC)
+	yield dut.disp_in.eq(0)
+	yield
+	yield
+	yield dut.data_in.eq(0xBC)
 	yield dut.disp_in.eq(1)
 	yield
+	yield
+	yield
+	
+	
 
 dut=Encoder()
 run_simulation(dut,tb(dut),vcd_name="encoder_comb.vcd")
-"""
+

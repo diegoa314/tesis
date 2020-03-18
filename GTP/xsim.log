@@ -2,8 +2,8 @@
 # xsim v2019.2 (64-bit)
 # SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
 # IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
-# Start of session at: Fri Feb 28 17:07:42 2020
-# Process ID: 7564
+# Start of session at: Wed Mar  4 16:39:09 2020
+# Process ID: 11278
 # Current directory: /home/diegoaranda/Documents/Tesis/GTP
 # Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
 # Log file: /home/diegoaranda/Documents/Tesis/GTP/xsim.log
@@ -17,33 +17,14 @@ source xsim.dir/top_tb_sim/xsim_script.tcl
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
-current_fileset: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 7546.105 ; gain = 135.020 ; free physical = 409 ; free virtual = 3868
+current_fileset: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 8584.582 ; gain = 135.020 ; free physical = 457 ; free virtual = 4622
 # xsim {top_tb_sim} -autoloadwcfg
 Vivado Simulator 2019.2
 Time resolution is 1 ps
 create_wave_config; add_wave /; set_property needs_save false [current_wave_config]
-run 7 us
-run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 7697.707 ; gain = 123.273 ; free physical = 243 ; free virtual = 3702
-run 200 us
-run: Time (s): cpu = 00:00:36 ; elapsed = 00:07:18 . Memory (MB): peak = 7701.246 ; gain = 1.543 ; free physical = 288 ; free virtual = 3105
-run 1000 us
-run: Time (s): cpu = 00:00:12 ; elapsed = 00:03:02 . Memory (MB): peak = 7701.246 ; gain = 0.000 ; free physical = 270 ; free virtual = 3101
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run 1200 us
-run: Time (s): cpu = 00:02:19 ; elapsed = 00:38:42 . Memory (MB): peak = 7717.855 ; gain = 3.809 ; free physical = 499 ; free virtual = 3068
-run 1000 us
-run: Time (s): cpu = 00:00:38 ; elapsed = 00:13:49 . Memory (MB): peak = 7717.855 ; gain = 0.000 ; free physical = 458 ; free virtual = 3070
-run 500 us
-run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:20 . Memory (MB): peak = 7717.855 ; gain = 0.000 ; free physical = 274 ; free virtual = 3067
-run 500 us
-run: Time (s): cpu = 00:01:10 ; elapsed = 00:20:34 . Memory (MB): peak = 7717.855 ; gain = 0.000 ; free physical = 221 ; free virtual = 3063
-run 500 us
-run: Time (s): cpu = 00:00:36 ; elapsed = 00:10:11 . Memory (MB): peak = 7717.855 ; gain = 0.000 ; free physical = 194 ; free virtual = 3049
-save_wave_config {/home/diegoaranda/Documents/Tesis/GTP/primer_exito.wcfg}
-add_files -fileset sim_1 -norecurse /home/diegoaranda/Documents/Tesis/GTP/primer_exito.wcfg
-set_property xsim.view /home/diegoaranda/Documents/Tesis/GTP/primer_exito.wcfg [get_filesets sim_1]
-export_ip_user_files -no_script -force
-invalid command name "export_ip_user_files"
-export_simulation  -directory "/home/diegoaranda/Documents/Tesis/GTP" -simulator xsim
-invalid command name "export_simulation"
+run 4000 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 8629.453 ; gain = 0.000 ; free physical = 406 ; free virtual = 4571
+exit
+INFO: [Common 17-206] Exiting xsim at Wed Mar  4 16:40:21 2020...

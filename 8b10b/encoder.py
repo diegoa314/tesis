@@ -67,7 +67,7 @@ class SingleEncoder(Module):
 		self.data_in=Signal(8) #senal de entrada
 		self.disp_in=Signal() #disparidad de entrada o anterior, 0 para RD=-1 y 1 para RD=+1
 		self.k=Signal() #caracter especial
-		self.enable
+		#self.enable
 
 		self.output=Signal(10) #senal de salida
 		self.disp_out=Signal() #disparidad de salida
@@ -179,3 +179,22 @@ class Encoder(Module):
 				disparity.eq(encoder.disp_out)
 			]
 """
+def tb(dut):
+	yield dut.data_in.eq(0xBC)
+	yield dut.disp_in.eq(0)
+	yield
+	yield dut.data_in.eq(0xBC)
+	yield dut.disp_in.eq(0)
+	yield
+	yield
+	yield dut.data_in.eq(0xBC)
+	yield dut.disp_in.eq(1)
+	yield
+	yield
+	yield
+	
+	
+
+dut=SingleEncoder()
+run_simulation(dut,tb(dut),vcd_name="single_encoder.vcd")
+

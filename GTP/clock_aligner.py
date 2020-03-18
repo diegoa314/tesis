@@ -114,10 +114,17 @@ class CommaAligner(Module):
         self.rx_aligned=rx_aligned=Signal()
         self.aligment_en=aligment_en=Signal()
         self.coma_detected=coma_detected=Signal()
+        self.rx_init_done=Signal()
 
-        aligment_fsm=FSM(reset_state="DETECTING_COMMA")
+        aligment_fsm=FSM(reset_state="WAITING_INIT_DONE")
         self.submodules+=aligment_fsm
 
+        aligment_fsm.act("WAITING_INIT_DONE",
+            If(self.rx_init_done,
+                NextState("DETECTING_COMMA"),
+            )
+        )
+       
         aligment_fsm.act("DETECTING_COMMA",
             aligment_en.eq(1),
             If(coma_detected,
