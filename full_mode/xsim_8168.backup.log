@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# xsim v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Thu Apr 16 15:50:54 2020
+# Process ID: 8168
+# Current directory: /home/diegoaranda/Documents/Tesis/full_mode
+# Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
+# Log file: /home/diegoaranda/Documents/Tesis/full_mode/xsim.log
+# Journal file: /home/diegoaranda/Documents/Tesis/full_mode/xsim.jou
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/top_tb_sim/xsim_script.tcl
+# set_param project.enableReportConfiguration 0
+# load_feature core
+# current_fileset
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
+current_fileset: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8536.656 ; gain = 89.027 ; free physical = 1094 ; free virtual = 5587
+# xsim {top_tb_sim} -autoloadwcfg
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/diegoaranda/Documents/Tesis/full_mode/top_tb_sim.wcfg
+WARNING: Simulation object /top_tb/dut/gtptxinit_state was not found in the design.
+WARNING: Simulation object /top_tb/dut/gtp_tx_init_txphinitdone0 was not found in the design.
+WARNING: Simulation object /top_tb/dut/gtp_tx_init_txphinitdone1 was not found in the design.
+WARNING: Simulation object /top_tb/dut/gtp_tx_init_txphaligndone0 was not found in the design.
+WARNING: Simulation object /top_tb/dut/gtp_tx_init_txphaligndone1 was not found in the design.
+run 100 us
+Warning : input CLKIN1 period and attribute CLKIN1_PERIOD on PLLE2_ADV instance top_tb.dut.PLLE2_BASE.plle2_adv_1 are not same.
+run: Time (s): cpu = 00:00:18 ; elapsed = 00:01:29 . Memory (MB): peak = 8631.484 ; gain = 0.000 ; free physical = 907 ; free virtual = 5400
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:01:34 ; elapsed = 00:00:07 . Memory (MB): peak = 8631.484 ; gain = 0.000 ; free physical = 1003 ; free virtual = 5497
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Apr 16 15:53:12 2020...

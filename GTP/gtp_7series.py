@@ -1,17 +1,11 @@
-"""
-Se ha conseguido la correcta inicializacion del canal RX luego de 
-2.5 ms de simulacion.
-
-"""
-
 from migen import *
 from migen.genlib.resetsync import AsyncResetSynchronizer
 
 from litex.soc.cores.code_8b10b import Encoder, Decoder
 from migen.genlib.cdc import *
 
-from gtp_7series_init2 import GTPTXInit, GTPRXInit
-from clock_aligner import *
+from gtp_7series_init import GTPTXInit, GTPRXInit
+from clock_aligner import BruteforceClockAligner
 
 from prbs_files.tx_top import _TX
 from prbs_files.rx_top import _RX
@@ -19,47 +13,75 @@ from prbs_files.rx_top import _RX
 
 class GTPQuadPLL(Module):
     def __init__(self, refclk, refclk_freq, linerate):
-        self.clk = Signal()
-        self.refclk = Signal()
-        self.reset = Signal()
-        self.lock = Signal()
-        self.config = self.compute_config(refclk_freq, linerate)
+        self.clk = Signal() #salida reloj (out)
+        self.refclk = Signal() #reloj de referencia (in)
+        self.reset = Signal() 
+        self.lock = Signal() #senhal que indica si se ha conseguido el bloqueo
+        self.config = self.compute_config(refclk_freq, linerate) #divisores y multplicadores del pll
 
         # # #
 
         self.specials += \
             Instance("GTPE2_COMMON",
                 # common
-                i_GTREFCLK0=refclk,
+                #Reloj de referencia generado por la logica del FPGA.
+                #reservado solo para testeo
+                i_GTREFCLK0=refclk, 
+                
+                #Puerto PLL, debe ser igual a 1, no se debe modificar
                 i_BGBYPASSB=1,
+                
+                #Idem al anterior
                 i_BGMONITORENB=1,
+                
+                #Idem al anterior
                 i_BGPDB=1,
+                
+                #Puerto PLL, debe ser igual a 0b11111, no se debe modificar
                 i_BGRCALOVRD=0b11111,
+                
+                #Idem
                 i_RCALENB=1,
 
                 # pll0
+                #Divisores y multiplicadores
                 p_PLL0_FBDIV=self.config["n2"],
                 p_PLL0_FBDIV_45=self.config["n1"],
                 p_PLL0_REFCLK_DIV=self.config["m"],
+                
+                #Activa la deteccion de bloqueo del PLL, debe ser 1 siempre
                 i_PLL0LOCKEN=1,
+                
+                #Power down (el pll 0 esta energizado)
                 i_PLL0PD=0,
+                
+                #Se seleccioana el reloj de referencia del PLL
+                #001: GTREFCLK0 selected
                 i_PLL0REFCLKSEL=0b001,
+                
+                #reset
                 i_PLL0RESET=self.reset,
+                
+                #indica que se ha conseguido el bloqueo
                 o_PLL0LOCK=self.lock,
+                
+                #salida reloj del pll
                 o_PLL0OUTCLK=self.clk,
+                
+                #se debe conectar al PLL0REFCLK en el GTPE2_CHANNEL
                 o_PLL0OUTREFCLK=self.refclk,
 
                 # pll1 (not used: power down)
                 i_PLL1PD=1,
              )
-
+    #funcion que calcula los multiplicadores y divisores para un linerate dado        
     @staticmethod
     def compute_config(refclk_freq, linerate):
         for n1 in 4, 5:
             for n2 in 1, 2, 3, 4, 5:
                 for m in 1, 2:
                     vco_freq = refclk_freq*(n1*n2)/m
-                    if 1.6e9 <= vco_freq <= 3.3e9:
+                    if 1.6e9 <= vco_freq <= 3.3e9: #rango de valores posibles del vco
                         for d in 1, 2, 4, 8:
                             current_linerate = vco_freq*2/d
                             if current_linerate == linerate:
@@ -70,7 +92,7 @@ class GTPQuadPLL(Module):
         msg = "No config found for {:3.2f} MHz refclk / {:3.2f} Gbps linerate."
         raise ValueError(msg.format(refclk_freq/1e6, linerate/1e9))
 
-    def __repr__(self):
+    def __repr__(self): #metodo que imprime las propiedades de la clase
         r = """
 GTPQuadPLL
 ==============
@@ -111,7 +133,6 @@ CLKIN +----> /M  +-->       Charge Pump         +-> VCO +---> CLKOUT
 class GTP(Module):
     def __init__(self, qpll,drp_host,tx_pads, rx_pads, sys_clk_freq,
                  clock_aligner=True):
-
         self.tx_seldata = Signal()
         self.rx_seldata = Signal()
         self.tx_en8b10b = Signal()
@@ -155,7 +176,7 @@ class GTP(Module):
         self.drpwe = Signal()
 
         # # # #
-
+        #se asignan lo dominios de reloj 
         tx = ClockDomainsRenamer("tx")(_TX(20,True))
         rx = ClockDomainsRenamer("rx")(_RX(20,True))
         self.submodules += tx,rx
@@ -164,7 +185,6 @@ class GTP(Module):
         tx_init = GTPTXInit(sys_clk_freq)
         # RX receives restart commands from RTIO domain
         rx_init = ClockDomainsRenamer("tx")(GTPRXInit(self.tx_clk_freq))
-        #rx_init = GTPRXInit(sys_clk_freq)
         self.submodules += tx_init, rx_init
         # debug
         self.tx_init = tx_init
@@ -185,7 +205,7 @@ class GTP(Module):
         tx.k.eq(self.k),
         tx.input.eq(self.tx_input)
         ]
-      
+
         self.comb += [
         rx.seldata.eq(self.rx_seldata),
         rx.en8b10b.eq(self.rx_en8b10b),
@@ -196,10 +216,8 @@ class GTP(Module):
         rx.mask.eq(self.rx_mask),
         rx.checklink.eq(self.checklink),
         self.linkstatus.eq(rx.linkstatus)
-
-
         ]
-          """
+        """
         self.comb += [
         self.tx_reset_ack.eq(tx_init.done),
         self.rx_reset_ack.eq(rx_init.done),
@@ -214,36 +232,34 @@ class GTP(Module):
         ]
 
         # DRP Mux selected by rx_init
-        
         """
         self.comb += [
-        
         If(rx_init.drp_mux_sel == 1,
             self.drpaddr.eq(rx_init.drpaddr),
             self.drpdi.eq(rx_init.drpdi),
-            #rx_init.drpdo.eq(self.drpdo), #no funca 
+            rx_init.drpdo.eq(self.drpdo),
             self.drpen.eq(rx_init.drpen),
             self.drpwe.eq(rx_init.drpwe),
             rx_init.drprdy.eq(self.drprdy)
         ).Else(
-          #  self.drpaddr.eq(drp_host.drpaddr),
-           # self.drpdi.eq(drp_host.drpdi),
-            #drp_host.drpdo.eq(self.drpdo),
-            #self.drpen.eq(drp_host.drpen),
-            #self.drpwe.eq(drp_host.drpwe),
-            #drp_host.drprdy.eq(self.drprdy)
+            self.drpaddr.eq(drp_host.drpaddr),
+            self.drpdi.eq(drp_host.drpdi),
+            drp_host.drpdo.eq(self.drpdo),
+            self.drpen.eq(drp_host.drpen),
+            self.drpwe.eq(drp_host.drpwe),
+            drp_host.drprdy.eq(self.drprdy)
 
-        )
+        )]
         """
-        self.comb+=[    
+        self.comb += [
+        
             self.drpaddr.eq(rx_init.drpaddr),
             self.drpdi.eq(rx_init.drpdi),
-            rx_init.drpdo.eq(self.drpdo), 
+            rx_init.drpdo.eq(self.drpdo),
             self.drpen.eq(rx_init.drpen),
             self.drpwe.eq(rx_init.drpwe),
             rx_init.drprdy.eq(self.drprdy)
         ]
-        
         assert qpll.config["linerate"] < 6.6e9
         # rxcdr_cfgs = {
         #      1 : 0x0001107FE206021041010,
@@ -259,23 +275,6 @@ class GTP(Module):
         }
 
         rxphaligndone = Signal()
-
-        self.rx_aligned=rx_aligned=Signal()
-        self.aligment_en=aligment_en=Signal()
-        self.coma_detected=coma_detected=Signal()
-        comma_aligner=CommaAligner()
-        self.submodules+=comma_aligner
-        self.rx_init_done=rx_init.done
-
-        self.comb+=[
-            comma_aligner.rx_aligned.eq(rx_aligned),
-            aligment_en.eq(comma_aligner.aligment_en),
-            #aligment_en.eq(1),
-            comma_aligner.coma_detected.eq(coma_detected),
-            comma_aligner.rx_init_done.eq(self.rx_init_done)
-
-        ]
-
         self.specials += \
             Instance("GTPE2_CHANNEL",
                 i_GTRESETSEL=0,
@@ -291,7 +290,7 @@ class GTP(Module):
                 o_DRPRDY=self.drprdy,
                 i_DRPWE=self.drpwe,
 
-                # PMA Attributes
+                #PMA Attributes
                 p_PMA_RSV=0x333,
                 p_PMA_RSV2=0x2040,
                 p_PMA_RSV3=0,
@@ -301,10 +300,8 @@ class GTP(Module):
                 p_RX_CM_TRIM=0b1010,
                 p_RX_OS_CFG=0b10000000,
                 p_RXLPM_IPCM_CFG=1,
-                
                 i_RXOOBRESET=0,
                 i_RXELECIDLEMODE=0b11,
-                
                 i_RXOSINTCFG=0b0010,
                 i_RXOSINTEN=1,
 
@@ -343,8 +340,9 @@ class GTP(Module):
                 i_TXPHALIGN=tx_init.txphalign,
                 o_TXPHALIGNDONE=tx_init.txphaligndone,
                 i_TXDLYEN=tx_init.txdlyen,
+                #no se resetea hasta que este uno. Se debe poner uno cuando
+                #se tiene pll done y se esta listo para enviar datos
                 i_TXUSERRDY=tx_init.txuserrdy,
-                i_TX8B10BEN=0,
 
                 # TX Buffer Attributes
                 p_TXBUF_EN="FALSE",
@@ -355,9 +353,9 @@ class GTP(Module):
 
                 # TX data
                 p_TX_DATA_WIDTH=20,
-                i_TXCHARDISPMODE=0b00,
-                i_TXCHARDISPVAL=0b00,
-                i_TXDATA=tx.txdata,
+                i_TXCHARDISPMODE=Cat(tx.txdata[9],tx.txdata[19]),
+                i_TXCHARDISPVAL=Cat(tx.txdata[8],tx.txdata[18]),
+                i_TXDATA=Cat(tx.txdata[:8], tx.txdata[10:18]),
                 i_TXUSRCLK=ClockSignal("tx"),
                 i_TXUSRCLK2=ClockSignal("tx"),
 
@@ -394,7 +392,6 @@ class GTP(Module):
                 o_RXSYNCDONE=rx_init.rxsyncdone,
                 p_RXPMARESET_TIME=0b11,
                 o_RXPMARESETDONE=rx_init.rxpmaresetdone,
-                i_RX8B10BEN=0,
 
                 # RX clock
                 p_RX_CLK25_DIV=5,
@@ -403,8 +400,7 @@ class GTP(Module):
                 i_RXRATE=0b000,
                 p_RXOUT_DIV=qpll.config["d"],
                 i_RXSYSCLKSEL=0b00,
-                i_RXOUTCLKSEL=0b010, #buffer bypass ver guia
-                #i_RXOUTCLKSEL=0b011,
+                i_RXOUTCLKSEL=0b010,
                 o_RXOUTCLK=self.rxoutclk,
                 i_RXUSRCLK=ClockSignal("rx"),
                 i_RXUSRCLK2=ClockSignal("rx"),
@@ -422,13 +418,13 @@ class GTP(Module):
                 p_RXPHDLY_CFG=0x084020,
                 p_RXPH_CFG=0xc00002,
                 p_RX_DATA_WIDTH=20,
-                #i_RXCOMMADETEN=1,
+                i_RXCOMMADETEN=1,
                 i_RXDLYBYPASS=0,
                 i_RXDDIEN=1,
                 o_RXDISPERR=Cat(rx.rxdata[9], rx.rxdata[19]),
                 o_RXCHARISK=Cat(rx.rxdata[8], rx.rxdata[18]),
                 o_RXDATA=Cat(rx.rxdata[:8], rx.rxdata[10:18]),
-                
+
                 # Polarity
                 i_TXPOLARITY=self.tx_polarity,
                 i_RXPOLARITY=self.rx_polarity,
@@ -437,43 +433,9 @@ class GTP(Module):
                 i_GTPRXP=rx_pads.p,
                 i_GTPRXN=rx_pads.n,
                 o_GTPTXP=tx_pads.p,
-                o_GTPTXN=tx_pads.n,
+                o_GTPTXN=tx_pads.n
+            )
 
-                #word aligment
-                i_RXCOMMADETEN=1,
-                p_ALIGN_COMMA_ENABLE=0b1111111111, #cantidad de bits de coma
-                o_RXBYTEISALIGNED=rx_aligned,
-                #i_RXMCOMMAALIGNEN=aligment_en, #activa deteccion de coma minus
-                #i_RXPCOMMAALIGNEN=aligment_en,
-                #p_ALIGN_MCOMMA_VALUE=0b1100000011 , #coma k28.5,
-                p_ALIGN_PCOMMA_VALUE=0b1100000011,
-                p_ALIGN_MCOMMA_DET="TRUE", #activa la la bandera de deteccion de coma
-                p_ALIGN_PCOMMA_DET="TRUE",
-                o_RXCOMMADET=coma_detected,
-                p_ALIGN_COMMA_DOUBLE="TRUE",
-                p_ALIGN_COMMA_WORD=1
-            )
-        """
-        aligment_fsm=ClockDomainsRenamer("tx")(FSM(reset_state="DETECTING_COMMA"))
-        self.submodules+=aligment_fsm
-
-        aligment_fsm.act("DETECTING_COMMA",
-            aligment_en.eq(1),
-            If(coma_detected,
-                NextState("COMMA_DETECTED"),
-            )
-        )
-        aligment_fsm.act("COMMA_DETECTED",
-            aligment_en.eq(1),
-            If(rx_aligned,
-                NextState("ALIGNED"),
-                aligment_en.eq(0),
-            )
-        )
-        aligment_fsm.act("ALIGNED",
-            aligment_en.eq(0)
-        )
-        """
 
         
         # tx clocking
@@ -484,10 +446,8 @@ class GTP(Module):
         self.clock_domains.cd_rx = ClockDomain()
         self.specials += Instance("BUFG", i_I=self.rxoutclk, o_O=self.cd_rx.clk)
 
-        """
         if clock_aligner:
-            print("oikeee clock aligener")
-            clock_aligner = BruteforceClockAligner(0b0101111100, self.tx_clk_freq, check_period=10e-6)
+            clock_aligner = BruteforceClockAligner(0b0101111100, self.tx_clk_freq, check_period=10e-3)
             self.submodules += clock_aligner
             self.comb += [
                 clock_aligner.rxdata.eq(rx.rxdata),
@@ -495,4 +455,3 @@ class GTP(Module):
                 clock_aligner.rx_restart_phaseAlign.eq(self.rx_restart_phaseAlign),
                 self.rx_phaseAlign_ack.eq(clock_aligner.rx_phaseAlign_ack)
             ]
-        """

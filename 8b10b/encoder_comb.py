@@ -3,7 +3,7 @@ class Encoder(Module):
 	def __init__(self):
 		self.data_in=data_in=Signal(8)
 		self.k=k=Signal()
-		self.output=output=Signal(10)
+		self.output=output=Signal(10, reset=0)
 		self.disp_in=disp_in=Signal()
 		self.disp_out=Signal()
 		
@@ -112,7 +112,7 @@ class Encoder(Module):
 			output[8].eq((bo ^ compls6)),output[9].eq((ao ^ compls6))
 			
 		]		
-
+"""
 def tb(dut):
 	yield dut.data_in.eq(0xBC)
 	yield dut.disp_in.eq(0)
@@ -133,3 +133,4 @@ def tb(dut):
 dut=Encoder()
 run_simulation(dut,tb(dut),vcd_name="encoder_comb.vcd")
 
+"""

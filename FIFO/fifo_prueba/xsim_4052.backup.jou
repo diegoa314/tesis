@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# xsim v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Tue Apr  7 14:48:33 2020
+# Process ID: 4052
+# Current directory: /home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba
+# Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
+# Log file: /home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba/xsim.log
+# Journal file: /home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba/xsim.jou
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/top_tb_sim/xsim_script.tcl
+create_wave_config; add_wave /; set_property needs_save false [current_wave_config]
+run 1 us
+close_sim
+close_project

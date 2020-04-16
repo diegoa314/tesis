@@ -199,11 +199,12 @@ class TxParallelCrcGenerator(Module):
     def __init__(self, data_width, crc_width, polynomial, initial=0):
         self.i_data_payload = Signal(data_width)
         self.i_data_strobe = Signal()
+        self.calc=Signal()
         self.o_crc = Signal(crc_width)
         crc_dat = Signal(data_width)
         crc_cur = Signal(crc_width, reset=initial)
         crc_next = Signal(crc_width, reset_less=True)
-        self.data=data=Signal(52)
+     
         
         	
 
@@ -238,7 +239,7 @@ class TxParallelCrcGenerator(Module):
         
 
         _, cols_nin, cols_min = build_matrix(poly_list, data_width)
-        print(len(cols_nin))
+       
         
         crc_next_reset_bits = list(crc_cur_reset_bits)
         for i in range(crc_width):
@@ -265,14 +266,30 @@ class TxParallelCrcGenerator(Module):
 
 def tb(dut):
 	yield dut.i_data_strobe.eq(1)
-	yield dut.i_data_payload.eq(0x1234abcd)
+	yield dut.i_data_payload.eq(0x1a)
 	yield
+	yield dut.i_data_payload.eq(0x1b)
 	yield
-	
+	yield dut.i_data_payload.eq(0x1c)
+	yield
+	yield dut.i_data_payload.eq(0x1d)
+	yield
+	yield dut.i_data_payload.eq(0x1f)
+	yield
+	yield dut.i_data_payload.eq(0x2a)
+	yield
+	yield dut.i_data_payload.eq(0x2b)
+	yield
+	yield dut.i_data_payload.eq(0x2c)
+	yield 
+	yield dut.i_data_strobe.eq(0)	
+	yield
+
+
+
+
+
 	
 
 dut=TxParallelCrcGenerator(data_width=32, crc_width=20, polynomial=0xc1acf,initial=0xfffff)
 run_simulation(dut,tb(dut), vcd_name="prueba_crc.vcd")
-#polynomial=0xc1acf
-
-#11=0b1101

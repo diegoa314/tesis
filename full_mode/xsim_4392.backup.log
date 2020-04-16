@@ -1,0 +1,38 @@
+#-----------------------------------------------------------
+# xsim v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Thu Apr 16 15:07:59 2020
+# Process ID: 4392
+# Current directory: /home/diegoaranda/Documents/Tesis/full_mode
+# Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
+# Log file: /home/diegoaranda/Documents/Tesis/full_mode/xsim.log
+# Journal file: /home/diegoaranda/Documents/Tesis/full_mode/xsim.jou
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/top_tb_sim/xsim_script.tcl
+# set_param project.enableReportConfiguration 0
+# load_feature core
+# current_fileset
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
+current_fileset: Time (s): cpu = 00:00:16 ; elapsed = 00:00:41 . Memory (MB): peak = 8540.594 ; gain = 89.031 ; free physical = 272 ; free virtual = 5213
+# xsim {top_tb_sim} -autoloadwcfg
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/diegoaranda/Documents/Tesis/full_mode/top_tb_sim.wcfg
+WARNING: Simulation object /top_tb/dut/gtptxinit_state was not found in the design.
+WARNING: Simulation object /top_tb/dut/gtp_tx_init_txphinitdone0 was not found in the design.
+WARNING: Simulation object /top_tb/dut/gtp_tx_init_txphinitdone1 was not found in the design.
+WARNING: Simulation object /top_tb/dut/gtp_tx_init_txphaligndone0 was not found in the design.
+WARNING: Simulation object /top_tb/dut/gtp_tx_init_txphaligndone1 was not found in the design.
+xsim: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 8632.449 ; gain = 91.855 ; free physical = 161 ; free virtual = 5104
+run 100 us
+ Attribute Syntax Error : The calculation of VCO frequency=750.000000 Mhz. This exceeds the permitted VCO frequency range of 800.000000 Mhz to 2133.000000 Mhz. The VCO frequency is calculated with formula: VCO frequency =  CLKFBOUT_MULT / (DIVCLK_DIVIDE * CLKIN1_PERIOD). Please adjust the attributes to the permitted VCO frequency range.
+$finish called at time : 2 ps : File "/wrk/2019.2/continuous/2019_10_24_2700185/data/verilog/src/unisims/PLLE2_ADV.v" Line 1705
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:22 ; elapsed = 00:00:35 . Memory (MB): peak = 8632.449 ; gain = 0.000 ; free physical = 294 ; free virtual = 5011
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Apr 16 15:12:23 2020...
