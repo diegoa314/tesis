@@ -172,45 +172,6 @@ class GTP(Module):
         fifo=ClockDomainsRenamer({"read":"tx"})(fifo)
         self.submodules+=[fifo,tx]
         
-       
-        relleno=Signal(24)
-        self.comb+=[
-            self.writable.eq(fifo.fifo.writable),
-
-            fifo.din.eq(self.din),
-            fifo.dtin.eq(self.dtin),
-            fifo.we.eq(self.we),
-            fifo.re.eq(self.re),
-            If(~fifo.fifo.readable,
-                fifo.re.eq(0)
-            ).Else(fifo.re.eq(tx.fifo_re)),
-                
-            
-            tx.link_ready.eq(self.link_ready),
-            
-
-            tx.fifo_empty.eq(~fifo.fifo.readable),
-            tx.reset.eq(self.re)    
-        ]
-      
-        self.comb+=[
-            If((self.link_ready & fifo.fifo.readable), 
-                tx.data_in.eq(fifo.fifo.dout),   
-               
-            ),  
-            If((self.link_ready & fifo.fifo.readable), 
-                tx.data_type_in.eq(fifo.fifo.dtout),
-            )    
-        ]
-        
-
-        
-        # # # #
-        """
-        tx = ClockDomainsRenamer("tx")(_TX(20,True))
-        rx = ClockDomainsRenamer("rx")(_RX(20,True))
-        self.submodules += tx,rx
-        """
         # TX generates RTIO clock, init must be in system domain
         tx_init = GTPTXInit(sys_clk_freq)
         
@@ -221,40 +182,13 @@ class GTP(Module):
         self.tx_init = tx_init
         self.rx_init = rx_init
 
+       
         # transceiver direct clock outputs
         # useful to specify clock constraints in a way palatable to Vivado
         self._txoutclk = _txoutclk= Signal()
         self.rxoutclk = Signal()
 
-        # control/status cdc
-        """
-        self.comb += [
-        tx.seldata.eq(self.tx_seldata),
-        tx.en8b10b.eq(self.tx_en8b10b),
-        tx.tx_prbs_config.eq(self.tx_prbs_config),
-        tx.mask.eq(self.tx_mask),
-        tx.k.eq(self.k),
-        tx.input.eq(self.tx_input)
-        ]
-
-        self.comb += [
-        rx.seldata.eq(self.rx_seldata),
-        rx.en8b10b.eq(self.rx_en8b10b),
-        rx.enable_err_count.eq(self.enable_err_count),
-        rx.rx_prbs_config.eq(self.rx_prbs_config),
-        self.global_error.eq(rx.global_error),
-        self.total_bit_count.eq(rx.total_bit_count),
-        rx.mask.eq(self.rx_mask),
-        rx.checklink.eq(self.checklink),
-        self.linkstatus.eq(rx.linkstatus)
-        ]
-        
-        self.comb += [
-        self.tx_reset_ack.eq(tx_init.done),
-        self.rx_reset_ack.eq(rx_init.done),
-        tx_init.restart.eq(self.tx_reset_host)
-        ]
-        """
+       
         #txoutclk periodo=8ns para refclk=125MHz y linerate=2.5 GHz
         
         self.txusrclk=txusrclk=Signal()
@@ -263,18 +197,19 @@ class GTP(Module):
         self._txusrclk2=_txusrclk2=Signal()
         self.txoutclk = txoutclk=Signal()
         pll_fb2=Signal()
+        pll_lock=Signal()
         self.specials += [
             Instance("PLLE2_BASE",
-                     p_STARTUP_WAIT="FALSE", #o_LOCKED=,
+                     p_STARTUP_WAIT="FALSE", o_LOCKED=pll_lock,
 
-                    
-                     p_REF_JITTER1=0.01, p_CLKIN1_PERIOD=8.0,
-                     p_CLKFBOUT_MULT=8, p_DIVCLK_DIVIDE=1,
+                     
+                     p_REF_JITTER1=0.01, p_CLKIN1_PERIOD=3.33333333,
+                     p_CLKFBOUT_MULT=4, p_DIVCLK_DIVIDE=1,
                      i_CLKIN1=self.txoutclk, i_CLKFBIN=pll_fb2, o_CLKFBOUT=pll_fb2,
 
-                     # 62.5 MHz
-                     p_CLKOUT0_DIVIDE=8, p_CLKOUT0_PHASE=0.0, o_CLKOUT0=_txusrclk,
-                     p_CLKOUT1_DIVIDE=16, p_CLKOUT1_PHASE=0.0, o_CLKOUT1=_txusrclk2,
+                     #240
+                     p_CLKOUT0_DIVIDE=5, p_CLKOUT0_PHASE=0.0, o_CLKOUT0=_txusrclk,
+                     p_CLKOUT1_DIVIDE=10, p_CLKOUT1_PHASE=0.0, o_CLKOUT1=_txusrclk2,
             ),
             Instance("BUFG", i_I=_txoutclk, o_O=txoutclk),
             Instance("BUFG", i_I=_txusrclk2, o_O=txusrclk2),
@@ -297,6 +232,42 @@ class GTP(Module):
     	self.drpwe.eq(rx_init.drpwe),
     	rx_init.drprdy.eq(self.drprdy)
     	]
+        
+       
+        relleno=Signal(24)
+        self.comb+=[
+            self.writable.eq(fifo.fifo.writable),
+
+            fifo.din.eq(self.din),
+            fifo.dtin.eq(self.dtin),
+            fifo.we.eq(self.we),
+            fifo.re.eq(self.re),
+            If(~fifo.fifo.readable,
+                fifo.re.eq(0)
+            ).Else(fifo.re.eq(tx.fifo_re)),
+                
+            
+            tx.link_ready.eq(self.link_ready),
+            
+
+            tx.fifo_empty.eq(~fifo.fifo.readable),
+            tx.reset.eq(self.re),
+            tx.tx_init_done.eq(tx_init.done),
+            tx.pll_lock.eq(pll_lock)    
+        ]
+      
+        self.comb+=[
+            If((self.link_ready & fifo.fifo.readable), 
+                tx.data_in.eq(fifo.fifo.dout),   
+               
+            ),  
+            If((self.link_ready & fifo.fifo.readable), 
+                tx.data_type_in.eq(fifo.fifo.dtout),
+            )    
+        ]
+        
+
+      
         assert qpll.config["linerate"] < 6.6e9
         # rxcdr_cfgs = {
         #      1 : 0x0001107FE206021041010,

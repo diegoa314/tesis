@@ -17,19 +17,15 @@ class TX(Module):
 		self.data_out=Signal(40)
 		self.fifo_empty=Signal()
 		self.fifo_re=Signal()
+		self.tx_init_done=Signal()
+		self.pll_lock=Signal()
 
 		self.reset=Signal()
 		#  #  #
 		
 		encoder=Encoder(4)
-		
-		#encoder1=ClockDomainsRenamer("user_domain")(encoder1)
-		#encoder2=ClockDomainsRenamer("user_domain")(encoder2)
-		#encoder3=ClockDomainsRenamer("user_domain")(encoder3)
-		#encoder4=ClockDomainsRenamer("user_domain")(encoder4)
-
 		crc_encoder=TxParallelCrcGenerator(data_width=32, crc_width=20, polynomial=0xc1acf,initial=0xfffff)
-		#crc_encoder=ClockDomainsRenamer("user_domain")(crc_encoder)
+	
 		fsm=Fsm()
 		#fsm=ClockDomainsRenamer("user_domain")(fsm)
 		self.submodules+=[encoder, crc_encoder, fsm]
@@ -38,6 +34,7 @@ class TX(Module):
 			fsm.fifo_empty.eq(self.fifo_empty),
 			fsm.data_type.eq(self.data_type_in),
 			fsm.reset.eq(self.reset),
+			fsm.system_ready.eq(self.tx_init_done & self.pll_lock),
 			self.fifo_re.eq(fsm.fifo_re),
 			crc_encoder.i_data_strobe.eq(fsm.strobe_crc),
 			#se hace combinacional para no tener que esperar un ciclo extra para el resultado crc
@@ -60,15 +57,9 @@ class TX(Module):
 			
 			#La asignacion de disparidad debe ser secuencial debido a la
 			#dependecia mutua de ambas senhalas (disp_in y disp_out)
+			
 			If((fsm.fifo_ready),
-				#encoder1.data_in.eq(self.data_in[0:8]),
-				#encoder2.data_in.eq(self.data_in[8:16]),
-				#encoder3.data_in.eq(self.data_in[16:24]),
-				#encoder4.data_in.eq(self.data_in[24:32]),
-				#encoder1.data_in.eq(0xa1),
-				#encoder2.data_in.eq(0xfa),
-				#encoder3.data_in.eq(0xca),
-				#encoder4.data_in.eq(0xdf),
+				
 				encoder.d[0].eq(self.data_in[0:8]),
 				encoder.d[1].eq(self.data_in[8:16]),
 				encoder.d[2].eq(self.data_in[16:24]),

@@ -88,23 +88,23 @@ class FullModeSim(Module):
                 o_O=refclk625_platform),
             Instance("BUFG", i_I=refclk625_platform, o_O=sys_clk)
         ]
-        refclk125 = Signal()
+        refclk = Signal()
         pll_fb = Signal()
         self.specials += [
             Instance("PLLE2_BASE",
                      p_STARTUP_WAIT="FALSE", #o_LOCKED=,
 
-                     # VCO @ 1GHz
-                     p_REF_JITTER1=0.01, p_CLKIN1_PERIOD=10.0,
-                     p_CLKFBOUT_MULT=14, p_DIVCLK_DIVIDE=1,
+                     # VCO @ 
+                     p_REF_JITTER1=0.01, p_CLKIN1_PERIOD=16.0,
+                     p_CLKFBOUT_MULT=24, p_DIVCLK_DIVIDE=1,
                      i_CLKIN1=sys_clk, i_CLKFBIN=pll_fb, o_CLKFBOUT=pll_fb,
 
-                     # 125MHz
-                     p_CLKOUT0_DIVIDE=7, p_CLKOUT0_PHASE=0.0, o_CLKOUT0=refclk125
+                     # 
+                     p_CLKOUT0_DIVIDE=5, p_CLKOUT0_PHASE=0.0, o_CLKOUT0=refclk
             ),
         ]
             
-        qpll = GTPQuadPLL(refclk125, 125e6, 2.5e9)
+        qpll = GTPQuadPLL(refclk, 300e6, 4.8e9)
         print(qpll)
         self.submodules += qpll
 
@@ -223,17 +223,12 @@ end
 
 
 always begin 
-    for (integer i=0;i<=37;i=i+1) begin
-        #10;
-        we=0;
-        re=0;
-    end
-    for (integer i=0;i<=10;i=i+1) begin
-        we=1'b0;
-        link_ready=1'b1;
+    for (integer i=0;i<=2500;i=i+1) begin
         #period;
+        
     end
-
+   
+    
     we=1'b1;
     #period;    
 

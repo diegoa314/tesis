@@ -70,17 +70,12 @@ end
 
 
 always begin 
-    for (integer i=0;i<=37;i=i+1) begin
-        #10;
-        we=0;
-        re=0;
-    end
-    for (integer i=0;i<=10;i=i+1) begin
-        we=1'b0;
-        link_ready=1'b1;
+    for (integer i=0;i<=2500;i=i+1) begin
         #period;
+        
     end
-
+   
+    
     we=1'b1;
     #period;    
 

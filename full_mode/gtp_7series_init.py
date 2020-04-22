@@ -86,7 +86,7 @@ class GTPTXInit(Module):
                 NextState("GTP_RESET")
             )
         )
-        startup_fsm.act("GTP_RESET",
+        startup_fsm.act("GTP_RESET", #1
             gttxreset.eq(1),
             If(plllock,
                 NextState("WAIT_GTP_RESET_DONE")
@@ -95,13 +95,13 @@ class GTPTXInit(Module):
         # Release GTP reset and wait for GTP resetdone
         # (from UG482, GTP is reset on falling edge
         # of gttxreset)
-        startup_fsm.act("WAIT_GTP_RESET_DONE",
+        startup_fsm.act("WAIT_GTP_RESET_DONE", #2
             gttxreset.eq(0),
             txuserrdy.eq(1),
             If(txresetdone, NextState("ALIGN"))
         )
         # Start delay alignment
-        startup_fsm.act("ALIGN",
+        startup_fsm.act("ALIGN", #3
             txuserrdy.eq(1),
             txdlysreset.eq(1),
             If(txdlysresetdone,
@@ -109,7 +109,7 @@ class GTPTXInit(Module):
             )
         )
         # Start phase alignment
-        startup_fsm.act("PHALIGN",
+        startup_fsm.act("PHALIGN", #4
             txuserrdy.eq(1),
             txphinit.eq(1),
             If(txphinitdone,

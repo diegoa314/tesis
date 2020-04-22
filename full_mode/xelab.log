@@ -4,33 +4,33 @@ Running: /home/diegoaranda/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -deb
 Multi-threading is on. Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 3 for port 'PLL0REFCLKSEL' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:2968]
-WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 4 for port 'RXOSINTCFG' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3106]
-WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 3 for port 'RXOUTCLKSEL' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3108]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 3 for port 'RXRATE' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3113]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'RXSYSCLKSEL' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3117]
-WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 3 for port 'TXOUTCLKSEL' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3131]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 3 for port 'TXRATE' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3141]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'TXSYSCLKSEL' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3145]
-WARNING: [VRFC 10-3645] port 'ODIV2' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:2917]
-WARNING: [VRFC 10-3645] port 'ODIV2' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:2929]
-WARNING: [VRFC 10-3645] port 'CLKOUT1' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:2941]
-WARNING: [VRFC 10-5021] port 'PWRDWN' is not connected on this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:2941]
-WARNING: [VRFC 10-3645] port 'DMONITOROUT' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:2956]
-WARNING: [VRFC 10-3645] port 'CLKOUT2' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3009]
-WARNING: [VRFC 10-5021] port 'PWRDWN' is not connected on this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3009]
-WARNING: [VRFC 10-3645] port 'DMONITOROUT' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3042]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 3 for port 'PLL0REFCLKSEL' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:2975]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 4 for port 'RXOSINTCFG' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3114]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 3 for port 'RXOUTCLKSEL' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3116]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 3 for port 'RXRATE' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3121]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'RXSYSCLKSEL' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3125]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 3 for port 'TXOUTCLKSEL' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3139]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 3 for port 'TXRATE' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3149]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'TXSYSCLKSEL' [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3153]
+WARNING: [VRFC 10-3645] port 'ODIV2' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:2924]
+WARNING: [VRFC 10-3645] port 'ODIV2' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:2936]
+WARNING: [VRFC 10-3645] port 'CLKOUT1' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:2948]
+WARNING: [VRFC 10-5021] port 'PWRDWN' is not connected on this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:2948]
+WARNING: [VRFC 10-3645] port 'DMONITOROUT' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:2963]
+WARNING: [VRFC 10-3645] port 'CLKOUT2' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3016]
+WARNING: [VRFC 10-5021] port 'PWRDWN' is not connected on this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3016]
+WARNING: [VRFC 10-3645] port 'DMONITOROUT' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/full_mode/top.v:3050]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module unisims_ver.IBUFDS_GTE2
 Compiling module unisims_ver.BUFG
-Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=14,CLKIN...
-Compiling module unisims_ver.PLLE2_BASE(CLKFBOUT_MULT=14,CLKI...
-Compiling module unisims_ver.GTPE2_COMMON(PLL0_FBDIV=5,PLL0_F...
-Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=8,CLKIN1...
-Compiling module unisims_ver.PLLE2_BASE(CLKFBOUT_MULT=8,CLKIN...
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=24,CLKIN...
+Compiling module unisims_ver.PLLE2_BASE(CLKFBOUT_MULT=24,CLKI...
+Compiling module unisims_ver.GTPE2_COMMON(PLL0_FBDIV=2,PLL0_F...
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=4,CLKIN1...
+Compiling module unisims_ver.PLLE2_BASE(CLKFBOUT_MULT=4,CLKIN...
 Compiling module unisims_ver.GTPE2_CHANNEL(CLK_CORRECT_USE="F...
 Compiling module work.top
 Compiling module work.top_tb

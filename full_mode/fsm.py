@@ -15,13 +15,14 @@ class Fsm(Module):
 		self.fifo_re=Signal(1) #habilitador de lectura del fifo
 		self.strobe_crc=Signal()
 		self.reset=Signal()
+		self.system_ready=Signal()
 
 		self.submodules.fsm=ResetInserter()(FSM(reset_state="INIT"))
 		
 		self.comb+=self.fsm.reset.eq(self.reset)
 		
 		self.fsm.act("INIT",
-			If((self.link_ready),
+			If((self.link_ready & self.system_ready),
 				NextState("IDLE"),
 				#NextValue(self.fifo_re,1), #se habilita la lectura
 				NextValue(self.change_disp,1)
