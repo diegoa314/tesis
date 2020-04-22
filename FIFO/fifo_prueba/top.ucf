@@ -1,0 +1,10 @@
+NET "write_clk_p" LOC=X; # write_clk:0.p
+NET "write_clk_n" LOC=X; # write_clk:0.n
+NET "din_a" LOC=X; # din:0.a
+NET "din_b" LOC=X; # din:0.b
+NET "din_c" LOC=X; # din:0.c
+NET "din_d" LOC=X; # din:0.d
+NET "writable" LOC=X; # writable:0
+NET "readable" LOC=X; # readable:0
+NET "we" LOC=X; # we:0
+NET "re" LOC=X; # re:0

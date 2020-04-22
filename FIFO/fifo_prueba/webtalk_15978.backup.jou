@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Tue Apr  7 12:28:04 2020
+# Process ID: 15978
+# Current directory: /home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba
+# Command line: wbtcv -mode batch -source /home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba/xsim.dir/top_tb_sim/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba/webtalk.log
+# Journal file: /home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba/webtalk.jou
+#-----------------------------------------------------------
+source /home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba/xsim.dir/top_tb_sim/webtalk/xsim_webtalk.tcl -notrace

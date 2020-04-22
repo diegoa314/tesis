@@ -13,28 +13,34 @@ class Fsm(Module):
 		self.encoder_ready=Signal() #avisa cuando se ha codificado correctamente la palabra
 		self.change_disp=Signal() #habilita el cambio de disparidad
 		self.fifo_re=Signal(1) #habilitador de lectura del fifo
+		self.strobe_crc=Signal()
+		self.reset=Signal()
+		self.system_ready=Signal()
+
+		self.submodules.fsm=ResetInserter()(FSM(reset_state="INIT"))
 		
-		self.submodules.fsm=FSM(reset_state="INIT")
-		
+		self.comb+=self.fsm.reset.eq(self.reset)
 		
 		self.fsm.act("INIT",
-			If((self.link_ready),
+			If((self.link_ready & self.system_ready),
 				NextState("IDLE"),
-				NextValue(self.fifo_re,1), #se habilita la lectura
+				#NextValue(self.fifo_re,1), #se habilita la lectura
 				NextValue(self.change_disp,1)
 			).Else(NextState("INIT")),
 			
 		)
-
+		
 		self.fsm.act("IDLE",
-			If(~self.fifo_empty,
+			If(~self.fifo_empty & self.link_ready,
 				NextState("SOP"),
 				NextValue(self.fifo_re,1), #se habilita la lectura
-				NextValue(self.sop,1)
+				NextValue(self.sop,1),
+				NextValue(self.change_disp,1),
+				NextValue(self.idle,0),
 			).Else(
-				self.idle.eq(1),
-				NextValue(self.encoder_ready,1)
+				NextValue(self.idle,1)
 			)
+			
 		)
 
 		self.fsm.act("SOP", #se codifica el sop y se lee el primer dato
@@ -42,69 +48,43 @@ class Fsm(Module):
 			NextValue(self.encoder_ready,1),
 			NextValue(self.fifo_ready,1),
 			NextValue(self.fifo_re,1),
-			NextValue(self.sop,0)
+			NextValue(self.sop,0),
+			NextValue(self.strobe_crc,1),
+			
 		)	
 		
-		self.fsm.act("READ_AND_CODE",
+		self.fsm.act("READ_AND_CODE", #3
 			NextValue(self.encoder_ready,1),
 			NextValue(self.fifo_ready,1),
+			NextValue(self.strobe_crc,1),
 			If(self.fifo_empty,
 				NextState("INIT")
 			).Else(NextValue(self.fifo_re,1)),
 			If(self.data_type==2,
 				NextValue(self.eop,1),
 				NextValue(self.fifo_re,0),
-				NextState("EOP")
-			)
+				NextState("EOP_DETECTED"),
+				NextValue(self.strobe_crc,0)
+			),
+			
 		)	
 
-		self.fsm.act("EOP",
-			NextState("IDLE"),
-			NextValue(self.eop,0)
+		self.fsm.act("EOP_DETECTED", #4
+			NextState("EOP_CODING"),
+			NextValue(self.eop,0),
+			NextValue(self.idle,1),
+			
+		)
+
+		self.fsm.act("EOP_CODING", #5
+			NextValue(self.fifo_ready,0),
+
+			
+			NextState("EOP_SENDING")
 		)
 		
-		"""
-		self.fsm.act("READING",
-			NextValue(self.fifo_re,0),
-			NextState("ENCODING"),
-			self.idle.eq(1),
-			self.encoder_ready.eq(1)
-		)	
-		self.fsm.act("ENCODING",
-			self.idle.eq(1),
-			self.encoder_ready.eq(1),
-			NextState("SENDING"),
-			NextValue(self.encoder_ready,1),
-			If((self.data_type==1)&(~bandera),
-				self.sop.eq(1),
-				
-			),
-			If((self.data_type==2)&(bandera),
-				self.eop.eq(1),
-				
-			),
-			NextValue(self.encoder_ready,1),
-			NextValue(self.change_disp,0)
+		self.fsm.act("EOP_SENDING", #
+			NextState("IDLE")
 			
 		)
-		self.fsm.act("SENDING",
-			NextValue(self.change_disp,1),
-			NextState("IDLE"),
-			If(((self.data_type==1) | (self.data_type==2))&~bandera,
-				NextValue(bandera,1),
-				NextState("ENCODING"),
-
-			),
-			If(bandera,
-				NextState("IDLE"),
-				NextValue(bandera,0)
-			),
-			NextValue(self.change_disp,1),
-			NextValue(self.encoder_ready,1),
-			If((self.data_type==1)&~bandera,self.sop.eq(1)),
-			If((self.data_type==2)&bandera,self.eop.eq(1))
-
-			
-			
-		)
-		"""
+		

@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# xsim v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Tue Apr  7 12:23:40 2020
+# Process ID: 15253
+# Current directory: /home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba
+# Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
+# Log file: /home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba/xsim.log
+# Journal file: /home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba/xsim.jou
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/top_tb_sim/xsim_script.tcl
+# set_param project.enableReportConfiguration 0
+# load_feature core
+# current_fileset
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
+current_fileset: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 8577.184 ; gain = 130.016 ; free physical = 317 ; free virtual = 4928
+# xsim {top_tb_sim} -autoloadwcfg
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+create_wave_config; add_wave /; set_property needs_save false [current_wave_config]
+run 1 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 8742.586 ; gain = 0.000 ; free physical = 213 ; free virtual = 4827
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Apr  7 12:27:49 2020...

@@ -150,7 +150,7 @@ class SingleEncoder(Module):
 				self.comb+=self.output[i].eq(output_msb_first[9-i])
 		else:
 			self.comb+=self.output.eq(output_msb_first)
-"""
+
 class Encoder(Module):
 	def __init__(self,nwords=1,lsb_first=False):
 		self.datas_in=[Signal(8) for _ in range(nwords)]
@@ -178,6 +178,7 @@ class Encoder(Module):
 				output.eq(encoder.output),
 				disparity.eq(encoder.disp_out)
 			]
+
 """
 def tb(dut):
 	yield dut.data_in.eq(0xBC)
@@ -198,3 +199,4 @@ def tb(dut):
 dut=SingleEncoder()
 run_simulation(dut,tb(dut),vcd_name="single_encoder.vcd")
 
+"""

@@ -1,0 +1,22 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /home/diegoaranda/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -debug typical top_tb glbl -s top_tb_sim -L unisims_ver -L unimacro_ver -L SIMPRIM_VER -L secureip -L /xil_defaultlib -timescale 1ns/1ps 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3645] port 'readable' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba/top_tb.v:21]
+WARNING: [VRFC 10-3645] port 'ODIV2' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba/top.v:129]
+WARNING: [VRFC 10-3645] port 'CLKOUT1' remains unconnected for this instance [/home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba/top.v:141]
+WARNING: [VRFC 10-5021] port 'PWRDWN' is not connected on this instance [/home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba/top.v:141]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUFDS_GTE2
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=10,CLKIN...
+Compiling module unisims_ver.PLLE2_BASE(CLKFBOUT_MULT=10,CLKI...
+Compiling module work.top
+Compiling module work.top_tb
+Compiling module work.glbl
+Built simulation snapshot top_tb_sim

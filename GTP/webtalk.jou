@@ -2,8 +2,8 @@
 # Webtalk v2019.2 (64-bit)
 # SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
 # IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
-# Start of session at: Wed Mar  4 16:40:15 2020
-# Process ID: 11507
+# Start of session at: Wed Apr 15 10:47:14 2020
+# Process ID: 5844
 # Current directory: /home/diegoaranda/Documents/Tesis/GTP
 # Command line: wbtcv -mode batch -source /home/diegoaranda/Documents/Tesis/GTP/xsim.dir/top_tb_sim/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /home/diegoaranda/Documents/Tesis/GTP/webtalk.log
