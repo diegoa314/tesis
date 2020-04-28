@@ -1,0 +1,46 @@
+#-----------------------------------------------------------
+# xsim v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Fri Apr 24 17:04:40 2020
+# Process ID: 9798
+# Current directory: /home/diegoaranda/Documents/Tesis/full_mode
+# Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
+# Log file: /home/diegoaranda/Documents/Tesis/full_mode/xsim.log
+# Journal file: /home/diegoaranda/Documents/Tesis/full_mode/xsim.jou
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/top_tb_sim/xsim_script.tcl
+# set_param project.enableReportConfiguration 0
+# load_feature core
+# current_fileset
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
+current_fileset: Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 8569.574 ; gain = 132.016 ; free physical = 487 ; free virtual = 4638
+# xsim {top_tb_sim} -autoloadwcfg
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/diegoaranda/Documents/Tesis/full_mode/top_tb_sim.wcfg
+WARNING: Simulation object /top_tb/write_clk was not found in the design.
+WARNING: Simulation object /top_tb/re was not found in the design.
+WARNING: Simulation object /top_tb/writable was not found in the design.
+WARNING: Simulation object /top_tb/bandera was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder0_d was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder1_d was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder2_d was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder3_d was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder0_output was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder1_output was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder2_output was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder3_output was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder0_disp_in was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder1_disp_in was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder2_disp_in was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder3_disp_in was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder0_disp_out was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder1_disp_out was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder2_disp_out was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_singleencoder3_disp_out was not found in the design.
+xsim: Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 8621.445 ; gain = 51.871 ; free physical = 379 ; free virtual = 4531
+run 50 us

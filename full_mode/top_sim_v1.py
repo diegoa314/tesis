@@ -8,7 +8,7 @@ from litex.soc.cores.code_8b10b import Encoder, Decoder
 from migen.genlib.cdc import *
 
 from gtp_7series_init import GTPTXInit, GTPRXInit
-from clock_aligner import BruteforceClockAligner
+
 
 from prbs_files.tx_top import _TX
 from prbs_files.rx_top import _RX
@@ -109,32 +109,8 @@ CLKIN +----> /M  +-->       Charge Pump         +-> VCO +---> CLKOUT
 
 
 class GTP(Module):
-    def __init__(self, qpll,tx_pads, rx_pads, sys_clk_freq,
-                 clock_aligner=True):
-        """
-        self.tx_seldata = Signal()
-        self.rx_seldata = Signal()
-        self.tx_en8b10b = Signal()
-        self.rx_en8b10b = Signal()
-        self.enable_err_count = Signal(2)
-        self.total_bit_count = Signal(32)
-        self.tx_prbs_config = Signal(2)
-        self.rx_prbs_config = Signal(2)
-        self.global_error = Signal(32)
-        self.tx_input = Signal(20)
-        self.tx_mask = Signal(20)
-        self.rx_mask = Signal(20)
-        self.k = Signal(2)
-        self.rx_ready = Signal()
-
-        self.plllock = Signal()
-       
+    def __init__(self, qpll,tx_pads, rx_pads, sys_clk_freq):
         
-        
-        
-        self.checklink = Signal()
-        self.linkstatus = Signal()
-        """
         self.tx_polarity = Signal()
         self.rx_polarity = Signal()
         self.loopback = Signal(3)
@@ -368,14 +344,7 @@ class GTP(Module):
                 i_TXUSRCLK=txusrclk,
                 i_TXUSRCLK2=txusrclk2,
 
-                #p_TX_DATA_WIDTH=20,
-                #i_TXCHARDISPMODE=Cat(tx.data_out[9],tx.data_out[19]),
-                #i_TXCHARDISPVAL=Cat(tx.data_out[8],tx.data_out[18]),
-                #i_TXDATA=Cat(tx.data_out[:8], tx.data_out[10:18]),
-                #i_TXUSRCLK=ClockSignal("tx"),
-                #i_TXUSRCLK2=ClockSignal("tx"),
-
-
+            
                 # TX electrical
                 i_TXBUFDIFFCTRL=0b100,
                 i_TXDIFFCTRL=self.diffctrl,

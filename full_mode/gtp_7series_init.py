@@ -78,7 +78,7 @@ class GTPTXInit(Module):
         txphaligndone_rising = Signal()
         self.sync += txphaligndone_r.eq(txphaligndone)
         self.comb += txphaligndone_rising.eq(txphaligndone & ~txphaligndone_r)
-
+       
         startup_fsm.act("PLL_RESET",
             pll_reset_timer.wait.eq(1),
             If(pll_reset_timer.done,
@@ -86,6 +86,8 @@ class GTPTXInit(Module):
                 NextState("GTP_RESET")
             )
         )
+     
+      
         startup_fsm.act("GTP_RESET", #1
             gttxreset.eq(1),
             If(plllock,
