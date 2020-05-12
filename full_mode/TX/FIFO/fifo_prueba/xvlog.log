@@ -1,0 +1,3 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba/top_tb.v" into library work
+INFO: [VRFC 10-311] analyzing module top_tb
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/FIFO/fifo_prueba/top_tb.v:35]

@@ -1,0 +1,387 @@
+$var wire 1 ! re $end
+$var wire 1 " readable $end
+$var wire 1 # syncfifo_we $end
+$var wire 1 $ syncfifo_writable $end
+$var wire 1 % syncfifo_re $end
+$var wire 1 & syncfifo_readable $end
+$var wire 8 ' syncfifo_din $end
+$var wire 8 ( syncfifo_dout $end
+$var wire 6 ) level0 $end
+$var wire 1 * replace $end
+$var wire 5 + produce $end
+$var wire 5 , consume $end
+$var wire 5 - wrport_adr $end
+$var wire 8 . wrport_dat_r $end
+$var wire 1 / wrport_we $end
+$var wire 8 0 wrport_dat_w $end
+$var wire 1 1 do_read $end
+$var wire 5 2 rdport_adr $end
+$var wire 8 3 rdport_dat_r $end
+$var wire 1 4 rdport_re $end
+$var wire 6 5 level1 $end
+$var wire 8 6 storage_data_0 $end
+$var wire 8 7 storage_data_1 $end
+$var wire 8 8 storage_data_2 $end
+$var wire 8 9 storage_data_3 $end
+$var wire 8 : storage_data_4 $end
+$var wire 8 ; storage_data_5 $end
+$var wire 8 < storage_data_6 $end
+$var wire 8 = storage_data_7 $end
+$var wire 8 > storage_data_8 $end
+$var wire 8 ? storage_data_9 $end
+$var wire 8 @ storage_data_10 $end
+$var wire 8 A storage_data_11 $end
+$var wire 8 B storage_data_12 $end
+$var wire 8 C storage_data_13 $end
+$var wire 8 D storage_data_14 $end
+$var wire 8 E storage_data_15 $end
+$var wire 8 F storage_data_16 $end
+$var wire 8 G storage_data_17 $end
+$var wire 8 H storage_data_18 $end
+$var wire 8 I storage_data_19 $end
+$var wire 8 J storage_data_20 $end
+$var wire 8 K storage_data_21 $end
+$var wire 8 L storage_data_22 $end
+$var wire 8 M storage_data_23 $end
+$var wire 8 N storage_data_24 $end
+$var wire 8 O storage_data_25 $end
+$var wire 8 P storage_data_26 $end
+$var wire 8 Q storage_data_27 $end
+$var wire 8 R storage_data_28 $end
+$var wire 8 S storage_data_29 $end
+$var wire 8 T storage_data_30 $end
+$var wire 8 U storage_data_31 $end
+$var wire 1 V sys_clk $end
+$dumpvars
+$end
+#0
+0!
+0"
+0#
+0$
+0%
+0&
+b00000000 '
+b00000000 (
+b000000 )
+0*
+b00000 +
+b00000 ,
+b00000 -
+b00000000 .
+0/
+b00000000 0
+01
+b00000 2
+b00000000 3
+04
+b000000 5
+b00000000 6
+b00000000 7
+b00000000 8
+b00000000 9
+b00000000 :
+b00000000 ;
+b00000000 <
+b00000000 =
+b00000000 >
+b00000000 ?
+b00000000 @
+b00000000 A
+b00000000 B
+b00000000 C
+b00000000 D
+b00000000 E
+b00000000 F
+b00000000 G
+b00000000 H
+b00000000 I
+b00000000 J
+b00000000 K
+b00000000 L
+b00000000 M
+b00000000 N
+b00000000 O
+b00000000 P
+b00000000 Q
+b00000000 R
+b00000000 S
+b00000000 T
+b00000000 U
+0V
+1$
+#5
+1V
+#10
+0V
+#15
+b00000001 '
+1/
+b00000001 0
+1V
+1#
+#20
+0V
+#25
+b00001 -
+b00000010 0
+b000001 5
+1%
+1&
+b00000010 '
+b00000001 6
+11
+1V
+b000001 )
+14
+b00001 +
+#30
+0V
+#35
+b00010 -
+1"
+b00000011 0
+b000010 5
+0%
+b00000011 '
+b00001 2
+b00000001 (
+b00000010 7
+1V
+b00000001 3
+01
+04
+b00010 +
+b00001 ,
+#40
+0V
+#45
+b00011 -
+b00000100 '
+b00000100 0
+1V
+b00000011 8
+b00011 +
+b000011 5
+b000010 )
+#50
+0V
+#55
+b00100 -
+b00000101 '
+b00000101 0
+1V
+b000011 )
+b00000100 9
+b00100 +
+b000100 5
+#60
+0V
+#65
+b00101 -
+b00000110 '
+b000101 5
+b00000110 0
+1V
+b000100 )
+b00101 +
+b00000101 :
+#70
+0V
+#75
+b00110 -
+b00000111 '
+b00000111 0
+1V
+b000101 )
+b00110 +
+b000110 5
+b00000110 ;
+#80
+0V
+#85
+b00000111 <
+b00111 -
+b00001000 '
+b00001000 0
+1V
+b000110 )
+b00111 +
+b000111 5
+#90
+0V
+#95
+b01000 -
+b00001000 =
+b00001001 '
+b00001001 0
+1V
+b000111 )
+b01000 +
+b001000 5
+#100
+0V
+#105
+b01001 -
+b00001010 '
+b00001001 >
+b00001010 0
+1V
+b001000 )
+b01001 +
+b001001 5
+#110
+0V
+#115
+b01010 -
+b00001011 '
+b00001011 0
+b00001010 ?
+1V
+b001001 )
+b01010 +
+b001010 5
+#120
+0V
+#125
+b01011 -
+b00001100 '
+b00001100 0
+1V
+b00001011 @
+b01011 +
+b001011 5
+b001010 )
+#130
+0V
+#135
+b01100 -
+b00001101 '
+b00001101 0
+1V
+b001011 )
+b00001100 A
+b01100 +
+b001100 5
+#140
+0V
+#145
+b01101 -
+b00001110 '
+b001101 5
+b00001110 0
+1V
+b001100 )
+b01101 +
+b00001101 B
+#150
+0V
+#155
+b01110 -
+b00001111 '
+b00001111 0
+1V
+b001101 )
+b01110 +
+b001110 5
+b00001110 C
+#160
+0V
+#165
+b01111 -
+1!
+b001111 5
+1%
+b00001111 D
+11
+1V
+b001110 )
+14
+b01111 +
+#170
+0V
+#175
+b10000 -
+b00001111 E
+b00000010 (
+b00010 2
+1V
+b00000010 3
+b10000 +
+b00010 ,
+#180
+0V
+#185
+b10001 -
+b00001111 F
+b00000011 (
+b00011 2
+1V
+b00000011 3
+b10001 +
+b00011 ,
+#190
+0V
+#195
+b10010 -
+b00100 2
+b00000100 (
+b00001111 G
+1V
+b00000100 3
+b10010 +
+b00100 ,
+0!
+0"
+0#
+0$
+0%
+0&
+b00000000 '
+b00000000 (
+b000000 )
+0*
+b00000 +
+b00000 ,
+b00000 -
+b00000000 .
+0/
+b00000000 0
+01
+b00000 2
+b00000000 3
+04
+b000000 5
+b00000000 6
+b00000000 7
+b00000000 8
+b00000000 9
+b00000000 :
+b00000000 ;
+b00000000 <
+b00000000 =
+b00000000 >
+b00000000 ?
+b00000000 @
+b00000000 A
+b00000000 B
+b00000000 C
+b00000000 D
+b00000000 E
+b00000000 F
+b00000000 G
+b00000000 H
+b00000000 I
+b00000000 J
+b00000000 K
+b00000000 L
+b00000000 M
+b00000000 N
+b00000000 O
+b00000000 P
+b00000000 Q
+b00000000 R
+b00000000 S
+b00000000 T
+b00000000 U
+0V

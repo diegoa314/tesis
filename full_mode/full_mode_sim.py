@@ -1,100 +1,54 @@
 import os
 import sys
 from migen import *
-from litex.build.generic_platform import *
-from litex.build.xilinx import XilinxPlatform
 from migen.genlib.io import CRG
-from tx import *
-from top_sim_v1 import *
 
-
-
-_io = [                             #generic_platform
-    ("gtp_tx", 0,
-        Subsignal("p", Pins("X")),
-        Subsignal("n", Pins("X"))
-    ),
-     ("gtp_rx", 0,
-        Subsignal("p", Pins("X")),
-        Subsignal("n", Pins("X"))
-    ),
-    ("write_clk", 0,
-        Subsignal("p", Pins("X")),
-        Subsignal("n", Pins("X"))
-    ),
-    ("read_clk", 0,
-        Subsignal("p", Pins("X")),
-        Subsignal("n", Pins("X"))
-    ),
-    ("din",0, 
-        Subsignal("a", Pins("X")),
-        Subsignal("b", Pins("X")),
-        Subsignal("c", Pins("X")),
-        Subsignal("d", Pins("X")),
-        Subsignal("e", Pins("X")),
-        Subsignal("f", Pins("X")),
-        Subsignal("g", Pins("X")),
-        Subsignal("h", Pins("X"))
-    ),
-    ("dtin",0, 
-        Subsignal("a", Pins("X")),
-        Subsignal("b", Pins("X"))
-    ),
-    ("writable",0, Pins("X")),
-    ("re",0, Pins("X")),
-    ("we",0, Pins("X")),
-    
-    ("link_ready",0, Pins("X"))
-]
-
-class Platform(XilinxPlatform):
-    def __init__(self):
-        XilinxPlatform.__init__(self, "", _io)
-
+from gtp import GTPQuadPLL, GTP
+from daphne_platforms import Platform
 
 class FullModeSim(Module):
     def __init__(self, platform):
-       
+        self.din=Signal(8) #data to write in the fifo
+        self.dtin=Signal(2) #data type to write in the fifo
+        self.we=Signal() #fifo write enable
+        self.link_ready=Signal() #starts transmision
         #   #   #
-        write_clk = Signal()
-       
+
+        write_clk = Signal() #clock that drives fifo writing 
         write_clk100 = Signal()
-        write_clk100_pads = platform.request("write_clk")
+        write_clk100_pads = platform.request("clk0") #differential clock
         self.specials += [
             Instance("IBUFDS_GTE2",
                 i_CEB=0,
-                i_I=write_clk100_pads.p,
-                i_IB=write_clk100_pads.n,
-                o_O=write_clk100),
+                i_I=write_clk100_pads.clk_p,
+                i_IB=write_clk100_pads.clk_n,
+                o_O=write_clk100), 
             Instance("BUFG", i_I=write_clk100, o_O=write_clk)
         ]
-        self.clock_domains.cd_write=ClockDomain(name="write")
+        self.clock_domains.cd_write=ClockDomain(name="write") #fifo writing clock domain
         self.comb += [
             self.cd_write.clk.eq(write_clk),
         ]        
 
-
-        sys_clk = Signal()
+        sys_clk = Signal() 
         self.submodules.crg = CRG(sys_clk)
-        
         refclk625_platform = Signal()
         sys_clk_freq=62.5e6
-        refclk625_platform_pads = platform.request("read_clk")
-        self.specials += [
-            Instance("IBUFDS_GTE2",
-                i_CEB=0,
-                i_I=refclk625_platform_pads.p,
-                i_IB=refclk625_platform_pads.n,
-                o_O=refclk625_platform),
-            Instance("BUFG", i_I=refclk625_platform, o_O=sys_clk)
-        ]
-        refclk = Signal()
+        clk62_5=Signal()
+        clk62_5 = platform.request("clk62_5") #single clock, source
+        self.specials+=[
+            Instance("BUFG", i_I=clk62_5, o_O=sys_clk)
+        ]    
+
+       
+
+        refclk = Signal() #300 MHz QuadPLL refclk 
         pll_fb = Signal()
         self.specials += [
             Instance("PLLE2_BASE",
                      p_STARTUP_WAIT="FALSE", #o_LOCKED=,
 
-                     # VCO @ 
+                     # VCO @ 1.5 GHz
                      p_REF_JITTER1=0.01, p_CLKIN1_PERIOD=16.0,
                      p_CLKFBOUT_MULT=24, p_DIVCLK_DIVIDE=1,
                      i_CLKIN1=sys_clk, i_CLKFBIN=pll_fb, o_CLKFBOUT=pll_fb,
@@ -103,46 +57,34 @@ class FullModeSim(Module):
                      p_CLKOUT0_DIVIDE=5, p_CLKOUT0_PHASE=0.0, o_CLKOUT0=refclk
             ),
         ]
-            
+        gtp_refclk=Signal()
+        gtp_refclk=platform.request("gtp_refclk") #to txoutclk
+
+        self.comb+=[gtp_refclk.p.eq(refclk), gtp_refclk.n.eq(~refclk)]
+
         qpll = GTPQuadPLL(refclk, 300e6, 4.8e9)
         print(qpll)
         self.submodules += qpll
 
-        
         tx_pads = platform.request("gtp_tx")
         rx_pads = platform.request("gtp_rx")
-        gtp = GTP(qpll, tx_pads, rx_pads,
-            sys_clk_freq, clock_aligner=False)
+        gtp = GTP(qpll, tx_pads, rx_pads, sys_clk_freq)
         self.submodules += gtp
 
-        self.din=Signal(8)
-        self.dtin=Signal(2)
-        self.writable=Signal()
-        self.we=Signal()
-        self.re=Signal()
-        self.link_ready=Signal()
-
+       
         self.din=platform.request("din")
         self.dtin=platform.request("dtin")
-        self.writable=platform.request("writable")
         self.we=platform.request("we")
-        self.re=platform.request("re")
         self.link_ready=platform.request("link_ready")
+        zeros=Signal(24) #completes the remaining 24 bits 
         
-        relleno=Signal(24)
         self.comb+=[
-            gtp.writable.eq(self.writable),
             gtp.we.eq(self.we),
-            gtp.re.eq(self.re),
             gtp.link_ready.eq(self.link_ready),
             gtp.din.eq(Cat(self.din.a,self.din.b,self.din.c,
-                self.din.d,self.din.e,self.din.f,self.din.g,self.din.h,relleno)),
+                self.din.d,self.din.e,self.din.f,self.din.g,self.din.h,zeros)),
             gtp.dtin.eq(Cat(self.dtin.a, self.dtin.b)),
         ]
-
-        
-        
-       
 
 def generate_top():
     platform = Platform()
@@ -156,13 +98,13 @@ def generate_top_tb():
 
 module top_tb();
 
-reg write_clk;
-initial write_clk = 1'b1;
-always #5 write_clk = ~write_clk;
+reg clk0;
+initial clk0 = 1'b1;
+always #5 clk0 = ~clk0;
 
-reg read_clk;
-initial read_clk = 1'b1;
-always #8 read_clk = ~read_clk;
+reg clk62_5;
+initial clk62_5 = 1'b1;
+always #8 clk62_5 = ~clk62_5;
 
 integer period =10;
 
@@ -170,31 +112,21 @@ reg[7:0] value;
 initial value='b0;    
 reg[1:0] type;
 initial type=2'b0;    
-
-
-
 reg link_ready;
 initial link_ready=0;
-reg we, re;
+reg we;
 initial we=0;
-initial re=0;
-
 wire gtp_p;
 wire gtp_n;
-
-
-wire writable;
 
 top dut (
     .gtp_tx_p(gtp_p),
     .gtp_tx_n(gtp_n),
     .gtp_rx_p(gtp_p),
     .gtp_rx_n(gtp_n),
-
-    .write_clk_p(write_clk),
-    .write_clk_n(~write_clk),
-    .read_clk_p(read_clk),
-    .read_clk_n(~read_clk),
+    .clk0_clk_p(clk0),
+    .clk0_clk_n(~clk0),
+    .clk62_5(clk62_5),
     .din_a(value[0]),
     .din_b(value[1]),
     .din_c(value[2]),
@@ -203,31 +135,17 @@ top dut (
     .din_f(value[5]),
     .din_g(value[6]),
     .din_h(value[7]),
-    
-
     .dtin_a(type[0]),
     .dtin_b(type[1]),
     .we(we),
-    .re(re),
-    
-    .writable(writable),
     .link_ready(link_ready)
 );
-reg bandera;
-initial bandera=0;
-initial begin
-    
-    
-end
-
-
 
 always begin 
     for (integer i=0;i<=2500;i=i+1) begin
         #period;
         
     end
-   
     
     we=1'b1;
     #period;    
@@ -286,9 +204,6 @@ always begin
     end
 
 end
-
-
-
 endmodule""")
     f.close()
 
@@ -307,26 +222,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-"""
-type=2'b00;
-    value=8'hDD;
-    we=1'b1;
-    #period;
-
-    type=2'b00;
-    value=8'hEE;
-    we=1'b1;
-    #period;
-
-    type=2'b10;
-    value=8'hFF;
-    we=1'b1;
-    #period;
-
-    re=1'b1;
-    #period;
-    re=1'b0;
-    #period;
-    
-"""
