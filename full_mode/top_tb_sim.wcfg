@@ -11,19 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="25101081fs"></ZoomStartTime>
-      <ZoomEndTime time="25204082fs"></ZoomEndTime>
-      <Cursor1Time time="25147981fs"></Cursor1Time>
+      <ZoomStartTime time="24871960fs"></ZoomStartTime>
+      <ZoomEndTime time="25875961fs"></ZoomEndTime>
+      <Cursor1Time time="25197960fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="176"></NameColumnWidth>
-      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+      <ValueColumnWidth column_width="112"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="41" />
-   <wvobject type="logic" fp_name="/top_tb/write_clk">
-      <obj_property name="ElementShortName">write_clk</obj_property>
-      <obj_property name="ObjectShortName">write_clk</obj_property>
-   </wvobject>
+   <WVObjectSize size="20" />
    <wvobject type="array" fp_name="/top_tb/period">
       <obj_property name="ElementShortName">period[31:0]</obj_property>
       <obj_property name="ObjectShortName">period[31:0]</obj_property>
@@ -44,18 +40,6 @@
       <obj_property name="ElementShortName">we</obj_property>
       <obj_property name="ObjectShortName">we</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/re">
-      <obj_property name="ElementShortName">re</obj_property>
-      <obj_property name="ObjectShortName">re</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/writable">
-      <obj_property name="ElementShortName">writable</obj_property>
-      <obj_property name="ObjectShortName">writable</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/bandera">
-      <obj_property name="ElementShortName">bandera</obj_property>
-      <obj_property name="ObjectShortName">bandera</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/state">
       <obj_property name="ElementShortName">state[2:0]</obj_property>
       <obj_property name="ObjectShortName">state[2:0]</obj_property>
@@ -68,29 +52,9 @@
       <obj_property name="ElementShortName">tx_clk</obj_property>
       <obj_property name="ObjectShortName">tx_clk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/txusrclk1">
-      <obj_property name="ElementShortName">txusrclk1</obj_property>
-      <obj_property name="ObjectShortName">txusrclk1</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/txusrclk0">
-      <obj_property name="ElementShortName">txusrclk0</obj_property>
-      <obj_property name="ObjectShortName">txusrclk0</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/pll_lock">
-      <obj_property name="ElementShortName">pll_lock</obj_property>
-      <obj_property name="ObjectShortName">pll_lock</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_init_done">
-      <obj_property name="ElementShortName">tx_init_done</obj_property>
-      <obj_property name="ObjectShortName">tx_init_done</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/tx_tx_init_done">
       <obj_property name="ElementShortName">tx_tx_init_done</obj_property>
       <obj_property name="ObjectShortName">tx_tx_init_done</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/tx_state">
-      <obj_property name="ElementShortName">tx_state[2:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_state[2:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/tx_data_in">
       <obj_property name="ElementShortName">tx_data_in[31:0]</obj_property>
@@ -99,38 +63,6 @@
    <wvobject type="array" fp_name="/top_tb/dut/tx_data_type_in">
       <obj_property name="ElementShortName">tx_data_type_in[1:0]</obj_property>
       <obj_property name="ObjectShortName">tx_data_type_in[1:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/tx_singleencoder0_d">
-      <obj_property name="ElementShortName">tx_singleencoder0_d[7:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder0_d[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/tx_singleencoder1_d">
-      <obj_property name="ElementShortName">tx_singleencoder1_d[7:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder1_d[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/tx_singleencoder2_d">
-      <obj_property name="ElementShortName">tx_singleencoder2_d[7:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder2_d[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/tx_singleencoder3_d">
-      <obj_property name="ElementShortName">tx_singleencoder3_d[7:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder3_d[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/tx_singleencoder0_output">
-      <obj_property name="ElementShortName">tx_singleencoder0_output[9:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder0_output[9:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/tx_singleencoder1_output">
-      <obj_property name="ElementShortName">tx_singleencoder1_output[9:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder1_output[9:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/tx_singleencoder2_output">
-      <obj_property name="ElementShortName">tx_singleencoder2_output[9:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder2_output[9:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/tx_singleencoder3_output">
-      <obj_property name="ElementShortName">tx_singleencoder3_output[9:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder3_output[9:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/tx_crc_dat">
       <obj_property name="ElementShortName">tx_crc_dat[31:0]</obj_property>
@@ -145,43 +77,27 @@
       <obj_property name="ObjectShortName">gtp_p</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/tx_data_out">
-      <obj_property name="ElementShortName">tx_data_out[39:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_data_out[39:0]</obj_property>
+      <obj_property name="ElementShortName">tx_data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_data_out[31:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/txusrclk20">
-      <obj_property name="ElementShortName">txusrclk20</obj_property>
-      <obj_property name="ObjectShortName">txusrclk20</obj_property>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_data_in">
+      <obj_property name="ElementShortName">tx_data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_data_in[31:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder0_disp_in">
-      <obj_property name="ElementShortName">tx_singleencoder0_disp_in</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder0_disp_in</obj_property>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_data_out">
+      <obj_property name="ElementShortName">tx_data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_data_out[31:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder1_disp_in">
-      <obj_property name="ElementShortName">tx_singleencoder1_disp_in</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder1_disp_in</obj_property>
+   <wvobject type="array" fp_name="/top_tb/dut/state">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder2_disp_in">
-      <obj_property name="ElementShortName">tx_singleencoder2_disp_in</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder2_disp_in</obj_property>
+   <wvobject type="logic" fp_name="/top_tb/dut/sys_clk">
+      <obj_property name="ElementShortName">sys_clk</obj_property>
+      <obj_property name="ObjectShortName">sys_clk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder3_disp_in">
-      <obj_property name="ElementShortName">tx_singleencoder3_disp_in</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder3_disp_in</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder0_disp_out">
-      <obj_property name="ElementShortName">tx_singleencoder0_disp_out</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder0_disp_out</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder1_disp_out">
-      <obj_property name="ElementShortName">tx_singleencoder1_disp_out</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder1_disp_out</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder2_disp_out">
-      <obj_property name="ElementShortName">tx_singleencoder2_disp_out</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder2_disp_out</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder3_disp_out">
-      <obj_property name="ElementShortName">tx_singleencoder3_disp_out</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder3_disp_out</obj_property>
+   <wvobject type="array" fp_name="/top_tb/dut/gtptxinit_state">
+      <obj_property name="ElementShortName">gtptxinit_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">gtptxinit_state[2:0]</obj_property>
    </wvobject>
 </wave_config>

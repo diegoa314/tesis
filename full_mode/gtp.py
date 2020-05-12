@@ -9,8 +9,8 @@ from gtp_7series_init import GTPTXInit, GTPRXInit
 
 import os
 import sys
-from TX.FIFO.asyncfifoDT import AsyncFIFOBuffered 
-from TX.tx import TX
+
+
 class GTPQuadPLL(Module):
     def __init__(self, refclk, refclk_freq, linerate):
         self.clk = Signal() 
@@ -128,20 +128,12 @@ class GTP(Module):
         self.drpdo = Signal(16)
         self.drpwe = Signal()
 
-        #TX signals
-        self.din=Signal(8)
-        self.dtin=Signal(2)
-        self.link_ready=Signal()
-        #FIFO signals
-        self.we=Signal()
-        self.re=Signal()
-        
+       
         #   #   #
-        tx=TX()
-        tx=ClockDomainsRenamer("tx")(tx)
-        fifo=AsyncFIFOBuffered(width=32,depth=32)
-        fifo=ClockDomainsRenamer({"read":"tx"})(fifo)
-        self.submodules+=[fifo,tx]
+        self.tx_data=Signal(40)
+        self.tx_k=Signal()
+        self.tx_init_done=Signal()
+       
         
         tx_init = GTPTXInit(sys_clk_freq)
         rx_init = ClockDomainsRenamer("tx")(GTPRXInit(self.tx_clk_freq))
@@ -163,7 +155,7 @@ class GTP(Module):
         self._txusrclk2=_txusrclk2=Signal()
         self.txoutclk = txoutclk=Signal()
         pll_fb2=Signal()
-        pll_lock=Signal()
+        self.pll_lock=pll_lock=Signal()
         self.specials += [
             Instance("PLLE2_BASE",
                      p_STARTUP_WAIT="FALSE", o_LOCKED=pll_lock,
@@ -181,12 +173,14 @@ class GTP(Module):
             Instance("BUFG", i_I=_txusrclk2, o_O=txusrclk2),
             Instance("BUFG", i_I=_txusrclk, o_O=txusrclk)
         ]
+       
         
         self.comb += [
         #self.plllock.eq(qpll.lock),
         tx_init.plllock.eq(qpll.lock),
         rx_init.plllock.eq(qpll.lock),
-        qpll.reset.eq(tx_init.pllreset)
+        qpll.reset.eq(tx_init.pllreset),
+        self.tx_init_done.eq(tx_init.done)
         ]
 
         # DRP Mux selected by rx_init
@@ -200,27 +194,7 @@ class GTP(Module):
     	]
         
         #TX signals 
-        self.comb+=[
-            fifo.din.eq(self.din),
-            fifo.dtin.eq(self.dtin),
-            fifo.we.eq(self.we),
-            fifo.re.eq(self.re),
-            If(~fifo.fifo.readable,
-                fifo.re.eq(0)
-            ).Else(fifo.re.eq(tx.fifo_re)),
-            tx.link_ready.eq(self.link_ready),
-            tx.fifo_empty.eq(~fifo.fifo.readable),
-            #tx.reset.eq(self.re),
-            tx.tx_init_done.eq(tx_init.done),
-            tx.pll_lock.eq(pll_lock),
-            If((self.link_ready & fifo.fifo.readable), 
-                tx.data_in.eq(fifo.fifo.dout),   
-               
-            ),  
-            If((self.link_ready & fifo.fifo.readable), 
-                tx.data_type_in.eq(fifo.fifo.dtout),
-            )     
-        ]
+        
       
         assert qpll.config["linerate"] < 6.6e9
         # rxcdr_cfgs = {
@@ -312,17 +286,18 @@ class GTP(Module):
                 p_TXSYNC_OVRD=1,
 
                 #8b10b
-                i_TX8B10BEN=1,
-                i_TXCHARISK=tx.k,
-                i_TXCHARDISPMODE=0b000,
-                i_TXCHARDISPVAL=0b000,
+                i_TX8B10BEN=0,
                 
                 # TX data
                 p_TX_DATA_WIDTH=40,
-                i_TXDATA=tx.data_out,
+                i_TXCHARDISPMODE=Cat(self.tx_data[9],self.tx_data[19],
+                    self.tx_data[29],self.tx_data[39]),
+                i_TXCHARDISPVAL=Cat(self.tx_data[8],self.tx_data[18],
+                    self.tx_data[28],self.tx_data[38]),
+                i_TXDATA=Cat(self.tx_data[:8], self.tx_data[10:18],
+                    self.tx_data[20:28], self.tx_data[30:38]),
                 i_TXUSRCLK=txusrclk,
                 i_TXUSRCLK2=txusrclk2,
-\
                 # TX electrical
                 i_TXBUFDIFFCTRL=0b100,
                 i_TXDIFFCTRL=self.diffctrl,

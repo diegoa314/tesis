@@ -5,7 +5,8 @@ from migen.genlib.io import CRG
 
 from gtp import GTPQuadPLL, GTP
 from daphne_platforms import Platform
-
+from TX.tx import TX
+from TX.FIFO.asyncfifoDT import AsyncFIFOBuffered 
 class FullModeSim(Module):
     def __init__(self, platform):
         self.din=Signal(8) #data to write in the fifo
@@ -78,13 +79,39 @@ class FullModeSim(Module):
         self.link_ready=platform.request("link_ready")
         zeros=Signal(24) #completes the remaining 24 bits 
         
+        tx=TX()
+        tx=ClockDomainsRenamer("tx")(tx)
+        fifo=AsyncFIFOBuffered(width=32,depth=32)
+        fifo=ClockDomainsRenamer({"read":"tx"})(fifo)
+        self.submodules+=[fifo,tx]
+
+        self.txdata=Signal(40) #salida de tx
+        self.tx_k=Signal() 
+
         self.comb+=[
-            gtp.we.eq(self.we),
-            gtp.link_ready.eq(self.link_ready),
-            gtp.din.eq(Cat(self.din.a,self.din.b,self.din.c,
+            fifo.din.eq(Cat(self.din.a,self.din.b,self.din.c,
                 self.din.d,self.din.e,self.din.f,self.din.g,self.din.h,zeros)),
-            gtp.dtin.eq(Cat(self.dtin.a, self.dtin.b)),
+            fifo.dtin.eq(Cat(self.dtin.a, self.dtin.b)),
+            fifo.we.eq(self.we),
+            If(~fifo.fifo.readable,
+                fifo.re.eq(0)
+            ).Else(fifo.re.eq(tx.fifo_re)),
+            tx.link_ready.eq(self.link_ready),
+            tx.fifo_empty.eq(~fifo.fifo.readable),
+            #tx.reset.eq(self.re),
+            tx.tx_init_done.eq(gtp.tx_init_done),
+            tx.pll_lock.eq(gtp.pll_lock),
+            If((self.link_ready & fifo.fifo.readable), 
+                tx.data_in.eq(fifo.fifo.dout),   
+               
+            ),  
+            If((self.link_ready & fifo.fifo.readable), 
+                tx.data_type_in.eq(fifo.fifo.dtout),
+            ),
+            gtp.tx_data.eq(tx.data_out)
         ]
+
+       
 
 def generate_top():
     platform = Platform()

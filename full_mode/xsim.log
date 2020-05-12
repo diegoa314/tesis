@@ -2,8 +2,8 @@
 # xsim v2019.2 (64-bit)
 # SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
 # IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
-# Start of session at: Tue Apr 21 08:40:21 2020
-# Process ID: 3911
+# Start of session at: Tue May 12 18:21:31 2020
+# Process ID: 4609
 # Current directory: /home/diegoaranda/Documents/Tesis/full_mode
 # Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
 # Log file: /home/diegoaranda/Documents/Tesis/full_mode/xsim.log
@@ -17,16 +17,15 @@ source xsim.dir/top_tb_sim/xsim_script.tcl
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
-current_fileset: Time (s): cpu = 00:00:30 ; elapsed = 00:00:51 . Memory (MB): peak = 8540.594 ; gain = 89.031 ; free physical = 1229 ; free virtual = 5800
+current_fileset: Time (s): cpu = 00:00:09 ; elapsed = 00:00:41 . Memory (MB): peak = 8589.613 ; gain = 132.016 ; free physical = 363 ; free virtual = 5426
 # xsim {top_tb_sim} -autoloadwcfg
 Vivado Simulator 2019.2
 Time resolution is 1 ps
 open_wave_config /home/diegoaranda/Documents/Tesis/full_mode/top_tb_sim.wcfg
-xsim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 8632.453 ; gain = 91.859 ; free physical = 1092 ; free virtual = 5665
 run 50 us
-run: Time (s): cpu = 00:00:53 ; elapsed = 00:03:05 . Memory (MB): peak = 8632.453 ; gain = 0.000 ; free physical = 1028 ; free virtual = 5605
+run: Time (s): cpu = 00:01:04 ; elapsed = 00:01:42 . Memory (MB): peak = 8643.492 ; gain = 0.000 ; free physical = 144 ; free virtual = 5210
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
-close_sim: Time (s): cpu = 00:03:20 ; elapsed = 00:00:21 . Memory (MB): peak = 8745.715 ; gain = 0.000 ; free physical = 821 ; free virtual = 5487
+close_sim: Time (s): cpu = 00:01:45 ; elapsed = 00:00:16 . Memory (MB): peak = 8643.492 ; gain = 0.000 ; free physical = 287 ; free virtual = 5301
 exit
-INFO: [Common 17-206] Exiting xsim at Tue Apr 21 10:21:05 2020...
+INFO: [Common 17-206] Exiting xsim at Tue May 12 18:27:13 2020...
