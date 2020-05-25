@@ -3,13 +3,13 @@
 
 module top_tb();
 
-reg clk0;
-initial clk0 = 1'b1;
-always #5 clk0 = ~clk0;
+reg write_clk;
+initial write_clk = 1'b1;
+always #1.25 write_clk = ~write_clk;
 
-reg clk62_5;
-initial clk62_5 = 1'b1;
-always #8 clk62_5 = ~clk62_5;
+reg gtp_clk;
+initial gtp_clk = 1'b1;
+always #2.08333 gtp_clk = ~gtp_clk;
 
 integer period =10;
 
@@ -29,9 +29,10 @@ top dut (
     .gtp_tx_n(gtp_n),
     .gtp_rx_p(gtp_p),
     .gtp_rx_n(gtp_n),
-    .clk0_clk_p(clk0),
-    .clk0_clk_n(~clk0),
-    .clk62_5(clk62_5),
+    .write_clk_p(write_clk),
+    .write_clk_n(~write_clk),
+    .gtp_clk_p(gtp_clk),
+    .gtp_clk_n(~gtp_clk),
     .din_a(value[0]),
     .din_b(value[1]),
     .din_c(value[2]),

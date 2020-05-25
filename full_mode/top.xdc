@@ -1,16 +1,13 @@
- ## clk0:0.clk_p
-set_property LOC G5 [get_ports clk0_clk_p]
-set_property IOSTANDARD DIFF_SSTL18_II [get_ports clk0_clk_p]
- ## clk0:0.clk_n
-set_property LOC F5 [get_ports clk0_clk_n]
-set_property IOSTANDARD DIFF_SSTL18_II [get_ports clk0_clk_n]
- ## clk62_5:0
-set_property LOC AA4 [get_ports clk62_5]
-set_property IOSTANDARD LVCMOS15 [get_ports clk62_5]
- ## gtp_refclk:0.p
-set_property LOC AA11 [get_ports gtp_refclk_p]
- ## gtp_refclk:0.n
-set_property LOC AB11 [get_ports gtp_refclk_n]
+ ## write_clk:0.p
+set_property LOC G5 [get_ports write_clk_p]
+set_property IOSTANDARD DIFF_SSTL18_II [get_ports write_clk_p]
+ ## write_clk:0.n
+set_property LOC F5 [get_ports write_clk_n]
+set_property IOSTANDARD DIFF_SSTL18_II [get_ports write_clk_n]
+ ## gtp_clk:0.p
+set_property LOC AA11 [get_ports gtp_clk_p]
+ ## gtp_clk:0.n
+set_property LOC AB11 [get_ports gtp_clk_n]
  ## gtp_tx:0.p
 set_property LOC AE7 [get_ports gtp_tx_p]
 set_property IOSTANDARD LVCMOS25 [get_ports gtp_tx_p]

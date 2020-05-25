@@ -16,60 +16,39 @@ class FullModeSim(Module):
         #   #   #
 
         write_clk = Signal() #clock that drives fifo writing 
-        write_clk100 = Signal()
-        write_clk100_pads = platform.request("clk0") #differential clock
+        write_clk_bufg = Signal()
+        write_clk_pads = platform.request("write_clk") #differential clock
         self.specials += [
-            Instance("IBUFDS_GTE2",
-                i_CEB=0,
-                i_I=write_clk100_pads.clk_p,
-                i_IB=write_clk100_pads.clk_n,
-                o_O=write_clk100), 
-            Instance("BUFG", i_I=write_clk100, o_O=write_clk)
+            Instance("IBUFGDS",
+                i_I=write_clk_pads.p,
+                i_IB=write_clk_pads.n,
+                o_O=write_clk_bufg), 
+            Instance("BUFG", i_I=write_clk_bufg, o_O=write_clk)
         ]
         self.clock_domains.cd_write=ClockDomain(name="write") #fifo writing clock domain
         self.comb += [
             self.cd_write.clk.eq(write_clk),
         ]        
-
-        sys_clk = Signal() 
-        self.submodules.crg = CRG(sys_clk)
-        refclk625_platform = Signal()
-        sys_clk_freq=62.5e6
-        clk62_5=Signal()
-        clk62_5 = platform.request("clk62_5") #single clock, source
-        self.specials+=[
-            Instance("BUFG", i_I=clk62_5, o_O=sys_clk)
-        ]    
-
-       
-
-        refclk = Signal() #300 MHz QuadPLL refclk 
-        pll_fb = Signal()
-        self.specials += [
-            Instance("PLLE2_BASE",
-                     p_STARTUP_WAIT="FALSE", #o_LOCKED=,
-
-                     # VCO @ 1.5 GHz
-                     p_REF_JITTER1=0.01, p_CLKIN1_PERIOD=16.0,
-                     p_CLKFBOUT_MULT=24, p_DIVCLK_DIVIDE=1,
-                     i_CLKIN1=sys_clk, i_CLKFBIN=pll_fb, o_CLKFBOUT=pll_fb,
-
-                     # 
-                     p_CLKOUT0_DIVIDE=5, p_CLKOUT0_PHASE=0.0, o_CLKOUT0=refclk
-            ),
+        
+        gtp_clk_bufg=Signal()
+        gtp_clk=Signal()
+        gtp_clk_freq=240e6
+        gtp_clk_pads = platform.request("gtp_clk")
+        self.specials +=[
+            Instance("IBUFDS_GTE2",
+                    i_CEB=0,
+                    i_I=gtp_clk_pads.p,
+                    i_IB=gtp_clk_pads.n,
+                    o_O=gtp_clk_bufg),
+            Instance("BUFG", i_I=gtp_clk_bufg, o_O=gtp_clk)
         ]
-        gtp_refclk=Signal()
-        gtp_refclk=platform.request("gtp_refclk") #to txoutclk
-
-        self.comb+=[gtp_refclk.p.eq(refclk), gtp_refclk.n.eq(~refclk)]
-
-        qpll = GTPQuadPLL(refclk, 300e6, 4.8e9)
+        self.submodules.crg = CRG(gtp_clk) #tx_init clock region
+        qpll = GTPQuadPLL(gtp_clk, gtp_clk_freq, 4.8e9)
         print(qpll)
         self.submodules += qpll
 
         tx_pads = platform.request("gtp_tx")
-        rx_pads = platform.request("gtp_rx")
-        gtp = GTP(qpll, tx_pads, rx_pads, sys_clk_freq)
+        gtp = GTP(qpll, tx_pads, rx_pads, gtp_clk_freq)
         self.submodules += gtp
 
        
@@ -125,13 +104,13 @@ def generate_top_tb():
 
 module top_tb();
 
-reg clk0;
-initial clk0 = 1'b1;
-always #5 clk0 = ~clk0;
+reg write_clk;
+initial write_clk = 1'b1;
+always #1.25 write_clk = ~write_clk;
 
-reg clk62_5;
-initial clk62_5 = 1'b1;
-always #8 clk62_5 = ~clk62_5;
+reg gtp_clk;
+initial gtp_clk = 1'b1;
+always #2.08333 gtp_clk = ~gtp_clk;
 
 integer period =10;
 
@@ -149,11 +128,10 @@ wire gtp_n;
 top dut (
     .gtp_tx_p(gtp_p),
     .gtp_tx_n(gtp_n),
-    .gtp_rx_p(gtp_p),
-    .gtp_rx_n(gtp_n),
-    .clk0_clk_p(clk0),
-    .clk0_clk_n(~clk0),
-    .clk62_5(clk62_5),
+    .write_clk_p(write_clk),
+    .write_clk_n(~write_clk),
+    .gtp_clk_p(gtp_clk),
+    .gtp_clk_n(~gtp_clk),
     .din_a(value[0]),
     .din_b(value[1]),
     .din_c(value[2]),

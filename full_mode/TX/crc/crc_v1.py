@@ -36,16 +36,16 @@ def cols(rows):
     return all_c
 
 
-def lfsr_serial_shift_crc(lfsr_poly, lfsr_cur, data):
+def CRC_paralelo(poly, crc_in, data):
     """
 
-    shift_by == num_data_bits
+    k== num_data_bits
     len(data_cur) == num_data_bits
     >>> for i in range(5):
     ...   l = [0]*5; l[i] = 1
     ...   r = lfsr_serial_shift_crc(
-    ...      lfsr_poly=[0,0,1,0,1], # (5, 2, 0)
-    ...      lfsr_cur=l,
+    ...      poly=[0,0,1,0,1], # (5, 2, 0)
+    ...      crc_in=l,
     ...      data=[0,0,0,0],
     ...   )
     ...   print("Min[%i] =" % i, r)
@@ -57,8 +57,8 @@ def lfsr_serial_shift_crc(lfsr_poly, lfsr_cur, data):
     >>> for i in range(4):
     ...   d = [0]*4; d[i] = 1
     ...   r = lfsr_serial_shift_crc(
-    ...      lfsr_poly=[0,0,1,0,1], # (5, 2, 0)
-    ...      lfsr_cur=[0,0,0,0,0],
+    ...      poly=[0,0,1,0,1], # (5, 2, 0)
+    ...      crc_in=[0,0,0,0,0],
     ...      data=d,
     ...   )
     ...   print("Nin[%i] =" % i, r)
@@ -68,51 +68,34 @@ def lfsr_serial_shift_crc(lfsr_poly, lfsr_cur, data):
     Nin[3] = [0, 1, 1, 0, 1]
 
     """
-    lfsr_poly = lfsr_poly[::-1]
+    poly = poly[::-1] #Primer elemento debe ser el bit menos significativo
     data = data[::-1]
 
-    shift_by = len(data) 
-    lfsr_poly_size = len(lfsr_poly)
-    assert lfsr_poly_size > 1
-    assert len(lfsr_cur) == lfsr_poly_size
+    k=len(data) 
+    p=len(poly)
+    assert p>1
+    assert len(crc_in) == p
 
-    lfsr_next = list(lfsr_cur)
-    for j in range(shift_by):
-        lfsr_upper_bit = lfsr_next[lfsr_poly_size-1]
-        for i in range(lfsr_poly_size-1, 0, -1):
-            if lfsr_poly[i]:
-                lfsr_next[i] = lfsr_next[i-1] ^ lfsr_upper_bit ^ data[j]
+    crc_next = list(crc_in)
+    for j in range(p):
+        crc_upper_bit = crc_next[p-1]
+        for i in range(p-1, 0, -1):
+            if poly[i]:
+                crc_next[i] = crc_next[i-1] ^ crc_upper_bit ^ data[j]
             else:
-                lfsr_next[i] = lfsr_next[i-1]
-        lfsr_next[0] = lfsr_upper_bit ^ data[j]
-    return list(lfsr_next[::-1])
+                crc_next[i] = crc_next[i-1]
+        crc_next[0] = crc_upper_bit ^ data[j]
+    return list(crc_next[::-1])
 
 
-def build_matrix(lfsr_poly, data_width): 
-	#lfsr_poly: polinomio en bits (lista)
+def matrices(poly, data_width): 
+	#poly: polinomio en bits (lista), bit mas significativo como primer elemento
+    #data_width: cantidad de bits de la palabra 
 
-    """
-    >>> print("\\n".join(build_matrix([0,0,1,0,1], 4)[0]))
-    lfsr([0, 0, 1, 0, 1], [0, 0, 0, 0, 0], [1, 0, 0, 0]) = [0, 0, 1, 0, 1]
-    lfsr([0, 0, 1, 0, 1], [0, 0, 0, 0, 0], [0, 1, 0, 0]) = [0, 1, 0, 1, 0]
-    lfsr([0, 0, 1, 0, 1], [0, 0, 0, 0, 0], [0, 0, 1, 0]) = [1, 0, 1, 0, 0]
-    lfsr([0, 0, 1, 0, 1], [0, 0, 0, 0, 0], [0, 0, 0, 1]) = [0, 1, 1, 0, 1]
-    <BLANKLINE>
-    lfsr([0, 0, 1, 0, 1], [1, 0, 0, 0, 0], [0, 0, 0, 0]) = [1, 0, 0, 0, 0]
-    lfsr([0, 0, 1, 0, 1], [0, 1, 0, 0, 0], [0, 0, 0, 0]) = [0, 0, 1, 0, 1]
-    lfsr([0, 0, 1, 0, 1], [0, 0, 1, 0, 0], [0, 0, 0, 0]) = [0, 1, 0, 1, 0]
-    lfsr([0, 0, 1, 0, 1], [0, 0, 0, 1, 0], [0, 0, 0, 0]) = [1, 0, 1, 0, 0]
-    lfsr([0, 0, 1, 0, 1], [0, 0, 0, 0, 1], [0, 0, 0, 0]) = [0, 1, 1, 0, 1]
-    <BLANKLINE>
-    Mout[4] = [0, 0, 1, 0] [1, 0, 0, 1, 0]
-    Mout[3] = [0, 1, 0, 1] [0, 0, 1, 0, 1]
-    Mout[2] = [1, 0, 1, 1] [0, 1, 0, 1, 1]
-    Mout[1] = [0, 1, 0, 0] [0, 0, 1, 0, 0]
-    Mout[0] = [1, 0, 0, 1] [0, 1, 0, 0, 1]
-    """
-    lfsr_poly_size = len(lfsr_poly)
+  
+    poly_size= len(poly)
 
-    # data_width*lfsr_polysize matrix == lfsr(0,Nin)
+    # data_width*polysize matrix == lfsr(0,Nin)
     rows_nin = []
 
     # (a) calculate the N values when Min=0 and Build NxM matrix
@@ -125,30 +108,30 @@ def build_matrix(lfsr_poly, data_width):
     #  - Each column of the matrix represents an output bit Mout[i] as a function of Nin
     info = []
     for i in range(data_width):
-        # lfsr_cur = [0,...,0] = Min
-        lfsr_cur = [0,]*lfsr_poly_size
+        # crc_in = [0,...,0] = Min
+        crc_in = [0,]*poly_size
         # data = [0,..,1,..,0] = Nin
         data = [0,]*data_width
         data[i] = 1
         # Calculate the CRC
-        rows_nin.append(lfsr_serial_shift_crc(lfsr_poly, lfsr_cur, data))
-        info.append("lfsr(%r, %r, %r) = %r" % (lfsr_poly, lfsr_cur, data, rows_nin[-1]))
+        rows_nin.append(CRC_paralelo(poly, crc_in, data))
+        info.append("lfsr(%r, %r, %r) = %r" % (poly, crc_in, data, rows_nin[-1]))
     assert len(rows_nin) == data_width
     cols_nin = cols(rows_nin)[::-1]
 
-    # lfsr_polysize*lfsr_polysize matrix == lfsr(Min,0)
+    # polysize*polysize matrix == lfsr(Min,0)
     info.append("")
     rows_min = []
-    for i in range(lfsr_poly_size):
-        # lfsr_cur = [0,..,1,...,0] = Min
-        lfsr_cur = [0,]*lfsr_poly_size
-        lfsr_cur[i] = 1
+    for i in range(poly_size):
+        # crc_in = [0,..,1,...,0] = Min
+        crc_in = [0,]*poly_size
+        crc_in[i] = 1
         # data = [0,..,0] = Nin
         data = [0,]*data_width
         # Calculate the crc
-        rows_min.append(lfsr_serial_shift_crc(lfsr_poly, lfsr_cur, data))
-        info.append("lfsr(%r, %r, %r) = %r" % (lfsr_poly, lfsr_cur, data, rows_min[-1]))
-    assert len(rows_min) == lfsr_poly_size
+        rows_min.append(CRC_paralelo(poly, crc_in, data))
+        info.append("lfsr(%r, %r, %r) = %r" % (poly, crc_in, data, rows_min[-1]))
+    assert len(rows_min) == poly_size
     cols_min = cols(rows_min)[::-1]
 
     # (c) Calculate CRC for the M values when Nin=0 and Build MxM matrix
@@ -223,12 +206,13 @@ class TxParallelCrcGenerator(Module):
         ]
 
         poly_list = []
+        #convierte a binario, bit mas significativo como primer elemento
         for i in range(crc_width):
-            poly_list.insert(0, polynomial >> i & 0x1) #convierte a binario
+            poly_list.insert(0, polynomial >> i & 0x1) 
         assert len(poly_list) == crc_width
         
 
-        _, cols_nin, cols_min = build_matrix(poly_list, data_width)
+        _, cols_nin, cols_min = matrices(poly_list, data_width)
        
         
         crc_next_reset_bits = list(crc_cur_reset_bits)

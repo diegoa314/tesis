@@ -161,8 +161,8 @@ class GTP(Module):
                      p_STARTUP_WAIT="FALSE", o_LOCKED=pll_lock,
 
                      
-                     p_REF_JITTER1=0.01, p_CLKIN1_PERIOD=3.33333333,
-                     p_CLKFBOUT_MULT=4, p_DIVCLK_DIVIDE=1,
+                     p_REF_JITTER1=0.01, p_CLKIN1_PERIOD=4.166667,
+                     p_CLKFBOUT_MULT=5, p_DIVCLK_DIVIDE=1,
                      i_CLKIN1=self.txoutclk, i_CLKFBIN=pll_fb2, o_CLKFBOUT=pll_fb2,
 
                      #240 MHz and 120 MHz required
