@@ -6,7 +6,7 @@ from migen.genlib.io import CRG
 from gtp import GTPQuadPLL, GTP
 from daphne_platforms import Platform
 from TX.tx import TX
-from TX.FIFO.asyncfifoDT import AsyncFIFOBuffered 
+from TX.FIFO.asyncfifoDT import AsyncFIFO
 class FullModeSim(Module):
     def __init__(self, platform):
         self.din=Signal(8) #data to write in the fifo
@@ -48,6 +48,7 @@ class FullModeSim(Module):
         self.submodules += qpll
 
         tx_pads = platform.request("gtp_tx")
+        rx_pads = platform.request("gtp_rx")
         gtp = GTP(qpll, tx_pads, rx_pads, gtp_clk_freq)
         self.submodules += gtp
 
@@ -56,11 +57,10 @@ class FullModeSim(Module):
         self.dtin=platform.request("dtin")
         self.we=platform.request("we")
         self.link_ready=platform.request("link_ready")
-        zeros=Signal(24) #completes the remaining 24 bits 
         
         tx=TX()
         tx=ClockDomainsRenamer("tx")(tx)
-        fifo=AsyncFIFOBuffered(width=32,depth=32)
+        fifo=AsyncFIFO(width=32,depth=32)
         fifo=ClockDomainsRenamer({"read":"tx"})(fifo)
         self.submodules+=[fifo,tx]
 
@@ -68,24 +68,29 @@ class FullModeSim(Module):
         self.tx_k=Signal() 
 
         self.comb+=[
-            fifo.din.eq(Cat(self.din.a,self.din.b,self.din.c,
-                self.din.d,self.din.e,self.din.f,self.din.g,self.din.h,zeros)),
+            fifo.din.eq(Cat(
+                self.din.a1,self.din.b1,self.din.c1,self.din.d1,
+                self.din.e1,self.din.f1,self.din.g1,self.din.h1,
+                self.din.a2,self.din.b2,self.din.c2,self.din.d2,
+                self.din.e2,self.din.f2,self.din.g2,self.din.h2,
+                self.din.a3,self.din.b3,self.din.c3,self.din.d3,
+                self.din.e3,self.din.f3,self.din.g3,self.din.h3,
+                self.din.a4,self.din.b4,self.din.c4,self.din.d4,
+                self.din.e4,self.din.f4,self.din.g4,self.din.h4,
+                )
+            ),
             fifo.dtin.eq(Cat(self.dtin.a, self.dtin.b)),
             fifo.we.eq(self.we),
-            If(~fifo.fifo.readable,
-                fifo.re.eq(0)
-            ).Else(fifo.re.eq(tx.fifo_re)),
+            fifo.re.eq(tx.fifo_re),
             tx.link_ready.eq(self.link_ready),
-            tx.fifo_empty.eq(~fifo.fifo.readable),
+            tx.fifo_empty.eq(~fifo.readable),
             #tx.reset.eq(self.re),
             tx.tx_init_done.eq(gtp.tx_init_done),
             tx.pll_lock.eq(gtp.pll_lock),
-            If((self.link_ready & fifo.fifo.readable), 
-                tx.data_in.eq(fifo.fifo.dout),   
-               
-            ),  
-            If((self.link_ready & fifo.fifo.readable), 
-                tx.data_type_in.eq(fifo.fifo.dtout),
+              
+            If((self.link_ready & fifo.readable), 
+                tx.data_type_in.eq(fifo.dtout),
+                tx.data_in.eq(fifo.dout), 
             ),
             gtp.tx_data.eq(tx.data_out)
         ]
@@ -106,15 +111,15 @@ module top_tb();
 
 reg write_clk;
 initial write_clk = 1'b1;
-always #1.25 write_clk = ~write_clk;
+always #1.25 write_clk = ~write_clk; //1.25 es semiperiodo del clk de 400 MHz
 
 reg gtp_clk;
 initial gtp_clk = 1'b1;
-always #2.08333 gtp_clk = ~gtp_clk;
+always #2.08333 gtp_clk = ~gtp_clk; //2.08333 es semiperiodo del clk de 240 MHz
 
-integer period =10;
+real period =2.5; //periodo de 400 MHz
 
-reg[7:0] value;
+reg[31:0] value;
 initial value='b0;    
 reg[1:0] type;
 initial type=2'b0;    
@@ -132,81 +137,164 @@ top dut (
     .write_clk_n(~write_clk),
     .gtp_clk_p(gtp_clk),
     .gtp_clk_n(~gtp_clk),
-    .din_a(value[0]),
-    .din_b(value[1]),
-    .din_c(value[2]),
-    .din_d(value[3]),
-    .din_e(value[4]),
-    .din_f(value[5]),
-    .din_g(value[6]),
-    .din_h(value[7]),
-    .dtin_a(type[0]),
-    .dtin_b(type[1]),
     .we(we),
-    .link_ready(link_ready)
+    .link_ready(link_ready),
+    
+    .din_a1(value[0]),
+    .din_b1(value[1]),
+    .din_c1(value[2]),
+    .din_d1(value[3]),
+    .din_e1(value[4]),
+    .din_f1(value[5]),
+    .din_g1(value[6]),
+    .din_h1(value[7]),
+    
+    .din_a2(value[8]),
+    .din_b2(value[9]),
+    .din_c2(value[10]),
+    .din_d2(value[11]),
+    .din_e2(value[12]),
+    .din_f2(value[13]),
+    .din_g2(value[14]),
+    .din_h2(value[15]),
+    
+    .din_a3(value[16]),
+    .din_b3(value[17]),
+    .din_c3(value[18]),
+    .din_d3(value[19]),
+    .din_e3(value[20]),
+    .din_f3(value[21]),
+    .din_g3(value[22]),
+    .din_h3(value[23]),
+    
+    .din_a4(value[24]),
+    .din_b4(value[25]),
+    .din_c4(value[26]),
+    .din_d4(value[27]),
+    .din_e4(value[28]),
+    .din_f4(value[29]),
+    .din_g4(value[30]),
+    .din_h4(value[31]),
+    
+    .dtin_a(type[0]),
+    .dtin_b(type[1])
+    
 );
 
+//Se espera que se inicie el GTP
 always begin 
-    for (integer i=0;i<=2500;i=i+1) begin
+    for (integer i=0;i<=2800;i=i+1) begin
         #period;
-        
     end
     
-    we=1'b1;
-    #period;    
+    /*Se habilita la transmision, como no hay nada en el fifo
+    enviara idle */
+    link_ready=1'b1; 
+
+    for (integer i=0;i<=1500;i=i+1) begin
+        #period;
+    end
+    
+     
+    //ahora se escriben palabras y empieza a enviar 
 
     type=2'b01;
-    value=8'hAA;
+    value='h12345678;
     we=1'b1;
     #period;
 
     type=2'b00;
-    value='h1A;
+    value='hAAAAAAAA;
     we=1'b1;
     #period;
 
     type=2'b00;
-    value='h1B;
+    value='hBBBBBBBB;
     we=1'b1;
     #period;
 
     type=2'b00;
-    value='h1C;
+    value='hCCCCCCCC;
     we=1'b1;
     #period;
 
     type=2'b00;
-    value='h1D;
+    value='hDDDDDDDD;
     we=1'b1;
     #period;
 
     type=2'b00;
-    value='h1F;
+    value='hEEEEEEEE;
     we=1'b1;
     #period;
+
 
     type=2'b00;
-    value='h2A;
+    value='hFFFFFFFF;
     we=1'b1;
     #period;
-
-    type=2'b00;
-    value='h2B;
-    we=1'b1;
-    #period;
-
 
     type=2'b10;
-    value='h2C;
+    value='hFAAAAAAC;
+    we=1'b1;
+    #period;
+    we=1'b0;
+  
+    we=1'b0;
+    #period;
+
+    for (integer i=0;i<=1500;i=i+1) begin
+        #period;
+    end
+
+    
+    type=2'b01;
+    value='h12345678;
     we=1'b1;
     #period;
 
+    type=2'b00;
+    value='hAAAAAAAA;
+    we=1'b1;
+    #period;
+
+    type=2'b00;
+    value='hBBBBBBBB;
+    we=1'b1;
+    #period;
+
+    type=2'b00;
+    value='hCCCCCCCC;
+    we=1'b1;
+    #period;
+
+    type=2'b00;
+    value='hDDDDDDDD;
+    we=1'b1;
+    #period;
+
+    type=2'b00;
+    value='hEEEEEEEE;
+    we=1'b1;
+    #period;
+
+
+    type=2'b00;
+    value='hFFFFFFFF;
+    we=1'b1;
+    #period;
+
+    type=2'b10;
+    value='hFAAAAAAC;
+    we=1'b1;
+    #period;
+    we=1'b0;
+  
+    we=1'b0;
+    #period;
+
+
     
-    for (integer i=0;i<=500;i=i+1) begin
-        we=1'b0;
-        link_ready=1'b1;
-        #period;
-    end
 
 end
 endmodule""")

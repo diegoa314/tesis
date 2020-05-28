@@ -2,8 +2,8 @@
 # xsim v2019.2 (64-bit)
 # SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
 # IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
-# Start of session at: Sun May 24 18:10:22 2020
-# Process ID: 5005
+# Start of session at: Thu May 28 15:45:33 2020
+# Process ID: 16474
 # Current directory: /home/diegoaranda/Documents/tesis/full_mode
 # Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
 # Log file: /home/diegoaranda/Documents/tesis/full_mode/xsim.log
@@ -17,17 +17,23 @@ source xsim.dir/top_tb_sim/xsim_script.tcl
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
-current_fileset: Time (s): cpu = 00:00:31 ; elapsed = 00:01:20 . Memory (MB): peak = 8583.676 ; gain = 132.016 ; free physical = 432 ; free virtual = 5654
+current_fileset: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 8582.082 ; gain = 130.016 ; free physical = 544 ; free virtual = 5196
 # xsim {top_tb_sim} -autoloadwcfg
 Vivado Simulator 2019.2
 Time resolution is 1 ps
 open_wave_config /home/diegoaranda/Documents/tesis/full_mode/top_tb_sim.wcfg
-xsim: Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 8632.551 ; gain = 48.875 ; free physical = 315 ; free virtual = 5539
-run 50 us
-Warning : input CLKIN1 period and attribute CLKIN1_PERIOD on PLLE2_ADV instance top_tb.dut.PLLE2_BASE.plle2_adv_1 are not same.
-run: Time (s): cpu = 00:00:34 ; elapsed = 00:01:34 . Memory (MB): peak = 8632.551 ; gain = 0.000 ; free physical = 250 ; free virtual = 5472
+run 20 us
+run: Time (s): cpu = 00:00:15 ; elapsed = 00:00:54 . Memory (MB): peak = 8632.461 ; gain = 0.000 ; free physical = 382 ; free virtual = 5034
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 20 us
+run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:54 . Memory (MB): peak = 8647.695 ; gain = 0.000 ; free physical = 283 ; free virtual = 4935
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 20 us
+run: Time (s): cpu = 00:00:08 ; elapsed = 00:01:07 . Memory (MB): peak = 8647.695 ; gain = 0.000 ; free physical = 233 ; free virtual = 4886
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
-close_sim: Time (s): cpu = 00:02:52 ; elapsed = 00:02:08 . Memory (MB): peak = 8632.551 ; gain = 0.000 ; free physical = 308 ; free virtual = 5476
+close_sim: Time (s): cpu = 00:03:03 ; elapsed = 00:00:11 . Memory (MB): peak = 8649.504 ; gain = 0.000 ; free physical = 338 ; free virtual = 4990
 exit
-INFO: [Common 17-206] Exiting xsim at Sun May 24 18:46:22 2020...
+INFO: [Common 17-206] Exiting xsim at Thu May 28 16:15:13 2020...

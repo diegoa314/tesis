@@ -159,7 +159,6 @@ class GTP(Module):
         self.specials += [
             Instance("PLLE2_BASE",
                      p_STARTUP_WAIT="FALSE", o_LOCKED=pll_lock,
-
                      
                      p_REF_JITTER1=0.01, p_CLKIN1_PERIOD=4.166667,
                      p_CLKFBOUT_MULT=5, p_DIVCLK_DIVIDE=1,

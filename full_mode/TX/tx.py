@@ -1,6 +1,6 @@
 from migen import *
 from .FSM.fsm import Fsm
-from .crc.crc_v1 import TxParallelCrcGenerator
+from .crc.crc import TxParallelCrcGenerator
 from litex.soc.cores.code_8b10b import *
 class TX(Module):
 	def __init__(self):
@@ -30,6 +30,7 @@ class TX(Module):
 			fsm.system_ready.eq(self.tx_init_done & self.pll_lock),
 			self.fifo_re.eq(fsm.fifo_re),
 			crc_encoder.i_data_strobe.eq(fsm.strobe_crc),
+			crc_encoder.reset.eq(fsm.reset_crc),
 			#se hace combinacional para no tener que esperar un ciclo extra para el resultado crc
 			If(fsm.encoder_ready,
 				crc_encoder.i_data_payload.eq(self.data_in),

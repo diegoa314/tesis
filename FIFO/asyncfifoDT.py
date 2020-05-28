@@ -158,7 +158,7 @@ class AsyncFIFOBuffered(Module, _FIFOInterface):
         self.din = fifo.din
         self.dtin = fifo.dtin
         self.we = fifo.we
-        #self.readable = fifo.readable
+       
 
         self.sync.read += \
             If(self.re | ~self.readable,
