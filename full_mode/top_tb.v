@@ -77,7 +77,7 @@ top dut (
 
 //Se espera que se inicie el GTP
 always begin 
-    for (integer i=0;i<=2800;i=i+1) begin
+    for (integer i=0;i<=4000;i=i+1) begin
         #period;
     end
     
@@ -98,38 +98,37 @@ always begin
     #period;
 
     type=2'b00;
-    value='hAAAAAAAA;
+    value='hA1A2A3A4;
     we=1'b1;
     #period;
 
     type=2'b00;
-    value='hBBBBBBBB;
+    value='hB1B2B3B4;
     we=1'b1;
     #period;
 
     type=2'b00;
-    value='hCCCCCCCC;
+    value='hC1C2C3C4;
     we=1'b1;
     #period;
 
     type=2'b00;
-    value='hDDDDDDDD;
+    value='hD1D2D3D4;
     we=1'b1;
     #period;
 
     type=2'b00;
-    value='hEEEEEEEE;
+    value='hE1E2E3E4;
     we=1'b1;
     #period;
 
-
     type=2'b00;
-    value='hFFFFFFFF;
+    value='hF1F2F3F4;
     we=1'b1;
     #period;
 
     type=2'b10;
-    value='hFAAAAAAC;
+    value='hABCDEF12;
     we=1'b1;
     #period;
     we=1'b0;
@@ -141,53 +140,51 @@ always begin
         #period;
     end
 
-    
+
+
     type=2'b01;
     value='h12345678;
     we=1'b1;
     #period;
 
     type=2'b00;
-    value='hAAAAAAAA;
+    value='hA1A2A3A4;
     we=1'b1;
     #period;
 
     type=2'b00;
-    value='hBBBBBBBB;
+    value='hB1B2B3B4;
     we=1'b1;
     #period;
 
     type=2'b00;
-    value='hCCCCCCCC;
+    value='hC1C2C3C4;
     we=1'b1;
     #period;
 
     type=2'b00;
-    value='hDDDDDDDD;
+    value='hD1D2D3D4;
     we=1'b1;
     #period;
 
     type=2'b00;
-    value='hEEEEEEEE;
+    value='hE1E2E3E4;
     we=1'b1;
     #period;
 
-
     type=2'b00;
-    value='hFFFFFFFF;
+    value='hF1F2F3F4;
     we=1'b1;
     #period;
 
     type=2'b10;
-    value='hFAAAAAAC;
+    value='hABCDEF12;
     we=1'b1;
     #period;
     we=1'b0;
   
     we=1'b0;
     #period;
-
-
     
 
 end

@@ -1,0 +1,1028 @@
+$var wire 8 ! d0 $end
+$var wire 8 " d1 $end
+$var wire 8 # d2 $end
+$var wire 8 $ d3 $end
+$var wire 8 % d4 $end
+$var wire 8 & d5 $end
+$var wire 8 ' d6 $end
+$var wire 8 ( d7 $end
+$var wire 8 ) d8 $end
+$var wire 8 * d9 $end
+$var wire 1 + k0 $end
+$var wire 1 , k1 $end
+$var wire 1 - k2 $end
+$var wire 1 . k3 $end
+$var wire 1 / k4 $end
+$var wire 1 0 k5 $end
+$var wire 1 1 k6 $end
+$var wire 1 2 k7 $end
+$var wire 1 3 k8 $end
+$var wire 1 4 k9 $end
+$var wire 10 5 output0 $end
+$var wire 10 6 output1 $end
+$var wire 10 7 output2 $end
+$var wire 10 8 output3 $end
+$var wire 10 9 output4 $end
+$var wire 10 : output5 $end
+$var wire 10 ; output6 $end
+$var wire 10 < output7 $end
+$var wire 10 = output8 $end
+$var wire 10 > output9 $end
+$var wire 1 ? disparity0 $end
+$var wire 1 @ disparity1 $end
+$var wire 1 A disparity2 $end
+$var wire 1 B disparity3 $end
+$var wire 1 C disparity4 $end
+$var wire 1 D disparity5 $end
+$var wire 1 E disparity6 $end
+$var wire 1 F disparity7 $end
+$var wire 1 G disparity8 $end
+$var wire 1 H disparity9 $end
+$var wire 8 I singleencoder0_d $end
+$var wire 1 J singleencoder0_k $end
+$var wire 1 K singleencoder0_disp_in $end
+$var wire 10 L singleencoder0_output $end
+$var wire 1 M singleencoder0_disp_out $end
+$var wire 6 N singleencoder0_code6b $end
+$var wire 1 O singleencoder0_code6b_unbalanced $end
+$var wire 1 P singleencoder0_code6b_flip $end
+$var wire 4 Q singleencoder0_code4b $end
+$var wire 1 R singleencoder0_code4b_unbalanced $end
+$var wire 1 S singleencoder0_code4b_flip $end
+$var wire 1 T singleencoder0_alt7_rd0 $end
+$var wire 1 U singleencoder0_alt7_rd1 $end
+$var wire 6 V singleencoder0_output_6b $end
+$var wire 1 W singleencoder0_disp_inter $end
+$var wire 4 X singleencoder0_output_4b $end
+$var wire 10 Y singleencoder0_output_msb_first $end
+$var wire 8 Z singleencoder1_d $end
+$var wire 1 [ singleencoder1_k $end
+$var wire 1 \ singleencoder1_disp_in $end
+$var wire 10 ] singleencoder1_output $end
+$var wire 1 ^ singleencoder1_disp_out $end
+$var wire 6 _ singleencoder1_code6b $end
+$var wire 1 ` singleencoder1_code6b_unbalanced $end
+$var wire 1 a singleencoder1_code6b_flip $end
+$var wire 4 b singleencoder1_code4b $end
+$var wire 1 c singleencoder1_code4b_unbalanced $end
+$var wire 1 d singleencoder1_code4b_flip $end
+$var wire 1 e singleencoder1_alt7_rd0 $end
+$var wire 1 f singleencoder1_alt7_rd1 $end
+$var wire 6 g singleencoder1_output_6b $end
+$var wire 1 h singleencoder1_disp_inter $end
+$var wire 4 i singleencoder1_output_4b $end
+$var wire 10 j singleencoder1_output_msb_first $end
+$var wire 8 k singleencoder2_d $end
+$var wire 1 l singleencoder2_k $end
+$var wire 1 m singleencoder2_disp_in $end
+$var wire 10 n singleencoder2_output $end
+$var wire 1 o singleencoder2_disp_out $end
+$var wire 6 p singleencoder2_code6b $end
+$var wire 1 q singleencoder2_code6b_unbalanced $end
+$var wire 1 r singleencoder2_code6b_flip $end
+$var wire 4 s singleencoder2_code4b $end
+$var wire 1 t singleencoder2_code4b_unbalanced $end
+$var wire 1 u singleencoder2_code4b_flip $end
+$var wire 1 v singleencoder2_alt7_rd0 $end
+$var wire 1 w singleencoder2_alt7_rd1 $end
+$var wire 6 x singleencoder2_output_6b $end
+$var wire 1 y singleencoder2_disp_inter $end
+$var wire 4 z singleencoder2_output_4b $end
+$var wire 10 { singleencoder2_output_msb_first $end
+$var wire 8 | singleencoder3_d $end
+$var wire 1 } singleencoder3_k $end
+$var wire 1 ~ singleencoder3_disp_in $end
+$var wire 10 "! singleencoder3_output $end
+$var wire 1 "" singleencoder3_disp_out $end
+$var wire 6 "# singleencoder3_code6b $end
+$var wire 1 "$ singleencoder3_code6b_unbalanced $end
+$var wire 1 "% singleencoder3_code6b_flip $end
+$var wire 4 "& singleencoder3_code4b $end
+$var wire 1 "' singleencoder3_code4b_unbalanced $end
+$var wire 1 "( singleencoder3_code4b_flip $end
+$var wire 1 ") singleencoder3_alt7_rd0 $end
+$var wire 1 "* singleencoder3_alt7_rd1 $end
+$var wire 6 "+ singleencoder3_output_6b $end
+$var wire 1 ", singleencoder3_disp_inter $end
+$var wire 4 "- singleencoder3_output_4b $end
+$var wire 10 ". singleencoder3_output_msb_first $end
+$var wire 8 "/ singleencoder4_d $end
+$var wire 1 "0 singleencoder4_k $end
+$var wire 1 "1 singleencoder4_disp_in $end
+$var wire 10 "2 singleencoder4_output $end
+$var wire 1 "3 singleencoder4_disp_out $end
+$var wire 6 "4 singleencoder4_code6b $end
+$var wire 1 "5 singleencoder4_code6b_unbalanced $end
+$var wire 1 "6 singleencoder4_code6b_flip $end
+$var wire 4 "7 singleencoder4_code4b $end
+$var wire 1 "8 singleencoder4_code4b_unbalanced $end
+$var wire 1 "9 singleencoder4_code4b_flip $end
+$var wire 1 ": singleencoder4_alt7_rd0 $end
+$var wire 1 "; singleencoder4_alt7_rd1 $end
+$var wire 6 "< singleencoder4_output_6b $end
+$var wire 1 "= singleencoder4_disp_inter $end
+$var wire 4 "> singleencoder4_output_4b $end
+$var wire 10 "? singleencoder4_output_msb_first $end
+$var wire 8 "@ singleencoder5_d $end
+$var wire 1 "A singleencoder5_k $end
+$var wire 1 "B singleencoder5_disp_in $end
+$var wire 10 "C singleencoder5_output $end
+$var wire 1 "D singleencoder5_disp_out $end
+$var wire 6 "E singleencoder5_code6b $end
+$var wire 1 "F singleencoder5_code6b_unbalanced $end
+$var wire 1 "G singleencoder5_code6b_flip $end
+$var wire 4 "H singleencoder5_code4b $end
+$var wire 1 "I singleencoder5_code4b_unbalanced $end
+$var wire 1 "J singleencoder5_code4b_flip $end
+$var wire 1 "K singleencoder5_alt7_rd0 $end
+$var wire 1 "L singleencoder5_alt7_rd1 $end
+$var wire 6 "M singleencoder5_output_6b $end
+$var wire 1 "N singleencoder5_disp_inter $end
+$var wire 4 "O singleencoder5_output_4b $end
+$var wire 10 "P singleencoder5_output_msb_first $end
+$var wire 8 "Q singleencoder6_d $end
+$var wire 1 "R singleencoder6_k $end
+$var wire 1 "S singleencoder6_disp_in $end
+$var wire 10 "T singleencoder6_output $end
+$var wire 1 "U singleencoder6_disp_out $end
+$var wire 6 "V singleencoder6_code6b $end
+$var wire 1 "W singleencoder6_code6b_unbalanced $end
+$var wire 1 "X singleencoder6_code6b_flip $end
+$var wire 4 "Y singleencoder6_code4b $end
+$var wire 1 "Z singleencoder6_code4b_unbalanced $end
+$var wire 1 "[ singleencoder6_code4b_flip $end
+$var wire 1 "\ singleencoder6_alt7_rd0 $end
+$var wire 1 "] singleencoder6_alt7_rd1 $end
+$var wire 6 "^ singleencoder6_output_6b $end
+$var wire 1 "_ singleencoder6_disp_inter $end
+$var wire 4 "` singleencoder6_output_4b $end
+$var wire 10 "a singleencoder6_output_msb_first $end
+$var wire 8 "b singleencoder7_d $end
+$var wire 1 "c singleencoder7_k $end
+$var wire 1 "d singleencoder7_disp_in $end
+$var wire 10 "e singleencoder7_output $end
+$var wire 1 "f singleencoder7_disp_out $end
+$var wire 6 "g singleencoder7_code6b $end
+$var wire 1 "h singleencoder7_code6b_unbalanced $end
+$var wire 1 "i singleencoder7_code6b_flip $end
+$var wire 4 "j singleencoder7_code4b $end
+$var wire 1 "k singleencoder7_code4b_unbalanced $end
+$var wire 1 "l singleencoder7_code4b_flip $end
+$var wire 1 "m singleencoder7_alt7_rd0 $end
+$var wire 1 "n singleencoder7_alt7_rd1 $end
+$var wire 6 "o singleencoder7_output_6b $end
+$var wire 1 "p singleencoder7_disp_inter $end
+$var wire 4 "q singleencoder7_output_4b $end
+$var wire 10 "r singleencoder7_output_msb_first $end
+$var wire 8 "s singleencoder8_d $end
+$var wire 1 "t singleencoder8_k $end
+$var wire 1 "u singleencoder8_disp_in $end
+$var wire 10 "v singleencoder8_output $end
+$var wire 1 "w singleencoder8_disp_out $end
+$var wire 6 "x singleencoder8_code6b $end
+$var wire 1 "y singleencoder8_code6b_unbalanced $end
+$var wire 1 "z singleencoder8_code6b_flip $end
+$var wire 4 "{ singleencoder8_code4b $end
+$var wire 1 "| singleencoder8_code4b_unbalanced $end
+$var wire 1 "} singleencoder8_code4b_flip $end
+$var wire 1 "~ singleencoder8_alt7_rd0 $end
+$var wire 1 #! singleencoder8_alt7_rd1 $end
+$var wire 6 #" singleencoder8_output_6b $end
+$var wire 1 ## singleencoder8_disp_inter $end
+$var wire 4 #$ singleencoder8_output_4b $end
+$var wire 10 #% singleencoder8_output_msb_first $end
+$var wire 8 #& singleencoder9_d $end
+$var wire 1 #' singleencoder9_k $end
+$var wire 1 #( singleencoder9_disp_in $end
+$var wire 10 #) singleencoder9_output $end
+$var wire 1 #* singleencoder9_disp_out $end
+$var wire 6 #+ singleencoder9_code6b $end
+$var wire 1 #, singleencoder9_code6b_unbalanced $end
+$var wire 1 #- singleencoder9_code6b_flip $end
+$var wire 4 #. singleencoder9_code4b $end
+$var wire 1 #/ singleencoder9_code4b_unbalanced $end
+$var wire 1 #0 singleencoder9_code4b_flip $end
+$var wire 1 #1 singleencoder9_alt7_rd0 $end
+$var wire 1 #2 singleencoder9_alt7_rd1 $end
+$var wire 6 #3 singleencoder9_output_6b $end
+$var wire 1 #4 singleencoder9_disp_inter $end
+$var wire 4 #5 singleencoder9_output_4b $end
+$var wire 10 #6 singleencoder9_output_msb_first $end
+$var wire 1 #7 sys_clk $end
+$dumpvars
+$end
+#0
+b00000000 !
+b00000000 "
+b00000000 #
+b00000000 $
+b00000000 %
+b00000000 &
+b00000000 '
+b00000000 (
+b00000000 )
+b00000000 *
+0+
+0,
+0-
+0.
+0/
+00
+01
+02
+03
+04
+b0000000000 5
+b0000000000 6
+b0000000000 7
+b0000000000 8
+b0000000000 9
+b0000000000 :
+b0000000000 ;
+b0000000000 <
+b0000000000 =
+b0000000000 >
+0?
+0@
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+0H
+b00000000 I
+0J
+0K
+b0000000000 L
+0M
+b000000 N
+0O
+0P
+b0000 Q
+0R
+0S
+0T
+0U
+b000000 V
+0W
+b0000 X
+b0000000000 Y
+b00000000 Z
+0[
+0\
+b0000000000 ]
+0^
+b000000 _
+0`
+0a
+b0000 b
+0c
+0d
+0e
+0f
+b000000 g
+0h
+b0000 i
+b0000000000 j
+b00000000 k
+0l
+0m
+b0000000000 n
+0o
+b000000 p
+0q
+0r
+b0000 s
+0t
+0u
+0v
+0w
+b000000 x
+0y
+b0000 z
+b0000000000 {
+b00000000 |
+0}
+0~
+b0000000000 "!
+0""
+b000000 "#
+0"$
+0"%
+b0000 "&
+0"'
+0"(
+0")
+0"*
+b000000 "+
+0",
+b0000 "-
+b0000000000 ".
+b00000000 "/
+0"0
+0"1
+b0000000000 "2
+0"3
+b000000 "4
+0"5
+0"6
+b0000 "7
+0"8
+0"9
+0":
+0";
+b000000 "<
+0"=
+b0000 ">
+b0000000000 "?
+b00000000 "@
+0"A
+0"B
+b0000000000 "C
+0"D
+b000000 "E
+0"F
+0"G
+b0000 "H
+0"I
+0"J
+0"K
+0"L
+b000000 "M
+0"N
+b0000 "O
+b0000000000 "P
+b00000000 "Q
+0"R
+0"S
+b0000000000 "T
+0"U
+b000000 "V
+0"W
+0"X
+b0000 "Y
+0"Z
+0"[
+0"\
+0"]
+b000000 "^
+0"_
+b0000 "`
+b0000000000 "a
+b00000000 "b
+0"c
+0"d
+b0000000000 "e
+0"f
+b000000 "g
+0"h
+0"i
+b0000 "j
+0"k
+0"l
+0"m
+0"n
+b000000 "o
+0"p
+b0000 "q
+b0000000000 "r
+b00000000 "s
+0"t
+0"u
+b0000000000 "v
+0"w
+b000000 "x
+0"y
+0"z
+b0000 "{
+0"|
+0"}
+0"~
+0#!
+b000000 #"
+0##
+b0000 #$
+b0000000000 #%
+b00000000 #&
+0#'
+0#(
+b0000000000 #)
+0#*
+b000000 #+
+0#,
+0#-
+b0000 #.
+0#/
+0#0
+0#1
+0#2
+b000000 #3
+0#4
+b0000 #5
+b0000000000 #6
+0#7
+#5
+b0100 "H
+1"I
+b011000 "x
+1"J
+1"y
+1"z
+b100111 V
+1W
+b0100 X
+b100111 "M
+b1001110100 Y
+1"N
+b10001110 Z
+b0100 "O
+b1001110100 ]
+b011000 _
+1`
+1a
+b1001110100 "P
+b11001101 "Q
+b1001110100 "T
+b0100 "&
+1"'
+b011000 "V
+1"(
+1"W
+1"X
+b0100 "{
+1"|
+1"}
+b100111 "+
+1",
+b0100 "-
+b100111 #"
+b1001110100 ".
+1##
+b11100011 "/
+b0100 #$
+b1001110100 "2
+b0100 b
+1c
+b011000 "4
+1d
+1"5
+1"6
+b1001110100 #%
+b1001110100 #)
+b0100 "Y
+1"Z
+b011000 #+
+1"[
+1#,
+1#-
+b100111 g
+1h
+b0100 i
+b100111 "^
+b1001110100 j
+1"_
+b10011110 k
+b0100 "`
+b1001110100 n
+b011000 p
+1q
+b10101100 !
+1r
+b10001110 "
+b10011110 #
+b1001110100 "a
+b00011100 $
+b11100000 "b
+b11100011 %
+b10101010 &
+b11001101 '
+b1001110100 "e
+b11100000 (
+b0100 "7
+b01101101 )
+1"8
+b011000 "g
+1"9
+1"h
+1"i
+b0100 #.
+1#/
+1#0
+b100111 "<
+1"=
+b10101100 I
+b0100 ">
+b1001110100 L
+b011000 N
+1O
+1P
+b100111 #3
+b1001110100 "?
+1#4
+b10101010 "@
+b0100 #5
+b1001110100 "C
+b0100 s
+1t
+b011000 "E
+1u
+1"F
+1"G
+b1001110100 #6
+1#7
+b0100 "j
+1"k
+1"l
+b100111 x
+1y
+b0100 z
+b100111 "o
+b1001110100 {
+1"p
+b00011100 |
+b0100 "q
+b1001110100 "!
+b0100 Q
+1R
+b011000 "#
+1S
+1"$
+1"%
+b1001110100 "r
+b01101101 "s
+b1001110100 "v
+#10
+0#7
+#15
+b1010 "H
+1"w
+0"I
+b101100 "x
+0"J
+0"y
+b1101 i
+0"z
+b101100 "^
+b0111001101 j
+1m
+b0110 "`
+b1000011101 n
+1o
+b100001 p
+b1011000110 "a
+b001101 V
+0W
+1"d
+b0110001110 "e
+b0001 "7
+1"f
+b1010 X
+b010101 "M
+b0011011010 Y
+1"u
+b1010 "O
+b0111001101 ]
+b1001110100 5
+1^
+b1001110100 6
+b1001110100 7
+b011100 _
+b1001110100 8
+0`
+b1001110100 9
+0a
+b1001110100 :
+b0101011010 "P
+b1001110100 ;
+b1001110100 <
+b1001110100 =
+b1001110100 >
+1"S
+b1011000110 "T
+1"U
+b101100 "V
+0"W
+0"X
+b110001 "<
+0"=
+b0011 "{
+0"|
+b1110 ">
+b0011011010 L
+b001101 N
+0O
+0P
+b1100011110 "?
+b011000 #3
+0#4
+1"B
+b1011 #5
+b0101011010 "C
+b0010 s
+1"D
+b010101 "E
+0"F
+0"G
+b0110001011 #6
+1#7
+b001110 "+
+b0001 "j
+b101100 #"
+b0011100100 ".
+b0011 #$
+b1100011110 "2
+b0010 b
+1"3
+b110001 "4
+0"5
+0"6
+b1011000011 #%
+b100001 x
+1#(
+0y
+b0110001011 #)
+b0110 "Y
+1#*
+0"Z
+b1101 z
+0"[
+b1000011101 {
+b011000 "o
+0"p
+1~
+b1110 "q
+b0011100100 "!
+b1010 Q
+0R
+b001110 "#
+0S
+0"$
+0"%
+b0110001110 "r
+b011100 g
+0h
+b1011000011 "v
+#20
+0#7
+#25
+0"w
+b0010 i
+b1100010001 "?
+b100111 #3
+1#4
+0"B
+b0100 #5
+0"D
+b0111000010 j
+0"_
+0m
+b1001110100 #6
+b0111100010 n
+1#7
+0o
+0",
+b1011 "-
+1W
+0"d
+b1001110001 "e
+0"f
+b0011101011 ".
+0##
+1"1
+b1100 #$
+b1100010001 "2
+0"3
+0"N
+0"u
+1\
+b1011001100 #%
+b0111000010 ]
+b0011011010 5
+0^
+b0111001101 6
+b011110 x
+b1000011101 7
+1y
+b0011100100 8
+0#(
+b1100011110 9
+0#*
+b0101011010 :
+b0010 z
+b1011000110 ;
+b1001110100 #)
+b0110001110 <
+b1011000011 =
+b0110001011 >
+0"S
+1@
+0"U
+1A
+b0111100010 {
+b100111 "o
+1"p
+1C
+1D
+0~
+1E
+b0011101011 "!
+1F
+1""
+1G
+b0001 "q
+1H
+1"=
+1K
+b0001 ">
+b1001110001 "r
+1M
+1h
+b1011001100 "v
+#30
+0#7
+#35
+1"w
+b1101 i
+b1100011110 "?
+b011000 #3
+0#4
+1"B
+b1011 #5
+1"D
+b0111001101 j
+1"_
+1m
+b0110001011 #6
+b1000011101 n
+1#7
+1o
+1",
+b0100 "-
+0W
+1"d
+b0110001110 "e
+1"f
+b0011100100 ".
+1##
+0"1
+b0011 #$
+b1100011110 "2
+1"3
+1"N
+1"u
+0\
+b1011000011 #%
+b0111001101 ]
+1^
+b0111000010 6
+b100001 x
+b0111100010 7
+0y
+b0011101011 8
+1#(
+b1100010001 9
+1#*
+b0110001011 #)
+b1101 z
+b1001110001 <
+b1011001100 =
+b1001110100 >
+1"S
+1?
+0@
+1"U
+0A
+b1000011101 {
+1B
+b011000 "o
+0C
+0"p
+0D
+1~
+0E
+b0011100100 "!
+0F
+0""
+0G
+b1110 "q
+0H
+0"=
+0K
+b1110 ">
+b0110001110 "r
+0M
+0h
+b1011000011 "v
+b00000000 !
+b00000000 "
+b00000000 #
+b00000000 $
+b00000000 %
+b00000000 &
+b00000000 '
+b00000000 (
+b00000000 )
+b00000000 *
+0+
+0,
+0-
+0.
+0/
+00
+01
+02
+03
+04
+b0000000000 5
+b0000000000 6
+b0000000000 7
+b0000000000 8
+b0000000000 9
+b0000000000 :
+b0000000000 ;
+b0000000000 <
+b0000000000 =
+b0000000000 >
+0?
+0@
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+0H
+b00000000 I
+0J
+0K
+b0000000000 L
+0M
+b000000 N
+0O
+0P
+b0000 Q
+0R
+0S
+0T
+0U
+b000000 V
+0W
+b0000 X
+b0000000000 Y
+b00000000 Z
+0[
+0\
+b0000000000 ]
+0^
+b000000 _
+0`
+0a
+b0000 b
+0c
+0d
+0e
+0f
+b000000 g
+0h
+b0000 i
+b0000000000 j
+b00000000 k
+0l
+0m
+b0000000000 n
+0o
+b000000 p
+0q
+0r
+b0000 s
+0t
+0u
+0v
+0w
+b000000 x
+0y
+b0000 z
+b0000000000 {
+b00000000 |
+0}
+0~
+b0000000000 "!
+0""
+b000000 "#
+0"$
+0"%
+b0000 "&
+0"'
+0"(
+0")
+0"*
+b000000 "+
+0",
+b0000 "-
+b0000000000 ".
+b00000000 "/
+0"0
+0"1
+b0000000000 "2
+0"3
+b000000 "4
+0"5
+0"6
+b0000 "7
+0"8
+0"9
+0":
+0";
+b000000 "<
+0"=
+b0000 ">
+b0000000000 "?
+b00000000 "@
+0"A
+0"B
+b0000000000 "C
+0"D
+b000000 "E
+0"F
+0"G
+b0000 "H
+0"I
+0"J
+0"K
+0"L
+b000000 "M
+0"N
+b0000 "O
+b0000000000 "P
+b00000000 "Q
+0"R
+0"S
+b0000000000 "T
+0"U
+b000000 "V
+0"W
+0"X
+b0000 "Y
+0"Z
+0"[
+0"\
+0"]
+b000000 "^
+0"_
+b0000 "`
+b0000000000 "a
+b00000000 "b
+0"c
+0"d
+b0000000000 "e
+0"f
+b000000 "g
+0"h
+0"i
+b0000 "j
+0"k
+0"l
+0"m
+0"n
+b000000 "o
+0"p
+b0000 "q
+b0000000000 "r
+b00000000 "s
+0"t
+0"u
+b0000000000 "v
+0"w
+b000000 "x
+0"y
+0"z
+b0000 "{
+0"|
+0"}
+0"~
+0#!
+b000000 #"
+0##
+b0000 #$
+b0000000000 #%
+b00000000 #&
+0#'
+0#(
+b0000000000 #)
+0#*
+b000000 #+
+0#,
+0#-
+b0000 #.
+0#/
+0#0
+0#1
+0#2
+b000000 #3
+0#4
+b0000 #5
+b0000000000 #6
+0#7

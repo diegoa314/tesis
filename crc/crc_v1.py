@@ -89,7 +89,7 @@ def lfsr_serial_shift_crc(lfsr_poly, lfsr_cur, data):
 
 
 def build_matrix(lfsr_poly, data_width): 
-	#lfsr_poly: polinomio en bits (lista)
+    #lfsr_poly: polinomio en bits (lista)
 
     """
     >>> print("\\n".join(build_matrix([0,0,1,0,1], 4)[0]))
@@ -201,12 +201,13 @@ class TxParallelCrcGenerator(Module):
         self.i_data_strobe = Signal()
         self.calc=Signal()
         self.o_crc = Signal(crc_width)
+        self.reset = Signal()
         crc_dat = Signal(data_width)
         crc_cur = Signal(crc_width, reset=initial)
         crc_next = Signal(crc_width, reset_less=True)
      
         
-        	
+            
 
         crc_cur_reset_bits = [
             int(i) for i in "{0:0{width}b}".format(
@@ -227,8 +228,10 @@ class TxParallelCrcGenerator(Module):
             If(self.i_data_strobe,
                 crc_cur.eq(crc_next),
                 #crc_cur.eq(0),
-
             ),
+            If(self.reset,
+                crc_cur.eq(initial)
+            )
            
         ]
 
@@ -265,31 +268,54 @@ class TxParallelCrcGenerator(Module):
 
 
 def tb(dut):
-	yield dut.i_data_strobe.eq(1)
-	yield dut.i_data_payload.eq(0x1a)
-	yield
-	yield dut.i_data_payload.eq(0x1b)
-	yield
-	yield dut.i_data_payload.eq(0x1c)
-	yield
-	yield dut.i_data_payload.eq(0x1d)
-	yield
-	yield dut.i_data_payload.eq(0x1f)
-	yield
-	yield dut.i_data_payload.eq(0x2a)
-	yield
-	yield dut.i_data_payload.eq(0x2b)
-	yield
-	yield dut.i_data_payload.eq(0x2c)
-	yield 
-	yield dut.i_data_strobe.eq(0)	
-	yield
+    yield dut.i_data_strobe.eq(1)
+    yield dut.i_data_payload.eq(0x1a)
+    yield
+    yield dut.i_data_payload.eq(0x1b)
+    yield
+    yield dut.i_data_payload.eq(0x1c)
+    yield
+    yield dut.i_data_payload.eq(0x1d)
+    yield
+    yield dut.i_data_payload.eq(0x1f)
+    yield
+    yield dut.i_data_payload.eq(0x2a)
+    yield
+    yield dut.i_data_payload.eq(0x2b)
+    yield
+    yield dut.i_data_payload.eq(0x2c)
+    yield 
+    yield dut.i_data_strobe.eq(0)    
+    yield
+    yield dut.reset.eq(1)
+    yield
+    yield dut.reset.eq(1)
+    yield
+    yield dut.reset.eq(0)
+    yield
+    yield
+    yield dut.i_data_strobe.eq(1)
+    yield dut.i_data_payload.eq(0x1a)
+    yield
+    yield dut.i_data_payload.eq(0x1b)
+    yield
+    yield dut.i_data_payload.eq(0x1c)
+    yield
+    yield dut.i_data_payload.eq(0x1d)
+    yield
+    yield dut.i_data_payload.eq(0x1f)
+    yield
+    yield dut.i_data_payload.eq(0x2a)
+    yield
+    yield dut.i_data_payload.eq(0x2b)
+    yield
+    yield dut.i_data_payload.eq(0x2c)
+    yield 
+    yield dut.i_data_strobe.eq(0)   
+    yield 
+    yield
 
 
-
-
-
-	
 
 dut=TxParallelCrcGenerator(data_width=32, crc_width=20, polynomial=0xc1acf,initial=0xfffff)
 run_simulation(dut,tb(dut), vcd_name="prueba_crc.vcd")

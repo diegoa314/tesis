@@ -18,11 +18,13 @@ class Fsm(Module):
 		self.system_ready=Signal()
 		self.reset_crc=Signal()
 
+		self.counter_idle=counter_idle=Signal(2) #contador para delay en Idle
+
 		self.submodules.fsm=ResetInserter()(FSM(reset_state="INIT"))
 		
 		self.comb+=self.fsm.reset.eq(self.reset)
 		
-		self.fsm.act("INIT", 
+		self.fsm.act("INIT", 	#0
 			If((self.link_ready & self.system_ready),
 				If(~self.fifo_empty,
 					NextState("SOP"),
@@ -31,6 +33,7 @@ class Fsm(Module):
 					NextValue(self.idle,0),
 				).Else(
 					NextState("IDLE"),
+					
 					NextValue(self.idle,1)
 				),
 				NextValue(self.change_disp,1),					
@@ -39,7 +42,16 @@ class Fsm(Module):
 		self.fsm.act("IDLE",		#1
 			If(self.link_ready,
 				If(self.fifo_empty,
-					NextValue(self.encoder_ready,1)
+					NextValue(counter_idle,counter_idle+1),
+					If(counter_idle==2,
+						NextState("SENDING_IDLE"),
+						NextValue(self.encoder_ready,1)
+					).Else(
+						NextState("IDLE")
+						
+
+					)
+					
 				).Else(
 					NextState("SOP"),
 					NextValue(self.fifo_re,1), #se habilita la lectura
@@ -47,7 +59,31 @@ class Fsm(Module):
 					NextValue(self.idle,0)
 				)
 				
-			).Else(NextState("INIT"))
+			).Else(
+				NextState("INIT"),
+				NextValue(self.encoder_ready,0),
+				NextValue(self.idle,0),
+
+			)
+		)
+
+		self.fsm.act("SENDING_IDLE",  	#2
+			If(self.link_ready,	
+				
+				If(self.fifo_empty,
+						NextState("SENDING_IDLE")
+					).Else(
+						NextState("SOP"),
+						NextValue(self.fifo_re,1), #se habilita la lectura
+						NextValue(self.sop,1),
+						NextValue(self.idle,0)
+					)
+			).Else(
+				NextState("INIT"),
+				NextValue(self.encoder_ready,0),
+				NextValue(self.idle,0),
+
+			)
 		)
 
 		self.fsm.act("SOP", #se codifica el sop y se lee el primer dato
@@ -91,7 +127,7 @@ class Fsm(Module):
 		)
 		
 		self.fsm.act("EOP_SENDING", #
-			NextState("IDLE")
+			NextState("SENDING_IDLE")
 			
 		)
 		

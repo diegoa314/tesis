@@ -1,7 +1,7 @@
 from migen import *
 from .FSM.fsm import Fsm
 from .crc.crc import TxParallelCrcGenerator
-from litex.soc.cores.code_8b10b import *
+from .code_8b10b.encoder import Encoder
 class TX(Module):
 	def __init__(self):
 		self.link_ready=Signal()
@@ -40,7 +40,6 @@ class TX(Module):
 			If((fsm.encoder_ready),
 				self.data_out.eq(Cat(encoder.output[0],encoder.output[1],
 					encoder.output[2],encoder.output[3])),
-				
 			).Else(self.data_out.eq(0)),
 				
 			
@@ -84,9 +83,9 @@ class TX(Module):
 				#encoder3.data_in.eq(0xbb),
 				#encoder4.data_in.eq(0xcc)
 			),
-			encoder.k[0].eq(0),
 			encoder.k[1].eq(0),
 			encoder.k[2].eq(0),
+			encoder.k[3].eq(0),
 		]		
 		
 """

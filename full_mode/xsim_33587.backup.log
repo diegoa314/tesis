@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# xsim v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Tue Jun  2 17:34:04 2020
+# Process ID: 33587
+# Current directory: /home/diegoaranda/Documents/Tesis/tesis/full_mode
+# Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
+# Log file: /home/diegoaranda/Documents/Tesis/tesis/full_mode/xsim.log
+# Journal file: /home/diegoaranda/Documents/Tesis/tesis/full_mode/xsim.jou
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/top_tb_sim/xsim_script.tcl
+# set_param project.enableReportConfiguration 0
+# load_feature core
+# current_fileset
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
+current_fileset: Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 8567.574 ; gain = 130.016 ; free physical = 1379 ; free virtual = 5553
+# xsim {top_tb_sim} -autoloadwcfg
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/diegoaranda/Documents/Tesis/tesis/full_mode/top_tb_sim.wcfg
+xsim: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 8618.449 ; gain = 50.875 ; free physical = 1261 ; free virtual = 5434
+run 20 us
+run: Time (s): cpu = 00:00:19 ; elapsed = 00:01:01 . Memory (MB): peak = 8618.449 ; gain = 0.000 ; free physical = 1207 ; free virtual = 5382
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:01:18 ; elapsed = 00:00:41 . Memory (MB): peak = 8618.449 ; gain = 0.000 ; free physical = 1230 ; free virtual = 5404
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Jun  2 17:45:21 2020...

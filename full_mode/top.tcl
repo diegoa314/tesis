@@ -1,6 +1,6 @@
 create_project -force -name top -part xc7a200t-fbg676-3
 set_msg_config -id {Common 17-55} -new_severity {Warning}
-read_verilog {/home/diegoaranda/Documents/tesis/full_mode/top.v}
+read_verilog {/home/diegoaranda/Documents/Tesis/tesis/full_mode/top.v}
 read_xdc top.xdc
 synth_design -directive default -top top -part xc7a200t-fbg676-3
 report_timing_summary -file top_timing_synth.rpt
