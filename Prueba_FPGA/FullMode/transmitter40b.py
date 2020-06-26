@@ -3,8 +3,8 @@
 #utilizando un modulo tx
 from migen import *
 import sys
-sys.path.append('/home/diegoaranda/Documents/Tesis/UART')
-from tx import *
+sys.path.append('/home/diegoaranda/Documents/Tesis/tesis/UART')
+from tx_uart import *
 class Transmitter40b(Module):
 	def __init__(self):
 		self.data_in=Signal(40) #los 10 bits a enviar
@@ -15,8 +15,8 @@ class Transmitter40b(Module):
 		self.submodules.trans_fsm=FSM(reset_state="IDLE")
 		#ATENCIOOOOOONNNNNN CON LA FRECUENCIA
 		#En las simulaciones trabajar a la misma frecuencia del hardware para detectar errores
-		transmitter=tx(freq=12000000, baud_rate=4000000, n_bits=8)
-		#transmitter=tx(freq=22000, baud_rate=9600, n_bits=8)
+		#transmitter=tx(freq=12000000, baud_rate=4000000, n_bits=8)
+		transmitter=tx(freq=22000, baud_rate=9600, n_bits=8)
 		self.byte_cnt=Signal(4) #Contador de bytes enviados
 		self.submodules+=transmitter
 		self.comb+=self.tx_serial.eq(transmitter.tx_serial)

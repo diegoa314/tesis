@@ -1,0 +1,44 @@
+#-----------------------------------------------------------
+# xsim v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Tue Jun 16 17:23:03 2020
+# Process ID: 10551
+# Current directory: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx
+# Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
+# Log file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.log
+# Journal file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.jou
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/top_tb_sim/xsim_script.tcl
+# set_param project.enableReportConfiguration 0
+# load_feature core
+# current_fileset
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
+current_fileset: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 8582.680 ; gain = 132.016 ; free physical = 796 ; free virtual = 5177
+# xsim {top_tb_sim} -autoloadwcfg
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg
+WARNING: Simulation object /top_tb/dut/final_dout was not found in the design.
+xsim: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 8634.113 ; gain = 51.434 ; free physical = 699 ; free virtual = 5065
+current_wave_config {top_tb_sim.wcfg}
+top_tb_sim.wcfg
+add_wave {{/top_tb/dut/data_received}} 
+current_wave_config {top_tb_sim.wcfg}
+top_tb_sim.wcfg
+add_wave {{/top_tb/dut/rx_data_out}} 
+save_wave_config {/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg}
+run 1.5 ms
+run: Time (s): cpu = 00:07:09 ; elapsed = 01:14:09 . Memory (MB): peak = 8658.484 ; gain = 0.000 ; free physical = 566 ; free virtual = 4939
+export_ip_user_files -no_script -force
+invalid command name "export_ip_user_files"
+export_simulation  -directory "/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx" -simulator xsim
+invalid command name "export_simulation"
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 01:12:55 ; elapsed = 00:00:15 . Memory (MB): peak = 8775.758 ; gain = 0.000 ; free physical = 783 ; free virtual = 4693
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Jun 16 19:30:32 2020...

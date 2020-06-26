@@ -1,0 +1,129 @@
+/*
+
+Xilinx xsim v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2700185 on Thu Oct 24 18:45:48 MDT 2019
+IP Build: 2699827 on Thu Oct 24 21:16:38 MDT 2019
+
+Process ID (PID): 3785
+License: Customer
+
+Current time: 	Mon Jun 15 18:34:35 PYT 2020
+Time zone: 	Paraguay Standard Time (America/Asuncion)
+
+OS: Scientific Linux release 7.8 (Nitrogen)
+OS Version: 3.10.0-1062.4.1.el7.x86_64
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: :0
+Screen size: 1366x768
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 43 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/home/diegoaranda/Xilinx/Vivado/2019.2/tps/lnx64/jre9.0.4
+Java executable location: 	/home/diegoaranda/Xilinx/Vivado/2019.2/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	diegoaranda
+User home directory: /home/diegoaranda
+User working directory: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /home/diegoaranda/Xilinx/Vivado
+HDI_APPROOT: /home/diegoaranda/Xilinx/Vivado/2019.2
+RDI_DATADIR: /home/diegoaranda/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: /home/diegoaranda/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: /home/diegoaranda/.Xilinx/xsim/2019.2/vivado.xml
+Vivado preferences directory: /home/diegoaranda/.Xilinx/xsim/2019.2/
+Vivado layouts directory: /home/diegoaranda/.Xilinx/xsim/2019.2/layouts
+PlanAhead jar file location: 	/home/diegoaranda/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.log
+Vivado journal file location: 	/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.jou
+Engine tmp dir: 	./.Xil/xsim-3785-localhost.localdomain
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /home/diegoaranda/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: /home/diegoaranda/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: /home/diegoaranda/Xilinx/Vivado/2019.2
+XILINX_VITIS: 
+XILINX_VIVADO: /home/diegoaranda/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 6,769 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// WARNING: HEventQueue.dispatchEvent() is taking  1407 ms.
+// TclEventType: START_PROGRESS_DIALOG
+// HMemoryUtils.trashcanNow. Engine heap size: 6,774 MB. GUI used memory: 43 MB. Current time: 6/15/20, 6:34:36 PM PYT
+// WARNING: HEventQueue.dispatchEvent() is taking  1166 ms.
+// TclEventType: START_PROGRESS_DIALOG
+// bB (cr):  Sourcing Tcl script 'xsim.dir/top_tb_sim/xsim_script.tcl' : addNotify
+// Tcl Message: source xsim.dir/top_tb_sim/xsim_script.tcl 
+// Tcl Message: # set_param project.enableReportConfiguration 0 
+// Tcl Message: # load_feature core 
+// HMemoryUtils.trashcanNow. Engine heap size: 6,850 MB. GUI used memory: 44 MB. Current time: 6/15/20, 6:35:00 PM PYT
+// TclEventType: LOAD_FEATURE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: # current_fileset 
+// HMemoryUtils.trashcanNow. Engine heap size: 6,978 MB. GUI used memory: 43 MB. Current time: 6/15/20, 6:35:35 PM PYT
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 7,049 MB. GUI used memory: 44 MB. Current time: 6/15/20, 6:35:50 PM PYT
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 74 MB (+75520kb) [00:02:46]
+// [Engine Memory]: 7,051 MB (+7242312kb) [00:02:46]
+// [GUI Memory]: 97 MB (+19414kb) [00:02:48]
+// WARNING: HEventQueue.dispatchEvent() is taking  5543 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 7,094 MB. GUI used memory: 47 MB. Current time: 6/15/20, 6:36:12 PM PYT
+// Tcl Message: current_fileset: Time (s): cpu = 00:00:28 ; elapsed = 00:00:51 . Memory (MB): peak = 8583.676 ; gain = 132.016 ; free physical = 1182 ; free virtual = 5846 
+// Tcl Message: # xsim {top_tb_sim} -autoloadwcfg 
+// Tcl Message: Vivado Simulator 2019.2 
+// WARNING: HEventQueue.dispatchEvent() is taking  1303 ms.
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// WARNING: HEventQueue.dispatchEvent() is taking  2918 ms.
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// HMemoryUtils.trashcanNow. Engine heap size: 7,112 MB. GUI used memory: 49 MB. Current time: 6/15/20, 6:36:28 PM PYT
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE

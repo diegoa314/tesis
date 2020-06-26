@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# xsim v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Tue Jun 16 13:26:50 2020
+# Process ID: 6732
+# Current directory: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx
+# Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
+# Log file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.log
+# Journal file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.jou
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/top_tb_sim/xsim_script.tcl
+open_wave_config /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg
+close_sim

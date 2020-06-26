@@ -1,0 +1,579 @@
+
+*** Running vivado
+    with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+  **** IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source top.tcl -notrace
+Command: synth_design -top top -part xc7a15tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a15t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a15t'
+INFO: [Device 21-403] Loading part xc7a15tcpg236-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5747 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 2039.590 ; gain = 202.711 ; free physical = 500 ; free virtual = 4908
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:4]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:9]
+INFO: [Synth 8-3876] $readmem data file 'INPUT.init' is read successfully [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:2795]
+INFO: [Synth 8-3876] $readmem data file 'TYPE.init' is read successfully [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:2809]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:670]
+WARNING: [Synth 8-6014] Unused sequential element tx_disparity0_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:2442]
+WARNING: [Synth 8-6014] Unused sequential element tx_disparity1_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:2444]
+WARNING: [Synth 8-6014] Unused sequential element tx_disparity2_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:2446]
+WARNING: [Synth 8-6014] Unused sequential element tx_disparity3_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:2448]
+WARNING: [Synth 8-6014] Unused sequential element tx_fsm_change_disp_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:2586]
+WARNING: [Synth 8-6014] Unused sequential element receiver_top_tx_transmitter_tx_40bdone_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:617]
+WARNING: [Synth 8-6014] Unused sequential element memdat_2_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:2818]
+INFO: [Synth 8-4471] merging register 'tx_k2_reg' into 'tx_k1_reg' [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:304]
+INFO: [Synth 8-4471] merging register 'tx_k3_reg' into 'tx_k1_reg' [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:306]
+WARNING: [Synth 8-6014] Unused sequential element tx_k2_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:304]
+WARNING: [Synth 8-6014] Unused sequential element tx_k3_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:306]
+INFO: [Synth 8-4471] merging register 'memoria_wrport2_adr_reg[2:0]' into 'memoria_wrport1_adr_reg[2:0]' [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:2620]
+WARNING: [Synth 8-6014] Unused sequential element memoria_wrport2_adr_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:2620]
+INFO: [Synth 8-6155] done synthesizing module 'top' (1#1) [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:4]
+WARNING: [Synth 8-3331] design top has unconnected port serial_rx
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 2102.344 ; gain = 265.465 ; free physical = 526 ; free virtual = 4935
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:21 . Memory (MB): peak = 2105.309 ; gain = 268.430 ; free physical = 523 ; free virtual = 4932
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:21 . Memory (MB): peak = 2105.309 ; gain = 268.430 ; free physical = 523 ; free virtual = 4932
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2105.309 ; gain = 0.000 ; free physical = 515 ; free virtual = 4925
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.xdc]
+Finished Parsing XDC File [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2241.043 ; gain = 0.000 ; free physical = 424 ; free virtual = 4834
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2241.043 ; gain = 0.000 ; free physical = 424 ; free virtual = 4834
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 2241.043 ; gain = 404.164 ; free physical = 500 ; free virtual = 4910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a15tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 2241.043 ; gain = 404.164 ; free physical = 500 ; free virtual = 4910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:36 . Memory (MB): peak = 2241.043 ; gain = 404.164 ; free physical = 499 ; free virtual = 4909
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'tx_fsm_reset_crc_reg' into 'tx_fsm_eop_reg' [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:281]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:786]
+INFO: [Synth 8-5544] ROM "INPUT" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "TYPE" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "INPUT" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "TYPE" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rhs_array_muxed0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rhs_array_muxed2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rhs_array_muxed4" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rhs_array_muxed6" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+ROM "f_array_muxed0" will be implemented in logic because its size less than 1024
+ROM "f_array_muxed1" will be implemented in logic because its size less than 1024
+ROM "f_array_muxed2" will be implemented in logic because its size less than 1024
+ROM "f_array_muxed4" will be implemented in logic because its size less than 1024
+ROM "f_array_muxed5" will be implemented in logic because its size less than 1024
+ROM "f_array_muxed6" will be implemented in logic because its size less than 1024
+ROM "f_array_muxed8" will be implemented in logic because its size less than 1024
+ROM "f_array_muxed9" will be implemented in logic because its size less than 1024
+ROM "f_array_muxed10" will be implemented in logic because its size less than 1024
+ROM "f_array_muxed12" will be implemented in logic because its size less than 1024
+ROM "f_array_muxed13" will be implemented in logic because its size less than 1024
+ROM "f_array_muxed14" will be implemented in logic because its size less than 1024
+INFO: [Synth 8-802] inferred FSM for state register 'receiver_top_tx_state_reg' in module 'top'
+INFO: [Synth 8-802] inferred FSM for state register 'receiver_top_state_reg' in module 'top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                               00 |                               00
+*
+                  iSTATE |                               01 |                               01
+                 iSTATE0 |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'receiver_top_state_reg' using encoding 'sequential' in module 'top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                               00 |                               00
+*
+                  iSTATE |                               01 |                               01
+                 iSTATE0 |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'receiver_top_tx_state_reg' using encoding 'sequential' in module 'top'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:37 . Memory (MB): peak = 2241.047 ; gain = 404.168 ; free physical = 490 ; free virtual = 4901
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 4     
+	   2 Input      3 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 3     
++---XORs : 
+	   2 Input      1 Bit         XORs := 27    
+	   3 Input      1 Bit         XORs := 10    
+	   5 Input      1 Bit         XORs := 3     
+	   4 Input      1 Bit         XORs := 2     
+	   8 Input      1 Bit         XORs := 5     
+	  13 Input      1 Bit         XORs := 3     
+	   9 Input      1 Bit         XORs := 2     
+	  15 Input      1 Bit         XORs := 1     
+	   7 Input      1 Bit         XORs := 3     
+	  10 Input      1 Bit         XORs := 1     
+	  11 Input      1 Bit         XORs := 2     
+	  12 Input      1 Bit         XORs := 2     
+	   6 Input      1 Bit         XORs := 1     
++---Registers : 
+	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 2     
+	               20 Bit    Registers := 1     
+	               10 Bit    Registers := 4     
+	                8 Bit    Registers := 6     
+	                6 Bit    Registers := 4     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 8     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 41    
++---RAMs : 
+	              400 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 1     
+	   7 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 4     
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 8     
+	   4 Input      8 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 8     
+	   2 Input      5 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 19    
+	   4 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 5     
+	   4 Input      2 Bit        Muxes := 3     
+	   7 Input      2 Bit        Muxes := 1     
+	   8 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 7     
+	   3 Input      2 Bit        Muxes := 2     
+	   5 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 15    
+	   2 Input      1 Bit        Muxes := 41    
+	   8 Input      1 Bit        Muxes := 21    
+	   5 Input      1 Bit        Muxes := 1     
+	   9 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+	  11 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 4     
+	   2 Input      3 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 3     
++---XORs : 
+	   2 Input      1 Bit         XORs := 27    
+	   3 Input      1 Bit         XORs := 10    
+	   5 Input      1 Bit         XORs := 3     
+	   4 Input      1 Bit         XORs := 2     
+	   8 Input      1 Bit         XORs := 5     
+	  13 Input      1 Bit         XORs := 3     
+	   9 Input      1 Bit         XORs := 2     
+	  15 Input      1 Bit         XORs := 1     
+	   7 Input      1 Bit         XORs := 3     
+	  10 Input      1 Bit         XORs := 1     
+	  11 Input      1 Bit         XORs := 2     
+	  12 Input      1 Bit         XORs := 2     
+	   6 Input      1 Bit         XORs := 1     
++---Registers : 
+	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 2     
+	               20 Bit    Registers := 1     
+	               10 Bit    Registers := 4     
+	                8 Bit    Registers := 6     
+	                6 Bit    Registers := 4     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 8     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 41    
++---RAMs : 
+	              400 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 1     
+	   7 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 4     
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 8     
+	   4 Input      8 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 8     
+	   2 Input      5 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 19    
+	   4 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 5     
+	   4 Input      2 Bit        Muxes := 3     
+	   7 Input      2 Bit        Muxes := 1     
+	   8 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 7     
+	   3 Input      2 Bit        Muxes := 2     
+	   5 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 15    
+	   2 Input      1 Bit        Muxes := 41    
+	   8 Input      1 Bit        Muxes := 21    
+	   5 Input      1 Bit        Muxes := 1     
+	   9 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+	  11 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 45 (col length:60)
+BRAMs: 50 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design top has unconnected port serial_rx
+INFO: [Synth 8-3886] merging instance 'memdat_reg[15]' (FD) to 'memdat_reg[9]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[9]' (FD) to 'memdat_reg[8]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[11]' (FD) to 'memdat_reg[27]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[12]' (FD) to 'memdat_reg[20]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[10]' (FD) to 'memdat_reg[27]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[8]' (FD) to 'memdat_reg[23]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[14]' (FD) to 'memdat_reg[22]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[13]' (FD) to 'memdat_reg[21]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[23]' (FD) to 'memdat_reg[17]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[17]' (FD) to 'memdat_reg[31]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[19]' (FD) to 'memdat_reg[27]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[20]' (FD) to 'memdat_reg[28]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[18]' (FD) to 'memdat_reg[27]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[16]' (FD) to 'memdat_reg[27]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[22]' (FD) to 'memdat_reg[30]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[21]' (FD) to 'memdat_reg[29]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[31]' (FD) to 'memdat_reg[24]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[25]' (FD) to 'memdat_reg[27]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[27]' (FD) to 'memdat_reg[26]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[28]' (FD) to 'memdat_reg[4]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[26]' (FD) to 'memdat_reg[3]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[24]' (FD) to 'memdat_reg[7]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[30]' (FD) to 'memdat_reg[6]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[29]' (FD) to 'memdat_reg[5]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[7]' (FD) to 'memdat_reg[2]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[1]' (FD) to 'memdat_reg[3]'
+INFO: [Synth 8-3886] merging instance 'memdat_reg[0]' (FD) to 'memdat_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\memdat_reg[3] )
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[15]' (FDR) to 'memoria_data_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[9]' (FDR) to 'memoria_data_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[11]' (FDR) to 'memoria_data_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[12]' (FDR) to 'memoria_data_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[10]' (FDR) to 'memoria_data_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[8]' (FDR) to 'memoria_data_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[14]' (FDR) to 'memoria_data_out_reg[6]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[13]' (FDR) to 'memoria_data_out_reg[5]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[23]' (FDR) to 'memoria_data_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[17]' (FDR) to 'memoria_data_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[19]' (FDR) to 'memoria_data_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[20]' (FDR) to 'memoria_data_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[18]' (FDR) to 'memoria_data_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[16]' (FDR) to 'memoria_data_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[22]' (FDR) to 'memoria_data_out_reg[6]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[21]' (FDR) to 'memoria_data_out_reg[5]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[31]' (FDR) to 'memoria_data_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[25]' (FDR) to 'memoria_data_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[27]' (FDR) to 'memoria_data_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[28]' (FDR) to 'memoria_data_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[26]' (FDR) to 'memoria_data_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[24]' (FDR) to 'memoria_data_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[30]' (FDR) to 'memoria_data_out_reg[6]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[29]' (FDR) to 'memoria_data_out_reg[5]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[7]' (FDR) to 'memoria_data_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[1]' (FDR) to 'memoria_data_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'memoria_data_out_reg[0]' (FDR) to 'memoria_data_out_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tx_k1_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\receiver_top_tx_transmitter_byte_cnt_reg[3] )
+INFO: [Synth 8-3886] merging instance 'tx_d0_reg[1]' (FDE) to 'tx_d0_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tx_d0_reg[0] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:41 . Memory (MB): peak = 2241.047 ; gain = 404.168 ; free physical = 472 ; free virtual = 4887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+-----------------+---------------+----------------+
+|Module Name | RTL Object      | Depth x Width | Implemented As | 
++------------+-----------------+---------------+----------------+
+|top         | f_array_muxed0  | 32x6          | LUT            | 
+|top         | f_array_muxed5  | 32x1          | LUT            | 
+|top         | f_array_muxed9  | 32x1          | LUT            | 
+|top         | f_array_muxed13 | 32x1          | LUT            | 
+|top         | f_array_muxed1  | 32x1          | LUT            | 
+|top         | f_array_muxed2  | 32x1          | LUT            | 
+|top         | f_array_muxed4  | 32x6          | LUT            | 
+|top         | f_array_muxed6  | 32x1          | LUT            | 
+|top         | f_array_muxed8  | 32x6          | LUT            | 
+|top         | f_array_muxed10 | 32x1          | LUT            | 
+|top         | f_array_muxed12 | 32x6          | LUT            | 
+|top         | f_array_muxed14 | 32x1          | LUT            | 
+|top         | f_array_muxed5  | 32x1          | LUT            | 
+|top         | f_array_muxed9  | 32x1          | LUT            | 
+|top         | f_array_muxed13 | 32x1          | LUT            | 
+|top         | f_array_muxed1  | 32x1          | LUT            | 
+|top         | f_array_muxed2  | 32x1          | LUT            | 
+|top         | f_array_muxed6  | 32x1          | LUT            | 
+|top         | f_array_muxed14 | 32x1          | LUT            | 
+|top         | f_array_muxed0  | 32x6          | LUT            | 
+|top         | f_array_muxed4  | 32x6          | LUT            | 
+|top         | f_array_muxed8  | 32x6          | LUT            | 
+|top         | f_array_muxed12 | 32x6          | LUT            | 
++------------+-----------------+---------------+----------------+
+
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
++------------+-------------+-----------+----------------------+-------------+
+|Module Name | RTL Object  | Inference | Size (Depth x Width) | Primitives  | 
++------------+-------------+-----------+----------------------+-------------+
+|top         | storage_reg | Implied   | 16 x 40              | RAM32M x 7	 | 
++------------+-------------+-----------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:01:09 . Memory (MB): peak = 2241.047 ; gain = 404.168 ; free physical = 351 ; free virtual = 4766
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:01:18 . Memory (MB): peak = 2241.047 ; gain = 404.168 ; free physical = 341 ; free virtual = 4755
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping	Report
++------------+-------------+-----------+----------------------+-------------+
+|Module Name | RTL Object  | Inference | Size (Depth x Width) | Primitives  | 
++------------+-------------+-----------+----------------------+-------------+
+|top         | storage_reg | Implied   | 16 x 40              | RAM32M x 7	 | 
++------------+-------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'tx_singleencoder0_code6b_unbalanced_reg' (FDR) to 'tx_singleencoder0_code6b_flip_reg'
+INFO: [Synth 8-3886] merging instance 'receiver_top_fifo_consume_reg_rep[0]' (FDRE) to 'receiver_top_fifo_consume_reg[0]'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:01:18 . Memory (MB): peak = 2241.047 ; gain = 404.168 ; free physical = 341 ; free virtual = 4755
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.v:299]
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:01:22 . Memory (MB): peak = 2241.047 ; gain = 404.168 ; free physical = 341 ; free virtual = 4756
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:01:22 . Memory (MB): peak = 2241.047 ; gain = 404.168 ; free physical = 341 ; free virtual = 4756
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:01:22 . Memory (MB): peak = 2241.047 ; gain = 404.168 ; free physical = 341 ; free virtual = 4756
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:01:22 . Memory (MB): peak = 2241.047 ; gain = 404.168 ; free physical = 341 ; free virtual = 4756
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:01:22 . Memory (MB): peak = 2241.047 ; gain = 404.168 ; free physical = 341 ; free virtual = 4756
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:01:22 . Memory (MB): peak = 2241.047 ; gain = 404.168 ; free physical = 341 ; free virtual = 4756
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |LUT1   |     4|
+|3     |LUT2   |    81|
+|4     |LUT3   |    65|
+|5     |LUT4   |    33|
+|6     |LUT5   |    93|
+|7     |LUT6   |    75|
+|8     |MUXF7  |     5|
+|9     |RAM32M |     7|
+|10    |FDRE   |   261|
+|11    |FDSE   |    22|
+|12    |IBUF   |     3|
+|13    |OBUF   |     1|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   651|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:01:22 . Memory (MB): peak = 2241.047 ; gain = 404.168 ; free physical = 341 ; free virtual = 4756
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:44 ; elapsed = 00:01:18 . Memory (MB): peak = 2241.047 ; gain = 268.434 ; free physical = 393 ; free virtual = 4808
+Synthesis Optimization Complete : Time (s): cpu = 00:00:47 ; elapsed = 00:01:23 . Memory (MB): peak = 2241.047 ; gain = 404.168 ; free physical = 393 ; free virtual = 4808
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2241.047 ; gain = 0.000 ; free physical = 464 ; free virtual = 4878
+INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2241.047 ; gain = 0.000 ; free physical = 411 ; free virtual = 4826
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 7 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 7 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+96 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:58 ; elapsed = 00:01:38 . Memory (MB): peak = 2241.047 ; gain = 654.094 ; free physical = 543 ; free virtual = 4958
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2241.047 ; gain = 0.000 ; free physical = 543 ; free virtual = 4958
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 18 18:44:27 2020...

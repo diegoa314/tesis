@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Thu Jun 18 18:38:49 2020
+# Process ID: 5406
+# Current directory: /home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4
+# Command line: vivado
+# Log file: /home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/vivado.log
+# Journal file: /home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/diegoaranda/Documents/Tesis/tesis/Prueba_FPGA/FullMode/FullMode_v4/build/top.xpr
+update_compile_order -fileset sources_1
+set_property part xc7a15tcpg236-1 [current_project]
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1

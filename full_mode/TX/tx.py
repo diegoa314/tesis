@@ -1,14 +1,14 @@
 from migen import *
-from .FSM.fsm import Fsm
-from .crc.crc import TxParallelCrcGenerator
-from .code_8b10b.encoder import Encoder
+from .fsm import Fsm
+from .crc import TxParallelCrcGenerator
+from .encoder import Encoder
 class TX(Module):
 	def __init__(self):
 		self.link_ready=Signal()
 		self.data_in=Signal(32)
 		self.data_type_in=Signal(2)
 		self.data_out=Signal(40)
-		self.fifo_empty=Signal()
+		self.fifo_empty=Signal(reset=1)
 		self.fifo_re=Signal()
 		self.tx_init_done=Signal()
 		self.pll_lock=Signal()

@@ -1,0 +1,94 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2700185 Thu Oct 24 18:45:48 MDT 2019
+| Date         : Thu Jun 18 18:47:44 2020
+| Host         : localhost.localdomain running 64-bit unknown
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a15t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    16 |
+|    Minimum number of control sets                        |    16 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    45 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    16 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     6 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     3 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               8 |            3 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             150 |           43 |
+| Yes          | No                    | No                     |              45 |            8 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              80 |           23 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+-----------------------------------------------------------+-------------------------------------+------------------+----------------+
+| Clock Signal |                       Enable Signal                       |           Set/Reset Signal          | Slice Load Count | Bel Load Count |
++--------------+-----------------------------------------------------------+-------------------------------------+------------------+----------------+
+|  sys_clk     | receiver_top_tx_transmitter_tx_serial1_tx_f_next_value_ce | int_rst                             |                1 |              1 |
+|  sys_clk     |                                                           | tx_singleencoder0_code6b[3]_i_1_n_0 |                1 |              4 |
+|  sys_clk     | tx_fsm_fifo_ready                                         | tx_d3[7]_i_1_n_0                    |                1 |              4 |
+|  sys_clk     | receiver_top_fifo_level0[3]_i_1_n_0                       | int_rst                             |                1 |              4 |
+|  sys_clk     | sel                                                       | counter[3]_i_1_n_0                  |                1 |              4 |
+|  sys_clk     | receiver_top_fifo_wrport_we__0                            | int_rst                             |                2 |              4 |
+|  sys_clk     | tx_d0[7]_i_1_n_0                                          |                                     |                1 |              5 |
+|  sys_clk     | receiver_top_fifo_syncfifo_re                             | int_rst                             |                1 |              7 |
+|  sys_clk     |                                                           |                                     |                3 |              8 |
+|  sys_clk     | receiver_top_tx_transmitter_tx_data0                      | int_rst                             |                3 |              8 |
+|  sys_clk     | receiver_top_tx_transmitter_tx_latch[7]_i_1_n_0           | int_rst                             |                2 |              8 |
+|  sys_clk     | tx_fsm_strobe_crc                                         | tx_crc_encoder_crc_cur[19]_i_1_n_0  |                8 |             20 |
+|  sys_clk     | tx_d3                                                     | tx_d2                               |                3 |             20 |
+|  sys_clk     | receiver_top_fifo_syncfifo_re                             |                                     |                7 |             40 |
+|  sys_clk     | receiver_top_fifo_wrport_we__0                            |                                     |                7 |             56 |
+|  sys_clk     |                                                           | int_rst                             |               42 |            146 |
++--------------+-----------------------------------------------------------+-------------------------------------+------------------+----------------+
+
+

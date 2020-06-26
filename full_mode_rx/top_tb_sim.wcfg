@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_tb_sim.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="top_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="86533fs"></ZoomEndTime>
+      <Cursor1Time time="1330512146fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="66" />
+   <wvobject type="array" fp_name="/top_tb/dut/gtptxinit_state">
+      <obj_property name="ElementShortName">gtptxinit_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">gtptxinit_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_tx_init_done">
+      <obj_property name="ElementShortName">tx_tx_init_done</obj_property>
+      <obj_property name="ObjectShortName">tx_tx_init_done</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_pll_lock">
+      <obj_property name="ElementShortName">tx_pll_lock</obj_property>
+      <obj_property name="ObjectShortName">tx_pll_lock</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/asyncfifo_dtout">
+      <obj_property name="ElementShortName">asyncfifo_dtout[1:0]</obj_property>
+      <obj_property name="ObjectShortName">asyncfifo_dtout[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/asyncfifo_dout">
+      <obj_property name="ElementShortName">asyncfifo_dout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">asyncfifo_dout[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/asyncfifo_re">
+      <obj_property name="ElementShortName">asyncfifo_re</obj_property>
+      <obj_property name="ObjectShortName">asyncfifo_re</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_fsm_system_ready">
+      <obj_property name="ElementShortName">tx_fsm_system_ready</obj_property>
+      <obj_property name="ObjectShortName">tx_fsm_system_ready</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/link_ready">
+      <obj_property name="ElementShortName">link_ready</obj_property>
+      <obj_property name="ObjectShortName">link_ready</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_data_in">
+      <obj_property name="ElementShortName">tx_data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_data_in[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_data_type_in">
+      <obj_property name="ElementShortName">tx_data_type_in[1:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_data_type_in[1:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_crc_encoder_crc_dat">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_crc_encoder_crc_dat[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_crc_encoder_crc_dat[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="label">tx_crc_enc_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_crc_encoder_o_crc">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_crc_encoder_o_crc[19:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_crc_encoder_o_crc[19:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="label">tx_crc_enc_o_[19:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_d0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_d0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_d0[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="label">tx_8b10b_d0[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_d1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_d1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_d1[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="label">tx_8b10b_d1[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_d2">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_d2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_d2[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="label">tx_8b10b_d2[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_d3">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_d3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_d3[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="label">tx_8b10b_d3[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_output0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_output0[9:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_output0[9:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="label">tx_8b10b_o0[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_output1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_output1[9:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_output1[9:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="label">tx_8b10b_o1[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_output2">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_output2[9:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_output2[9:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="label">tx_8b10b_o2[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_output3">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_output3[9:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_output3[9:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="label">tx_8b10b_o3[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder0_disp_in">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_singleencoder0_disp_in</obj_property>
+      <obj_property name="ObjectShortName">tx_singleencoder0_disp_in</obj_property>
+      <obj_property name="label">tx_enc0_disp_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder3_disp_out">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_singleencoder3_disp_out</obj_property>
+      <obj_property name="ObjectShortName">tx_singleencoder3_disp_out</obj_property>
+      <obj_property name="label">tx_enc3_disp_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/gtp_p">
+      <obj_property name="ElementShortName">gtp_p</obj_property>
+      <obj_property name="ObjectShortName">gtp_p</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_clk">
+      <obj_property name="ElementShortName">tx_clk</obj_property>
+      <obj_property name="ObjectShortName">tx_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder2_disp_in">
+      <obj_property name="ElementShortName">tx_singleencoder2_disp_in</obj_property>
+      <obj_property name="ObjectShortName">tx_singleencoder2_disp_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder3_disp_in">
+      <obj_property name="ElementShortName">tx_singleencoder3_disp_in</obj_property>
+      <obj_property name="ObjectShortName">tx_singleencoder3_disp_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder0_disp_out">
+      <obj_property name="ElementShortName">tx_singleencoder0_disp_out</obj_property>
+      <obj_property name="ObjectShortName">tx_singleencoder0_disp_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder1_disp_out">
+      <obj_property name="ElementShortName">tx_singleencoder1_disp_out</obj_property>
+      <obj_property name="ObjectShortName">tx_singleencoder1_disp_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder2_disp_out">
+      <obj_property name="ElementShortName">tx_singleencoder2_disp_out</obj_property>
+      <obj_property name="ObjectShortName">tx_singleencoder2_disp_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_disparity0">
+      <obj_property name="ElementShortName">tx_disparity0</obj_property>
+      <obj_property name="ObjectShortName">tx_disparity0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_disparity1">
+      <obj_property name="ElementShortName">tx_disparity1</obj_property>
+      <obj_property name="ObjectShortName">tx_disparity1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_disparity2">
+      <obj_property name="ElementShortName">tx_disparity2</obj_property>
+      <obj_property name="ObjectShortName">tx_disparity2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_disparity3">
+      <obj_property name="ElementShortName">tx_disparity3</obj_property>
+      <obj_property name="ObjectShortName">tx_disparity3</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder1_disp_in">
+      <obj_property name="ElementShortName">tx_singleencoder1_disp_in</obj_property>
+      <obj_property name="ObjectShortName">tx_singleencoder1_disp_in</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/value">
+      <obj_property name="ElementShortName">value[31:0]</obj_property>
+      <obj_property name="ObjectShortName">value[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/type">
+      <obj_property name="ElementShortName">type[1:0]</obj_property>
+      <obj_property name="ObjectShortName">type[1:0]</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/we">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/write_clk">
+      <obj_property name="ElementShortName">write_clk</obj_property>
+      <obj_property name="ObjectShortName">write_clk</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/asyncfifo_din">
+      <obj_property name="ElementShortName">asyncfifo_din[31:0]</obj_property>
+      <obj_property name="ObjectShortName">asyncfifo_din[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/asyncfifo_dtin">
+      <obj_property name="ElementShortName">asyncfifo_dtin[1:0]</obj_property>
+      <obj_property name="ObjectShortName">asyncfifo_dtin[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_fifo_empty">
+      <obj_property name="ElementShortName">tx_fifo_empty</obj_property>
+      <obj_property name="ObjectShortName">tx_fifo_empty</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_clk">
+      <obj_property name="ElementShortName">tx_clk</obj_property>
+      <obj_property name="ObjectShortName">tx_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/asyncfifo_readable">
+      <obj_property name="ElementShortName">asyncfifo_readable</obj_property>
+      <obj_property name="ObjectShortName">asyncfifo_readable</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_fifo_re">
+      <obj_property name="ElementShortName">tx_fifo_re</obj_property>
+      <obj_property name="ObjectShortName">tx_fifo_re</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/qpll_lock">
+      <obj_property name="ElementShortName">qpll_lock</obj_property>
+      <obj_property name="ObjectShortName">qpll_lock</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_fsm_counter_idle">
+      <obj_property name="ElementShortName">tx_fsm_counter_idle[1:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_fsm_counter_idle[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_disparity0">
+      <obj_property name="ElementShortName">tx_disparity0</obj_property>
+      <obj_property name="ObjectShortName">tx_disparity0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_disparity1">
+      <obj_property name="ElementShortName">tx_disparity1</obj_property>
+      <obj_property name="ObjectShortName">tx_disparity1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_disparity2">
+      <obj_property name="ElementShortName">tx_disparity2</obj_property>
+      <obj_property name="ObjectShortName">tx_disparity2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_disparity3">
+      <obj_property name="ElementShortName">tx_disparity3</obj_property>
+      <obj_property name="ObjectShortName">tx_disparity3</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_k0">
+      <obj_property name="ElementShortName">tx_k0</obj_property>
+      <obj_property name="ObjectShortName">tx_k0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_k1">
+      <obj_property name="ElementShortName">tx_k1</obj_property>
+      <obj_property name="ObjectShortName">tx_k1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_k2">
+      <obj_property name="ElementShortName">tx_k2</obj_property>
+      <obj_property name="ObjectShortName">tx_k2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_k3">
+      <obj_property name="ElementShortName">tx_k3</obj_property>
+      <obj_property name="ObjectShortName">tx_k3</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder0_disp_in">
+      <obj_property name="ElementShortName">tx_singleencoder0_disp_in</obj_property>
+      <obj_property name="ObjectShortName">tx_singleencoder0_disp_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder1_disp_in">
+      <obj_property name="ElementShortName">tx_singleencoder1_disp_in</obj_property>
+      <obj_property name="ObjectShortName">tx_singleencoder1_disp_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder2_disp_in">
+      <obj_property name="ElementShortName">tx_singleencoder2_disp_in</obj_property>
+      <obj_property name="ObjectShortName">tx_singleencoder2_disp_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder3_disp_in">
+      <obj_property name="ElementShortName">tx_singleencoder3_disp_in</obj_property>
+      <obj_property name="ObjectShortName">tx_singleencoder3_disp_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_done">
+      <obj_property name="ElementShortName">gtp_gtprxinit_done</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_done</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_rxcommmadet">
+      <obj_property name="ElementShortName">gtp_rxcommmadet</obj_property>
+      <obj_property name="ObjectShortName">gtp_rxcommmadet</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_rxbytealigned">
+      <obj_property name="ElementShortName">gtp_rxbytealigned</obj_property>
+      <obj_property name="ObjectShortName">gtp_rxbytealigned</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/gtp_rx_data">
+      <obj_property name="ElementShortName">gtp_rx_data[39:0]</obj_property>
+      <obj_property name="ObjectShortName">gtp_rx_data[39:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_rx_p">
+      <obj_property name="ElementShortName">gtp_rx_p</obj_property>
+      <obj_property name="ObjectShortName">gtp_rx_p</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_data_out">
+      <obj_property name="ElementShortName">tx_data_out[39:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_data_out[39:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/data_received">
+      <obj_property name="ElementShortName">data_received[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_received[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_data_out">
+      <obj_property name="ElementShortName">rx_data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_data_out[31:0]</obj_property>
+   </wvobject>
+</wave_config>
