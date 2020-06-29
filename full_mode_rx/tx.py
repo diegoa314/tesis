@@ -20,7 +20,6 @@ class TX(Module):
 		crc_encoder=TxParallelCrcGenerator(data_width=32, crc_width=20, polynomial=0xc1acf,initial=0xfffff)
 	
 		fsm=Fsm()
-		#fsm=ClockDomainsRenamer("user_domain")(fsm)
 		self.submodules+=[encoder, crc_encoder, fsm]
 		self.comb+=[
 			fsm.link_ready.eq(self.link_ready),
@@ -31,7 +30,6 @@ class TX(Module):
 			self.fifo_re.eq(fsm.fifo_re),
 			crc_encoder.i_data_strobe.eq(fsm.strobe_crc),
 			crc_encoder.reset.eq(fsm.reset_crc),
-			#se hace combinacional para no tener que esperar un ciclo extra para el resultado crc
 			If(fsm.encoder_ready,
 				crc_encoder.i_data_payload.eq(self.data_in),
 			),
@@ -47,10 +45,6 @@ class TX(Module):
 		]
 		
 		self.sync+=[ 
-			
-			#La asignacion de disparidad debe ser secuencial debido a la
-			#dependecia mutua de ambas senhalas (disp_in y disp_out)
-			
 			If((fsm.fifo_ready),
 				
 				encoder.d[0].eq(self.data_in[0:8]),
@@ -79,46 +73,13 @@ class TX(Module):
 				encoder.d[1].eq(crc_encoder.o_crc[0:8]),
 				encoder.d[2].eq(crc_encoder.o_crc[8:16]),
 				encoder.d[3].eq(crc_encoder.o_crc[16:])
-				#encoder2.data_in.eq(0xaa),
-				#encoder3.data_in.eq(0xbb),
-				#encoder4.data_in.eq(0xcc)
+				
+			),
+			If((~fsm.idle)&(~fsm.eop)&(~fsm.sop),
+				encoder.k[0].eq(0)	
 			),
 			encoder.k[1].eq(0),
 			encoder.k[2].eq(0),
 			encoder.k[3].eq(0),
 		]		
 		
-"""
-def tb(dut):
-	yield dut.link_ready.eq(0)
-	yield dut.fifo_we.eq(1)
-	yield dut.self.data_in.eq(0xAAAAAAAA)
-	yield dut.data_type_in.eq(0b01)	
-	yield
-	yield dut.fifo_we.eq(1)
-	yield dut.data_type_in.eq(0b00)
-	yield dut.self.data_in.eq(0xBBBBBBBB)
-	yield
-	yield dut.data_type_in.eq(0b00)
-	yield dut.fifo_we.eq(1)
-	yield dut.self.data_in.eq(0xCCCCCCCC)
-	yield
-	yield dut.fifo_we.eq(1)
-	yield dut.self.data_in.eq(0xDDDDDDDD)
-	yield dut.data_type_in.eq(0b00)
-	yield
-	yield dut.fifo_we.eq(1)
-	yield dut.self.data_in.eq(0xEEEEEEEE)
-	yield dut.data_type_in.eq(0b00)
-	yield
-	yield dut.fifo_we.eq(1)
-	yield dut.self.data_in.eq(0xFFFFFFFF)
-	yield dut.data_type_in.eq(0b10)
-	yield
-	yield dut.fifo_we.eq(0)
-	for i in range(40):
-		yield
-		yield dut.link_ready.eq(1)
-dut=TX()
-run_simulation(dut,tb(dut),vcd_name="tx.vcd")
-"""

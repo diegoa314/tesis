@@ -1,5 +1,8 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v" into library work
 INFO: [VRFC 10-311] analyzing module top_tb
-WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:85]
-WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:96]
-WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:147]
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:50]
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:61]
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:67]
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:71]
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:76]
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:80]

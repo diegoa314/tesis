@@ -1,60 +1,49 @@
 from migen import *
 class Fsm(Module):
 	def __init__(self):
-		#Entradas
-		self.link_ready=Signal() #avisa si el usuario solicita la transmision
-		self.fifo_empty=Signal() #avisa si el fifo esta vacio
-		self.data_type=Signal(2) #tipo de dato
+		#Inputs
+		self.link_ready=Signal() 
+		self.fifo_empty=Signal() 
+		self.data_type=Signal(2) 
 		self.sop=Signal()
 		self.eop=Signal()
 		self.idle=Signal()
-		#Salidas
+		#Outputs
 		self.fifo_ready=Signal()
-		self.encoder_ready=Signal() #avisa cuando se ha codificado correctamente la palabra
-		self.change_disp=Signal() #habilita el cambio de disparidad
-		self.fifo_re=Signal(1) #habilitador de lectura del fifo
+		self.encoder_ready=Signal() 
+		self.fifo_re=Signal(1) 
 		self.strobe_crc=Signal()
-		self.reset=Signal()
 		self.system_ready=Signal()
 		self.reset_crc=Signal()
-
-		self.counter_idle=counter_idle=Signal(2) #contador para delay en Idle
-
+		#	#	#
+		self.counter_idle=counter_idle=Signal(2) #counter for IDLE sending process
 		self.submodules.fsm=ResetInserter()(FSM(reset_state="INIT"))
-		
-		self.comb+=self.fsm.reset.eq(self.reset)
-		
 		self.fsm.act("INIT", 	#0
 			If((self.link_ready & self.system_ready),
-				If(~self.fifo_empty,
+				If(~self.fifo_empty & (self.data_type==1),
 					NextState("SOP"),
-					NextValue(self.fifo_re,1), #se habilita la lectura
+					NextValue(self.fifo_re,1), 
 					NextValue(self.sop,1),
 					NextValue(self.idle,0),
 				).Else(
 					NextState("IDLE"),
-					
 					NextValue(self.idle,1)
-				),
-				NextValue(self.change_disp,1),					
+				),								
 			).Else(NextState("INIT")),
 		)
 		self.fsm.act("IDLE",		#1
 			If(self.link_ready,
 				If(self.fifo_empty,
 					NextValue(counter_idle,counter_idle+1),
-					If(counter_idle==2,
+					If(counter_idle==2, #Waits the EOP sending 
 						NextState("SENDING_IDLE"),
 						NextValue(self.encoder_ready,1)
 					).Else(
 						NextState("IDLE")
-						
-
 					)
-					
-				).Else(
+				).Elif(self.data_type==1, #SOP
 					NextState("SOP"),
-					NextValue(self.fifo_re,1), #se habilita la lectura
+					NextValue(self.fifo_re,1), 
 					NextValue(self.sop,1),
 					NextValue(self.idle,0)
 				)
@@ -69,15 +58,14 @@ class Fsm(Module):
 
 		self.fsm.act("SENDING_IDLE",  	#2
 			If(self.link_ready,	
-				
 				If(self.fifo_empty,
-						NextState("SENDING_IDLE")
-					).Else(
-						NextState("SOP"),
-						NextValue(self.fifo_re,1), #se habilita la lectura
-						NextValue(self.sop,1),
-						NextValue(self.idle,0)
-					)
+					NextState("SENDING_IDLE")
+				).Else(
+					NextState("SOP"),
+					NextValue(self.fifo_re,1), 
+					NextValue(self.sop,1),
+					NextValue(self.idle,0)
+				)
 			).Else(
 				NextState("INIT"),
 				NextValue(self.encoder_ready,0),
@@ -128,6 +116,5 @@ class Fsm(Module):
 		
 		self.fsm.act("EOP_SENDING", #
 			NextState("SENDING_IDLE")
-			
 		)
 		

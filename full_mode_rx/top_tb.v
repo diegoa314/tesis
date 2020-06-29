@@ -20,11 +20,13 @@ initial type=2'b0;
 reg link_ready;
 initial link_ready=0;
 reg we;
-initial we=0;
+reg trans_en;
+initial we='b0;
 wire gtp_p;
 wire gtp_n;
 
 wire rxinit_done;
+
 
 top dut (
     .gtp_tx_p(gtp_p),
@@ -37,52 +39,15 @@ top dut (
     .gtp_clk_n(~gtp_clk),
     .we(we),
     .link_ready(link_ready),
-    .rxinit_done(rxinit_done),
-    
-    .din_a1(value[0]),
-    .din_b1(value[1]),
-    .din_c1(value[2]),
-    .din_d1(value[3]),
-    .din_e1(value[4]),
-    .din_f1(value[5]),
-    .din_g1(value[6]),
-    .din_h1(value[7]),
-    
-    .din_a2(value[8]),
-    .din_b2(value[9]),
-    .din_c2(value[10]),
-    .din_d2(value[11]),
-    .din_e2(value[12]),
-    .din_f2(value[13]),
-    .din_g2(value[14]),
-    .din_h2(value[15]),
-    
-    .din_a3(value[16]),
-    .din_b3(value[17]),
-    .din_c3(value[18]),
-    .din_d3(value[19]),
-    .din_e3(value[20]),
-    .din_f3(value[21]),
-    .din_g3(value[22]),
-    .din_h3(value[23]),
-    
-    .din_a4(value[24]),
-    .din_b4(value[25]),
-    .din_c4(value[26]),
-    .din_d4(value[27]),
-    .din_e4(value[28]),
-    .din_f4(value[29]),
-    .din_g4(value[30]),
-    .din_h4(value[31]),
-    
-    .dtin_a(type[0]),
-    .dtin_b(type[1])
+    .trans_en(trans_en),
+    .rxinit_done(rxinit_done)
+   
     
 );
 
 //Se espera que se inicie el GTP
 always begin 
-    for (integer i=0;i<=4000;i=i+1) begin
+    for (integer i=0;i<=400;i=i+1) begin
         #period;
     end
     
@@ -93,109 +58,27 @@ always begin
     enviara idle */
     link_ready=1'b1; 
     
-    for (integer i=0;i<=300;i=i+1) begin
+    for (integer i=0;i<=100;i=i+1) begin
         #period;
     end
     
-
-        //ahora se escriben palabras y empieza a enviar 
-
-        type=2'b01;
-        value='h12345678;
-        we=1'b1;
+    //ahora se escriben palabras y empieza a enviar 
+    we=1'b1;
+    for (integer i=0;i<=200;i=i+1) begin
         #period;
+    end
 
-        type=2'b00;
-        value='hA1A2A3A4;
-        we=1'b1;
+    for (integer i=0;i<=1000;i=i+1) begin
+        trans_en=1'b1;
         #period;
-
-        type=2'b00;
-        value='hB1B2B3B4;
-        we=1'b1;
+    end
+    we=1'b0;
+    for (integer i=0;i<=10;i=i+1) begin
         #period;
-
-        type=2'b00;
-        value='hC1C2C3C4;
-        we=1'b1;
+    end
+    we=1'b1;
+    for (integer i=0;i<=1000;i=i+1) begin
         #period;
-
-        type=2'b00;
-        value='hD1D2D3D4;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hE1E2E3E4;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hF1F2F3F4;
-        we=1'b1;
-        #period;
-
-        type=2'b10;
-        value='hABCDEF12;
-        we=1'b1;
-        #period;
-        we=1'b0;
-      
-        we=1'b0;
-        #period;
-
-        for (integer i=0;i<=1500;i=i+1) begin
-            #period;
-        end
-
-
-
-        type=2'b01;
-        value='h12345678;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hA1A2A3A4;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hB1B2B3B4;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hC1C2C3C4;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hD1D2D3D4;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hE1E2E3E4;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hF1F2F3F4;
-        we=1'b1;
-        #period;
-
-        type=2'b10;
-        value='hABCDEF12;
-        we=1'b1;
-        #period;
-        we=1'b0;
-      
-        we=1'b0;
-        #period;
-  
-     
-    
-
+    end
 end
 endmodule

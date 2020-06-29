@@ -327,57 +327,17 @@ _io = [
         Subsignal("n", Pins("AB11"))
     ),
 
-    ("din",0, 
-        Subsignal("a1", Pins("X")),
-        Subsignal("b1", Pins("X")),
-        Subsignal("c1", Pins("X")),
-        Subsignal("d1", Pins("X")),
-        Subsignal("e1", Pins("X")),
-        Subsignal("f1", Pins("X")),
-        Subsignal("g1", Pins("X")),
-        Subsignal("h1", Pins("X")),
-
-        Subsignal("a2", Pins("X")),
-        Subsignal("b2", Pins("X")),
-        Subsignal("c2", Pins("X")),
-        Subsignal("d2", Pins("X")),
-        Subsignal("e2", Pins("X")),
-        Subsignal("f2", Pins("X")),
-        Subsignal("g2", Pins("X")),
-        Subsignal("h2", Pins("X")),
-
-        Subsignal("a3", Pins("X")),
-        Subsignal("b3", Pins("X")),
-        Subsignal("c3", Pins("X")),
-        Subsignal("d3", Pins("X")),
-        Subsignal("e3", Pins("X")),
-        Subsignal("f3", Pins("X")),
-        Subsignal("g3", Pins("X")),
-        Subsignal("h3", Pins("X")),
-
-        Subsignal("a4", Pins("X")),
-        Subsignal("b4", Pins("X")),
-        Subsignal("c4", Pins("X")),
-        Subsignal("d4", Pins("X")),
-        Subsignal("e4", Pins("X")),
-        Subsignal("f4", Pins("X")),
-        Subsignal("g4", Pins("X")),
-        Subsignal("h4", Pins("X"))
-    ),
-    ("dtin",0, 
-        Subsignal("a", Pins("X")),
-        Subsignal("b", Pins("X"))
-    ),
-    ("re",0, Pins("X")),
     ("we",0, Pins("X")),
     ("rxinit_done",0,Pins("X")),
     
     ("link_ready",0, Pins("X")),
+    ("trans_en",0, Pins("X")),
 
     ("write_clk", 0, 
         Subsignal("p", Pins("G5"), IOStandard("DIFF_SSTL18_II")),
         Subsignal("n", Pins("F5"), IOStandard("DIFF_SSTL18_II")),
     ),
+
 
 ]
 

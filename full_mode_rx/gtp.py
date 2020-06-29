@@ -174,12 +174,11 @@ class GTP(Module):
         self.rxinit_done=Signal()
 
         self.comb += [
-        self.rxinit_done.eq(rx_init.done),
-        #self.plllock.eq(qpll.lock),
-        tx_init.plllock.eq(qpll.lock),
-        rx_init.plllock.eq(qpll.lock),
-        qpll.reset.eq(tx_init.pllreset),
-        self.tx_init_done.eq(tx_init.done)
+            self.rxinit_done.eq(rx_init.done),
+            tx_init.plllock.eq(qpll.lock),
+            rx_init.plllock.eq(qpll.lock),
+            qpll.reset.eq(tx_init.pllreset),
+            self.tx_init_done.eq(tx_init.done)
         ]
 
         # DRP Mux selected by rx_init

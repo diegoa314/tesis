@@ -8,12 +8,19 @@ from tx import TX
 from rx import RX
 from asyncfifoDT import AsyncFIFO
 from alignment_corrector import Alignment_Corrector
+from memory import mem
 class FullModeSim(Module):
     def __init__(self, platform):
-        self.din=Signal(8) #data to write in the fifo
-        self.dtin=Signal(2) #data type to write in the fifo
-        self.we=Signal() #fifo write enable
-        self.link_ready=Signal() #starts transmision
+        """
+        we: Write button. When is asserted, all data and data type from 
+        memory is written into the FIFO. 
+        link_ready: When is asserted, the transmision starts.
+        trans_en: When is asserted, the transmision of data received in
+        RX to the PC via UART starts.
+        """
+        self.we=Signal() 
+        self.link_ready=Signal()
+        self.trans_en=Signal() 
         #   #   #
 
         write_clk = Signal() #clock that drives fifo writing 
@@ -31,8 +38,8 @@ class FullModeSim(Module):
             self.cd_write.clk.eq(write_clk),
         ]        
         
+        gtp_clk=Signal() #gtp reference clk
         gtp_clk_bufg=Signal()
-        gtp_clk=Signal()
         gtp_clk_freq=240e6
         gtp_clk_pads = platform.request("gtp_clk")
         self.specials +=[
@@ -50,15 +57,13 @@ class FullModeSim(Module):
 
         tx_pads = platform.request("gtp_tx")
         rx_pads = platform.request("gtp_rx")
-     
         gtp = GTP(qpll, tx_pads, rx_pads, gtp_clk_freq)
         self.submodules += gtp
-
-       
-        self.din=platform.request("din")
-        self.dtin=platform.request("dtin")
+  
+        
         self.we=platform.request("we")
         self.link_ready=platform.request("link_ready")
+        self.trans_en=platform.request("trans_en")
         
         tx=TX()
         tx=ClockDomainsRenamer("tx")(tx)
@@ -67,46 +72,68 @@ class FullModeSim(Module):
         fifo=AsyncFIFO(width=32,depth=32)
         fifo=ClockDomainsRenamer({"read":"tx"})(fifo)
         corrector=ClockDomainsRenamer("tx")(Alignment_Corrector())
-        self.submodules+=[fifo,tx,corrector,rx]
+        memory=mem()
+        memory=ClockDomainsRenamer("write")(memory)
+        self.submodules+=[fifo,tx,corrector,rx,memory]
 
-        self.txdata=Signal(40) #salida de tx
-        self.tx_k=Signal() 
-
-        self.data_received=Signal(32)  
+        
         self.rxinit_done=Signal()  
+        #rx_init_done signal goes to tb only for simulation purposes
         self.rxinit_done=platform.request("rxinit_done")    
+        
+        index=Signal(5) #Memory index
+        write_fifo=Signal() #fifo write enable
+        #FSM to control the FIFO writing process
+        self.submodules.write_fifo_fsm=FSM(reset_state="INIT")
+        self.write_fifo=ClockDomainsRenamer("write")(self.write_fifo_fsm)
+        self.write_fifo_fsm.act("INIT",
+            If(self.we,
+                NextValue(index,1),
+                NextState("WRITING"),
+                NextValue(write_fifo,1),
+            )
+        )
+        self.write_fifo_fsm.act("WRITING",
+            
+            NextValue(index,index+1),
+            If(index==(memory.n_value), #Last word reached
+                NextValue(index,memory.n_value),
+                NextState("WRITING_EOP"),
+                NextValue(write_fifo,0)
+            )    
+        )
+        self.write_fifo_fsm.act("WRITING_EOP",
+            NextState("IDLE"),
+            
+        )
+        self.write_fifo_fsm.act("IDLE",
+            If(~self.we, #Process starts again
+                NextState("INIT")
+            )
+        )
         self.comb+=[
-            fifo.din.eq(Cat(
-                self.din.a1,self.din.b1,self.din.c1,self.din.d1,
-                self.din.e1,self.din.f1,self.din.g1,self.din.h1,
-                self.din.a2,self.din.b2,self.din.c2,self.din.d2,
-                self.din.e2,self.din.f2,self.din.g2,self.din.h2,
-                self.din.a3,self.din.b3,self.din.c3,self.din.d3,
-                self.din.e3,self.din.f3,self.din.g3,self.din.h3,
-                self.din.a4,self.din.b4,self.din.c4,self.din.d4,
-                self.din.e4,self.din.f4,self.din.g4,self.din.h4,
-                )
-            ),
-            fifo.dtin.eq(Cat(self.dtin.a, self.dtin.b)),
-            fifo.we.eq(self.we),
+            memory.index.eq(index),
+            fifo.din.eq(memory.data_out),
+            fifo.dtin.eq(memory.type_out),
             fifo.re.eq(tx.fifo_re),
+            fifo.we.eq(write_fifo),
             tx.link_ready.eq(self.link_ready),
             tx.fifo_empty.eq(~fifo.readable),
-            #tx.reset.eq(self.re),
             tx.tx_init_done.eq(gtp.tx_init_done),
             tx.pll_lock.eq(gtp.pll_lock),
-              
             If((self.link_ready & fifo.readable), 
                 tx.data_type_in.eq(fifo.dtout),
                 tx.data_in.eq(fifo.dout), 
             ),
             gtp.tx_data.eq(tx.data_out),
-
             corrector.din.eq(gtp.rx_data),
             corrector.aligned.eq(gtp.rxbytealigned),
             rx.data_in.eq(corrector.dout),
-            self.data_received.eq(rx.data_out),
-            self.rxinit_done.eq(gtp.rxinit_done)
+            rx.rx_init_done.eq(gtp.rxinit_done),
+            rx.pll_lock.eq(gtp.pll_lock),
+            rx.trans_en.eq(self.trans_en),
+            self.rxinit_done.eq(gtp.tx_init_done)
+            
         ]
 
 def generate_top():
@@ -123,22 +150,19 @@ module top_tb();
 
 reg write_clk;
 initial write_clk = 1'b1;
-always #1.25 write_clk = ~write_clk; //1.25 es semiperiodo del clk de 400 MHz
+always #1.25 write_clk = ~write_clk; //1.25 is half period of 400 MHz write clk
 
 reg gtp_clk;
 initial gtp_clk = 1'b1;
-always #2.08333 gtp_clk = ~gtp_clk; //2.08333 es semiperiodo del clk de 240 MHz
+always #2.08333 gtp_clk = ~gtp_clk; //2.08333 is half period of 240 MHz gtp clk
 
-real period =2.5; //periodo de 400 MHz
+real period =2.5; //400 MHz period
 
-reg[31:0] value;
-initial value='b0;    
-reg[1:0] type;
-initial type=2'b0;    
 reg link_ready;
 initial link_ready=0;
 reg we;
-initial we=0;
+reg trans_en;
+initial we='b0;
 wire gtp_p;
 wire gtp_n;
 
@@ -155,166 +179,46 @@ top dut (
     .gtp_clk_n(~gtp_clk),
     .we(we),
     .link_ready(link_ready),
-    .rxinit_done(rxinit_done),
-    
-    .din_a1(value[0]),
-    .din_b1(value[1]),
-    .din_c1(value[2]),
-    .din_d1(value[3]),
-    .din_e1(value[4]),
-    .din_f1(value[5]),
-    .din_g1(value[6]),
-    .din_h1(value[7]),
-    
-    .din_a2(value[8]),
-    .din_b2(value[9]),
-    .din_c2(value[10]),
-    .din_d2(value[11]),
-    .din_e2(value[12]),
-    .din_f2(value[13]),
-    .din_g2(value[14]),
-    .din_h2(value[15]),
-    
-    .din_a3(value[16]),
-    .din_b3(value[17]),
-    .din_c3(value[18]),
-    .din_d3(value[19]),
-    .din_e3(value[20]),
-    .din_f3(value[21]),
-    .din_g3(value[22]),
-    .din_h3(value[23]),
-    
-    .din_a4(value[24]),
-    .din_b4(value[25]),
-    .din_c4(value[26]),
-    .din_d4(value[27]),
-    .din_e4(value[28]),
-    .din_f4(value[29]),
-    .din_g4(value[30]),
-    .din_h4(value[31]),
-    
-    .dtin_a(type[0]),
-    .dtin_b(type[1])
+    .trans_en(trans_en),
+    .rxinit_done(rxinit_done)
     
 );
 
-//Se espera que se inicie el GTP
+
 always begin 
-    for (integer i=0;i<=4000;i=i+1) begin
+    //Waits signals initialization
+    for (integer i=0;i<=400;i=i+1) begin
         #period;
     end
-    
+    //Waits rx initialization (tx is always(?) initialized first)
     while(!rxinit_done) begin
         #period;
     end
-    /*Se habilita la transmision, como no hay nada en el fifo
-    enviara idle */
+    //Starts transmision. It will send IDLE because FIFO is empty yet
     link_ready=1'b1; 
-    
-    for (integer i=0;i<=300;i=i+1) begin
+    for (integer i=0;i<=100;i=i+1) begin
         #period;
     end
     
-
-        //ahora se escriben palabras y empieza a enviar 
-
-        type=2'b01;
-        value='h12345678;
-        we=1'b1;
+    //The writing process starts
+    we=1'b1;
+    for (integer i=0;i<=200;i=i+1) begin
         #period;
-
-        type=2'b00;
-        value='hA1A2A3A4;
-        we=1'b1;
+    end
+    //The transmision via UART starts
+    for (integer i=0;i<=1000;i=i+1) begin
+        trans_en=1'b1;
         #period;
-
-        type=2'b00;
-        value='hB1B2B3B4;
-        we=1'b1;
+    end
+    //The writing process starts again
+    we=1'b0;
+    for (integer i=0;i<=10;i=i+1) begin
         #period;
-
-        type=2'b00;
-        value='hC1C2C3C4;
-        we=1'b1;
+    end
+    we=1'b1;
+    for (integer i=0;i<=1000;i=i+1) begin
         #period;
-
-        type=2'b00;
-        value='hD1D2D3D4;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hE1E2E3E4;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hF1F2F3F4;
-        we=1'b1;
-        #period;
-
-        type=2'b10;
-        value='hABCDEF12;
-        we=1'b1;
-        #period;
-        we=1'b0;
-      
-        we=1'b0;
-        #period;
-
-        for (integer i=0;i<=1500;i=i+1) begin
-            #period;
-        end
-
-
-
-        type=2'b01;
-        value='h12345678;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hA1A2A3A4;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hB1B2B3B4;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hC1C2C3C4;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hD1D2D3D4;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hE1E2E3E4;
-        we=1'b1;
-        #period;
-
-        type=2'b00;
-        value='hF1F2F3F4;
-        we=1'b1;
-        #period;
-
-        type=2'b10;
-        value='hABCDEF12;
-        we=1'b1;
-        #period;
-        we=1'b0;
-      
-        we=1'b0;
-        #period;
-  
-     
-    
-
+    end
 end
 endmodule""")
     f.close()
