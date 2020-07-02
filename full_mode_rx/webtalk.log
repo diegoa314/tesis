@@ -2,13 +2,14 @@
 # Webtalk v2019.2 (64-bit)
 # SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
 # IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
-# Start of session at: Sun Jun 28 16:54:59 2020
-# Process ID: 30754
+# Start of session at: Tue Jun 30 18:41:35 2020
+# Process ID: 12956
 # Current directory: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx
 # Command line: wbtcv -mode batch -source /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.dir/top_tb_sim/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/webtalk.log
 # Journal file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/webtalk.jou
 #-----------------------------------------------------------
 source /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.dir/top_tb_sim/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] '/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.dir/top_tb_sim/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Jun 28 16:55:03 2020. For additional details about this file, please refer to the WebTalk help file at /home/diegoaranda/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Sun Jun 28 16:55:03 2020...
+INFO: [Common 17-186] '/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.dir/top_tb_sim/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Jun 30 18:41:43 2020. For additional details about this file, please refer to the WebTalk help file at /home/diegoaranda/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 482.113 ; gain = 0.000 ; free physical = 506 ; free virtual = 5325
+INFO: [Common 17-206] Exiting Webtalk at Tue Jun 30 18:41:43 2020...

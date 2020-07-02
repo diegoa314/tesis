@@ -20,8 +20,10 @@ class FullModeSim(Module):
         """
         self.we=Signal() 
         self.link_ready=Signal()
-        self.trans_en=Signal() 
+        self.trans_en=Signal()
+        self.reset=Signal() 
         #   #   #
+        self.reset=platform.request("reset")
 
         write_clk = Signal() #clock that drives fifo writing 
         write_clk_bufg = Signal()
@@ -34,9 +36,7 @@ class FullModeSim(Module):
             Instance("BUFG", i_I=write_clk_bufg, o_O=write_clk)
         ]
         self.clock_domains.cd_write=ClockDomain(name="write") #fifo writing clock domain
-        self.comb += [
-            self.cd_write.clk.eq(write_clk),
-        ]        
+      
         
         gtp_clk=Signal() #gtp reference clk
         gtp_clk_bufg=Signal()
@@ -50,7 +50,10 @@ class FullModeSim(Module):
                     o_O=gtp_clk_bufg),
             Instance("BUFG", i_I=gtp_clk_bufg, o_O=gtp_clk)
         ]
-        self.submodules.crg = CRG(gtp_clk) #tx_init clock region
+        self.submodules.crg = CRG(gtp_clk,rst=self.reset) #tx_init clock region
+        self.comb += [
+          
+        ]        
         qpll = GTPQuadPLL(gtp_clk, gtp_clk_freq, 4.8e9)
         print(qpll)
         self.submodules += qpll
@@ -97,7 +100,8 @@ class FullModeSim(Module):
             
             NextValue(index,index+1),
             If(index==(memory.n_value), #Last word reached
-                NextValue(index,memory.n_value),
+                #NextValue(index,memory.n_value),
+                NextValue(index,0),
                 NextState("WRITING_EOP"),
                 NextValue(write_fifo,0)
             )    
@@ -112,6 +116,7 @@ class FullModeSim(Module):
             )
         )
         self.comb+=[
+            gtp.reset.eq(self.reset),
             memory.index.eq(index),
             fifo.din.eq(memory.data_out),
             fifo.dtin.eq(memory.type_out),
@@ -132,7 +137,12 @@ class FullModeSim(Module):
             rx.rx_init_done.eq(gtp.rxinit_done),
             rx.pll_lock.eq(gtp.pll_lock),
             rx.trans_en.eq(self.trans_en),
-            self.rxinit_done.eq(gtp.tx_init_done)
+            self.rxinit_done.eq(gtp.rxinit_done),
+
+            self.cd_write.clk.eq(write_clk),
+            self.cd_write.rst.eq(self.reset)
+           
+          
             
         ]
 
@@ -162,6 +172,8 @@ reg link_ready;
 initial link_ready=0;
 reg we;
 reg trans_en;
+reg reset;
+initial reset='b0;
 initial we='b0;
 wire gtp_p;
 wire gtp_n;
@@ -180,7 +192,8 @@ top dut (
     .we(we),
     .link_ready(link_ready),
     .trans_en(trans_en),
-    .rxinit_done(rxinit_done)
+    .rxinit_done(rxinit_done),
+    .reset(reset)
     
 );
 
@@ -202,21 +215,41 @@ always begin
     
     //The writing process starts
     we=1'b1;
-    for (integer i=0;i<=200;i=i+1) begin
+    for (integer i=0;i<=100;i=i+1) begin
         #period;
     end
+    
+    /*
     //The transmision via UART starts
     for (integer i=0;i<=1000;i=i+1) begin
         trans_en=1'b1;
         #period;
     end
-    //The writing process starts again
+    */
     we=1'b0;
-    for (integer i=0;i<=10;i=i+1) begin
+    #period;
+    we=1'b1;
+    //The writing process starts again
+    for (integer i=0;i<=100;i=i+1) begin
         #period;
     end
+
+    //Reset
+    reset=1'b1;
+    #period;
+    #period;
+    #period;
+    reset=1'b0;
+
+    for (integer i=0;i<=100;i=i+1) begin
+        #period;
+    end
+    
+    we=1'b0;
+    #period;
     we=1'b1;
-    for (integer i=0;i<=1000;i=i+1) begin
+    //The writing process starts again
+    for (integer i=0;i<=100;i=i+1) begin
         #period;
     end
 end

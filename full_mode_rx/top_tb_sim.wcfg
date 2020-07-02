@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="394181fs"></ZoomEndTime>
-      <Cursor1Time time="1330512146fs"></Cursor1Time>
+      <ZoomStartTime time="1326374000fs"></ZoomStartTime>
+      <ZoomEndTime time="1327449001fs"></ZoomEndTime>
+      <Cursor1Time time="1326782500fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="163"></NameColumnWidth>
+      <NameColumnWidth column_width="151"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="73" />
+   <WVObjectSize size="100" />
    <wvobject type="array" fp_name="/top_tb/dut/gtptxinit_state">
       <obj_property name="ElementShortName">gtptxinit_state[2:0]</obj_property>
       <obj_property name="ObjectShortName">gtptxinit_state[2:0]</obj_property>
@@ -203,18 +203,6 @@
       <obj_property name="ElementShortName">tx_singleencoder1_disp_in</obj_property>
       <obj_property name="ObjectShortName">tx_singleencoder1_disp_in</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/top_tb/value">
-      <obj_property name="ElementShortName">value[31:0]</obj_property>
-      <obj_property name="ObjectShortName">value[31:0]</obj_property>
-      <obj_property name="CustomSignalColor">#0000FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/type">
-      <obj_property name="ElementShortName">type[1:0]</obj_property>
-      <obj_property name="ObjectShortName">type[1:0]</obj_property>
-      <obj_property name="CustomSignalColor">#0000FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/top_tb/we">
       <obj_property name="ElementShortName">we</obj_property>
       <obj_property name="ObjectShortName">we</obj_property>
@@ -379,5 +367,121 @@
    <wvobject type="logic" fp_name="/top_tb/dut/write_fifo">
       <obj_property name="ElementShortName">write_fifo</obj_property>
       <obj_property name="ObjectShortName">write_fifo</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/fifo_asyncfifo_we">
+      <obj_property name="ElementShortName">fifo_asyncfifo_we</obj_property>
+      <obj_property name="ObjectShortName">fifo_asyncfifo_we</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_decoder1_input">
+      <obj_property name="ElementShortName">rx_decoder1_input[9:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_decoder1_input[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_decoder2_input">
+      <obj_property name="ElementShortName">rx_decoder2_input[9:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_decoder2_input[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_decoder3_input">
+      <obj_property name="ElementShortName">rx_decoder3_input[9:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_decoder3_input[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_decoder4_input">
+      <obj_property name="ElementShortName">rx_decoder4_input[9:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_decoder4_input[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_decoder1_d">
+      <obj_property name="ElementShortName">rx_decoder1_d[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_decoder1_d[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/rx_decoder1_k">
+      <obj_property name="ElementShortName">rx_decoder1_k</obj_property>
+      <obj_property name="ObjectShortName">rx_decoder1_k</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_decoder2_d">
+      <obj_property name="ElementShortName">rx_decoder2_d[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_decoder2_d[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/rx_decoder2_k">
+      <obj_property name="ElementShortName">rx_decoder2_k</obj_property>
+      <obj_property name="ObjectShortName">rx_decoder2_k</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_decoder3_d">
+      <obj_property name="ElementShortName">rx_decoder3_d[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_decoder3_d[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/rx_decoder3_k">
+      <obj_property name="ElementShortName">rx_decoder3_k</obj_property>
+      <obj_property name="ObjectShortName">rx_decoder3_k</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_decoder4_d">
+      <obj_property name="ElementShortName">rx_decoder4_d[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_decoder4_d[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/rx_decoder4_k">
+      <obj_property name="ElementShortName">rx_decoder4_k</obj_property>
+      <obj_property name="ObjectShortName">rx_decoder4_k</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_state">
+      <obj_property name="ElementShortName">rx_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/rx_syncfifo_re">
+      <obj_property name="ElementShortName">rx_syncfifo_re</obj_property>
+      <obj_property name="ObjectShortName">rx_syncfifo_re</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_syncfifo_dout">
+      <obj_property name="ElementShortName">rx_syncfifo_dout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_syncfifo_dout[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/rx_syncfifo_we">
+      <obj_property name="ElementShortName">rx_syncfifo_we</obj_property>
+      <obj_property name="ObjectShortName">rx_syncfifo_we</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_syncfifo_din">
+      <obj_property name="ElementShortName">rx_syncfifo_din[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_syncfifo_din[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/rx_fifoEmpty">
+      <obj_property name="ElementShortName">rx_fifoEmpty</obj_property>
+      <obj_property name="ObjectShortName">rx_fifoEmpty</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_fsm_state">
+      <obj_property name="ElementShortName">rx_fsm_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_fsm_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_tx_state">
+      <obj_property name="ElementShortName">rx_tx_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_tx_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_byte_cnt">
+      <obj_property name="ElementShortName">rx_byte_cnt[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_byte_cnt[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/rx_tx_done">
+      <obj_property name="ElementShortName">rx_tx_done</obj_property>
+      <obj_property name="ObjectShortName">rx_tx_done</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/rx_tx_32bdone">
+      <obj_property name="ElementShortName">rx_tx_32bdone</obj_property>
+      <obj_property name="ObjectShortName">rx_tx_32bdone</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_tx_init_restart">
+      <obj_property name="ElementShortName">gtp_tx_init_restart</obj_property>
+      <obj_property name="ObjectShortName">gtp_tx_init_restart</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_restart">
+      <obj_property name="ElementShortName">gtp_gtprxinit_restart</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_restart</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/qpll_reset">
+      <obj_property name="ElementShortName">qpll_reset</obj_property>
+      <obj_property name="ObjectShortName">qpll_reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_reset">
+      <obj_property name="ElementShortName">gtp_reset</obj_property>
+      <obj_property name="ObjectShortName">gtp_reset</obj_property>
    </wvobject>
 </wave_config>

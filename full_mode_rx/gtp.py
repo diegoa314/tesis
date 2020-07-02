@@ -104,13 +104,10 @@ class GTP(Module):
         self.loopback = Signal(3)
         self.txprecursor = Signal(5)
         self.txpostcursor = Signal(5)
-        self.diffctrl = Signal(4)   
-        self.rx_reset_host = Signal()
-        self.tx_reset_host = Signal()
-        self.rx_reset_ack = Signal()
-        self.tx_reset_ack = Signal()
-        self.rx_restart_phaseAlign = Signal()
-        self.rx_phaseAlign_ack = Signal()
+        self.diffctrl = Signal(4) 
+        self.reset=Signal()  
+       
+     
         self.tx_clk_freq = qpll.config["linerate"]/40
 
         # DRP signals
@@ -174,11 +171,13 @@ class GTP(Module):
         self.rxinit_done=Signal()
 
         self.comb += [
-            self.rxinit_done.eq(rx_init.done),
+            tx_init.restart.eq(self.reset),
+            rx_init.restart.eq(self.reset),
             tx_init.plllock.eq(qpll.lock),
             rx_init.plllock.eq(qpll.lock),
             qpll.reset.eq(tx_init.pllreset),
-            self.tx_init_done.eq(tx_init.done)
+            self.tx_init_done.eq(tx_init.done),
+            self.rxinit_done.eq(rx_init.done),
         ]
 
         # DRP Mux selected by rx_init
@@ -402,6 +401,7 @@ class GTP(Module):
         
         # tx clocking
         self.clock_domains.cd_tx = ClockDomain()
+        self.comb+=self.cd_tx.rst.eq(self.reset)
         self.specials += Instance("BUFG", i_I=self.txusrclk2, o_O=self.cd_tx.clk)
 
         

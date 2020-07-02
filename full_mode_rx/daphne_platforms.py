@@ -332,6 +332,7 @@ _io = [
     
     ("link_ready",0, Pins("X")),
     ("trans_en",0, Pins("X")),
+    ("reset",0, Pins("X")),
 
     ("write_clk", 0, 
         Subsignal("p", Pins("G5"), IOStandard("DIFF_SSTL18_II")),

@@ -13,7 +13,7 @@ class TX(Module):
 		self.tx_init_done=Signal()
 		self.pll_lock=Signal()
 
-		self.reset=Signal()
+		
 		#  #  #
 		
 		encoder=Encoder(4)
@@ -25,7 +25,7 @@ class TX(Module):
 			fsm.link_ready.eq(self.link_ready),
 			fsm.fifo_empty.eq(self.fifo_empty),
 			fsm.data_type.eq(self.data_type_in),
-			fsm.reset.eq(self.reset),
+			
 			fsm.system_ready.eq(self.tx_init_done & self.pll_lock),
 			self.fifo_re.eq(fsm.fifo_re),
 			crc_encoder.i_data_strobe.eq(fsm.strobe_crc),

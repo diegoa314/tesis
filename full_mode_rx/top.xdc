@@ -1,3 +1,5 @@
+ ## reset:0
+set_property LOC X [get_ports reset]
  ## write_clk:0.p
 set_property LOC G5 [get_ports write_clk_p]
 set_property IOSTANDARD DIFF_SSTL18_II [get_ports write_clk_p]
