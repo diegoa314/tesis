@@ -13,7 +13,6 @@ class TX(Module):
 		self.tx_init_done=Signal()
 		self.pll_lock=Signal()
 
-		
 		#  #  #
 		
 		encoder=Encoder(4)
@@ -25,23 +24,19 @@ class TX(Module):
 			fsm.link_ready.eq(self.link_ready),
 			fsm.fifo_empty.eq(self.fifo_empty),
 			fsm.data_type.eq(self.data_type_in),
-			
 			fsm.system_ready.eq(self.tx_init_done & self.pll_lock),
 			self.fifo_re.eq(fsm.fifo_re),
-			crc_encoder.i_data_strobe.eq(fsm.strobe_crc),
+			If(self.data_type_in!=3,
+				crc_encoder.i_data_strobe.eq(fsm.strobe_crc)
+			),
 			crc_encoder.reset.eq(fsm.reset_crc),
 			If(fsm.encoder_ready,
 				crc_encoder.i_data_payload.eq(self.data_in),
 			),
-		
-
 			If((fsm.encoder_ready),
 				self.data_out.eq(Cat(encoder.output[0],encoder.output[1],
 					encoder.output[2],encoder.output[3])),
 			).Else(self.data_out.eq(0)),
-				
-			
-
 		]
 		
 		self.sync+=[ 
@@ -67,19 +62,30 @@ class TX(Module):
 				encoder.d[2].eq(0),
 				encoder.d[3].eq(0)
 			),
+			If(fsm.ign,
+				encoder.d[0].eq(0x5C),
+				encoder.k[0].eq(1),
+				encoder.d[1].eq(0),
+				encoder.d[2].eq(0),
+				encoder.d[3].eq(0)
+			),
 			If(fsm.eop,                  
-				encoder.d[0].eq(0xDC), #0xDC
+				encoder.d[0].eq(0xDC), 
 				encoder.k[0].eq(1),
 				encoder.d[1].eq(crc_encoder.o_crc[0:8]),
 				encoder.d[2].eq(crc_encoder.o_crc[8:16]),
 				encoder.d[3].eq(crc_encoder.o_crc[16:])
 				
 			),
-			If((~fsm.idle)&(~fsm.eop)&(~fsm.sop),
+			If((~fsm.idle)&(~fsm.eop)&(~fsm.sop)&(~fsm.ign),
 				encoder.k[0].eq(0)	
 			),
 			encoder.k[1].eq(0),
 			encoder.k[2].eq(0),
 			encoder.k[3].eq(0),
 		]		
-		
+
+	yield
+
+dut=TX()
+run_simulation(dut,tb(dut),vcd_name="prueba_tb.vcd")

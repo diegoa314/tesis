@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1326374000fs"></ZoomStartTime>
-      <ZoomEndTime time="1327449001fs"></ZoomEndTime>
-      <Cursor1Time time="1326782500fs"></Cursor1Time>
+      <ZoomStartTime time="5616372fs"></ZoomStartTime>
+      <ZoomEndTime time="16446373fs"></ZoomEndTime>
+      <Cursor1Time time="8266372fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="151"></NameColumnWidth>
+      <NameColumnWidth column_width="143"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="100" />
+   <WVObjectSize size="103" />
    <wvobject type="array" fp_name="/top_tb/dut/gtptxinit_state">
       <obj_property name="ElementShortName">gtptxinit_state[2:0]</obj_property>
       <obj_property name="ObjectShortName">gtptxinit_state[2:0]</obj_property>
@@ -43,6 +43,44 @@
       <obj_property name="ObjectShortName">link_ready</obj_property>
       <obj_property name="CustomSignalColor">#0000FF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/write_clk">
+      <obj_property name="ElementShortName">write_clk</obj_property>
+      <obj_property name="ObjectShortName">write_clk</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_fifo_re">
+      <obj_property name="ElementShortName">tx_fifo_re</obj_property>
+      <obj_property name="ObjectShortName">tx_fifo_re</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/write_fifo">
+      <obj_property name="ElementShortName">write_fifo</obj_property>
+      <obj_property name="ObjectShortName">write_fifo</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_fsm_aux_ign">
+      <obj_property name="ElementShortName">tx_fsm_aux_ign</obj_property>
+      <obj_property name="ObjectShortName">tx_fsm_aux_ign</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/fifo_asyncfifo_dout">
+      <obj_property name="ElementShortName">fifo_asyncfifo_dout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_asyncfifo_dout[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/fifo_asyncfifo_dtout">
+      <obj_property name="ElementShortName">fifo_asyncfifo_dtout[1:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_asyncfifo_dtout[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/memory_index">
+      <obj_property name="ElementShortName">memory_index[4:0]</obj_property>
+      <obj_property name="ObjectShortName">memory_index[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/memory_data_out">
+      <obj_property name="ElementShortName">memory_data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory_data_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/memory_type_out">
+      <obj_property name="ElementShortName">memory_type_out[1:0]</obj_property>
+      <obj_property name="ObjectShortName">memory_type_out[1:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/tx_data_in">
       <obj_property name="ElementShortName">tx_data_in[31:0]</obj_property>
@@ -209,12 +247,6 @@
       <obj_property name="CustomSignalColor">#0000FF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/write_clk">
-      <obj_property name="ElementShortName">write_clk</obj_property>
-      <obj_property name="ObjectShortName">write_clk</obj_property>
-      <obj_property name="CustomSignalColor">#0000FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/tx_fifo_empty">
       <obj_property name="ElementShortName">tx_fifo_empty</obj_property>
       <obj_property name="ObjectShortName">tx_fifo_empty</obj_property>
@@ -222,10 +254,6 @@
    <wvobject type="logic" fp_name="/top_tb/dut/tx_clk">
       <obj_property name="ElementShortName">tx_clk</obj_property>
       <obj_property name="ObjectShortName">tx_clk</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_fifo_re">
-      <obj_property name="ElementShortName">tx_fifo_re</obj_property>
-      <obj_property name="ObjectShortName">tx_fifo_re</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/qpll_lock">
       <obj_property name="ElementShortName">qpll_lock</obj_property>
@@ -348,25 +376,9 @@
       <obj_property name="ElementShortName">rx_syncfifo_dout[31:0]</obj_property>
       <obj_property name="ObjectShortName">rx_syncfifo_dout[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/memory_index">
-      <obj_property name="ElementShortName">memory_index[4:0]</obj_property>
-      <obj_property name="ObjectShortName">memory_index[4:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/memory_data_out">
-      <obj_property name="ElementShortName">memory_data_out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">memory_data_out[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/memory_type_out">
-      <obj_property name="ElementShortName">memory_type_out[1:0]</obj_property>
-      <obj_property name="ObjectShortName">memory_type_out[1:0]</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/tx_state">
       <obj_property name="ElementShortName">tx_state[2:0]</obj_property>
       <obj_property name="ObjectShortName">tx_state[2:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/write_fifo">
-      <obj_property name="ElementShortName">write_fifo</obj_property>
-      <obj_property name="ObjectShortName">write_fifo</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/fifo_asyncfifo_we">
       <obj_property name="ElementShortName">fifo_asyncfifo_we</obj_property>

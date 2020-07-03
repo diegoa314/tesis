@@ -2,8 +2,8 @@
 # xsim v2019.2 (64-bit)
 # SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
 # IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
-# Start of session at: Tue Jun 30 16:56:17 2020
-# Process ID: 5456
+# Start of session at: Fri Jul  3 16:37:08 2020
+# Process ID: 14151
 # Current directory: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx
 # Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
 # Log file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.log
@@ -17,20 +17,15 @@ source xsim.dir/top_tb_sim/xsim_script.tcl
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
-current_fileset: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 8571.605 ; gain = 130.016 ; free physical = 1304 ; free virtual = 5827
+current_fileset: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 8579.414 ; gain = 130.016 ; free physical = 1168 ; free virtual = 5742
 # xsim {top_tb_sim} -autoloadwcfg
 Vivado Simulator 2019.2
 Time resolution is 1 ps
 open_wave_config /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg
-xsim: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 8619.477 ; gain = 47.871 ; free physical = 1205 ; free virtual = 5720
 run 1.5 ms
-run: Time (s): cpu = 00:02:30 ; elapsed = 00:54:09 . Memory (MB): peak = 8619.477 ; gain = 0.000 ; free physical = 1046 ; free virtual = 5588
-save_wave_config {/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg}
-save_wave_config {/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg}
-save_wave_config {/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg}
-save_wave_config {/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg}
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:23 . Memory (MB): peak = 8625.664 ; gain = 0.000 ; free physical = 1002 ; free virtual = 5577
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
-close_sim: Time (s): cpu = 00:54:27 ; elapsed = 00:00:22 . Memory (MB): peak = 8619.477 ; gain = 0.000 ; free physical = 689 ; free virtual = 5488
+close_sim: Time (s): cpu = 00:00:30 ; elapsed = 00:00:08 . Memory (MB): peak = 8625.664 ; gain = 0.000 ; free physical = 1047 ; free virtual = 5621
 exit
-INFO: [Common 17-206] Exiting xsim at Tue Jun 30 18:41:51 2020...
+INFO: [Common 17-206] Exiting xsim at Fri Jul  3 17:03:56 2020...

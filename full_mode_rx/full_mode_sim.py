@@ -137,7 +137,8 @@ class FullModeSim(Module):
             rx.rx_init_done.eq(gtp.rxinit_done),
             rx.pll_lock.eq(gtp.pll_lock),
             rx.trans_en.eq(self.trans_en),
-            self.rxinit_done.eq(gtp.rxinit_done),
+            #self.rxinit_done.eq(gtp.rxinit_done),
+            self.rxinit_done.eq(gtp.tx_init_done),
 
             self.cd_write.clk.eq(write_clk),
             self.cd_write.rst.eq(self.reset)

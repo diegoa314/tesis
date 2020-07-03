@@ -5,10 +5,11 @@ class Fsm(Module):
 		self.link_ready=Signal() 
 		self.fifo_empty=Signal() 
 		self.data_type=Signal(2) 
+		#Outputs
 		self.sop=Signal()
 		self.eop=Signal()
+		self.ign=Signal()
 		self.idle=Signal()
-		#Outputs
 		self.fifo_ready=Signal()
 		self.encoder_ready=Signal() 
 		self.fifo_re=Signal(1) 
@@ -16,6 +17,7 @@ class Fsm(Module):
 		self.system_ready=Signal()
 		self.reset_crc=Signal()
 		#	#	#
+		aux_ign=Signal()
 		self.counter_idle=counter_idle=Signal(2) #counter for IDLE sending process
 		self.submodules.fsm=ResetInserter()(FSM(reset_state="INIT"))
 		self.fsm.act("INIT", 	#0
@@ -26,12 +28,12 @@ class Fsm(Module):
 					NextValue(self.sop,1),
 					NextValue(self.idle,0),
 				).Else(
-					NextState("IDLE"),
+					NextState("CHECKING"),
 					NextValue(self.idle,1)
 				),								
 			).Else(NextState("INIT")),
 		)
-		self.fsm.act("IDLE",		#1
+		self.fsm.act("CHECKING",		#1
 			If(self.link_ready,
 				If(self.fifo_empty,
 					NextValue(counter_idle,counter_idle+1),
@@ -39,7 +41,7 @@ class Fsm(Module):
 						NextState("SENDING_IDLE"),
 						NextValue(self.encoder_ready,1)
 					).Else(
-						NextState("IDLE")
+						NextState("CHECKING")
 					)
 				).Elif(self.data_type==1, #SOP
 					NextState("SOP"),
@@ -47,7 +49,6 @@ class Fsm(Module):
 					NextValue(self.sop,1),
 					NextValue(self.idle,0)
 				)
-				
 			).Else(
 				NextState("INIT"),
 				NextValue(self.encoder_ready,0),
@@ -60,7 +61,7 @@ class Fsm(Module):
 			If(self.link_ready,	
 				If(self.fifo_empty,
 					NextState("SENDING_IDLE")
-				).Else(
+				).Elif(self.data_type==1,
 					NextState("SOP"),
 					NextValue(self.fifo_re,1), 
 					NextValue(self.sop,1),
@@ -70,43 +71,71 @@ class Fsm(Module):
 				NextState("INIT"),
 				NextValue(self.encoder_ready,0),
 				NextValue(self.idle,0),
-
 			)
 		)
-
-		self.fsm.act("SOP", #se codifica el sop y se lee el primer dato
+		self.fsm.act("SOP", 
 			NextState("READ_AND_CODE"),
 			NextValue(self.encoder_ready,1),
 			NextValue(self.fifo_ready,1),
 			NextValue(self.fifo_re,1),
 			NextValue(self.sop,0),
-			NextValue(self.strobe_crc,1),
-			
+			NextValue(self.strobe_crc,1)
 		)	
 		
 		self.fsm.act("READ_AND_CODE", #3
-			NextValue(self.encoder_ready,1),
-			NextValue(self.fifo_ready,1),
-			NextValue(self.strobe_crc,1),
 			If(self.fifo_empty,
 				NextState("INIT")
 			).Else(NextValue(self.fifo_re,1)),
-			If(self.data_type==2,
-				NextValue(self.eop,1),
-				NextValue(self.fifo_re,0),
-				NextState("EOP_DETECTED"),
-				NextValue(self.strobe_crc,0),
-				NextValue(self.reset_crc,1)
-			),
-			
-		)	
+			If(~self.fifo_empty,	
+				Case(self.data_type,{
+					#Intermediate word
+					0:[ 
+						NextValue(self.encoder_ready,1),
+						NextValue(self.fifo_ready,1),
+						NextValue(self.strobe_crc,1),
+						NextValue(self.fifo_re,1),
+						NextValue(aux_ign,0)
+					],
+					#SOP (Error)
+					1:[
+						NextState("SOP"),
+						NextValue(self.fifo_re,1), 
+						NextValue(self.sop,1),
+					],
+					#Last word (EOP)
+					2:[	
+						NextState("EOP_DETECTED"),
+						NextValue(self.eop,1),
+						NextValue(self.strobe_crc,0),
+						NextValue(self.reset_crc,1),
+						If(~self.fifo_empty,
+							NextValue(self.fifo_re,1)
+						).Else(
+							NextValue(self.fifo_re,0)
+						),
+						NextValue(self.fifo_ready,0),
+						NextValue(aux_ign,0)
+					],
+					#Ignored
+					3:[
+						NextState("READ_AND_CODE"),
+						self.ign.eq(1)
+					]
+				}),
+			)
+		)
 
 		self.fsm.act("EOP_DETECTED", #4
 			NextState("EOP_CODING"),
 			NextValue(self.eop,0),
-			NextValue(self.idle,1),
-			NextValue(self.reset_crc,0)
-			
+			NextValue(self.reset_crc,0),
+			If(self.data_type==1,
+				NextState("SOP"),
+				NextValue(self.fifo_re,1), 
+				NextValue(self.sop,1)
+			).Else(
+				NextValue(self.idle,1),
+			)		
 		)
 
 		self.fsm.act("EOP_CODING", #5

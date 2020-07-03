@@ -9,18 +9,33 @@ value_input = [
     0xd1d2d3d4,
     0xe1e2e3e4,
     0xf1f2f3f4,
-    0xabcdef12
+    0x12345678,
+    0x11111111,
+    0xabcdef12,
+    0x111,
+    0x22222,
+    0x333333,
+    0x4444444,
+    0x55555555,
 ]
 
 value_type = [
         
-    0b01,   
+    0b01,   #SOP
+    0b00,
+    0b11,   #IGNORED
+    0b00,
+    0b00,
+    0b11,   #IGNORED
+    0b11,   #IGNORED
+    0b00,
+    0b10,   #EOP
+    0b01,   #SOP
     0b00,
     0b00,
     0b00,
-    0b00,
-    0b00,
-    0b10
+    0b10,
+
 ]
 
 
