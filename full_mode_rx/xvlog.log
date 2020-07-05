@@ -1,8 +1,8 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v" into library work
 INFO: [VRFC 10-311] analyzing module top_tb
-WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:48]
-WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:57]
-WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:63]
-WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:78]
-WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:89]
-WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:97]
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:49]
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:58]
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:64]
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:80]
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:91]
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:99]

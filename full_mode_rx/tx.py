@@ -85,7 +85,3 @@ class TX(Module):
 			encoder.k[3].eq(0),
 		]		
 
-	yield
-
-dut=TX()
-run_simulation(dut,tb(dut),vcd_name="prueba_tb.vcd")

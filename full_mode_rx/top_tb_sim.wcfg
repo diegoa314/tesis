@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="5616372fs"></ZoomStartTime>
-      <ZoomEndTime time="16446373fs"></ZoomEndTime>
-      <Cursor1Time time="8266372fs"></Cursor1Time>
+      <ZoomStartTime time="8126200fs"></ZoomStartTime>
+      <ZoomEndTime time="8175501fs"></ZoomEndTime>
+      <Cursor1Time time="8137500fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="143"></NameColumnWidth>
-      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+      <NameColumnWidth column_width="208"></NameColumnWidth>
+      <ValueColumnWidth column_width="98"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="103" />
+   <WVObjectSize size="108" />
    <wvobject type="array" fp_name="/top_tb/dut/gtptxinit_state">
       <obj_property name="ElementShortName">gtptxinit_state[2:0]</obj_property>
       <obj_property name="ObjectShortName">gtptxinit_state[2:0]</obj_property>
@@ -70,18 +70,6 @@
       <obj_property name="ElementShortName">fifo_asyncfifo_dtout[1:0]</obj_property>
       <obj_property name="ObjectShortName">fifo_asyncfifo_dtout[1:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/memory_index">
-      <obj_property name="ElementShortName">memory_index[4:0]</obj_property>
-      <obj_property name="ObjectShortName">memory_index[4:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/memory_data_out">
-      <obj_property name="ElementShortName">memory_data_out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">memory_data_out[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/memory_type_out">
-      <obj_property name="ElementShortName">memory_type_out[1:0]</obj_property>
-      <obj_property name="ObjectShortName">memory_type_out[1:0]</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/tx_data_in">
       <obj_property name="ElementShortName">tx_data_in[31:0]</obj_property>
       <obj_property name="ObjectShortName">tx_data_in[31:0]</obj_property>
@@ -94,6 +82,10 @@
       <obj_property name="CustomSignalColor">#00FF00</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_crc_encoder_i_data_strobe">
+      <obj_property name="ElementShortName">tx_crc_encoder_i_data_strobe</obj_property>
+      <obj_property name="ObjectShortName">tx_crc_encoder_i_data_strobe</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/tx_crc_encoder_crc_dat">
       <obj_property name="DisplayName">label</obj_property>
@@ -495,5 +487,33 @@
    <wvobject type="logic" fp_name="/top_tb/dut/gtp_reset">
       <obj_property name="ElementShortName">gtp_reset</obj_property>
       <obj_property name="ObjectShortName">gtp_reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/rx_trans_en0">
+      <obj_property name="ElementShortName">rx_trans_en0</obj_property>
+      <obj_property name="ObjectShortName">rx_trans_en0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/rx_trans_en1">
+      <obj_property name="ElementShortName">rx_trans_en1</obj_property>
+      <obj_property name="ObjectShortName">rx_trans_en1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/prbs_en">
+      <obj_property name="ElementShortName">prbs_en</obj_property>
+      <obj_property name="ObjectShortName">prbs_en</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/fsm_state">
+      <obj_property name="ElementShortName">fsm_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">fsm_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/o">
+      <obj_property name="ElementShortName">o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/i_ignored">
+      <obj_property name="ElementShortName">i_ignored[1:0]</obj_property>
+      <obj_property name="ObjectShortName">i_ignored[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/data_type">
+      <obj_property name="ElementShortName">data_type[1:0]</obj_property>
+      <obj_property name="ObjectShortName">data_type[1:0]</obj_property>
    </wvobject>
 </wave_config>

@@ -3,6 +3,7 @@ from migen import *
 from migen.fhdl.specials import Memory, READ_FIRST
 
 value_input = [ 
+    0x0,
     0xa1a2a3a4,
     0xb1b2b3b4,
     0xc1c2c3c4,
@@ -10,31 +11,29 @@ value_input = [
     0xe1e2e3e4,
     0xf1f2f3f4,
     0x12345678,
+    0x0,
     0x11111111,
-    0xabcdef12,
-    0x111,
-    0x22222,
-    0x333333,
-    0x4444444,
-    0x55555555,
+    0x22222222,
+    0x33333333,
+    0x44444444,
+    
 ]
 
 value_type = [
         
     0b01,   #SOP
     0b00,
+    0b00,
     0b11,   #IGNORED
     0b00,
     0b00,
-    0b11,   #IGNORED
-    0b11,   #IGNORED
     0b00,
     0b10,   #EOP
     0b01,   #SOP
     0b00,
     0b00,
     0b00,
-    0b10,
+    0b10,   #EOP
 
 ]
 

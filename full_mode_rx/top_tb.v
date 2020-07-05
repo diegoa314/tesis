@@ -20,6 +20,7 @@ reg trans_en;
 reg reset;
 initial reset='b0;
 initial we='b0;
+initial trans_en='b0;
 wire gtp_p;
 wire gtp_n;
 
@@ -66,11 +67,12 @@ always begin
     
     /*
     //The transmision via UART starts
-    for (integer i=0;i<=1000;i=i+1) begin
-        trans_en=1'b1;
+    trans_en=1'b1;
+    for (integer i=0;i<=10000;i=i+1) begin
         #period;
     end
     */
+
     we=1'b0;
     #period;
     we=1'b1;
