@@ -1,5 +1,6 @@
 from litex.soc.cores.code_8b10b import Decoder
 from transmitter32b import Transmitter32b
+from alignment_corrector import Alignment_Corrector
 from migen.genlib.fifo import *
 from migen import *
 class RX(Module):
@@ -9,16 +10,18 @@ class RX(Module):
 		self.pll_lock = pll_lock = Signal()
 		self.trans_en = trans_en = Signal() #habilitador para el envio
 		self.tx_serial= tx_serial = Signal() #senhal serial de salida
+		self.aligned=Signal()
 		#	#	#
+		corrector=Alignment_Corrector()
 		data_32b=Signal(32)
 		rx_k=Signal(4)
-		decoder1=Decoder()
-		decoder2=Decoder()
-		decoder3=Decoder()
-		decoder4=Decoder()
+		decoder1=Decoder(lsb_first=True)
+		decoder2=Decoder(lsb_first=True)
+		decoder3=Decoder(lsb_first=True)
+		decoder4=Decoder(lsb_first=True)
 		uart_transmitter = Transmitter32b()
 		fifo = SyncFIFOBuffered(32,20)
-		self.submodules+=[uart_transmitter,fifo,decoder1,decoder2,decoder3,decoder4]
+		self.submodules+=[corrector,uart_transmitter,fifo,decoder1,decoder2,decoder3,decoder4]
 		self.comb+=[
 			decoder1.input.eq(self.data_in[:10]),
 			decoder2.input.eq(self.data_in[10:20]),
@@ -28,12 +31,12 @@ class RX(Module):
 			rx_k[1].eq(decoder2.k),
 			rx_k[2].eq(decoder3.k),
 			rx_k[3].eq(decoder4.k),
-			data_32b[:8].eq(decoder1.d),
-			data_32b[8:16].eq(decoder2.d),
-			data_32b[16:24].eq(decoder3.d),
-			data_32b[24:32].eq(decoder4.d),
-			#writable.eq(fifo.writable),
-			#readable.eq(fifo.readable),
+			corrector.aligned.eq(self.aligned),
+			corrector.din[:8].eq(decoder1.d),
+			corrector.din[8:16].eq(decoder2.d),
+			corrector.din[16:24].eq(decoder3.d),
+			corrector.din[24:].eq(decoder4.d),
+			data_32b.eq(corrector.dout),
 			fifo.din.eq(data_32b),
 			fifo.re.eq(uart_transmitter.tx_32bdone),
 			uart_transmitter.data_in.eq(fifo.dout),
@@ -66,5 +69,3 @@ class RX(Module):
 
 		)
 
-def tb(dut):
-	yield dut 

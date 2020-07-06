@@ -4,5 +4,5 @@ WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of
 WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:58]
 WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:64]
 WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:80]
-WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:91]
-WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:99]
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:93]
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb.v:101]

@@ -11,36 +11,46 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="8126200fs"></ZoomStartTime>
-      <ZoomEndTime time="8175501fs"></ZoomEndTime>
-      <Cursor1Time time="8137500fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="98936fs"></ZoomEndTime>
+      <Cursor1Time time="1326284257fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="208"></NameColumnWidth>
-      <ValueColumnWidth column_width="98"></ValueColumnWidth>
+      <NameColumnWidth column_width="213"></NameColumnWidth>
+      <ValueColumnWidth column_width="86"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="108" />
+   <WVObjectSize size="125" />
    <wvobject type="array" fp_name="/top_tb/dut/gtptxinit_state">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">gtptxinit_state[2:0]</obj_property>
       <obj_property name="ObjectShortName">gtptxinit_state[2:0]</obj_property>
+      <obj_property name="label">txinit_state[2:0]</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/tx_tx_init_done">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">tx_tx_init_done</obj_property>
       <obj_property name="ObjectShortName">tx_tx_init_done</obj_property>
+      <obj_property name="label">tx_init_done</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_done">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">gtp_gtprxinit_done</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_done</obj_property>
+      <obj_property name="label">rx_init_done</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/tx_pll_lock">
       <obj_property name="ElementShortName">tx_pll_lock</obj_property>
       <obj_property name="ObjectShortName">tx_pll_lock</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_fsm_system_ready">
-      <obj_property name="ElementShortName">tx_fsm_system_ready</obj_property>
-      <obj_property name="ObjectShortName">tx_fsm_system_ready</obj_property>
-      <obj_property name="CustomSignalColor">#00FF00</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/top_tb/link_ready">
       <obj_property name="ElementShortName">link_ready</obj_property>
       <obj_property name="ObjectShortName">link_ready</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/we">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
       <obj_property name="CustomSignalColor">#0000FF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
@@ -50,42 +60,45 @@
       <obj_property name="CustomSignalColor">#0000FF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_fifo_re">
-      <obj_property name="ElementShortName">tx_fifo_re</obj_property>
-      <obj_property name="ObjectShortName">tx_fifo_re</obj_property>
+   <wvobject type="logic" fp_name="/top_tb/dut/prbs_en">
+      <obj_property name="ElementShortName">prbs_en</obj_property>
+      <obj_property name="ObjectShortName">prbs_en</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/o">
+      <obj_property name="ElementShortName">o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/data_type">
+      <obj_property name="ElementShortName">data_type[1:0]</obj_property>
+      <obj_property name="ObjectShortName">data_type[1:0]</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/write_fifo">
       <obj_property name="ElementShortName">write_fifo</obj_property>
       <obj_property name="ObjectShortName">write_fifo</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_fsm_aux_ign">
-      <obj_property name="ElementShortName">tx_fsm_aux_ign</obj_property>
-      <obj_property name="ObjectShortName">tx_fsm_aux_ign</obj_property>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_fifo_empty">
+      <obj_property name="ElementShortName">tx_fifo_empty</obj_property>
+      <obj_property name="ObjectShortName">tx_fifo_empty</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_fifo_re">
+      <obj_property name="ElementShortName">tx_fifo_re</obj_property>
+      <obj_property name="ObjectShortName">tx_fifo_re</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/fifo_asyncfifo_dout">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">fifo_asyncfifo_dout[31:0]</obj_property>
       <obj_property name="ObjectShortName">fifo_asyncfifo_dout[31:0]</obj_property>
+      <obj_property name="label">asyncfifo_dout[31:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/fifo_asyncfifo_dtout">
       <obj_property name="ElementShortName">fifo_asyncfifo_dtout[1:0]</obj_property>
       <obj_property name="ObjectShortName">fifo_asyncfifo_dtout[1:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/tx_data_in">
-      <obj_property name="ElementShortName">tx_data_in[31:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_data_in[31:0]</obj_property>
-      <obj_property name="CustomSignalColor">#00FF00</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/tx_data_type_in">
-      <obj_property name="ElementShortName">tx_data_type_in[1:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_data_type_in[1:0]</obj_property>
-      <obj_property name="CustomSignalColor">#00FF00</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/tx_crc_encoder_i_data_strobe">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">tx_crc_encoder_i_data_strobe</obj_property>
       <obj_property name="ObjectShortName">tx_crc_encoder_i_data_strobe</obj_property>
+      <obj_property name="label">crc_strobe</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/tx_crc_encoder_crc_dat">
       <obj_property name="DisplayName">label</obj_property>
@@ -135,6 +148,10 @@
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="label">tx_8b10b_d3[7:0]</obj_property>
    </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_k0">
+      <obj_property name="ElementShortName">tx_k0</obj_property>
+      <obj_property name="ObjectShortName">tx_k0</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/tx_output0">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">tx_output0[9:0]</obj_property>
@@ -171,11 +188,13 @@
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="label">tx_8b10b_o3[9:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder0_disp_in">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">tx_singleencoder0_disp_in</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder0_disp_in</obj_property>
-      <obj_property name="label">tx_enc0_disp_in</obj_property>
+   <wvobject type="array" fp_name="/top_tb/dut/gtp_tx_data">
+      <obj_property name="ElementShortName">gtp_tx_data[39:0]</obj_property>
+      <obj_property name="ObjectShortName">gtp_tx_data[39:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder2_disp_in">
+      <obj_property name="ElementShortName">tx_singleencoder2_disp_in</obj_property>
+      <obj_property name="ObjectShortName">tx_singleencoder2_disp_in</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder3_disp_out">
       <obj_property name="DisplayName">label</obj_property>
@@ -193,9 +212,11 @@
       <obj_property name="ElementShortName">tx_clk</obj_property>
       <obj_property name="ObjectShortName">tx_clk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder2_disp_in">
-      <obj_property name="ElementShortName">tx_singleencoder2_disp_in</obj_property>
-      <obj_property name="ObjectShortName">tx_singleencoder2_disp_in</obj_property>
+   <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder0_disp_in">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_singleencoder0_disp_in</obj_property>
+      <obj_property name="ObjectShortName">tx_singleencoder0_disp_in</obj_property>
+      <obj_property name="label">tx_enc0_disp_in</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder3_disp_in">
       <obj_property name="ElementShortName">tx_singleencoder3_disp_in</obj_property>
@@ -233,16 +254,6 @@
       <obj_property name="ElementShortName">tx_singleencoder1_disp_in</obj_property>
       <obj_property name="ObjectShortName">tx_singleencoder1_disp_in</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/we">
-      <obj_property name="ElementShortName">we</obj_property>
-      <obj_property name="ObjectShortName">we</obj_property>
-      <obj_property name="CustomSignalColor">#0000FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_fifo_empty">
-      <obj_property name="ElementShortName">tx_fifo_empty</obj_property>
-      <obj_property name="ObjectShortName">tx_fifo_empty</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/tx_clk">
       <obj_property name="ElementShortName">tx_clk</obj_property>
       <obj_property name="ObjectShortName">tx_clk</obj_property>
@@ -250,10 +261,6 @@
    <wvobject type="logic" fp_name="/top_tb/dut/qpll_lock">
       <obj_property name="ElementShortName">qpll_lock</obj_property>
       <obj_property name="ObjectShortName">qpll_lock</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/tx_fsm_counter_idle">
-      <obj_property name="ElementShortName">tx_fsm_counter_idle[1:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_fsm_counter_idle[1:0]</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/tx_disparity0">
       <obj_property name="ElementShortName">tx_disparity0</obj_property>
@@ -271,22 +278,6 @@
       <obj_property name="ElementShortName">tx_disparity3</obj_property>
       <obj_property name="ObjectShortName">tx_disparity3</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_k0">
-      <obj_property name="ElementShortName">tx_k0</obj_property>
-      <obj_property name="ObjectShortName">tx_k0</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_k1">
-      <obj_property name="ElementShortName">tx_k1</obj_property>
-      <obj_property name="ObjectShortName">tx_k1</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_k2">
-      <obj_property name="ElementShortName">tx_k2</obj_property>
-      <obj_property name="ObjectShortName">tx_k2</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/tx_k3">
-      <obj_property name="ElementShortName">tx_k3</obj_property>
-      <obj_property name="ObjectShortName">tx_k3</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder0_disp_in">
       <obj_property name="ElementShortName">tx_singleencoder0_disp_in</obj_property>
       <obj_property name="ObjectShortName">tx_singleencoder0_disp_in</obj_property>
@@ -302,6 +293,10 @@
    <wvobject type="logic" fp_name="/top_tb/dut/tx_singleencoder3_disp_in">
       <obj_property name="ElementShortName">tx_singleencoder3_disp_in</obj_property>
       <obj_property name="ObjectShortName">tx_singleencoder3_disp_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_rx_p">
+      <obj_property name="ElementShortName">gtp_rx_p</obj_property>
+      <obj_property name="ObjectShortName">gtp_rx_p</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_done">
       <obj_property name="ElementShortName">gtp_gtprxinit_done</obj_property>
@@ -319,9 +314,9 @@
       <obj_property name="ElementShortName">gtp_rx_data[39:0]</obj_property>
       <obj_property name="ObjectShortName">gtp_rx_data[39:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/dut/gtp_rx_p">
-      <obj_property name="ElementShortName">gtp_rx_p</obj_property>
-      <obj_property name="ObjectShortName">gtp_rx_p</obj_property>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_din">
+      <obj_property name="ElementShortName">rx_din[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_din[31:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/tx_data_out">
       <obj_property name="ElementShortName">tx_data_out[39:0]</obj_property>
@@ -339,10 +334,6 @@
    <wvobject type="logic" fp_name="/top_tb/dut/rx_syncfifo_re">
       <obj_property name="ElementShortName">rx_syncfifo_re</obj_property>
       <obj_property name="ObjectShortName">rx_syncfifo_re</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/rx_state">
-      <obj_property name="ElementShortName">rx_state[1:0]</obj_property>
-      <obj_property name="ObjectShortName">rx_state[1:0]</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/rx_syncfifo_we">
       <obj_property name="ElementShortName">rx_syncfifo_we</obj_property>
@@ -369,8 +360,8 @@
       <obj_property name="ObjectShortName">rx_syncfifo_dout[31:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/tx_state">
-      <obj_property name="ElementShortName">tx_state[2:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_state[2:0]</obj_property>
+      <obj_property name="ElementShortName">tx_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_state[1:0]</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/fifo_asyncfifo_we">
       <obj_property name="ElementShortName">fifo_asyncfifo_we</obj_property>
@@ -424,10 +415,6 @@
       <obj_property name="ElementShortName">rx_decoder4_k</obj_property>
       <obj_property name="ObjectShortName">rx_decoder4_k</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/rx_state">
-      <obj_property name="ElementShortName">rx_state[1:0]</obj_property>
-      <obj_property name="ObjectShortName">rx_state[1:0]</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/top_tb/dut/rx_syncfifo_re">
       <obj_property name="ElementShortName">rx_syncfifo_re</obj_property>
       <obj_property name="ObjectShortName">rx_syncfifo_re</obj_property>
@@ -447,14 +434,6 @@
    <wvobject type="logic" fp_name="/top_tb/dut/rx_fifoEmpty">
       <obj_property name="ElementShortName">rx_fifoEmpty</obj_property>
       <obj_property name="ObjectShortName">rx_fifoEmpty</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/rx_fsm_state">
-      <obj_property name="ElementShortName">rx_fsm_state[1:0]</obj_property>
-      <obj_property name="ObjectShortName">rx_fsm_state[1:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/rx_tx_state">
-      <obj_property name="ElementShortName">rx_tx_state[1:0]</obj_property>
-      <obj_property name="ObjectShortName">rx_tx_state[1:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/rx_byte_cnt">
       <obj_property name="ElementShortName">rx_byte_cnt[3:0]</obj_property>
@@ -500,20 +479,112 @@
       <obj_property name="ElementShortName">prbs_en</obj_property>
       <obj_property name="ObjectShortName">prbs_en</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/fsm_state">
-      <obj_property name="ElementShortName">fsm_state[2:0]</obj_property>
-      <obj_property name="ObjectShortName">fsm_state[2:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/o">
-      <obj_property name="ElementShortName">o[31:0]</obj_property>
-      <obj_property name="ObjectShortName">o[31:0]</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/top_tb/dut/i_ignored">
-      <obj_property name="ElementShortName">i_ignored[1:0]</obj_property>
-      <obj_property name="ObjectShortName">i_ignored[1:0]</obj_property>
+      <obj_property name="ElementShortName">i_ignored[2:0]</obj_property>
+      <obj_property name="ObjectShortName">i_ignored[2:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/top_tb/dut/data_type">
-      <obj_property name="ElementShortName">data_type[1:0]</obj_property>
-      <obj_property name="ObjectShortName">data_type[1:0]</obj_property>
+   <wvobject type="array" fp_name="/top_tb/dut/gtp_rx_data">
+      <obj_property name="ElementShortName">gtp_rx_data[39:0]</obj_property>
+      <obj_property name="ObjectShortName">gtp_rx_data[39:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_data_in0">
+      <obj_property name="ElementShortName">rx_data_in0[39:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_data_in0[39:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/gtp_rx_data">
+      <obj_property name="ElementShortName">gtp_rx_data[39:0]</obj_property>
+      <obj_property name="ObjectShortName">gtp_rx_data[39:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/qpll_lock">
+      <obj_property name="ElementShortName">qpll_lock</obj_property>
+      <obj_property name="ObjectShortName">qpll_lock</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_gtrxreset0">
+      <obj_property name="ElementShortName">gtp_gtprxinit_gtrxreset0</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_gtrxreset0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_gtrxpd0">
+      <obj_property name="ElementShortName">gtp_gtprxinit_gtrxpd0</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_gtrxpd0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_drpen">
+      <obj_property name="ElementShortName">gtp_gtprxinit_drpen</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_drpen</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_drprdy">
+      <obj_property name="ElementShortName">gtp_gtprxinit_drprdy</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_drprdy</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/gtp_gtprxinit_drpvalue">
+      <obj_property name="ElementShortName">gtp_gtprxinit_drpvalue[15:0]</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_drpvalue[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_drpwe">
+      <obj_property name="ElementShortName">gtp_gtprxinit_drpwe</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_drpwe</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_rxuserrdy0">
+      <obj_property name="ElementShortName">gtp_gtprxinit_rxuserrdy0</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_rxuserrdy0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_rxpmaresetdone_r">
+      <obj_property name="ElementShortName">gtp_gtprxinit_rxpmaresetdone_r</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_rxpmaresetdone_r</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_rxpmaresetdone0">
+      <obj_property name="ElementShortName">gtp_gtprxinit_rxpmaresetdone0</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_rxpmaresetdone0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_rxresetdone0">
+      <obj_property name="ElementShortName">gtp_gtprxinit_rxresetdone0</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_rxresetdone0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_cdr_stable_timer_done">
+      <obj_property name="ElementShortName">gtp_gtprxinit_cdr_stable_timer_done</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_cdr_stable_timer_done</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_rxdlysresetdone0">
+      <obj_property name="ElementShortName">gtp_gtprxinit_rxdlysresetdone0</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_rxdlysresetdone0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_rxdlysreset0">
+      <obj_property name="ElementShortName">gtp_gtprxinit_rxdlysreset0</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_rxdlysreset0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/dut/gtp_gtprxinit_rxsyncdone0">
+      <obj_property name="ElementShortName">gtp_gtprxinit_rxsyncdone0</obj_property>
+      <obj_property name="ObjectShortName">gtp_gtprxinit_rxsyncdone0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/tx_state">
+      <obj_property name="ElementShortName">tx_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/fsm_state0">
+      <obj_property name="ElementShortName">fsm_state0[1:0]</obj_property>
+      <obj_property name="ObjectShortName">fsm_state0[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/rx_syncfifo_din">
+      <obj_property name="ElementShortName">rx_syncfifo_din[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_syncfifo_din[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/fifo_asyncfifo_dtin">
+      <obj_property name="ElementShortName">fifo_asyncfifo_dtin[1:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_asyncfifo_dtin[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/clockdomainsrenamer_state">
+      <obj_property name="ElementShortName">clockdomainsrenamer_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">clockdomainsrenamer_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/clockdomainsrenamer0_state">
+      <obj_property name="ElementShortName">clockdomainsrenamer0_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">clockdomainsrenamer0_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/clockdomainsrenamer2_state">
+      <obj_property name="ElementShortName">clockdomainsrenamer2_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">clockdomainsrenamer2_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/dut/fsm_state1">
+      <obj_property name="ElementShortName">fsm_state1[1:0]</obj_property>
+      <obj_property name="ObjectShortName">fsm_state1[1:0]</obj_property>
    </wvobject>
 </wave_config>

@@ -207,7 +207,7 @@ class GTP(Module):
             Instance("GTPE2_CHANNEL",
                 i_GTRESETSEL=0,
                 i_RESETOVRD=0,
-                p_SIM_RESET_SPEEDUP="TRUE",
+                p_SIM_RESET_SPEEDUP="FALSE",
 
                 # DRP
                 i_DRPADDR=self.drpaddr,
@@ -374,9 +374,11 @@ class GTP(Module):
                 p_RXSLIDE_AUTO_WAIT=7,
                 p_RX_SIG_VALID_DLY=10,
                 
-                p_ALIGN_MCOMMA_VALUE=0b1100000101, 
+                #p_ALIGN_MCOMMA_VALUE=0b1100000101, 
+                p_ALIGN_MCOMMA_VALUE=0b1010000011, 
                 p_ALIGN_MCOMMA_DET="TRUE",
-                p_ALIGN_PCOMMA_VALUE=0b0011111010,
+                #p_ALIGN_PCOMMA_VALUE=0b0011111010,
+                p_ALIGN_PCOMMA_VALUE=0b0101111100,
                 p_ALIGN_PCOMMA_DET="TRUE",
 
 

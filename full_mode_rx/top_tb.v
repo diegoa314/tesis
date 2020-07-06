@@ -61,7 +61,7 @@ always begin
     
     //The writing process starts
     we=1'b1;
-    for (integer i=0;i<=100;i=i+1) begin
+    for (integer i=0;i<=1500;i=i+1) begin
         #period;
     end
     
@@ -77,7 +77,7 @@ always begin
     #period;
     we=1'b1;
     //The writing process starts again
-    for (integer i=0;i<=100;i=i+1) begin
+    for (integer i=0;i<=5000;i=i+1) begin
         #period;
     end
 
@@ -87,7 +87,9 @@ always begin
     #period;
     #period;
     reset=1'b0;
-
+    while(!rxinit_done) begin
+        #period;
+    end
     for (integer i=0;i<=100;i=i+1) begin
         #period;
     end
