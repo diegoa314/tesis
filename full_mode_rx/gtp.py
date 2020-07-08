@@ -190,7 +190,6 @@ class GTP(Module):
     	rx_init.drprdy.eq(self.drprdy)
     	]
         
-        #TX signals 
         
       
         assert qpll.config["linerate"] < 6.6e9
@@ -207,7 +206,7 @@ class GTP(Module):
             Instance("GTPE2_CHANNEL",
                 i_GTRESETSEL=0,
                 i_RESETOVRD=0,
-                p_SIM_RESET_SPEEDUP="FALSE",
+                p_SIM_RESET_SPEEDUP="TRUE",
 
                 # DRP
                 i_DRPADDR=self.drpaddr,

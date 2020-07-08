@@ -40,36 +40,30 @@ class TX(Module):
 		]
 		
 		self.sync+=[ 
-			If((stream_controller.fifo_ready),
-				
-				encoder.d[0].eq(self.data_in[0:8]),
-				encoder.d[1].eq(self.data_in[8:16]),
-				encoder.d[2].eq(self.data_in[16:24]),
-				encoder.d[3].eq(self.data_in[24:32]),
-
-			),
-			If(stream_controller.sop, 
-				encoder.d[0].eq(0x3C),
-				encoder.k[0].eq(1),
-				encoder.d[1].eq(0),
-				encoder.d[2].eq(0),
-				encoder.d[3].eq(0)  
-			),
 			If(stream_controller.idle,
 				encoder.d[0].eq(0xBC),
 				encoder.k[0].eq(1),
 				encoder.d[1].eq(0),
 				encoder.d[2].eq(0),
 				encoder.d[3].eq(0)
-			),
-			If(stream_controller.ign,
+			).Elif(stream_controller.sop, 
+				encoder.d[0].eq(0x3C),
+				encoder.k[0].eq(1),
+				encoder.d[1].eq(0),
+				encoder.d[2].eq(0),
+				encoder.d[3].eq(0)  
+			).Elif((stream_controller.intermediate),
+				encoder.d[0].eq(self.data_in[0:8]),
+				encoder.d[1].eq(self.data_in[8:16]),
+				encoder.d[2].eq(self.data_in[16:24]),
+				encoder.d[3].eq(self.data_in[24:32]),
+			).Elif(stream_controller.ign,
 				encoder.d[0].eq(0x5C),
 				encoder.k[0].eq(1),
 				encoder.d[1].eq(0),
 				encoder.d[2].eq(0),
 				encoder.d[3].eq(0)
-			),
-			If(stream_controller.eop,                  
+			).Elif(stream_controller.eop,                  
 				encoder.d[0].eq(0xDC), 
 				encoder.k[0].eq(1),
 				encoder.d[1].eq(crc_encoder.o_crc[0:8]),
@@ -82,6 +76,6 @@ class TX(Module):
 			),
 			encoder.k[1].eq(0),
 			encoder.k[2].eq(0),
-			encoder.k[3].eq(0),
+			encoder.k[3].eq(0)
 		]		
 

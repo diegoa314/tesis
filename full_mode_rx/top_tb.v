@@ -53,6 +53,7 @@ always begin
     while(!rxinit_done) begin
         #period;
     end
+
     //Starts transmision. It will send IDLE because FIFO is empty yet
     link_ready=1'b1; 
     for (integer i=0;i<=100;i=i+1) begin
@@ -77,7 +78,7 @@ always begin
     #period;
     we=1'b1;
     //The writing process starts again
-    for (integer i=0;i<=5000;i=i+1) begin
+    for (integer i=0;i<=35000;i=i+1) begin
         #period;
     end
 
@@ -98,7 +99,7 @@ always begin
     #period;
     we=1'b1;
     //The writing process starts again
-    for (integer i=0;i<=100;i=i+1) begin
+    for (integer i=0;i<=10000;i=i+1) begin
         #period;
     end
 end

@@ -208,8 +208,8 @@ class FullModeSim(Module):
             rx.rx_init_done.eq(gtp.rxinit_done),
             rx.pll_lock.eq(gtp.pll_lock),
             rx.trans_en.eq(self.trans_en),
-            self.rxinit_done.eq(gtp.rxinit_done),
-            #self.rxinit_done.eq(gtp.tx_init_done),
+            #self.rxinit_done.eq(gtp.rxinit_done),
+            self.rxinit_done.eq(gtp.tx_init_done),
 
             self.cd_write.clk.eq(write_clk),
             self.cd_write.rst.eq(self.reset)
@@ -280,6 +280,7 @@ always begin
     while(!rxinit_done) begin
         #period;
     end
+
     //Starts transmision. It will send IDLE because FIFO is empty yet
     link_ready=1'b1; 
     for (integer i=0;i<=100;i=i+1) begin
@@ -304,7 +305,7 @@ always begin
     #period;
     we=1'b1;
     //The writing process starts again
-    for (integer i=0;i<=7000;i=i+1) begin
+    for (integer i=0;i<=35000;i=i+1) begin
         #period;
     end
 

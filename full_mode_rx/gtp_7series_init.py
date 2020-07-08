@@ -171,7 +171,7 @@ class GTPRXInit(Module):
         self.comb += [
             self.drpaddr.eq(0x011),
             If(drpmask,
-                self.drpdi.eq(drpvalue & 0xf7ff)
+                self.drpdi.eq(drpvalue & 0xf7ff) #bit[11]=0
             ).Else(
                 self.drpdi.eq(drpvalue)
             )
@@ -229,7 +229,7 @@ class GTPRXInit(Module):
         cdr_stable_timer = WaitTimer(1024)
         self.submodules += cdr_stable_timer
 
-        startup_fsm_rx.act("GTP_PD",
+        startup_fsm_rx.act("GTP_PD", #0
            
             gtrxpd.eq(1),
             pll_reset_timer.wait.eq(1),
@@ -239,7 +239,7 @@ class GTPRXInit(Module):
             )
         )
 
-        startup_fsm_rx.act("GTP_PLL_WAIT",
+        startup_fsm_rx.act("GTP_PLL_WAIT", #1
           
             gtrxreset.eq(1),
             If(plllock,
@@ -247,13 +247,13 @@ class GTPRXInit(Module):
             )
         )
 
-        startup_fsm_rx.act("DRP_READ_ISSUE",
+        startup_fsm_rx.act("DRP_READ_ISSUE", #2
         
             gtrxreset.eq(1),
             self.drpen.eq(1),
             NextState("DRP_READ_WAIT")
         )
-        startup_fsm_rx.act("DRP_READ_WAIT",
+        startup_fsm_rx.act("DRP_READ_WAIT", #3
          
             gtrxreset.eq(1),
             If(self.drprdy,
@@ -262,7 +262,7 @@ class GTPRXInit(Module):
             )
         )
 
-        startup_fsm_rx.act("DRPRDY_DEASSERT",
+        startup_fsm_rx.act("DRPRDY_DEASSERT", #4
        
             gtrxreset.eq(1),
             If(~self.drprdy,
@@ -270,7 +270,7 @@ class GTPRXInit(Module):
             )
         )
 
-        startup_fsm_rx.act("DRP_MOD_ISSUE",
+        startup_fsm_rx.act("DRP_MOD_ISSUE", #5
         
             gtrxreset.eq(1),
             drpmask.eq(1),
@@ -278,7 +278,7 @@ class GTPRXInit(Module):
             self.drpwe.eq(1),
             NextState("DRP_MOD_WAIT")
         )
-        startup_fsm_rx.act("DRP_MOD_WAIT",
+        startup_fsm_rx.act("DRP_MOD_WAIT", #6
         
             gtrxreset.eq(1),
             If(self.drprdy,
@@ -286,21 +286,21 @@ class GTPRXInit(Module):
                 NextState("WAIT_PMARST_FALL")
             )
         )
-        startup_fsm_rx.act("WAIT_PMARST_FALL",
+        startup_fsm_rx.act("WAIT_PMARST_FALL", #7
          
             rxuserrdy.eq(1),
             If(rxpmaresetdone_r & ~rxpmaresetdone,
                 NextState("DRP_RESTORE_ISSUE")
             )
         )
-        startup_fsm_rx.act("DRP_RESTORE_ISSUE",
+        startup_fsm_rx.act("DRP_RESTORE_ISSUE", #8
          
             rxuserrdy.eq(1),
             self.drpen.eq(1),
             self.drpwe.eq(1),
             NextState("DRP_RESTORE_WAIT")
         )
-        startup_fsm_rx.act("DRP_RESTORE_WAIT",
+        startup_fsm_rx.act("DRP_RESTORE_WAIT", #9
     
             rxuserrdy.eq(1),
             If(self.drprdy,
@@ -310,7 +310,7 @@ class GTPRXInit(Module):
         # Release GTP reset and wait for GTP resetdone
         # (from UG482, GTP is reset on falling edge
         # of gtrxreset)
-        startup_fsm_rx.act("WAIT_GTP_RESET_DONE",
+        startup_fsm_rx.act("WAIT_GTP_RESET_DONE", #10
          
             rxuserrdy.eq(1),
             cdr_stable_timer.wait.eq(1),
