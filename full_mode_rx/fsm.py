@@ -85,11 +85,6 @@ class Fsm(Module):
 						NextValue(self.eop,1),
 						NextValue(self.strobe_crc,0),
 						NextValue(self.reset_crc,1),
-						If(~self.fifo_empty,
-							NextValue(self.fifo_re,1)
-						).Else(
-							NextValue(self.fifo_re,0)
-						),
 						NextValue(self.intermediate,0),
 						NextValue(aux_ign,0)
 					],
@@ -112,6 +107,7 @@ class Fsm(Module):
 				NextValue(self.sop,1)
 			).Else(
 				NextValue(self.idle,1),
+				NextValue(self.fifo_re,0)
 				NextState("IDLE")
 			)		
 		)

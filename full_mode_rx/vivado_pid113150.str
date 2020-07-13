@@ -14120,3 +14120,626 @@ selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E
 selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 770, 288); // n (o, cr)
 // TclEventType: WAVEFORM_UPDATE_COMMANDS
 // HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 48 MB. Current time: 7/13/20, 5:07:24 PM PYT
+// Elapsed time: 329 seconds
+selectButton(RDIResource.GraphicalView_ZOOM_FIT, "Waveform Viewer_zoom_fit"); // E (f, cr)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, cr)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 48 MB. Current time: 7/13/20, 5:12:58 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:12:58 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 48 MB. Current time: 7/13/20, 5:12:58 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 47 MB. Current time: 7/13/20, 5:12:58 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 47 MB. Current time: 7/13/20, 5:13:05 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 47 MB. Current time: 7/13/20, 5:13:06 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 47 MB. Current time: 7/13/20, 5:13:06 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 13 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 712, 283); // n (o, cr)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 712, 283); // n (o, aN)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 712, 283); // n (o, aN)Waveform: addNotify
+floatFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "top_tb_sim.wcfg"); // aA (aL, cr)
+// RDIResource.RDIViews_WAVEFORM_VIEWER: top_tb_sim.wcfg: float view
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 48 MB. Current time: 7/13/20, 5:13:09 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 48 MB. Current time: 7/13/20, 5:13:15 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 48 MB. Current time: 7/13/20, 5:13:18 PM PYT
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 3, 83); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:13:21 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 54 MB. Current time: 7/13/20, 5:13:21 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 54 MB. Current time: 7/13/20, 5:13:21 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 54 MB. Current time: 7/13/20, 5:13:21 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 55 MB. Current time: 7/13/20, 5:13:21 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:13:22 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:13:22 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,140 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:13:23 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,141 MB. GUI used memory: 53 MB. Current time: 7/13/20, 5:13:23 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,141 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:13:23 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,141 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:13:24 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:13:24 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:13:26 PM PYT
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 595, 95); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, we]", 4, false); // a (r, aN)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, link_ready]", 11, false); // a (r, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:13:42 PM PYT
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, rx_init_done]", 3, false); // a (r, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, we]", 5, false); // a (r, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:13:46 PM PYT
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, write_clk]", 6, false); // a (r, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, o[31:0]]", 8, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Elapsed time: 34 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 95, 161); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:14:22 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:14:25 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:14:26 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 53 MB. Current time: 7/13/20, 5:14:31 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 62 MB. Current time: 7/13/20, 5:14:33 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:14:38 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:14:39 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 234, 225); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:14:42 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:14:52 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 199, 254); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 64 MB. Current time: 7/13/20, 5:14:54 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:14:59 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 40 seconds
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_state[2:0]]", 0, true); // a (r, aN) - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:15:39 PM PYT
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, crc_o[19:0]]", 3, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_state[2:0]]", 4, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 63 MB. Current time: 7/13/20, 5:15:48 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:15:53 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 13 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 122, 203); // n (o, aN)
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:16:02 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:16:02 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:16:02 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:16:03 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:16:03 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 59 MB. Current time: 7/13/20, 5:16:06 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 62 MB. Current time: 7/13/20, 5:16:09 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 72, 319); // n (o, aN)
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:16:11 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:16:12 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:16:12 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:16:12 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:16:13 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:16:21 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:16:22 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 16 seconds
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_singleencoder3_disp_in]", 17, false); // a (r, aN)
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 76 MB. Current time: 7/13/20, 5:16:31 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 59 MB. Current time: 7/13/20, 5:16:34 PM PYT
+// Elapsed time: 103 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 53, 85); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_clk]", 15, false); // a (r, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_singleencoder3_disp_in]", 17, false); // a (r, aN)
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:18:13 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:19:08 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 52 MB. Current time: 7/13/20, 5:19:09 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 57 seconds
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 51 MB. Current time: 7/13/20, 5:19:12 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:19:13 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 53 MB. Current time: 7/13/20, 5:19:14 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:19:16 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:19:17 PM PYT
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 166, 211); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 160, 211); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:19:21 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:19:28 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 214, 172); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:19:34 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:19:38 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:19:49 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:19:56 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:20:46 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 59 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 53, 275); // n (o, aN)
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:20:57 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:20:57 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:20:57 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:20:58 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:20:58 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:20:58 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:20:58 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:20:59 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 52 MB. Current time: 7/13/20, 5:20:59 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:21:00 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:21:00 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:21:02 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:21:18 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 24 seconds
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 74, 264); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:21:22 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 55 MB. Current time: 7/13/20, 5:21:22 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:21:23 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:21:23 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:21:23 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 53 MB. Current time: 7/13/20, 5:21:23 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:21:23 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:21:24 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:21:55 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:22:00 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 40 seconds
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_state[2:0]]", 12, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Elapsed time: 117 seconds
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:01 PM PYT
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E (f, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 190, 208); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:06 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:08 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:45 PM PYT
+// Elapsed time: 43 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 82, 289); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:49 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:50 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:50 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:50 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:51 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:51 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:51 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:52 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:52 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:53 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 56 MB. Current time: 7/13/20, 5:24:53 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:54 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:24:59 PM PYT
+// Elapsed time: 10 seconds
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, fifo_empty]", 5, false); // a (r, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:25:04 PM PYT
+// Elapsed time: 16 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 72, 217); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_8b10b_d3[7:0]]", 11, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_8b10b_o1[9:0]]", 14, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 71 MB. Current time: 7/13/20, 5:25:27 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:25:31 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:25:32 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:25:35 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:25:36 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:25:44 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 59 MB. Current time: 7/13/20, 5:25:46 PM PYT
+// Elapsed time: 21 seconds
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_8b10b_d0[7:0]]", 8, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_RENAME_OBJECT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_8b10b_d1[7:0]]", 9, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_RENAME_OBJECT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_8b10b_d2[7:0]]", 10, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,143 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:26:01 PM PYT
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_RENAME_OBJECT
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_8b10b_d3[7:0]]", 11, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_8b10b_d2[7:0]]", 10, true); // a (r, aN) - Node
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_8b10b_d2[7:0]]", 10, true); // a (r, aN) - Node
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_RENAME_OBJECT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_8b10b_d3[7:0]]", 11, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:26:19 PM PYT
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_RENAME_OBJECT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_8b10b_o0[9:0]]", 13, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_RENAME_OBJECT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_8b10b_o1[9:0]]", 14, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_RENAME_OBJECT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_8b10b_o2[9:0]]", 15, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:26:34 PM PYT
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_RENAME_OBJECT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_8b10b_o3[9:0]]", 16, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_RENAME_OBJECT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_data[39:0]]", 17, true); // a (r, aN) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_RENAME_OBJECT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:26:50 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:26:55 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 59 MB. Current time: 7/13/20, 5:26:58 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 62 MB. Current time: 7/13/20, 5:27:07 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:27:09 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:27:30 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:27:31 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 66 MB. Current time: 7/13/20, 5:27:41 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:27:45 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:27:45 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 49 MB. Current time: 7/13/20, 5:27:46 PM PYT
+// Elapsed time: 98 seconds
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, gtp_p]", 21, false); // a (r, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Elapsed time: 17 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 535, 218); // n (o, aN)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:28:43 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:28:45 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 56 MB. Current time: 7/13/20, 5:28:47 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 20 seconds
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, gtp_p]", 21, false); // a (r, aN)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:29:30 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:29:32 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:29:32 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 54 MB. Current time: 7/13/20, 5:29:33 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 54 MB. Current time: 7/13/20, 5:29:33 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:29:34 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 54 MB. Current time: 7/13/20, 5:29:34 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 56 MB. Current time: 7/13/20, 5:29:35 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:29:39 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:30:02 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:30:04 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:30:12 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:30:14 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 55 MB. Current time: 7/13/20, 5:30:14 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:30:16 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:30:17 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 7,148 MB. GUI used memory: 50 MB. Current time: 7/13/20, 5:30:37 PM PYT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
