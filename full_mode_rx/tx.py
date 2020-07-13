@@ -11,7 +11,7 @@ class TX(Module):
 		self.fifo_empty=Signal()
 		self.fifo_re=Signal()
 		self.tx_init_done=Signal()
-		self.pll_lock=Signal()
+		
 
 		#  #  #
 		
@@ -24,7 +24,7 @@ class TX(Module):
 			stream_controller.link_ready.eq(self.link_ready),
 			stream_controller.fifo_empty.eq(self.fifo_empty),
 			stream_controller.data_type.eq(self.data_type_in),
-			stream_controller.system_ready.eq(self.tx_init_done & self.pll_lock),
+			stream_controller.tx_init_done.eq(self.tx_init_done),
 			self.fifo_re.eq(stream_controller.fifo_re),
 			If(self.data_type_in!=3,
 				crc_encoder.i_data_strobe.eq(stream_controller.strobe_crc)
@@ -39,31 +39,35 @@ class TX(Module):
 			).Else(self.data_out.eq(0)),
 		]
 		
-		self.sync+=[ 
+		self.comb+=[ 
 			If(stream_controller.idle,
 				encoder.d[0].eq(0xBC),
 				encoder.k[0].eq(1),
 				encoder.d[1].eq(0),
 				encoder.d[2].eq(0),
 				encoder.d[3].eq(0)
-			).Elif(stream_controller.sop, 
+			),
+			If(stream_controller.sop, 
 				encoder.d[0].eq(0x3C),
 				encoder.k[0].eq(1),
 				encoder.d[1].eq(0),
 				encoder.d[2].eq(0),
 				encoder.d[3].eq(0)  
-			).Elif((stream_controller.intermediate),
+			),
+			If((stream_controller.intermediate),
 				encoder.d[0].eq(self.data_in[0:8]),
 				encoder.d[1].eq(self.data_in[8:16]),
 				encoder.d[2].eq(self.data_in[16:24]),
 				encoder.d[3].eq(self.data_in[24:32]),
-			).Elif(stream_controller.ign,
+			),
+			If(stream_controller.ign,
 				encoder.d[0].eq(0x5C),
 				encoder.k[0].eq(1),
 				encoder.d[1].eq(0),
 				encoder.d[2].eq(0),
 				encoder.d[3].eq(0)
-			).Elif(stream_controller.eop,                  
+			),
+			If(stream_controller.eop,                  
 				encoder.d[0].eq(0xDC), 
 				encoder.k[0].eq(1),
 				encoder.d[1].eq(crc_encoder.o_crc[0:8]),

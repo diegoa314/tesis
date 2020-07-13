@@ -155,6 +155,10 @@ class GTPRXInit(Module):
         self.rxuserrdy = Signal()
         self.rxsyncdone = Signal()
         self.rxpmaresetdone = Signal()
+        self.rxphdlypd = Signal(reset=1)
+        self.pll_rxusrclk_rst = Signal()
+        self.pll_rxusrclk_lock = Signal()
+
 
         self.drpaddr = Signal(9)
         self.drpen = Signal()
@@ -201,6 +205,7 @@ class GTPRXInit(Module):
         rxphalign = Signal()
         rxdlyen = Signal()
         rxuserrdy = Signal()
+
         self.sync += [
             self.gtrxreset.eq(gtrxreset),
             self.gtrxpd.eq(gtrxpd),
@@ -230,6 +235,7 @@ class GTPRXInit(Module):
         self.submodules += cdr_stable_timer
 
         startup_fsm_rx.act("GTP_PD", #0
+            NextValue(self.rxphdlypd,0),
            
             gtrxpd.eq(1),
             pll_reset_timer.wait.eq(1),
@@ -240,7 +246,6 @@ class GTPRXInit(Module):
         )
 
         startup_fsm_rx.act("GTP_PLL_WAIT", #1
-          
             gtrxreset.eq(1),
             If(plllock,
                 NextState("DRP_READ_ISSUE")
@@ -315,6 +320,15 @@ class GTPRXInit(Module):
             rxuserrdy.eq(1),
             cdr_stable_timer.wait.eq(1),
             If(rxresetdone & cdr_stable_timer.done,
+                NextState("WAIT_PLL_RXUSRCLK_LOCK"),
+                NextValue(self.pll_rxusrclk_rst,1)
+            )
+        )
+
+        startup_fsm_rx.act("WAIT_PLL_RXUSRCLK_LOCK",
+            NextValue(self.pll_rxusrclk_rst,0),
+            rxuserrdy.eq(1),
+            If(self.pll_rxusrclk_lock,
                 NextState("ALIGN")
             )
         )

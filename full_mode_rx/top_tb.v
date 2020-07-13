@@ -46,10 +46,11 @@ top dut (
 
 always begin 
     //Waits signals initialization
-    for (integer i=0;i<=400;i=i+1) begin
+    for (integer i=0;i<=4000;i=i+1) begin
         #period;
     end
-    //Waits rx initialization (tx is always(?) initialized first)
+  
+    //Waits rx initialization (tx is always initialized first)
     while(!rxinit_done) begin
         #period;
     end

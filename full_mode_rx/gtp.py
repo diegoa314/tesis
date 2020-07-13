@@ -140,8 +140,8 @@ class GTP(Module):
        
         # transceiver direct clock outputs
         # useful to specify clock constraints in a way palatable to Vivado
-        self._txoutclk = _txoutclk= Signal()
-        self.rxoutclk = Signal()
+        self._txoutclk = _txoutclk = Signal()
+        self._rxoutclk = _rxoutclk = Signal()
 
         
         self.txusrclk=txusrclk=Signal()
@@ -149,11 +149,22 @@ class GTP(Module):
         self._txusrclk=_txusrclk=Signal()
         self._txusrclk2=_txusrclk2=Signal()
         self.txoutclk = txoutclk=Signal()
+
+        self.rxusrclk=rxusrclk=Signal()
+        self.rxusrclk2=rxusrclk2=Signal()
+        self._rxusrclk=_rxusrclk=Signal()
+        self._rxusrclk2=_rxusrclk2=Signal()
+        self.rxoutclk = rxoutclk=Signal()
+        
         pll_fb2=Signal()
-        self.pll_lock=pll_lock=Signal()
+        pll_fb2_rx=Signal()
+        self.pll_txusrclk_lock=pll_txusrclk_lock=Signal()
+        self.pll_rxusrclk_lock=pll_rxusrclk_lock=Signal()
+        
+        
         self.specials += [
             Instance("PLLE2_BASE",
-                     p_STARTUP_WAIT="FALSE", o_LOCKED=pll_lock,
+                     p_STARTUP_WAIT="FALSE", o_LOCKED=pll_txusrclk_lock,
                      
                      p_REF_JITTER1=0.01, p_CLKIN1_PERIOD=4.166667,
                      p_CLKFBOUT_MULT=5, p_DIVCLK_DIVIDE=1,
@@ -167,12 +178,30 @@ class GTP(Module):
             Instance("BUFG", i_I=_txusrclk2, o_O=txusrclk2),
             Instance("BUFG", i_I=_txusrclk, o_O=txusrclk)
         ]
+        self.specials += [
+            Instance("PLLE2_BASE",
+                    p_STARTUP_WAIT="FALSE", o_LOCKED=rx_init.pll_rxusrclk_lock,
+                    i_RST=rx_init.pll_rxusrclk_rst,
+                    p_REF_JITTER1=0.01, p_CLKIN1_PERIOD=4.166667,
+                    p_CLKFBOUT_MULT=5, p_DIVCLK_DIVIDE=1,
+                    i_CLKIN1=self.rxoutclk, i_CLKFBIN=pll_fb2_rx, o_CLKFBOUT=pll_fb2_rx,
+                     #240 MHz and 120 MHz required
+                    p_CLKOUT0_DIVIDE=5, p_CLKOUT0_PHASE=0.0, o_CLKOUT0=_rxusrclk,
+                    p_CLKOUT1_DIVIDE=10, p_CLKOUT1_PHASE=0.0, o_CLKOUT1=_rxusrclk2,
+            ),
+          
+            Instance("BUFG", i_I=_rxoutclk, o_O=rxoutclk),
+            Instance("BUFG", i_I=_rxusrclk2, o_O=rxusrclk2),
+            Instance("BUFG", i_I=_rxusrclk, o_O=rxusrclk)
+        ]
        
         self.rxinit_done=Signal()
 
         self.comb += [
             tx_init.restart.eq(self.reset),
-            rx_init.restart.eq(self.reset),
+            If(~tx_init.done,
+                rx_init.restart.eq(1)
+            ),
             tx_init.plllock.eq(qpll.lock),
             rx_init.plllock.eq(qpll.lock),
             qpll.reset.eq(tx_init.pllreset),
@@ -182,12 +211,12 @@ class GTP(Module):
 
         # DRP Mux selected by rx_init
         self.comb +=[
-    	self.drpaddr.eq(rx_init.drpaddr),
-    	self.drpdi.eq(rx_init.drpdi),
-    	rx_init.drpdo.eq(self.drpdo),
-    	self.drpen.eq(rx_init.drpen),
-    	self.drpwe.eq(rx_init.drpwe),
-    	rx_init.drprdy.eq(self.drprdy)
+        	self.drpaddr.eq(rx_init.drpaddr),
+        	self.drpdi.eq(rx_init.drpdi),
+        	rx_init.drpdo.eq(self.drpdo),
+        	self.drpen.eq(rx_init.drpen),
+        	self.drpwe.eq(rx_init.drpwe),
+        	rx_init.drprdy.eq(self.drprdy)
     	]
         
         
@@ -206,7 +235,10 @@ class GTP(Module):
             Instance("GTPE2_CHANNEL",
                 i_GTRESETSEL=0,
                 i_RESETOVRD=0,
-                p_SIM_RESET_SPEEDUP="TRUE",
+                p_SIM_RESET_SPEEDUP="FALSE",
+                p_SIM_RECEIVER_DETECT_PASS="TRUE",
+                p_SIM_TX_EIDLE_DRIVE_LEVEL="X",
+                p_SIM_VERSION="2.0",
 
                 # DRP
                 i_DRPADDR=self.drpaddr,
@@ -229,7 +261,7 @@ class GTP(Module):
                 p_RXLPM_IPCM_CFG=1,
                 i_RXOOBRESET=0,
                 i_RXELECIDLEMODE=0b11,
-                i_RXOSINTCFG=0b0010,
+                
                 i_RXOSINTEN=1,
 
                 #Power-Down Attributes
@@ -300,6 +332,39 @@ class GTP(Module):
                 # Internal Loopback
                 i_LOOPBACK=self.loopback,
 
+                #CDR
+                #i_RXCDRHOLD=1,
+                #i_RXCDROVRDEN=0,
+                p_RXCDR_FR_RESET_ON_EIDLE                =0b0,
+                p_RXCDR_HOLD_DURING_EIDLE                =0b0,
+                p_RXCDR_PH_RESET_ON_EIDLE                =0b0,
+                p_RXCDR_LOCK_CFG                         =0b001001,
+                p_RXCDR_CFG=rxcdr_cfgs[qpll.config["d"]],
+
+                i_RXCDRFREQRESET                 =0,
+                i_RXCDRHOLD                      =0,
+                #o_RXCDRLOCK                      =,
+                i_RXCDROVRDEN                    =0,
+                i_RXCDRRESET                     =0,
+                i_RXCDRRESETRSV                  =0,
+                i_RXOSCALRESET                   =0,
+                i_RXOSINTCFG                     =0b0010,
+                #o_RXOSINTDONE                    =,
+                i_RXOSINTHOLD                    =0,
+                i_RXOSINTOVRDEN                  =0,
+                i_RXOSINTPD                      =0,
+                #o_RXOSINTSTARTED                 =,
+                i_RXOSINTSTROBE                  =0,
+                #o_RXOSINTSTROBESTARTED           =,
+                i_RXOSINTTESTOVRDEN              =0,
+
+                i_RXLPMHFHOLD                    =0,
+                i_RXLPMHFOVRDEN                  =0,
+                i_RXLPMLFHOLD                    =0,
+                i_RXOSHOLD                       =0,
+                i_RXOSOVRDEN                     =0,
+                i_RXRATEMODE                     =0b0,
+
                 # RX Startup/Reset
                 i_GTRXRESET=rx_init.gtrxreset,
                 o_RXRESETDONE=rx_init.rxresetdone,
@@ -308,8 +373,6 @@ class GTP(Module):
                 o_RXPHALIGNDONE=rxphaligndone,
                 i_RXSYNCALLIN=rxphaligndone,
                 i_RXUSERRDY=rx_init.rxuserrdy,
-                i_RXCDRRESET=0,
-                i_RXCDRFREQRESET=0,
                 i_RXPMARESET=0,
                 i_RXLPMRESET=0,
                 i_EYESCANRESET=0,
@@ -326,28 +389,61 @@ class GTP(Module):
                 # RX clock
                 p_RX_CLK25_DIV=5,
                 p_TX_CLK25_DIV=5,
-                p_RX_XCLK_SEL="RXUSR",
+                
                 i_RXRATE=0b000,
                 p_RXOUT_DIV=qpll.config["d"],
                 i_RXSYSCLKSEL=0b00,
                 i_RXOUTCLKSEL=0b010,
-                o_RXOUTCLK=self.rxoutclk,
-                i_RXUSRCLK=txusrclk,
-                i_RXUSRCLK2=txusrclk2,
-                p_RXCDR_CFG=rxcdr_cfgs[qpll.config["d"]],
+                o_RXOUTCLK=self._rxoutclk,
+                i_RXUSRCLK=rxusrclk,
+                i_RXUSRCLK2=rxusrclk2,
+                #i_RXUSRCLK=txusrclk,
+                #i_RXUSRCLK2=txusrclk2,
+                
                 p_RXPI_CFG1=1,
                 p_RXPI_CFG2=1,
 
                 # RX Clock Correction Attributes
                 p_CLK_CORRECT_USE="FALSE",
 
+                #BUffer
+                
+                p_RXBUF_ADDR_MODE                        ="FAST",
+                p_RXBUF_EIDLE_HI_CNT                     =0b1000,
+                p_RXBUF_EIDLE_LO_CNT                     =0b0000,
+                p_RXBUF_EN                               ="FALSE",
+                p_RX_BUFFER_CFG                          =0b000000,
+                p_RXBUF_RESET_ON_CB_CHANGE               ="TRUE",
+                p_RXBUF_RESET_ON_COMMAALIGN              ="FALSE",
+                p_RXBUF_RESET_ON_EIDLE                   ="FALSE",
+                p_RXBUF_RESET_ON_RATE_CHANGE             ="TRUE",
+                p_RXBUFRESET_TIME                        =0b00001,
+                p_RXBUF_THRESH_OVFLW                     =61,
+                p_RXBUF_THRESH_OVRD                      ="FALSE",
+                p_RXBUF_THRESH_UNDFLW                    =4,
+                p_RXDLY_CFG                              =0x001F,
+                p_RXDLY_LCFG                             =0x030,
+                p_RXDLY_TAP_CFG                          =0x0000,
+                p_RXPH_CFG                               =0xC00002,
+                p_RXPHDLY_CFG                            =0x084020,
+                p_RXPH_MONITOR_SEL                       =0b00000,
+                p_RX_XCLK_SEL                            ="RXUSR",
+                p_RX_DDI_SEL                             =0b000000,
+                p_RX_DEFER_RESET_BUF_EN                  ="TRUE",
+                
+                # RX Buffer Attributes
+                #p_RXSYNC_MULTILANE                       =0b0,
+                #p_RXSYNC_OVRD                            =0b0,
+                p_RXSYNC_SKIP_DA                         =0b0,
+                i_RXPHDLYPD=rx_init.rxphdlypd,
+
+
                 # RX data
                 i_RX8B10BEN=0,
-                p_RXBUF_EN="FALSE",
-                p_RXDLY_CFG=0x001f,
-                p_RXDLY_LCFG=0x030,
-                p_RXPHDLY_CFG=0x084020,
-                p_RXPH_CFG=0xc00002,
+                
+              
+               
+              
                 p_RX_DATA_WIDTH=40,
                 i_RXDLYBYPASS=0,
                 i_RXDDIEN=1,
@@ -368,7 +464,7 @@ class GTP(Module):
                 p_ALIGN_COMMA_WORD=2,
                 p_ALIGN_COMMA_ENABLE=0b1111111111,
                 p_ALIGN_COMMA_DOUBLE="FALSE",
-                p_SHOW_REALIGN_COMMA="TRUE",
+                p_SHOW_REALIGN_COMMA="FALSE",
                 p_RXSLIDE_MODE="OFF",
                 p_RXSLIDE_AUTO_WAIT=7,
                 p_RX_SIG_VALID_DLY=10,
@@ -399,5 +495,10 @@ class GTP(Module):
         self.clock_domains.cd_tx = ClockDomain()
         self.comb+=self.cd_tx.rst.eq(self.reset)
         self.specials += Instance("BUFG", i_I=self.txusrclk2, o_O=self.cd_tx.clk)
+
+        # tx clocking
+        self.clock_domains.cd_rx = ClockDomain()
+        self.comb+=self.cd_rx.rst.eq(self.reset)
+        self.specials += Instance("BUFG", i_I=self.rxusrclk2, o_O=self.cd_rx.clk)
 
         

@@ -6,30 +6,26 @@ class Alignment_Corrector(Module):
 		self.din=din=Signal(32)
 		self.aligned=aligned=Signal()
 		self.dout=dout=Signal(32)
-		self.correction_done=Signal(1)
+		self.correction_done=Signal()
 		#	#	#
 		first_half=Signal(16)
 		first_half1=Signal(16)
 		second_half=Signal(16)
-		self.submodules.fsm=FSM(reset_state="INIT")
-		self.fsm.act("INIT",
+		self.submodules.fsm=FSM(reset_state="IDLE")
+		self.fsm.act("IDLE",
 			If(aligned, 
-				NextState("FIRST_HALF"),
-				
+				NextState("INIT"),
 			)
 		)
-		self.fsm.act("FIRST_HALF",
-			NextState("SECOND_HALF"),
-			
+		self.fsm.act("INIT",
+			NextState("DONE"),
 			NextValue(first_half,din[16:]),
 			NextValue(self.correction_done,1)
-			
-
 		)
-		self.fsm.act("SECOND_HALF",
-			NextValue(dout,Cat(first_half,din[:16])),
+		self.fsm.act("DONE",
+			dout.eq(Cat(first_half,din[:16])),
 			NextValue(first_half,din[16:]),
-			NextState("SECOND_HALF")
+			NextState("DONE")
 
 		)
 	

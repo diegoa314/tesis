@@ -7,7 +7,7 @@ from gtp import GTPQuadPLL, GTP
 from daphne_platforms import Platform
 from tx import TX
 from rx import RX
-from prbs import PRBSGenerator
+from prbs import PRBS31Generator
 from asyncfifoDT import AsyncFIFO
 
 from memory import mem
@@ -19,6 +19,7 @@ class FullModeSim(Module):
         link_ready: When is asserted, the transmision starts.
         trans_en: When is asserted, the transmision of data received in
         RX to the PC via UART starts.
+        reset: General reset
         """
         self.we=Signal() 
         self.link_ready=Signal()
@@ -73,7 +74,7 @@ class FullModeSim(Module):
         tx=TX()
         tx=ClockDomainsRenamer("tx")(tx)
         rx=RX()
-        rx=ClockDomainsRenamer("tx")(rx)
+        rx=ClockDomainsRenamer("rx")(rx)
         fifo=AsyncFIFO(width=32,depth=32)
         fifo=ClockDomainsRenamer({"read":"tx"})(fifo)
         
@@ -125,7 +126,7 @@ class FullModeSim(Module):
             ]
 
         else:
-            prbs=PRBSGenerator(n_out=32)
+            prbs=PRBS31Generator(n_out=32)
             prbs=ClockDomainsRenamer("write")(prbs)
             self.submodules+=prbs
             prbs_en=Signal()
@@ -197,7 +198,7 @@ class FullModeSim(Module):
             tx.link_ready.eq(self.link_ready),
             tx.fifo_empty.eq(~fifo.readable),
             tx.tx_init_done.eq(gtp.tx_init_done),
-            tx.pll_lock.eq(gtp.pll_lock),
+            
             If((self.link_ready & fifo.readable), 
                 tx.data_type_in.eq(fifo.dtout),
                 tx.data_in.eq(fifo.dout), 
@@ -206,10 +207,10 @@ class FullModeSim(Module):
             rx.data_in.eq(gtp.rx_data),
             rx.aligned.eq(gtp.rxbytealigned),
             rx.rx_init_done.eq(gtp.rxinit_done),
-            rx.pll_lock.eq(gtp.pll_lock),
+            
             rx.trans_en.eq(self.trans_en),
-            #self.rxinit_done.eq(gtp.rxinit_done),
-            self.rxinit_done.eq(gtp.tx_init_done),
+            self.rxinit_done.eq(gtp.rxinit_done),
+            #self.rxinit_done.eq(gtp.tx_init_done),
 
             self.cd_write.clk.eq(write_clk),
             self.cd_write.rst.eq(self.reset)
@@ -273,10 +274,11 @@ top dut (
 
 always begin 
     //Waits signals initialization
-    for (integer i=0;i<=400;i=i+1) begin
+    for (integer i=0;i<=4000;i=i+1) begin
         #period;
     end
-    //Waits rx initialization (tx is always(?) initialized first)
+  
+    //Waits rx initialization (tx is always initialized first)
     while(!rxinit_done) begin
         #period;
     end

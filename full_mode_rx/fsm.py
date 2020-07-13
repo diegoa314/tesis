@@ -4,7 +4,8 @@ class Fsm(Module):
 		#Inputs
 		self.link_ready=Signal() 
 		self.fifo_empty=Signal() 
-		self.data_type=Signal(2) 
+		self.data_type=Signal(2)
+		self.tx_init_done=Signal() 
 		#Outputs
 		self.sop=Signal()
 		self.eop=Signal()
@@ -12,44 +13,41 @@ class Fsm(Module):
 		self.idle=Signal()
 		self.intermediate=Signal()
 		self.encoder_ready=Signal() 
-		self.fifo_re=Signal(1) 
+		self.fifo_re=Signal() 
 		self.strobe_crc=Signal()
-		self.system_ready=Signal()
 		self.reset_crc=Signal()
 		#	#	#
 		aux_ign=Signal()
-		self.counter_idle=counter_idle=Signal(2) #counter for IDLE sending process
 		self.submodules.fsm=ResetInserter()(FSM(reset_state="INIT"))
 		self.fsm.act("INIT", 	#0
-			If((self.link_ready & self.system_ready),
-				If(~self.fifo_empty & (self.data_type==1),
-					NextState("SOP"),
-					NextValue(self.fifo_re,1), 
-					NextValue(self.sop,1),
-					NextValue(self.idle,0),
+			If(self.tx_init_done,	
+				If(self.link_ready,
+					If(self.link_ready & (~self.fifo_empty) & (self.data_type==1),
+						NextState("SOP"),
+						NextValue(self.fifo_re,1), 
+						NextValue(self.sop,1),
+						NextValue(self.idle,0),
+					).Else(
+						NextState("IDLE"),
+						NextValue(self.idle,1)
+					)
 				).Else(
 					NextState("IDLE"),
 					NextValue(self.idle,1)
-				),								
+				)
 			).Else(NextState("INIT")),
 		)
 	
 
 		self.fsm.act("IDLE",  	#1
-			If(self.link_ready,	
-				NextValue(self.encoder_ready,1),
-				If(self.fifo_empty,
-					NextState("IDLE")
-				).Elif(self.data_type==1,
-					NextState("SOP"),
-					NextValue(self.fifo_re,1), 
-					NextValue(self.sop,1),
-					NextValue(self.idle,0)
-				)
-			).Else(
-				NextState("INIT"),
-				NextValue(self.encoder_ready,0),
-				NextValue(self.idle,0),
+			NextValue(self.encoder_ready,1),
+			If(self.fifo_empty,
+				NextState("IDLE")
+			).Elif(self.link_ready & (self.data_type==1),
+				NextState("SOP"),
+				NextValue(self.fifo_re,1), 
+				NextValue(self.sop,1),
+				NextValue(self.idle,0)
 			)
 		)
 		self.fsm.act("SOP", #2

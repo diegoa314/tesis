@@ -7,30 +7,28 @@ class RX(Module):
 	def __init__(self):
 		self.data_in=Signal(40)
 		self.rx_init_done = rx_init_done = Signal()
-		self.pll_lock = pll_lock = Signal()
+		
 		self.trans_en = trans_en = Signal() #habilitador para el envio
 		self.tx_serial= tx_serial = Signal() #senhal serial de salida
 		self.aligned=Signal()
 		#	#	#
 		corrector=Alignment_Corrector()
 		data_32b=Signal(32)
-		rx_k=Signal(4)
+		rx_k0=Signal()
 		decoder1=Decoder(lsb_first=True)
 		decoder2=Decoder(lsb_first=True)
 		decoder3=Decoder(lsb_first=True)
 		decoder4=Decoder(lsb_first=True)
 		uart_transmitter = Transmitter32b()
 		fifo = SyncFIFOBuffered(32,20)
-		self.submodules+=[corrector,uart_transmitter,fifo,decoder1,decoder2,decoder3,decoder4]
+		self.submodules+=[corrector,uart_transmitter,decoder1,decoder2,decoder3,decoder4]
+		#self.submodules+=[uart_transmitter,fifo]
 		self.comb+=[
 			decoder1.input.eq(self.data_in[:10]),
 			decoder2.input.eq(self.data_in[10:20]),
 			decoder3.input.eq(self.data_in[20:30]),
 			decoder4.input.eq(self.data_in[30:]),
-			rx_k[0].eq(decoder1.k),
-			rx_k[1].eq(decoder2.k),
-			rx_k[2].eq(decoder3.k),
-			rx_k[3].eq(decoder4.k),
+			
 			corrector.aligned.eq(self.aligned),
 			corrector.din[:8].eq(decoder1.d),
 			corrector.din[8:16].eq(decoder2.d),
@@ -46,16 +44,20 @@ class RX(Module):
 			
 			
 		]
+		self.sync+=[
+			rx_k0.eq(decoder3.k),
+		]
 		
+		"""
 		self.submodules.fsm=FSM(reset_state="INIT")
 		self.fsm.act("INIT",
-			If((rx_init_done & pll_lock),
+			If((rx_init_done ),
 				NextState("WAITING_SOP")
 			)
 		)
 
 		self.fsm.act("WAITING_SOP",
-			If(((data_32b[:8]==0x3c) & (rx_k[0])), #SOP 
+			If(((data_32b[:8]==0x3c) & (rx_k0)), #SOP 
 				fifo.we.eq(1),
 				NextState("WAITING_EOP")
 			)
@@ -63,9 +65,10 @@ class RX(Module):
 
 		self.fsm.act("WAITING_EOP",
 			fifo.we.eq(1),
-			If(((data_32b[:8]==0xdc) & (rx_k[0])), #EOP
+			If(((data_32b[:8]==0xdc) & (rx_k0)), #EOP
 				NextState("WAITING_SOP")
 			)
 
 		)
-
+		"""
+		
