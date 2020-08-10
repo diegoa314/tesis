@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# xsim v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Sun Jul 19 14:34:30 2020
+# Process ID: 3595
+# Current directory: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx
+# Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
+# Log file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.log
+# Journal file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.jou
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/top_tb_sim/xsim_script.tcl
+# set_param project.enableReportConfiguration 0
+# load_feature core
+# current_fileset
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
+current_fileset: Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 8540.672 ; gain = 89.031 ; free physical = 1425 ; free virtual = 5818
+# xsim {top_tb_sim} -autoloadwcfg
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg
+WARNING: Simulation object /top_tb/dut/tx_tx_init_done was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_fifo_empty was not found in the design.
+WARNING: Simulation object /top_tb/dut/asyncfifo_dtout was not found in the design.
+WARNING: Simulation object /top_tb/dut/gtp_gtprxinit_restart was not found in the design.
+xsim: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 8635.531 ; gain = 94.859 ; free physical = 1312 ; free virtual = 5708
+save_wave_config {/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg}
+run 1 ms
+run: Time (s): cpu = 00:02:06 ; elapsed = 00:15:45 . Memory (MB): peak = 8635.531 ; gain = 0.000 ; free physical = 1109 ; free virtual = 5553
+run 1 ms
+run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 8765.801 ; gain = 0.000 ; free physical = 1075 ; free virtual = 5521
+save_wave_config {/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:15:50 ; elapsed = 00:00:12 . Memory (MB): peak = 8765.805 ; gain = 0.000 ; free physical = 1192 ; free virtual = 5606
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Jul 19 14:55:46 2020...

@@ -32,8 +32,8 @@ class _FIFOInterface:
 
         self.din = Signal(width, reset_less=True)
         self.dout = Signal(width, reset_less=True)
-        self.dtin = Signal(2, reset_less=True)
-        self.dtout = Signal(2, reset_less=True)
+        #self.dtin = Signal(2, reset_less=True)
+        #self.dtout = Signal(2, reset_less=True)
         self.width = width
         self.depth = depth
 
@@ -65,7 +65,7 @@ class _FIFOInterface:
 
     def writetype(self, data):
         """Write method for simulation."""
-        yield self.dtin.eq(data)
+        #yield self.dtin.eq(data)
         yield self.we.eq(1)
         yield
         yield self.we.eq(0)
@@ -130,7 +130,7 @@ class AsyncFIFO(Module, _FIFOInterface):
         ]
 
         #### BLOQUE DE DATA TYPE #####
-
+        """
         storaget = Memory(2, depth)
         self.specials += storaget
         wrport1 = storaget.get_port(write_capable=True, clock_domain="write")
@@ -146,6 +146,7 @@ class AsyncFIFO(Module, _FIFOInterface):
             rdport1.adr.eq(consume.q_next_binary[:-1]),
             self.dtout.eq(rdport1.dat_r)
         ]
+        """
 
 class AsyncFIFOBuffered(Module, _FIFOInterface):
     """Improves timing when it breaks due to sluggish clock-to-output
@@ -156,14 +157,14 @@ class AsyncFIFOBuffered(Module, _FIFOInterface):
 
         self.writable = fifo.writable
         self.din = fifo.din
-        self.dtin = fifo.dtin
+        #self.dtin = fifo.dtin
         self.we = fifo.we
         #self.readable = fifo.readable
 
         self.sync.read += \
             If(self.re | ~self.readable,
                 self.dout.eq(fifo.dout),
-                self.dtout.eq(fifo.dtout),
+                #self.dtout.eq(fifo.dtout),
                 self.readable.eq(fifo.readable)
             )
         self.comb += fifo.re.eq(self.re | ~self.readable)

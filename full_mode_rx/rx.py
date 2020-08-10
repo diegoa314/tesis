@@ -15,20 +15,27 @@ class RX(Module):
 		corrector=Alignment_Corrector()
 		data_32b=Signal(32)
 		rx_k0=Signal()
+		rx_k1=Signal()
+		rx_k2=Signal()
+		rx_k3=Signal()
 		decoder1=Decoder(lsb_first=True)
 		decoder2=Decoder(lsb_first=True)
 		decoder3=Decoder(lsb_first=True)
 		decoder4=Decoder(lsb_first=True)
+		decoder_out=Signal(32)
 		uart_transmitter = Transmitter32b()
 		fifo = SyncFIFOBuffered(32,20)
-		self.submodules+=[corrector,uart_transmitter,decoder1,decoder2,decoder3,decoder4]
+		#self.submodules+=[corrector,uart_transmitter,decoder1,decoder2,decoder3,decoder4]
+		self.submodules+=[uart_transmitter,decoder1,decoder2,decoder3,decoder4]
 		#self.submodules+=[uart_transmitter,fifo]
 		self.comb+=[
 			decoder1.input.eq(self.data_in[:10]),
 			decoder2.input.eq(self.data_in[10:20]),
 			decoder3.input.eq(self.data_in[20:30]),
 			decoder4.input.eq(self.data_in[30:]),
-			
+			decoder_out.eq(Cat(decoder1.d,decoder2.d,decoder3.d,decoder4.d,)),
+
+
 			corrector.aligned.eq(self.aligned),
 			corrector.din[:8].eq(decoder1.d),
 			corrector.din[8:16].eq(decoder2.d),
@@ -45,7 +52,10 @@ class RX(Module):
 			
 		]
 		self.sync+=[
-			rx_k0.eq(decoder3.k),
+			rx_k0.eq(decoder1.k),
+			rx_k1.eq(decoder2.k),
+			rx_k2.eq(decoder3.k),
+			rx_k3.eq(decoder4.k),
 		]
 		
 		"""

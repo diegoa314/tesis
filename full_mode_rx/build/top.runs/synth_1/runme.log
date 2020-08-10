@@ -1,0 +1,1076 @@
+
+*** Running vivado
+    with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+  **** IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source top.tcl -notrace
+Command: synth_design -top top -part xc7a200tfbg676-3
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Device 21-403] Loading part xc7a200tfbg676-3
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 19076 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:35 . Memory (MB): peak = 2086.547 ; gain = 201.680 ; free physical = 121 ; free virtual = 4399
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:6]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:8]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:10]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:148]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:150]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:346]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:351]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:469]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:469]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:470]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:470]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:471]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:471]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:472]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:472]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:473]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:473]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:474]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:474]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:475]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:475]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:476]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:476]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:477]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:477]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:478]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:478]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:479]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:479]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:480]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:480]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:481]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:481]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:482]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:482]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:483]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:483]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:484]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:484]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:485]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:485]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:486]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:486]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:487]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:487]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:488]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:488]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:489]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:489]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:490]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:490]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:491]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:491]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:492]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:492]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:493]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:493]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:494]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:494]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:495]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:495]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:496]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:496]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:497]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:497]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:498]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:498]
+INFO: [Synth 8-3876] $readmem data file 'mem_6b5b.init' is read successfully [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4557]
+INFO: [Synth 8-3876] $readmem data file 'mem_6b5b_1.init' is read successfully [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4569]
+INFO: [Synth 8-3876] $readmem data file 'mem_6b5b_2.init' is read successfully [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4581]
+INFO: [Synth 8-3876] $readmem data file 'mem_6b5b_3.init' is read successfully [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4593]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:1268]
+INFO: [Synth 8-6157] synthesizing module 'IBUFGDS' [/home/diegoaranda/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:33416]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DIFF_TERM bound to: FALSE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IBUFGDS' (1#1) [/home/diegoaranda/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:33416]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS_GTE2' [/home/diegoaranda/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:33090]
+	Parameter CLKCM_CFG bound to: TRUE - type: string 
+	Parameter CLKRCV_TRST bound to: TRUE - type: string 
+	Parameter CLKSWING_CFG bound to: 2'b11 
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS_GTE2' (2#1) [/home/diegoaranda/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:33090]
+WARNING: [Synth 8-7023] instance 'IBUFDS_GTE2' of module 'IBUFDS_GTE2' has 5 connections declared, but only 4 given [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4252]
+INFO: [Synth 8-6157] synthesizing module 'IBUFG' [/home/diegoaranda/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:33402]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IBUFG' (3#1) [/home/diegoaranda/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:33402]
+INFO: [Synth 8-6157] synthesizing module 'GTPE2_COMMON' [/home/diegoaranda/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:20663]
+	Parameter BIAS_CFG bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter COMMON_CFG bound to: 0 - type: integer 
+	Parameter IS_DRPCLK_INVERTED bound to: 1'b0 
+	Parameter IS_GTGREFCLK0_INVERTED bound to: 1'b0 
+	Parameter IS_GTGREFCLK1_INVERTED bound to: 1'b0 
+	Parameter IS_PLL0LOCKDETCLK_INVERTED bound to: 1'b0 
+	Parameter IS_PLL1LOCKDETCLK_INVERTED bound to: 1'b0 
+	Parameter PLL0_CFG bound to: 27'b000000111110000001111011100 
+	Parameter PLL0_DMON_CFG bound to: 1'b0 
+	Parameter PLL0_FBDIV bound to: 5 - type: integer 
+	Parameter PLL0_FBDIV_45 bound to: 4 - type: integer 
+	Parameter PLL0_INIT_CFG bound to: 24'b000000000000000000011110 
+	Parameter PLL0_LOCK_CFG bound to: 9'b111101000 
+	Parameter PLL0_REFCLK_DIV bound to: 2 - type: integer 
+	Parameter PLL1_CFG bound to: 27'b000000111110000001111011100 
+	Parameter PLL1_DMON_CFG bound to: 1'b0 
+	Parameter PLL1_FBDIV bound to: 4 - type: integer 
+	Parameter PLL1_FBDIV_45 bound to: 5 - type: integer 
+	Parameter PLL1_INIT_CFG bound to: 24'b000000000000000000011110 
+	Parameter PLL1_LOCK_CFG bound to: 9'b111101000 
+	Parameter PLL1_REFCLK_DIV bound to: 1 - type: integer 
+	Parameter PLL_CLKOUT_CFG bound to: 8'b00000000 
+	Parameter RSVD_ATTR0 bound to: 16'b0000000000000000 
+	Parameter RSVD_ATTR1 bound to: 16'b0000000000000000 
+	Parameter SIM_PLL0REFCLK_SEL bound to: 3'b001 
+	Parameter SIM_PLL1REFCLK_SEL bound to: 3'b001 
+	Parameter SIM_RESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter SIM_VERSION bound to: 1.0 - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'GTPE2_COMMON' (4#1) [/home/diegoaranda/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:20663]
+WARNING: [Synth 8-7023] instance 'GTPE2_COMMON' of module 'GTPE2_COMMON' has 48 connections declared, but only 14 given [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4268]
+INFO: [Synth 8-6157] synthesizing module 'PLLE2_BASE' [/home/diegoaranda/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61495]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT bound to: 5 - type: integer 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 4.166667 - type: double 
+	Parameter CLKOUT0_DIVIDE bound to: 5 - type: integer 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_DIVIDE bound to: 10 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'PLLE2_BASE' (5#1) [/home/diegoaranda/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:61495]
+WARNING: [Synth 8-7023] instance 'PLLE2_BASE' of module 'PLLE2_BASE' has 12 connections declared, but only 6 given [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4295]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/home/diegoaranda/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (6#1) [/home/diegoaranda/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1075]
+WARNING: [Synth 8-7023] instance 'PLLE2_BASE_1' of module 'PLLE2_BASE' has 12 connections declared, but only 7 given [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4329]
+INFO: [Synth 8-6157] synthesizing module 'GTPE2_CHANNEL' [/home/diegoaranda/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:19961]
+	Parameter ACJTAG_DEBUG_MODE bound to: 1'b0 
+	Parameter ACJTAG_MODE bound to: 1'b0 
+	Parameter ACJTAG_RESET bound to: 1'b0 
+	Parameter ADAPT_CFG0 bound to: 20'b00000000000000000000 
+	Parameter ALIGN_COMMA_DOUBLE bound to: FALSE - type: string 
+	Parameter ALIGN_COMMA_ENABLE bound to: 10'b1111111111 
+	Parameter ALIGN_COMMA_WORD bound to: 2 - type: integer 
+	Parameter ALIGN_MCOMMA_DET bound to: TRUE - type: string 
+	Parameter ALIGN_MCOMMA_VALUE bound to: 10'b1010000011 
+	Parameter ALIGN_PCOMMA_DET bound to: TRUE - type: string 
+	Parameter ALIGN_PCOMMA_VALUE bound to: 10'b0101111100 
+	Parameter CBCC_DATA_SOURCE_SEL bound to: DECODED - type: string 
+	Parameter CFOK_CFG bound to: 43'b1001001000000000000000001000000111010000000 
+	Parameter CFOK_CFG2 bound to: 7'b0100000 
+	Parameter CFOK_CFG3 bound to: 7'b0100000 
+	Parameter CFOK_CFG4 bound to: 1'b0 
+	Parameter CFOK_CFG5 bound to: 2'b00 
+	Parameter CFOK_CFG6 bound to: 4'b0000 
+	Parameter CHAN_BOND_KEEP_ALIGN bound to: FALSE - type: string 
+	Parameter CHAN_BOND_MAX_SKEW bound to: 7 - type: integer 
+	Parameter CHAN_BOND_SEQ_1_1 bound to: 10'b0101111100 
+	Parameter CHAN_BOND_SEQ_1_2 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_1_3 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_1_4 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_1_ENABLE bound to: 4'b1111 
+	Parameter CHAN_BOND_SEQ_2_1 bound to: 10'b0100000000 
+	Parameter CHAN_BOND_SEQ_2_2 bound to: 10'b0100000000 
+	Parameter CHAN_BOND_SEQ_2_3 bound to: 10'b0100000000 
+	Parameter CHAN_BOND_SEQ_2_4 bound to: 10'b0100000000 
+	Parameter CHAN_BOND_SEQ_2_ENABLE bound to: 4'b1111 
+	Parameter CHAN_BOND_SEQ_2_USE bound to: FALSE - type: string 
+	Parameter CHAN_BOND_SEQ_LEN bound to: 1 - type: integer 
+	Parameter CLK_COMMON_SWING bound to: 1'b0 
+	Parameter CLK_CORRECT_USE bound to: FALSE - type: string 
+	Parameter CLK_COR_KEEP_IDLE bound to: FALSE - type: string 
+	Parameter CLK_COR_MAX_LAT bound to: 20 - type: integer 
+	Parameter CLK_COR_MIN_LAT bound to: 18 - type: integer 
+	Parameter CLK_COR_PRECEDENCE bound to: TRUE - type: string 
+	Parameter CLK_COR_REPEAT_WAIT bound to: 0 - type: integer 
+	Parameter CLK_COR_SEQ_1_1 bound to: 10'b0100011100 
+	Parameter CLK_COR_SEQ_1_2 bound to: 10'b0000000000 
+	Parameter CLK_COR_SEQ_1_3 bound to: 10'b0000000000 
+	Parameter CLK_COR_SEQ_1_4 bound to: 10'b0000000000 
+	Parameter CLK_COR_SEQ_1_ENABLE bound to: 4'b1111 
+	Parameter CLK_COR_SEQ_2_1 bound to: 10'b0100000000 
+	Parameter CLK_COR_SEQ_2_2 bound to: 10'b0100000000 
+	Parameter CLK_COR_SEQ_2_3 bound to: 10'b0100000000 
+	Parameter CLK_COR_SEQ_2_4 bound to: 10'b0100000000 
+	Parameter CLK_COR_SEQ_2_ENABLE bound to: 4'b1111 
+	Parameter CLK_COR_SEQ_2_USE bound to: FALSE - type: string 
+	Parameter CLK_COR_SEQ_LEN bound to: 1 - type: integer 
+	Parameter DEC_MCOMMA_DETECT bound to: TRUE - type: string 
+	Parameter DEC_PCOMMA_DETECT bound to: TRUE - type: string 
+	Parameter DEC_VALID_COMMA_ONLY bound to: TRUE - type: string 
+	Parameter DMONITOR_CFG bound to: 24'b000000000000101000000000 
+	Parameter ES_CLK_PHASE_SEL bound to: 1'b0 
+	Parameter ES_CONTROL bound to: 6'b000000 
+	Parameter ES_ERRDET_EN bound to: FALSE - type: string 
+	Parameter ES_EYE_SCAN_EN bound to: FALSE - type: string 
+	Parameter ES_HORZ_OFFSET bound to: 12'b000000010000 
+	Parameter ES_PMA_CFG bound to: 10'b0000000000 
+	Parameter ES_PRESCALE bound to: 5'b00000 
+	Parameter ES_QUALIFIER bound to: 80'b00000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ES_QUAL_MASK bound to: 80'b00000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ES_SDATA_MASK bound to: 80'b00000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ES_VERT_OFFSET bound to: 9'b000000000 
+	Parameter FTS_DESKEW_SEQ_ENABLE bound to: 4'b1111 
+	Parameter FTS_LANE_DESKEW_CFG bound to: 4'b1111 
+	Parameter FTS_LANE_DESKEW_EN bound to: FALSE - type: string 
+	Parameter GEARBOX_MODE bound to: 3'b000 
+	Parameter IS_CLKRSVD0_INVERTED bound to: 1'b0 
+	Parameter IS_CLKRSVD1_INVERTED bound to: 1'b0 
+	Parameter IS_DMONITORCLK_INVERTED bound to: 1'b0 
+	Parameter IS_DRPCLK_INVERTED bound to: 1'b0 
+	Parameter IS_RXUSRCLK2_INVERTED bound to: 1'b0 
+	Parameter IS_RXUSRCLK_INVERTED bound to: 1'b0 
+	Parameter IS_SIGVALIDCLK_INVERTED bound to: 1'b0 
+	Parameter IS_TXPHDLYTSTCLK_INVERTED bound to: 1'b0 
+	Parameter IS_TXUSRCLK2_INVERTED bound to: 1'b0 
+	Parameter IS_TXUSRCLK_INVERTED bound to: 1'b0 
+	Parameter LOOPBACK_CFG bound to: 1'b0 
+	Parameter OUTREFCLK_SEL_INV bound to: 2'b11 
+	Parameter PCS_PCIE_EN bound to: FALSE - type: string 
+	Parameter PCS_RSVD_ATTR bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter PD_TRANS_TIME_FROM_P2 bound to: 12'b000000111100 
+	Parameter PD_TRANS_TIME_NONE_P2 bound to: 8'b00111100 
+	Parameter PD_TRANS_TIME_TO_P2 bound to: 8'b01100100 
+	Parameter PMA_LOOPBACK_CFG bound to: 1'b0 
+	Parameter PMA_RSV bound to: 819 - type: integer 
+	Parameter PMA_RSV2 bound to: 8256 - type: integer 
+	Parameter PMA_RSV3 bound to: 2'b00 
+	Parameter PMA_RSV4 bound to: 4'b0000 
+	Parameter PMA_RSV5 bound to: 1'b0 
+	Parameter PMA_RSV6 bound to: 1'b0 
+	Parameter PMA_RSV7 bound to: 1'b0 
+	Parameter RXBUFRESET_TIME bound to: 5'b00001 
+	Parameter RXBUF_ADDR_MODE bound to: FAST - type: string 
+	Parameter RXBUF_EIDLE_HI_CNT bound to: 4'b1000 
+	Parameter RXBUF_EIDLE_LO_CNT bound to: 4'b0000 
+	Parameter RXBUF_EN bound to: FALSE - type: string 
+	Parameter RXBUF_RESET_ON_CB_CHANGE bound to: TRUE - type: string 
+	Parameter RXBUF_RESET_ON_COMMAALIGN bound to: FALSE - type: string 
+	Parameter RXBUF_RESET_ON_EIDLE bound to: FALSE - type: string 
+	Parameter RXBUF_RESET_ON_RATE_CHANGE bound to: TRUE - type: string 
+	Parameter RXBUF_THRESH_OVFLW bound to: 61 - type: integer 
+	Parameter RXBUF_THRESH_OVRD bound to: FALSE - type: string 
+	Parameter RXBUF_THRESH_UNDFLW bound to: 4 - type: integer 
+	Parameter RXCDRFREQRESET_TIME bound to: 5'b00001 
+	Parameter RXCDRPHRESET_TIME bound to: 5'b00001 
+	Parameter RXCDR_CFG bound to: 83'b00000000000000000010000011111111110010000000110000000000001000001000001000000010000 
+	Parameter RXCDR_FR_RESET_ON_EIDLE bound to: 1'b0 
+	Parameter RXCDR_HOLD_DURING_EIDLE bound to: 1'b0 
+	Parameter RXCDR_LOCK_CFG bound to: 6'b001001 
+	Parameter RXCDR_PH_RESET_ON_EIDLE bound to: 1'b0 
+	Parameter RXDLY_CFG bound to: 16'b0000000000011111 
+	Parameter RXDLY_LCFG bound to: 9'b000110000 
+	Parameter RXDLY_TAP_CFG bound to: 16'b0000000000000000 
+	Parameter RXGEARBOX_EN bound to: FALSE - type: string 
+	Parameter RXISCANRESET_TIME bound to: 5'b00001 
+	Parameter RXLPMRESET_TIME bound to: 7'b0001111 
+	Parameter RXLPM_BIAS_STARTUP_DISABLE bound to: 1'b0 
+	Parameter RXLPM_CFG bound to: 4'b0110 
+	Parameter RXLPM_CFG1 bound to: 1'b0 
+	Parameter RXLPM_CM_CFG bound to: 1'b0 
+	Parameter RXLPM_GC_CFG bound to: 9'b111100010 
+	Parameter RXLPM_GC_CFG2 bound to: 3'b001 
+	Parameter RXLPM_HF_CFG bound to: 14'b00001111110000 
+	Parameter RXLPM_HF_CFG2 bound to: 5'b01010 
+	Parameter RXLPM_HF_CFG3 bound to: 4'b0000 
+	Parameter RXLPM_HOLD_DURING_EIDLE bound to: 1'b0 
+	Parameter RXLPM_INCM_CFG bound to: 1'b0 
+	Parameter RXLPM_IPCM_CFG bound to: 1'b1 
+	Parameter RXLPM_LF_CFG bound to: 18'b000000001111110000 
+	Parameter RXLPM_LF_CFG2 bound to: 5'b01010 
+	Parameter RXLPM_OSINT_CFG bound to: 3'b100 
+	Parameter RXOOB_CFG bound to: 7'b0000110 
+	Parameter RXOOB_CLK_CFG bound to: PMA - type: string 
+	Parameter RXOSCALRESET_TIME bound to: 5'b00011 
+	Parameter RXOSCALRESET_TIMEOUT bound to: 5'b00000 
+	Parameter RXOUT_DIV bound to: 1 - type: integer 
+	Parameter RXPCSRESET_TIME bound to: 5'b00001 
+	Parameter RXPHDLY_CFG bound to: 24'b000010000100000000100000 
+	Parameter RXPH_CFG bound to: 24'b110000000000000000000010 
+	Parameter RXPH_MONITOR_SEL bound to: 5'b00000 
+	Parameter RXPI_CFG0 bound to: 3'b000 
+	Parameter RXPI_CFG1 bound to: 1'b1 
+	Parameter RXPI_CFG2 bound to: 1'b1 
+	Parameter RXPMARESET_TIME bound to: 5'b00011 
+	Parameter RXPRBS_ERR_LOOPBACK bound to: 1'b0 
+	Parameter RXSLIDE_AUTO_WAIT bound to: 7 - type: integer 
+	Parameter RXSLIDE_MODE bound to: OFF - type: string 
+	Parameter RXSYNC_MULTILANE bound to: 1'b0 
+	Parameter RXSYNC_OVRD bound to: 1'b0 
+	Parameter RXSYNC_SKIP_DA bound to: 1'b0 
+	Parameter RX_BIAS_CFG bound to: 16'b0000111100110011 
+	Parameter RX_BUFFER_CFG bound to: 6'b000000 
+	Parameter RX_CLK25_DIV bound to: 5 - type: integer 
+	Parameter RX_CLKMUX_EN bound to: 1'b1 
+	Parameter RX_CM_SEL bound to: 2'b01 
+	Parameter RX_CM_TRIM bound to: 4'b1010 
+	Parameter RX_DATA_WIDTH bound to: 40 - type: integer 
+	Parameter RX_DDI_SEL bound to: 6'b000000 
+	Parameter RX_DEBUG_CFG bound to: 14'b00000000000000 
+	Parameter RX_DEFER_RESET_BUF_EN bound to: TRUE - type: string 
+	Parameter RX_DISPERR_SEQ_MATCH bound to: TRUE - type: string 
+	Parameter RX_OS_CFG bound to: 13'b0000010000000 
+	Parameter RX_SIG_VALID_DLY bound to: 10 - type: integer 
+	Parameter RX_XCLK_SEL bound to: RXUSR - type: string 
+	Parameter SAS_MAX_COM bound to: 64 - type: integer 
+	Parameter SAS_MIN_COM bound to: 36 - type: integer 
+	Parameter SATA_BURST_SEQ_LEN bound to: 4'b1111 
+	Parameter SATA_BURST_VAL bound to: 3'b100 
+	Parameter SATA_EIDLE_VAL bound to: 3'b100 
+	Parameter SATA_MAX_BURST bound to: 8 - type: integer 
+	Parameter SATA_MAX_INIT bound to: 21 - type: integer 
+	Parameter SATA_MAX_WAKE bound to: 7 - type: integer 
+	Parameter SATA_MIN_BURST bound to: 4 - type: integer 
+	Parameter SATA_MIN_INIT bound to: 12 - type: integer 
+	Parameter SATA_MIN_WAKE bound to: 4 - type: integer 
+	Parameter SATA_PLL_CFG bound to: VCO_3000MHZ - type: string 
+	Parameter SHOW_REALIGN_COMMA bound to: FALSE - type: string 
+	Parameter SIM_RECEIVER_DETECT_PASS bound to: TRUE - type: string 
+	Parameter SIM_RESET_SPEEDUP bound to: FALSE - type: string 
+	Parameter SIM_TX_EIDLE_DRIVE_LEVEL bound to: X - type: string 
+	Parameter SIM_VERSION bound to: 2.0 - type: string 
+	Parameter TERM_RCAL_CFG bound to: 15'b100001000010000 
+	Parameter TERM_RCAL_OVRD bound to: 3'b000 
+	Parameter TRANS_TIME_RATE bound to: 8'b00001110 
+	Parameter TST_RSV bound to: 0 - type: integer 
+	Parameter TXBUF_EN bound to: FALSE - type: string 
+	Parameter TXBUF_RESET_ON_RATE_CHANGE bound to: FALSE - type: string 
+	Parameter TXDLY_CFG bound to: 16'b0000000000010000 
+	Parameter TXDLY_LCFG bound to: 9'b000100000 
+	Parameter TXDLY_TAP_CFG bound to: 16'b0000000000000000 
+	Parameter TXGEARBOX_EN bound to: FALSE - type: string 
+	Parameter TXOOB_CFG bound to: 1'b0 
+	Parameter TXOUT_DIV bound to: 1 - type: integer 
+	Parameter TXPCSRESET_TIME bound to: 5'b00001 
+	Parameter TXPHDLY_CFG bound to: 24'b000010000100000000000000 
+	Parameter TXPH_CFG bound to: 16'b0000010000000000 
+	Parameter TXPH_MONITOR_SEL bound to: 5'b00000 
+	Parameter TXPI_CFG0 bound to: 2'b00 
+	Parameter TXPI_CFG1 bound to: 2'b00 
+	Parameter TXPI_CFG2 bound to: 2'b00 
+	Parameter TXPI_CFG3 bound to: 1'b0 
+	Parameter TXPI_CFG4 bound to: 1'b0 
+	Parameter TXPI_CFG5 bound to: 3'b000 
+	Parameter TXPI_GREY_SEL bound to: 1'b0 
+	Parameter TXPI_INVSTROBE_SEL bound to: 1'b0 
+	Parameter TXPI_PPMCLK_SEL bound to: TXUSRCLK2 - type: string 
+	Parameter TXPI_PPM_CFG bound to: 8'b00000000 
+	Parameter TXPI_SYNFREQ_PPM bound to: 3'b000 
+	Parameter TXPMARESET_TIME bound to: 5'b00001 
+	Parameter TXSYNC_MULTILANE bound to: 1'b0 
+	Parameter TXSYNC_OVRD bound to: 1'b1 
+	Parameter TXSYNC_SKIP_DA bound to: 1'b0 
+	Parameter TX_CLK25_DIV bound to: 5 - type: integer 
+	Parameter TX_CLKMUX_EN bound to: 1'b1 
+	Parameter TX_DATA_WIDTH bound to: 40 - type: integer 
+	Parameter TX_DEEMPH0 bound to: 6'b000000 
+	Parameter TX_DEEMPH1 bound to: 6'b000000 
+	Parameter TX_DRIVE_MODE bound to: DIRECT - type: string 
+	Parameter TX_EIDLE_ASSERT_DELAY bound to: 3'b110 
+	Parameter TX_EIDLE_DEASSERT_DELAY bound to: 3'b100 
+	Parameter TX_LOOPBACK_DRIVE_HIZ bound to: FALSE - type: string 
+	Parameter TX_MAINCURSOR_SEL bound to: 1'b0 
+	Parameter TX_MARGIN_FULL_0 bound to: 7'b1001110 
+	Parameter TX_MARGIN_FULL_1 bound to: 7'b1001001 
+	Parameter TX_MARGIN_FULL_2 bound to: 7'b1000101 
+	Parameter TX_MARGIN_FULL_3 bound to: 7'b1000010 
+	Parameter TX_MARGIN_FULL_4 bound to: 7'b1000000 
+	Parameter TX_MARGIN_LOW_0 bound to: 7'b1000110 
+	Parameter TX_MARGIN_LOW_1 bound to: 7'b1000100 
+	Parameter TX_MARGIN_LOW_2 bound to: 7'b1000010 
+	Parameter TX_MARGIN_LOW_3 bound to: 7'b1000000 
+	Parameter TX_MARGIN_LOW_4 bound to: 7'b1000000 
+	Parameter TX_PREDRIVER_MODE bound to: 1'b0 
+	Parameter TX_RXDETECT_CFG bound to: 14'b01100000110010 
+	Parameter TX_RXDETECT_REF bound to: 3'b100 
+	Parameter TX_XCLK_SEL bound to: TXUSR - type: string 
+	Parameter UCODEER_CLR bound to: 1'b0 
+	Parameter USE_PCS_CLK_PHASE_SEL bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'GTPE2_CHANNEL' (7#1) [/home/diegoaranda/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:19961]
+WARNING: [Synth 8-7023] instance 'GTPE2_CHANNEL' of module 'GTPE2_CHANNEL' has 227 connections declared, but only 108 given [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4427]
+WARNING: [Synth 8-6014] Unused sequential element rx_rx_k0_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3714]
+WARNING: [Synth 8-6014] Unused sequential element rx_rx_k1_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3715]
+WARNING: [Synth 8-6014] Unused sequential element rx_rx_k2_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3716]
+WARNING: [Synth 8-6014] Unused sequential element rx_rx_k3_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3717]
+WARNING: [Synth 8-6014] Unused sequential element fsm_state_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3718]
+WARNING: [Synth 8-6014] Unused sequential element rx_tx_ready_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3720]
+WARNING: [Synth 8-6014] Unused sequential element rx_tx_data_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3723]
+WARNING: [Synth 8-6014] Unused sequential element rx_tx_32bdone_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:1230]
+WARNING: [Synth 8-6014] Unused sequential element rx_byte_cnt_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3729]
+WARNING: [Synth 8-6014] Unused sequential element rx_tx_counter_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:1303]
+WARNING: [Synth 8-6014] Unused sequential element tx_state_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3736]
+WARNING: [Synth 8-6014] Unused sequential element rx_tx_latch_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3738]
+WARNING: [Synth 8-6014] Unused sequential element rx_tx_serial2_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:1235]
+WARNING: [Synth 8-6014] Unused sequential element rx_tx_bitn_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3747]
+WARNING: [Synth 8-6014] Unused sequential element rx_tx_done_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3750]
+WARNING: [Synth 8-6014] Unused sequential element rx_decoder1_k_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3714]
+WARNING: [Synth 8-6014] Unused sequential element rx_decoder1_code3b_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:1380]
+WARNING: [Synth 8-6014] Unused sequential element rx_decoder1_ones_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:1381]
+WARNING: [Synth 8-6014] Unused sequential element rx_decoder2_k_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3715]
+WARNING: [Synth 8-6014] Unused sequential element rx_decoder2_code3b_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:1397]
+WARNING: [Synth 8-6014] Unused sequential element rx_decoder2_ones_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:1398]
+WARNING: [Synth 8-6014] Unused sequential element rx_decoder3_k_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3716]
+WARNING: [Synth 8-6014] Unused sequential element rx_decoder3_code3b_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:1414]
+WARNING: [Synth 8-6014] Unused sequential element rx_decoder3_ones_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:1415]
+WARNING: [Synth 8-6014] Unused sequential element rx_decoder4_k_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3717]
+WARNING: [Synth 8-6014] Unused sequential element rx_decoder4_code3b_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:1431]
+WARNING: [Synth 8-6014] Unused sequential element rx_decoder4_ones_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:1432]
+WARNING: [Synth 8-6014] Unused sequential element gtp_gtprxinit_rxphalign0_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3912]
+WARNING: [Synth 8-6014] Unused sequential element gtp_gtprxinit_rxdlyen0_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3913]
+WARNING: [Synth 8-6014] Unused sequential element tx_disparity0_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3949]
+WARNING: [Synth 8-6014] Unused sequential element tx_disparity1_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3951]
+WARNING: [Synth 8-6014] Unused sequential element tx_disparity2_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3953]
+WARNING: [Synth 8-6014] Unused sequential element tx_disparity3_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3955]
+WARNING: [Synth 8-6014] Unused sequential element tx_stream_controller_aux_ign_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4102]
+WARNING: [Synth 8-6014] Unused sequential element memadr_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4551]
+WARNING: [Synth 8-6014] Unused sequential element memadr_1_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4563]
+WARNING: [Synth 8-6014] Unused sequential element memadr_2_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4575]
+WARNING: [Synth 8-6014] Unused sequential element memadr_3_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4587]
+WARNING: [Synth 8-6014] Unused sequential element memadr_4_reg was removed.  [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4602]
+INFO: [Synth 8-6155] done synthesizing module 'top' (8#1) [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4]
+WARNING: [Synth 8-3331] design top has unconnected port trans_en
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:46 . Memory (MB): peak = 2150.270 ; gain = 265.402 ; free physical = 229 ; free virtual = 4422
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:48 . Memory (MB): peak = 2159.172 ; gain = 274.305 ; free physical = 231 ; free virtual = 4424
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:48 . Memory (MB): peak = 2159.172 ; gain = 274.305 ; free physical = 231 ; free virtual = 4424
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2162.141 ; gain = 0.000 ; free physical = 225 ; free virtual = 4418
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+WARNING: [Netlist 29-432] The IBUFG primitive 'IBUFG' has been retargeted to an IBUF primitive only. No BUFG will be added. If a global buffer is intended, please instantiate an available global clock primitive from the current architecture.
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.xdc]
+Finished Parsing XDC File [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2293.906 ; gain = 0.000 ; free physical = 124 ; free virtual = 4328
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  IBUFG => IBUF: 1 instance 
+  IBUFGDS => IBUFDS: 1 instance 
+  PLLE2_BASE => PLLE2_ADV: 2 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2293.906 ; gain = 0.000 ; free physical = 124 ; free virtual = 4328
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:01:11 . Memory (MB): peak = 2293.906 ; gain = 409.039 ; free physical = 201 ; free virtual = 4405
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tfbg676-3
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:01:11 . Memory (MB): peak = 2293.906 ; gain = 409.039 ; free physical = 201 ; free virtual = 4405
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:01:12 . Memory (MB): peak = 2293.906 ; gain = 409.039 ; free physical = 201 ; free virtual = 4405
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'tx_stream_controller_strobe_crc_reg' into 'tx_stream_controller_intermediate_reg' [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4099]
+INFO: [Synth 8-4471] merging register 'tx_stream_controller_reset_crc_reg' into 'tx_stream_controller_eop_reg' [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:798]
+INFO: [Synth 8-4471] merging register 'write_fifo_reg' into 'prbs_en_reg' [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:505]
+INFO: [Synth 8-5544] ROM "gtp_gtprxinit_drpmask" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gtp_gtprxinit_drpen" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gtp_gtprxinit_drpwe" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gtp_gtprxinit_done" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gtp_gtprxinit_rxphdlypd_gtp_next_value_ce0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gtp_gtprxinit_rxdlysreset1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gtp_gtprxinit_rxuserrdy1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "clockdomainsrenamer_next_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gtp_gtprxinit_cdr_stable_timer_wait" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rhs_array_muxed3" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rhs_array_muxed9" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rhs_array_muxed15" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rhs_array_muxed21" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "clockdomainsrenamer0_next_state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+ROM "rhs_array_muxed0" will be implemented in logic because its size less than 1024
+ROM "rhs_array_muxed1" will be implemented in logic because its size less than 1024
+ROM "rhs_array_muxed2" will be implemented in logic because its size less than 1024
+ROM "rhs_array_muxed6" will be implemented in logic because its size less than 1024
+ROM "rhs_array_muxed7" will be implemented in logic because its size less than 1024
+ROM "rhs_array_muxed8" will be implemented in logic because its size less than 1024
+ROM "rhs_array_muxed12" will be implemented in logic because its size less than 1024
+ROM "rhs_array_muxed13" will be implemented in logic because its size less than 1024
+ROM "rhs_array_muxed14" will be implemented in logic because its size less than 1024
+ROM "rhs_array_muxed18" will be implemented in logic because its size less than 1024
+ROM "rhs_array_muxed19" will be implemented in logic because its size less than 1024
+ROM "rhs_array_muxed20" will be implemented in logic because its size less than 1024
+INFO: [Synth 8-802] inferred FSM for state register 'gtptxinit_state_reg' in module 'top'
+INFO: [Synth 8-802] inferred FSM for state register 'clockdomainsrenamer2_state_reg' in module 'top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE5 |                              000 |                              000
+*
+                  iSTATE |                              001 |                              001
+                 iSTATE0 |                              010 |                              010
+                 iSTATE1 |                              011 |                              011
+                 iSTATE2 |                              100 |                              100
+                 iSTATE3 |                              101 |                              101
+                 iSTATE4 |                              110 |                              110
+                 iSTATE6 |                              111 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gtptxinit_state_reg' using encoding 'sequential' in module 'top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE3 |                              000 |                              000
+*
+                  iSTATE |                              001 |                              001
+                 iSTATE2 |                              010 |                              010
+                 iSTATE1 |                              011 |                              011
+                 iSTATE0 |                              100 |                              100
+                 iSTATE4 |                              101 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'clockdomainsrenamer2_state_reg' using encoding 'sequential' in module 'top'
+INFO: [Synth 8-6430] The Block RAM "top/storage_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:01:13 . Memory (MB): peak = 2293.910 ; gain = 409.043 ; free physical = 188 ; free virtual = 4393
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 3     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input      6 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 63    
+	   4 Input      1 Bit         XORs := 4     
+	   5 Input      1 Bit         XORs := 1     
+	   3 Input      1 Bit         XORs := 3     
+	   8 Input      1 Bit         XORs := 4     
+	  10 Input      1 Bit         XORs := 2     
+	   6 Input      1 Bit         XORs := 3     
+	   7 Input      1 Bit         XORs := 1     
+	  13 Input      1 Bit         XORs := 1     
+	  12 Input      1 Bit         XORs := 3     
+	   9 Input      1 Bit         XORs := 3     
+	  17 Input      1 Bit         XORs := 1     
+	  14 Input      1 Bit         XORs := 3     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               20 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 4     
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 12    
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 74    
++---RAMs : 
+	               1K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	  15 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   6 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 9     
+	   2 Input      6 Bit        Muxes := 5     
+	   8 Input      4 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 13    
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 6     
+	   5 Input      3 Bit        Muxes := 3     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 6     
+	   7 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 26    
+	   8 Input      1 Bit        Muxes := 17    
+	  15 Input      1 Bit        Muxes := 12    
+	   5 Input      1 Bit        Muxes := 15    
+	   3 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 3     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input      6 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 63    
+	   4 Input      1 Bit         XORs := 4     
+	   5 Input      1 Bit         XORs := 1     
+	   3 Input      1 Bit         XORs := 3     
+	   8 Input      1 Bit         XORs := 4     
+	  10 Input      1 Bit         XORs := 2     
+	   6 Input      1 Bit         XORs := 3     
+	   7 Input      1 Bit         XORs := 1     
+	  13 Input      1 Bit         XORs := 1     
+	  12 Input      1 Bit         XORs := 3     
+	   9 Input      1 Bit         XORs := 3     
+	  17 Input      1 Bit         XORs := 1     
+	  14 Input      1 Bit         XORs := 3     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               20 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 4     
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 12    
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 74    
++---RAMs : 
+	               1K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	  15 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   6 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 9     
+	   2 Input      6 Bit        Muxes := 5     
+	   8 Input      4 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 13    
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 6     
+	   5 Input      3 Bit        Muxes := 3     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 6     
+	   7 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 26    
+	   8 Input      1 Bit        Muxes := 17    
+	  15 Input      1 Bit        Muxes := 12    
+	   5 Input      1 Bit        Muxes := 15    
+	   3 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design top has unconnected port trans_en
+RAM Pipeline Warning: Read Address Register Found For RAM storage_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM storage_reg. We will not be able to pipeline it. This may degrade performance. 
+INFO: [Synth 8-6430] The Block RAM "top/storage_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+RAM Pipeline Warning: Read Address Register Found For RAM storage_reg. We will not be able to pipeline it. This may degrade performance. 
+INFO: [Synth 8-3886] merging instance 'state_reg[6]' (FDRE) to 'o_reg[6]'
+INFO: [Synth 8-3886] merging instance 'state_reg[5]' (FDRE) to 'o_reg[5]'
+INFO: [Synth 8-3886] merging instance 'state_reg[4]' (FDRE) to 'o_reg[4]'
+INFO: [Synth 8-3886] merging instance 'state_reg[3]' (FDRE) to 'o_reg[3]'
+INFO: [Synth 8-3886] merging instance 'state_reg[2]' (FDRE) to 'o_reg[2]'
+INFO: [Synth 8-3886] merging instance 'state_reg[1]' (FDRE) to 'o_reg[1]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:01:18 . Memory (MB): peak = 2293.910 ; gain = 409.043 ; free physical = 173 ; free virtual = 4382
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+-------------------+---------------+----------------+
+|Module Name | RTL Object        | Depth x Width | Implemented As | 
++------------+-------------------+---------------+----------------+
+|top         | rhs_array_muxed1  | 32x1          | LUT            | 
+|top         | rhs_array_muxed19 | 32x1          | LUT            | 
+|top         | rhs_array_muxed13 | 32x1          | LUT            | 
+|top         | rhs_array_muxed7  | 32x1          | LUT            | 
+|top         | rhs_array_muxed0  | 32x6          | LUT            | 
+|top         | rhs_array_muxed2  | 32x1          | LUT            | 
+|top         | rhs_array_muxed6  | 32x6          | LUT            | 
+|top         | rhs_array_muxed8  | 32x1          | LUT            | 
+|top         | rhs_array_muxed12 | 32x6          | LUT            | 
+|top         | rhs_array_muxed14 | 32x1          | LUT            | 
+|top         | rhs_array_muxed18 | 32x6          | LUT            | 
+|top         | rhs_array_muxed20 | 32x1          | LUT            | 
+|top         | rhs_array_muxed1  | 32x1          | LUT            | 
+|top         | rhs_array_muxed19 | 32x1          | LUT            | 
+|top         | rhs_array_muxed13 | 32x1          | LUT            | 
+|top         | rhs_array_muxed7  | 32x1          | LUT            | 
+|top         | rhs_array_muxed0  | 32x6          | LUT            | 
+|top         | rhs_array_muxed2  | 32x1          | LUT            | 
+|top         | rhs_array_muxed6  | 32x6          | LUT            | 
+|top         | rhs_array_muxed8  | 32x1          | LUT            | 
+|top         | rhs_array_muxed12 | 32x6          | LUT            | 
+|top         | rhs_array_muxed14 | 32x1          | LUT            | 
+|top         | rhs_array_muxed18 | 32x6          | LUT            | 
+|top         | rhs_array_muxed20 | 32x1          | LUT            | 
++------------+-------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping	Report (see note below)
++------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object  | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|top         | storage_reg | 32 x 34(NO_CHANGE)     | W |   | 32 x 34(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:01:43 . Memory (MB): peak = 2293.910 ; gain = 409.043 ; free physical = 132 ; free virtual = 4251
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:01:45 . Memory (MB): peak = 2293.910 ; gain = 409.043 ; free physical = 130 ; free virtual = 4248
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping	Report
++------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object  | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|top         | storage_reg | 32 x 34(NO_CHANGE)     | W |   | 32 x 34(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7053] The timing for the instance storage_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:01:45 . Memory (MB): peak = 2293.910 ; gain = 409.043 ; free physical = 129 ; free virtual = 4248
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-5396] Clock pin CLKARDCLK has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:760]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3954]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3954]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3954]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3954]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3954]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3954]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3954]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3954]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3954]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3954]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3950]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3950]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3950]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3950]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3950]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3950]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3950]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3950]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3950]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3950]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4049]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4058]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4019]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4028]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3989]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3998]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3959]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3947]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4056]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4026]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3996]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3966]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:914]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:957]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:1000]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4077]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:871]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3965]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3965]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3965]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3965]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4096]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4090]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4082]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4082]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4082]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4203]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4205]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4207]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4207]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4207]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4207]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4207]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4207]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3914]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3910]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3909]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3922]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3922]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3922]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3922]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4199]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4197]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4195]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3698]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3699]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3703]
+WARNING: [Synth 8-5396] Clock pin DRPCLK has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4427]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4201]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4193]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:4191]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3908]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3700]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3701]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3702]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3927]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3927]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3927]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3927]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.v:3927]
+INFO: [Common 17-14] Message 'Synth 8-5396' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:50 ; elapsed = 00:01:49 . Memory (MB): peak = 2293.910 ; gain = 409.043 ; free physical = 129 ; free virtual = 4248
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:50 ; elapsed = 00:01:49 . Memory (MB): peak = 2293.910 ; gain = 409.043 ; free physical = 129 ; free virtual = 4248
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:01:49 . Memory (MB): peak = 2293.910 ; gain = 409.043 ; free physical = 129 ; free virtual = 4248
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:01:49 . Memory (MB): peak = 2293.910 ; gain = 409.043 ; free physical = 129 ; free virtual = 4248
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:01:49 . Memory (MB): peak = 2293.910 ; gain = 409.043 ; free physical = 129 ; free virtual = 4248
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:50 ; elapsed = 00:01:49 . Memory (MB): peak = 2293.910 ; gain = 409.043 ; free physical = 129 ; free virtual = 4248
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |BUFG          |     9|
+|2     |CARRY4        |     5|
+|3     |GTPE2_CHANNEL |     1|
+|4     |GTPE2_COMMON  |     1|
+|5     |IBUFDS_GTE2   |     1|
+|6     |LUT1          |    25|
+|7     |LUT2          |    83|
+|8     |LUT3          |    50|
+|9     |LUT4          |    67|
+|10    |LUT5          |   100|
+|11    |LUT6          |   136|
+|12    |MUXF7         |     3|
+|13    |MUXF8         |     1|
+|14    |PLLE2_BASE    |     2|
+|15    |RAMB18E1      |     1|
+|16    |FDRE          |   296|
+|17    |FDSE          |    38|
+|18    |IBUF          |     5|
+|19    |IBUFG         |     1|
+|20    |IBUFGDS       |     1|
+|21    |OBUF          |     1|
++------+--------------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   827|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:50 ; elapsed = 00:01:49 . Memory (MB): peak = 2293.910 ; gain = 409.043 ; free physical = 129 ; free virtual = 4248
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 221 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:01:35 . Memory (MB): peak = 2293.910 ; gain = 274.309 ; free physical = 182 ; free virtual = 4301
+Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:01:49 . Memory (MB): peak = 2293.910 ; gain = 409.043 ; free physical = 182 ; free virtual = 4301
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2293.910 ; gain = 0.000 ; free physical = 178 ; free virtual = 4296
+INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
+WARNING: [Netlist 29-432] The IBUFG primitive 'IBUFG' has been retargeted to an IBUF primitive only. No BUFG will be added. If a global buffer is intended, please instantiate an available global clock primitive from the current architecture.
+INFO: [Netlist 29-28] Unisim Transformation completed in 33 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 2 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 2 OBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2293.910 ; gain = 0.000 ; free physical = 192 ; free virtual = 4314
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  IBUFG => IBUF: 1 instance 
+  IBUFGDS => IBUFDS: 1 instance 
+  PLLE2_BASE => PLLE2_ADV: 2 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+135 Infos, 148 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:10 ; elapsed = 00:02:14 . Memory (MB): peak = 2293.910 ; gain = 693.707 ; free physical = 322 ; free virtual = 4445
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2293.910 ; gain = 0.000 ; free physical = 319 ; free virtual = 4445
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Jul 19 17:29:47 2020...

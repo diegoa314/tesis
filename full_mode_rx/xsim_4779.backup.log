@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# xsim v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Fri Jul 17 18:05:00 2020
+# Process ID: 4779
+# Current directory: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx
+# Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
+# Log file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.log
+# Journal file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.jou
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/top_tb_sim/xsim_script.tcl
+# set_param project.enableReportConfiguration 0
+# load_feature core
+# current_fileset
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
+current_fileset: Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 8542.676 ; gain = 89.031 ; free physical = 1344 ; free virtual = 5759
+# xsim {top_tb_sim} -autoloadwcfg
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg
+WARNING: Simulation object /top_tb/dut/tx_tx_init_done was not found in the design.
+WARNING: Simulation object /top_tb/dut/tx_fifo_empty was not found in the design.
+xsim: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 8631.531 ; gain = 88.855 ; free physical = 1229 ; free virtual = 5645
+run 1 ms
+Warning : input CLKIN1 period and attribute CLKIN1_PERIOD on PLLE2_ADV instance top_tb.dut.PLLE2_BASE_1.plle2_adv_1 are not same.
+Warning: [Unisim PLLE2_ADV-21] Input CLKIN1 is stopped at time            738708250. Reset is required when input clock returns. Instance top_tb.dut.PLLE2_BASE_1.plle2_adv_1 
+Warning: [Unisim PLLE2_ADV-21] Input CLKIN1 is stopped at time            844945698. Reset is required when input clock returns. Instance top_tb.dut.PLLE2_BASE_1.plle2_adv_1 
+run: Time (s): cpu = 00:05:50 ; elapsed = 00:55:55 . Memory (MB): peak = 8631.531 ; gain = 0.000 ; free physical = 806 ; free virtual = 5473
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:56:10 ; elapsed = 00:00:37 . Memory (MB): peak = 8631.531 ; gain = 0.000 ; free physical = 1079 ; free virtual = 5589
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Jul 17 19:04:13 2020...

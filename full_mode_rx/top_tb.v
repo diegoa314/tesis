@@ -11,6 +11,11 @@ reg gtp_clk;
 initial gtp_clk = 1'b1;
 always #2.08333 gtp_clk = ~gtp_clk; //2.08333 is half period of 240 MHz gtp clk
 
+reg sys_clk;
+initial sys_clk = 1'b1;
+always #5 sys_clk = ~sys_clk; //2.08333 is half period of 240 MHz gtp clk
+
+
 real period =2.5; //400 MHz period
 
 reg link_ready;
@@ -23,6 +28,7 @@ initial we='b0;
 initial trans_en='b0;
 wire gtp_p;
 wire gtp_n;
+
 
 wire rxinit_done;
 
@@ -39,7 +45,8 @@ top dut (
     .link_ready(link_ready),
     .trans_en(trans_en),
     .rxinit_done(rxinit_done),
-    .reset(reset)
+    .reset(reset),
+    .clk62_5(sys_clk)
     
 );
 

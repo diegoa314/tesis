@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Sun Jul 19 12:19:59 2020
+# Process ID: 5701
+# Current directory: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx
+# Command line: vivado
+# Log file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/vivado.log
+# Journal file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.xpr
+update_compile_order -fileset sources_1
+launch_runs impl_1
+wait_on_run impl_1
+open_run impl_1
+set_max_delay -from gtp_tx_init_done1_reg -to xilinxmultiregimpl10_regs0_reg 10.0
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+set_property target_constrs_file /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.xdc [current_fileset -constrset]
+save_constraints -force

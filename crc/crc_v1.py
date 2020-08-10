@@ -269,52 +269,16 @@ class TxParallelCrcGenerator(Module):
 
 def tb(dut):
     yield dut.i_data_strobe.eq(1)
-    yield dut.i_data_payload.eq(0x1a)
+    yield dut.i_data_payload.eq(0x1122aabb)
     yield
-    yield dut.i_data_payload.eq(0x1b)
-    yield
-    yield dut.i_data_payload.eq(0x1c)
-    yield
-    yield dut.i_data_payload.eq(0x1d)
-    yield
-    yield dut.i_data_payload.eq(0x1f)
-    yield
-    yield dut.i_data_payload.eq(0x2a)
-    yield
-    yield dut.i_data_payload.eq(0x2b)
-    yield
-    yield dut.i_data_payload.eq(0x2c)
+    yield dut.i_data_payload.eq(0x3344ccdd)
     yield 
-    yield dut.i_data_strobe.eq(0)    
+    yield dut.i_data_payload.eq(0x5566eeff)
     yield
-    yield dut.reset.eq(1)
+    yield dut.i_data_payload.eq(0x7788abcd)
+    yield   
     yield
-    yield dut.reset.eq(1)
-    yield
-    yield dut.reset.eq(0)
-    yield
-    yield
-    yield dut.i_data_strobe.eq(1)
-    yield dut.i_data_payload.eq(0x1a)
-    yield
-    yield dut.i_data_payload.eq(0x1b)
-    yield
-    yield dut.i_data_payload.eq(0x1c)
-    yield
-    yield dut.i_data_payload.eq(0x1d)
-    yield
-    yield dut.i_data_payload.eq(0x1f)
-    yield
-    yield dut.i_data_payload.eq(0x2a)
-    yield
-    yield dut.i_data_payload.eq(0x2b)
-    yield
-    yield dut.i_data_payload.eq(0x2c)
-    yield 
-    yield dut.i_data_strobe.eq(0)   
-    yield 
-    yield
-
+    
 
 
 dut=TxParallelCrcGenerator(data_width=32, crc_width=20, polynomial=0xc1acf,initial=0xfffff)

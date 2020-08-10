@@ -1,0 +1,66 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Sun Jul 19 12:19:59 2020
+# Process ID: 5701
+# Current directory: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx
+# Command line: vivado
+# Log file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/vivado.log
+# Journal file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 6668.816 ; gain = 169.781 ; free physical = 1744 ; free virtual = 5777
+update_compile_order -fileset sources_1
+launch_runs impl_1
+[Sun Jul 19 12:23:48 2020] Launched synth_1...
+Run output will be captured here: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.runs/synth_1/runme.log
+[Sun Jul 19 12:23:48 2020] Launched impl_1...
+Run output will be captured here: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7a200tfbg676-3
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 6963.781 ; gain = 0.000 ; free physical = 1477 ; free virtual = 5515
+INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Constraints 18-5170] The checkpoint was created with non-default parameter values which do not match the current Vivado settings.  Mismatching parameters are:
+  general.maxThreads
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.17 . Memory (MB): peak = 7592.465 ; gain = 0.000 ; free physical = 886 ; free virtual = 4925
+Restored from archive | CPU: 0.160000 secs | Memory: 0.797501 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.17 . Memory (MB): peak = 7592.465 ; gain = 0.000 ; free physical = 886 ; free virtual = 4925
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 7592.465 ; gain = 0.000 ; free physical = 886 ; free virtual = 4924
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:31 ; elapsed = 00:00:46 . Memory (MB): peak = 7780.613 ; gain = 1055.270 ; free physical = 786 ; free virtual = 4824
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [Vivado 12-2286] Implicit search of objects for pattern 'gtp_tx_init_done1_reg' matched to 'cell' objects.
+Resolution: To avoid ambiguous patterns, provide proper objects using get commands e.g. [get_nets xyz].
+INFO: [Vivado 12-2286] Implicit search of objects for pattern 'xilinxmultiregimpl10_regs0_reg' matched to 'cell' objects.
+Resolution: To avoid ambiguous patterns, provide proper objects using get commands e.g. [get_nets xyz].
+set_max_delay -from gtp_tx_init_done1_reg -to xilinxmultiregimpl10_regs0_reg 10.0
+INFO: [Vivado 12-2286] Implicit search of objects for pattern 'gtp_tx_init_done1_reg' matched to 'cell' objects.
+Resolution: To avoid ambiguous patterns, provide proper objects using get commands e.g. [get_nets xyz].
+INFO: [Vivado 12-2286] Implicit search of objects for pattern 'xilinxmultiregimpl10_regs0_reg' matched to 'cell' objects.
+Resolution: To avoid ambiguous patterns, provide proper objects using get commands e.g. [get_nets xyz].
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 4 CPUs
+set_property target_constrs_file /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/build/top.xdc [current_fileset -constrset]
+save_constraints -force
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jul 19 12:39:48 2020...

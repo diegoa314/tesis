@@ -397,8 +397,7 @@ class GTP(Module):
                 o_RXOUTCLK=self._rxoutclk,
                 i_RXUSRCLK=rxusrclk,
                 i_RXUSRCLK2=rxusrclk2,
-                #i_RXUSRCLK=txusrclk,
-                #i_RXUSRCLK2=txusrclk2,
+            
                 
                 p_RXPI_CFG1=1,
                 p_RXPI_CFG2=1,

@@ -35,12 +35,14 @@ class GTPTXInit(Module):
         txdlysresetdone = Signal()
         txphinitdone = Signal()
         txphaligndone = Signal()
+        
         self.specials += [
             MultiReg(self.plllock, plllock),
             MultiReg(self.txresetdone, txresetdone),
             MultiReg(self.txdlysresetdone, txdlysresetdone),
             MultiReg(self.txphinitdone, txphinitdone),
-            MultiReg(self.txphaligndone, txphaligndone)
+            MultiReg(self.txphaligndone, txphaligndone),
+            
         ]
 
         # Deglitch FSM outputs driving transceiver asynch inputs
@@ -50,6 +52,7 @@ class GTPTXInit(Module):
         txphalign = Signal()
         txdlyen = Signal()
         txuserrdy = Signal()
+        done = Signal()
         self.sync += [
             self.gttxreset.eq(gttxreset),
             self.txdlysreset.eq(txdlysreset),
@@ -57,6 +60,7 @@ class GTPTXInit(Module):
             self.txphalign.eq(txphalign),
             self.txdlyen.eq(txdlyen),
             self.txuserrdy.eq(txuserrdy)
+            self.done.eq(done)
         ]
 
         # PLL reset must be at least 500us
@@ -70,7 +74,7 @@ class GTPTXInit(Module):
         ready_timer = WaitTimer(int(1e-3*sys_clk_freq))
         self.submodules += ready_timer
         self.comb += [
-            ready_timer.wait.eq(~self.done & ~startup_fsm.reset),
+            ready_timer.wait.eq(~done & ~startup_fsm.reset),
             startup_fsm.reset.eq(self.restart | ready_timer.done)
         ]
 
@@ -134,7 +138,7 @@ class GTPTXInit(Module):
         )
         startup_fsm.act("READY",
             txuserrdy.eq(1),
-            self.done.eq(1),
+            done.eq(1),
             If(self.restart, NextState("PLL_RESET"))
         )
 

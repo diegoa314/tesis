@@ -1,0 +1,128 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2700185 Thu Oct 24 18:45:48 MDT 2019
+| Date         : Sun Jul 19 17:52:04 2020
+| Host         : localhost.localdomain running 64-bit unknown
+| Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
+| Design       : top
+| Device       : xc7a200tfbg676-3
+| Speed File   : -3
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 17
++-----------+------------------+------------------------------------------------+------------+
+| Rule      | Severity         | Description                                    | Violations |
++-----------+------------------+------------------------------------------------+------------+
+| TIMING-2  | Critical Warning | Invalid primary clock source pin               | 2          |
+| TIMING-6  | Critical Warning | No common primary clock between related clocks | 2          |
+| TIMING-7  | Critical Warning | No common node between related clocks          | 2          |
+| TIMING-8  | Critical Warning | No common period between related clocks        | 2          |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                    | 2          |
+| SYNTH-6   | Warning          | Timing of a block RAM might be sub-optimal     | 1          |
+| SYNTH-16  | Warning          | Address collision                              | 1          |
+| TIMING-16 | Warning          | Large setup violation                          | 1          |
+| TIMING-18 | Warning          | Missing input or output delay                  | 4          |
++-----------+------------------+------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-2#1 Critical Warning
+Invalid primary clock source pin  
+A primary clock rx_clk is created on an inappropriate pin BUFG_7/O. It is recommended to create a primary clock only on a proper clock source (input port or primitive output pin with no timing arc)
+Related violations: <none>
+
+TIMING-2#2 Critical Warning
+Invalid primary clock source pin  
+A primary clock tx_clk is created on an inappropriate pin BUFG_6/O. It is recommended to create a primary clock only on a proper clock source (input port or primitive output pin with no timing arc)
+Related violations: <none>
+
+TIMING-6#1 Critical Warning
+No common primary clock between related clocks  
+The clocks sys_clk and tx_clk are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks sys_clk] -to [get_clocks tx_clk]
+Related violations: <none>
+
+TIMING-6#2 Critical Warning
+No common primary clock between related clocks  
+The clocks tx_clk and write_clk_p are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks tx_clk] -to [get_clocks write_clk_p]
+Related violations: <none>
+
+TIMING-7#1 Critical Warning
+No common node between related clocks  
+The clocks sys_clk and tx_clk are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks sys_clk] -to [get_clocks tx_clk]
+Related violations: <none>
+
+TIMING-7#2 Critical Warning
+No common node between related clocks  
+The clocks tx_clk and write_clk_p are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks tx_clk] -to [get_clocks write_clk_p]
+Related violations: <none>
+
+TIMING-8#1 Critical Warning
+No common period between related clocks  
+The clocks sys_clk and tx_clk are found related (timed together) but have no common (expandable) period
+Related violations: <none>
+
+TIMING-8#2 Critical Warning
+No common period between related clocks  
+The clocks tx_clk and write_clk_p are found related (timed together) but have no common (expandable) period
+Related violations: <none>
+
+TIMING-17#1 Critical Warning
+Non-clocked sequential cell  
+The clock pin GTPE2_CHANNEL/RXUSRCLK2 is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#2 Critical Warning
+Non-clocked sequential cell  
+The clock pin GTPE2_CHANNEL/TXUSRCLK2 is not reached by a timing clock
+Related violations: <none>
+
+SYNTH-6#1 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance storage_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-16#1 Warning
+Address collision  
+Block RAM storage_reg may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -2.007 ns between graycounter1_q_reg[0]/C (clocked by tx_clk) and xilinxmultiregimpl14_regs0_reg[0]/D (clocked by write_clk_p). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on link_ready relative to clock(s) tx_clk
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on reset relative to clock(s) sys_clk, tx_clk, write_clk_p
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on we relative to clock(s) write_clk_p
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on rxinit_done relative to clock(s) tx_clk
+Related violations: <none>
+
+

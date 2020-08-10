@@ -3,26 +3,28 @@
 #include <stdlib.h>
     
 int main(int argc, char* argv[]) {
-    uint32_t start = 0xffffffff;
+    uint8_t start = 0x7f;
     uint32_t a = start;
-    int i;
-    int j;    
-    for(j=1; j<=1; j++){    
-        for (i = 1; i<=32; i++) {
-            uint32_t newbit = (((a >> 6) ^ (a >> 5)) & 1);
-            a = ((a << 1) | newbit) & 0x7fffffff;
-            //a = ((a << 1) | newbit) ;
-            if(a==0x06147916) {
-                printf("estoy%s\n", a);
-                break;
+    uint32_t o;
+    int i,j;
+
+ 
+    for (i = 0;i<1; i++) {
+          
+        for (j=1;j<1000;j++){
+            //printf(" i %d\n", j);
+            //printf("%x\n",a );
+            int newbit = (((a >> 6) ^ (a >> 5)) & 1);
+            a = ((a << 1) | newbit); //& 0x7fffffff; //0x7f=0111 1111
+                      
+            if((j-7)%32==0){
+                printf("%x\n",a );
             }
             
-            if (a == start) {
-                printf("repetition period is %d\n", i);
-                break;
-            }
-        
+        }    
+        if (a == start) {
+            printf("repetition period is %d\n", i);
+            break;
         }
-        printf("%x\n", a);
     }
 }

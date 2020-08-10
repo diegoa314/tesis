@@ -2,8 +2,8 @@
 # xsim v2019.2 (64-bit)
 # SW Build 2700185 on Thu Oct 24 18:45:48 MDT 2019
 # IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
-# Start of session at: Mon Jul 13 15:53:22 2020
-# Process ID: 113150
+# Start of session at: Sun Jul 19 16:16:17 2020
+# Process ID: 12773
 # Current directory: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx
 # Command line: xsim -source {xsim.dir/top_tb_sim/xsim_script.tcl}
 # Log file: /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/xsim.log
@@ -17,13 +17,21 @@ source xsim.dir/top_tb_sim/xsim_script.tcl
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/diegoaranda/Xilinx/Vivado/2019.2/data/ip'.
-current_fileset: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 8538.055 ; gain = 84.027 ; free physical = 1074 ; free virtual = 5288
+current_fileset: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 8573.652 ; gain = 130.016 ; free physical = 904 ; free virtual = 5521
 # xsim {top_tb_sim} -autoloadwcfg
 Vivado Simulator 2019.2
 Time resolution is 1 ps
 open_wave_config /home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg
+save_wave_config {/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg}
 run 1 ms
 Warning : input CLKIN1 period and attribute CLKIN1_PERIOD on PLLE2_ADV instance top_tb.dut.PLLE2_BASE_1.plle2_adv_1 are not same.
-Warning: [Unisim PLLE2_ADV-21] Input CLKIN1 is stopped at time            773209250. Reset is required when input clock returns. Instance top_tb.dut.PLLE2_BASE_1.plle2_adv_1 
-Warning: [Unisim PLLE2_ADV-21] Input CLKIN1 is stopped at time            879464352. Reset is required when input clock returns. Instance top_tb.dut.PLLE2_BASE_1.plle2_adv_1 
-run: Time (s): cpu = 00:03:13 ; elapsed = 00:51:39 . Memory (MB): peak = 8626.910 ; gain = 0.000 ; free physical = 627 ; free virtual = 5044
+Warning: [Unisim PLLE2_ADV-21] Input CLKIN1 is stopped at time            756708250. Reset is required when input clock returns. Instance top_tb.dut.PLLE2_BASE_1.plle2_adv_1 
+run: Time (s): cpu = 00:05:20 ; elapsed = 00:45:39 . Memory (MB): peak = 8625.516 ; gain = 0.000 ; free physical = 522 ; free virtual = 5262
+run 1 ms
+run: Time (s): cpu = 00:00:31 ; elapsed = 00:03:02 . Memory (MB): peak = 8625.516 ; gain = 0.000 ; free physical = 510 ; free virtual = 5266
+save_wave_config {/home/diegoaranda/Documents/Tesis/tesis/full_mode_rx/top_tb_sim.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:48:16 ; elapsed = 00:00:12 . Memory (MB): peak = 8625.516 ; gain = 0.000 ; free physical = 760 ; free virtual = 5373
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Jul 19 17:09:28 2020...

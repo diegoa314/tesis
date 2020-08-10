@@ -44,7 +44,16 @@ class PRBS31Generator(PRBSGenerator):
     def __init__(self, n_out):
         PRBSGenerator.__init__(self, n_out, taps=[27, 30])
 
+def prbs_tb(dut):
+    yield
+    yield dut.enable.eq(1)
+    for i in range(20):
+        yield
 
+dut=PRBS7Generator(n_out=32)
+run_simulation(dut,prbs_tb(dut), vcd_name="prbs_tb.vcd")
+
+"""
 class PRBSTX(Module):
     def __init__(self, width, reverse=False):
         self.config = Signal(2)
@@ -180,3 +189,4 @@ class PRBSRX(Module):
             self.bit_wise_errors.eq(prbs31.errors)
             )
 
+"""

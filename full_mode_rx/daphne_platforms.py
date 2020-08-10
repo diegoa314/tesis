@@ -220,8 +220,8 @@ _io = [
             IOStandard("LVCMOS15")),
     ),
 
-    ("dbg", 0, Pins("D3 C3 F3 E3 C2 B2 A3 A2"
-        "C1 B1 F2 E2 E1 D1 G2 G1"), IOStandard("LVCMOS15")),
+    #("dbg", 0, Pins("D3 C3 F3 E3 C2 B2 A3 A2"
+    #    "C1 B1 F2 E2 E1 D1 G2 G1"), IOStandard("LVCMOS15")),
 
 
     ("clk0", 0, 
@@ -313,26 +313,27 @@ _io = [
     ),
 
     ("gtp_tx", 0,
-        Subsignal("p", Pins("AE7")),
-        Subsignal("n", Pins("AF7")),
-        IOStandard("LVCMOS25")
+        Subsignal("p", Pins("AC10")),
+        Subsignal("n", Pins("AD10")),
+        
     ),
     ("gtp_rx", 0,
-        Subsignal("p", Pins("AE11")),
-        Subsignal("n", Pins("AF11")),
-        IOStandard("LVCMOS25")
+        Subsignal("p", Pins("AC12")),
+        Subsignal("n", Pins("AD12")),
+        
     ),
     ("gtp_clk", 0,
-        Subsignal("p", Pins("AA11")),
-        Subsignal("n", Pins("AB11"))
+        Subsignal("p", Pins("AA13")),
+        Subsignal("n", Pins("AB13"))
     ),
 
-    ("we",0, Pins("X")),
-    ("rxinit_done",0,Pins("X")),
+    ("we",0, Pins("A2"),IOStandard("LVCMOS15")),
+    ("rxinit_done",0,Pins("A3"),IOStandard("LVCMOS15")),
     
-    ("link_ready",0, Pins("X")),
-    ("trans_en",0, Pins("X")),
-    ("reset",0, Pins("X")),
+    
+    ("link_ready",0, Pins("D3"),IOStandard("LVCMOS15")),
+    ("trans_en",0, Pins("F3"),IOStandard("LVCMOS15")),
+    ("reset",0, Pins("C3"),IOStandard("LVCMOS15")),
 
     ("write_clk", 0, 
         Subsignal("p", Pins("G5"), IOStandard("DIFF_SSTL18_II")),
@@ -341,33 +342,40 @@ _io = [
 
 
 ]
-
+    
 
 # Platform -----------------------------------------------------------------------------------------
 
 class Platform(XilinxPlatform):
-    default_clk_name = "clk62.5"
-    default_clk_period = 1e9/62.5e6
+    default_clk_name = "clk62_5"
+    default_clk_period = 1e9/100e6
+
+
 
     def __init__(self):
         XilinxPlatform.__init__(self, "xc7a200t-fbg676-3", _io,  toolchain="vivado")
+
         self.toolchain.bitstream_commands = \
             ["set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]"]
         self.toolchain.additional_commands = \
             ["write_cfgmem -force -format bin -interface spix4 -size 16 "
              "-loadbit \"up 0x0 {build_name}.bit\" -file {build_name}.bin"]
         self.add_platform_command("set_property INTERNAL_VREF 0.750 [get_iobanks 34]")
+        
 
 
     def create_programmer(self):
         return VivadoProgrammer(flash_part="n25q128-3.3v-spi-x1_x2_x4")
 
-    # def do_finalize(self, fragment):
-    #     XilinxPlatform.do_finalize(self, fragment)
-    #     try:
-    #         self.add_period_constraint(self.lookup_request("eth_clocks").rx, 1e9/125e6)
-    #     except ConstraintError:
-    #         pass
+    def do_finalize(self, fragment):
+        XilinxPlatform.do_finalize(self, fragment)
+        try:
+                  
+            self.add_period_constraint(self.lookup_request("write_clk").p , 1e9/400e6)
+            self.add_period_constraint(self.lookup_request("gtp_clk").p , 1e9/240e6)
+           
+        except ConstraintError:
+            pass
     def load(self):
         from litex.build.xilinx import VivadoProgrammer
         prog=VivadoProgrammer()

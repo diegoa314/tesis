@@ -1,0 +1,46 @@
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|                   tx_clk |              write_clk_p |                                                                       xilinxmultiregimpl14_regs0_reg[0]/D|
+|              write_clk_p |              write_clk_p |                                                                                   graycounter0_q_reg[4]/D|
+|              write_clk_p |              write_clk_p |                                                                                     storage_reg/DIBDI[12]|
+|              write_clk_p |              write_clk_p |                                                                                     storage_reg/DIADI[10]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIBDI[1]|
+|              write_clk_p |              write_clk_p |                                                                                     storage_reg/DIADI[11]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIBDI[4]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIBDI[6]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIBDI[5]|
+|              write_clk_p |              write_clk_p |                                                                                   graycounter0_q_reg[5]/D|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIBDI[8]|
+|              write_clk_p |              write_clk_p |                                                                            graycounter0_q_binary_reg[5]/D|
+|              write_clk_p |              write_clk_p |                                                                            graycounter0_q_binary_reg[4]/D|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIADI[7]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIBDI[7]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIADI[9]|
+|              write_clk_p |              write_clk_p |                                                                                     storage_reg/DIBDI[11]|
+|              write_clk_p |              write_clk_p |                                                                                     storage_reg/DIBDI[15]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIBDI[3]|
+|              write_clk_p |              write_clk_p |                                                                                     storage_reg/DIBDI[10]|
+|              write_clk_p |              write_clk_p |                                                                                     storage_reg/DIBDI[14]|
+|              write_clk_p |              write_clk_p |                                                                                     storage_reg/DIADI[15]|
+|              write_clk_p |              write_clk_p |                                                                                   graycounter0_q_reg[3]/D|
+|              write_clk_p |              write_clk_p |                                                                            graycounter0_q_binary_reg[1]/D|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIADI[6]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIBDI[9]|
+|              write_clk_p |              write_clk_p |                                                                                     storage_reg/DIADI[13]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIADI[8]|
+|              write_clk_p |              write_clk_p |                                                                                     storage_reg/DIADI[14]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIBDI[0]|
+|              write_clk_p |              write_clk_p |                                                                                     storage_reg/DIBDI[13]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIADI[0]|
+|              write_clk_p |              write_clk_p |                                                                                     storage_reg/DIADI[12]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIBDI[2]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIADI[1]|
+|              write_clk_p |              write_clk_p |                                                                                    storage_reg/DIPADIP[0]|
+|              write_clk_p |              write_clk_p |                                                                                    storage_reg/DIPADIP[1]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIADI[3]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIADI[4]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIADI[5]|
+|              write_clk_p |              write_clk_p |                                                                                      storage_reg/DIADI[2]|
+|              write_clk_p |              write_clk_p |                                                                                   graycounter0_q_reg[1]/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
